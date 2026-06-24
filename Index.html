@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AT&T Retirement Benefits — Advisor Field Guide</title>
+<style>
+:root{
+  --cream:#F7F4E9;
+  --cream-deep:#EFE9D6;
+  --ink:#10243F;
+  --ink-soft:#33486A;
+  --blue:#1E55C0;
+  --blue-bright:#2E84D6;
+  --sky:#cfe1f5;
+  --gold:#C08A2D;
+  --gold-soft:#E4C98A;
+  --line:#D8D0BA;
+  --paper:#FDFCF6;
+  --good:#2E7D52;
+  --warn:#B5532A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.sans{font-family:'Helvetica Neue',Arial,sans-serif}
+
+/* ---------- Layout shell ---------- */
+.wrap{display:flex;max-width:1400px;margin:0 auto;min-height:100vh}
+nav.side{
+  width:262px;flex:0 0 262px;
+  position:sticky;top:0;align-self:flex-start;
+  height:100vh;overflow-y:auto;
+  background:var(--ink);
+  color:var(--cream);
+  padding:30px 0 60px;
+}
+nav.side .brand{padding:0 26px 22px}
+nav.side .brand .logo{font-size:25px;font-weight:bold;letter-spacing:.5px;color:#fff;font-family:Georgia,serif}
+nav.side .brand .team{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:4px;color:var(--gold-soft);margin-top:3px}
+nav.side .brand .sub{font-size:12px;color:#9fb4d4;margin-top:14px;line-height:1.5;font-family:'Helvetica Neue',Arial,sans-serif}
+nav.side .navlabel{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;color:#7d93b6;padding:18px 26px 8px;text-transform:uppercase}
+nav.side a{
+  display:block;padding:8px 26px 8px 26px;
+  color:#c6d4e8;text-decoration:none;font-size:14px;
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  border-left:3px solid transparent;transition:.15s;
+}
+nav.side a .num{color:var(--gold-soft);font-size:11px;margin-right:9px;letter-spacing:1px}
+nav.side a:hover{background:#163459;color:#fff}
+nav.side a.active{background:#163459;color:#fff;border-left-color:var(--gold)}
+
+main{flex:1;min-width:0;padding:0 0 80px}
+section.block{padding:64px 56px;max-width:880px;border-bottom:1px solid var(--line)}
+@media(max-width:980px){
+  nav.side{display:none}
+  section.block{padding:44px 24px}
+}
+
+/* ---------- Typography ---------- */
+.eyebrow{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+h1{font-size:46px;line-height:1.08;font-weight:normal;letter-spacing:-.5px;margin-bottom:18px}
+h2{font-size:34px;line-height:1.12;font-weight:normal;letter-spacing:-.4px;margin-bottom:14px}
+h3{font-size:21px;font-weight:normal;margin:34px 0 12px;color:var(--ink)}
+h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin:26px 0 10px;font-weight:700}
+p{margin-bottom:14px;font-size:16.5px}
+p.lead{font-size:19px;color:var(--ink-soft);line-height:1.55}
+a.inline{color:var(--blue)}
+strong{font-weight:bold}
+em{color:var(--ink-soft)}
+.small{font-size:13.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(160deg,#10243F 0%,#16345b 60%,#1d4377 100%);
+  color:var(--cream);padding:74px 56px 64px;border-bottom:5px solid var(--gold);
+  position:relative;overflow:hidden;
+}
+.hero .eyebrow{color:var(--gold-soft)}
+.hero h1{color:#fff;max-width:680px}
+.hero p.lead{color:#cdddf2;max-width:620px}
+.hero .gear{position:absolute;right:-90px;top:-40px;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, rgba(46,132,214,.28), transparent 60%);pointer-events:none}
+.hero .meta{display:flex;gap:38px;margin-top:34px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.hero .meta div span{display:block}
+.hero .meta .k{font-size:10.5px;letter-spacing:2px;color:#8fb0d6;text-transform:uppercase}
+.hero .meta .v{font-size:15px;color:#fff;margin-top:3px}
+
+/* ---------- Callouts ---------- */
+.callout{border-left:4px solid var(--blue);background:var(--paper);padding:18px 22px;margin:22px 0;border-radius:0 6px 6px 0}
+.callout.gold{border-left-color:var(--gold);background:#fbf6ea}
+.callout.warn{border-left-color:var(--warn);background:#fbf0ea}
+.callout.good{border-left-color:var(--good);background:#eef6f1}
+.callout .tag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:block}
+.callout.gold .tag{color:var(--gold)}
+.callout .tag.blue{color:var(--blue)}
+.callout.warn .tag{color:var(--warn)}
+.callout.good .tag{color:var(--good)}
+.callout p:last-child{margin-bottom:0}
+.callout p{font-size:15.5px}
+
+/* advisor lens recurring box */
+.lens{background:#10243F;color:#e7eefa;border-radius:8px;padding:22px 24px;margin:26px 0;position:relative;overflow:hidden}
+.lens .tag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-soft);font-weight:700;display:block;margin-bottom:8px}
+.lens p{color:#dbe5f5;font-size:15.5px}
+.lens p:last-child{margin-bottom:0}
+.lens strong{color:#fff}
+
+/* ---------- Tables ---------- */
+table{width:100%;border-collapse:collapse;margin:20px 0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;background:var(--paper)}
+th{background:var(--ink);color:#fff;text-align:left;padding:11px 14px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600}
+td{padding:11px 14px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fbf9f1}
+td.num{font-variant-numeric:tabular-nums;text-align:right}
+
+/* Custom Table Utilities */
+table.v-lines th:not(:last-child), table.v-lines td:not(:last-child) { border-right: 1px solid var(--line); }
+table.v-lines th:not(:last-child) { border-right-color: rgba(255, 255, 255, 0.2); }
+.text-center { text-align: center !important; }
+
+/* ---------- Two col ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0}
+@media(max-width:640px){.cols{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:20px 22px}
+.card h4{margin-top:0}
+.card .big{font-size:30px;color:var(--blue);font-family:Georgia,serif}
+
+/* ---------- Formula strip ---------- */
+.formula{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:24px 0;font-family:'Helvetica Neue',Arial,sans-serif}
+.fbox{background:var(--blue);color:#fff;border-radius:8px;padding:14px 16px;flex:1;min-width:120px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.fbox .ft{font-size:11px;letter-spacing:1px;text-transform:uppercase;opacity:.8}
+.fbox .fv{font-size:14px;margin-top:4px;font-weight:600}
+.fbox.alt{background:var(--gold)}
+.fbox.ghost{background:var(--cream-deep);color:var(--ink)}
+.fop{display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--ink-soft);font-family:Georgia,serif;padding:0 2px}
+
+/* ---------- Pillars ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+@media(max-width:720px){.pillars{grid-template-columns:1fr}}
+.pillars.four{grid-template-columns:repeat(4,1fr)}
+@media(max-width:840px){.pillars.four{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pillars.four{grid-template-columns:1fr}}
+.pillar{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px;border-top:4px solid var(--blue)}
+.pillar.b{border-top-color:var(--gold)}
+.pillar.c{border-top-color:var(--good)}
+.pillar.d{border-top-color:var(--ink-soft)}
+.pillar .ico{font-size:24px;margin-bottom:8px}
+.pillar h4{margin:0 0 8px}
+.pillar p{font-size:14px;margin-bottom:0;color:var(--ink-soft)}
+
+/* ---------- Calculator ---------- */
+.calc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:26px;margin:26px 0;box-shadow:0 2px 14px rgba(16,36,63,.06)}
+.calc .row{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.calc label{flex:0 0 200px;font-size:13.5px;color:var(--ink-soft)}
+.calc input[type=range]{flex:1;min-width:160px;accent-color:var(--blue)}
+.calc .val{flex:0 0 110px;text-align:right;font-size:16px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.calc select{flex:1;padding:7px;border:1px solid var(--line);border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:#fff}
+.calc .out{margin-top:18px;padding-top:20px;border-top:2px solid var(--cream-deep);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.calc .out{grid-template-columns:1fr}.calc label{flex:0 0 100%}}
+.calc .out .o{background:var(--cream);border-radius:8px;padding:14px 16px}
+.calc .out .o .ol{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft)}
+.calc .out .o .ov{font-size:27px;color:var(--blue);margin-top:4px;font-variant-numeric:tabular-nums}
+.calc .out .o.hl{background:var(--ink)}
+.calc .out .o.hl .ol{color:#9fb4d4}
+.calc .out .o.hl .ov{color:var(--gold-soft)}
+.calc .note{font-size:12.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif;margin-top:14px;line-height:1.5}
+
+/* eligibility calculator results */
+.calc .num-input{flex:0 0 110px}
+.calc .num-input input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;text-align:right}
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+@media(max-width:680px){.results{grid-template-columns:1fr}}
+.rcard{border-radius:10px;padding:18px;border:1px solid var(--line);background:var(--cream);display:flex;flex-direction:column;min-height:140px}
+.rcard .rlabel{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+.rcard .rval{font-size:26px;color:var(--ink);margin:8px 0 6px;line-height:1.1}
+.rcard .rdesc{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);line-height:1.45;margin-top:auto}
+.rcard.good{background:#eef6f1;border-color:#bcd9c8}
+.rcard.good .rval{color:var(--good)}
+.rcard.warn{background:#fbf0ea;border-color:#e6c3b2}
+.rcard.warn .rval{color:var(--warn)}
+.rcard.neutral{background:#eef3fb;border-color:#c4d6ef}
+.rcard.neutral .rval{color:var(--blue)}
+.status-banner{margin-top:18px;padding:14px 18px;border-radius:8px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;font-weight:600}
+.status-banner.met{background:#10243F;color:#fff}
+.status-banner.met .sb-sub{color:#9fb4d4;font-weight:400;font-size:13px;margin-top:4px;display:block}
+.status-banner.notmet{background:#fbf0ea;color:var(--warn);border:1px solid #e6c3b2}
+.status-banner.notmet .sb-sub{color:#8a4a2e;font-weight:400;font-size:13px;margin-top:4px;display:block}
+
+/* growth bar viz */
+.bars{display:flex;align-items:flex-end;gap:6px;height:150px;margin:16px 0 6px}
+.bars .bcol{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.bars .bseg{width:100%;border-radius:3px 3px 0 0}
+.bars .s-basic{background:var(--blue)}
+.bars .s-int{background:var(--gold)}
+.bars .blab{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;color:var(--ink-soft);margin-top:6px}
+.legend{display:flex;gap:18px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;margin-top:6px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* steps */
+.steps{counter-reset:s;margin:22px 0}
+.step{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start}
+.step .sn{counter-increment:s;flex:0 0 34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:15px}
+.step .sn::before{content:counter(s)}
+.step .sc{flex:1;padding-top:3px}
+.step .sc strong{display:block;margin-bottom:2px}
+.step .sc p{font-size:14.5px;margin:0;color:var(--ink-soft)}
+
+/* decision compare */
+.compare{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:24px 0}
+@media(max-width:760px){.compare{grid-template-columns:1fr}}
+.opt{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column}
+.opt h4{margin-top:0;color:var(--ink);font-size:13px}
+.opt .who{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:var(--blue);margin-bottom:12px;font-weight:600}
+.opt ul{list-style:none;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px}
+.opt li{padding:5px 0 5px 20px;position:relative;color:var(--ink-soft)}
+.opt li.pro::before{content:"+";position:absolute;left:0;color:var(--good);font-weight:700}
+.opt li.con::before{content:"–";position:absolute;left:0;color:var(--warn);font-weight:700}
+
+/* glossary */
+.gloss dt{font-weight:bold;margin-top:16px;font-size:16px}
+.gloss dd{margin:3px 0 0;font-size:15px;color:var(--ink-soft)}
+
+/* footer */
+.foot{padding:48px 56px;background:var(--ink);color:#c6d4e8;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.7}
+.foot .ftitle{color:#fff;font-size:15px;letter-spacing:1px;margin-bottom:8px;font-weight:600}
+.foot a{color:var(--gold-soft)}
+.foot .disc{margin-top:22px;font-size:11.5px;color:#7d93b6;border-top:1px solid #24426b;padding-top:18px}
+
+/* contacts */
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+@media(max-width:600px){.contacts{grid-template-columns:1fr}}
+.contact{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px;font-family:'Helvetica Neue',Arial,sans-serif}
+.contact .cn{font-weight:700;font-size:14px}
+.contact .cd{font-size:13px;color:var(--ink-soft);margin-top:4px}
+
+.pn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
+.tax-chip{display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;padding:2px 9px;border-radius:20px;background:var(--cream-deep);color:var(--ink-soft);margin-right:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="side">
+  <div class="brand">
+    <div class="logo">Farther</div>
+    <div class="team">FOCUS TEAM</div>
+    <div class="sub">AT&amp;T Retirement Benefits<br>Advisor Field Guide</div>
+  </div>
+  <div class="navlabel">Foundations</div>
+  <a href="#landscape" class="navitem"><span class="num">01</span>The benefit landscape</a>
+  <a href="#eligibility" class="navitem"><span class="num">02</span>Eligibility &amp; vesting</a>
+  <div class="navlabel">The Pension</div>
+  <a href="#two-formulas" class="navitem"><span class="num">03</span>Two pension formulas</a>
+  <a href="#cash-balance" class="navitem"><span class="num">04</span>Cash balance mechanics</a>
+  <a href="#pre99" class="navitem"><span class="num">05</span>Pre-99 pension band</a>
+  <a href="#mod75" class="navitem"><span class="num">06</span>Modified Rule of 75</a>
+  <a href="#elig-calc" class="navitem"><span class="num">07</span>Mod 75 calculator</a>
+  <a href="#payment" class="navitem"><span class="num">08</span>Payment options</a>
+  <div class="navlabel">The Savings Plan</div>
+  <a href="#savings" class="navitem"><span class="num">09</span>The 401(k) plan</a>
+  <a href="#irmaa" class="navitem"><span class="num">10</span>IRMAA planning</a>
+  <div class="navlabel">Advisor Toolkit</div>
+  <a href="#strategy" class="navitem"><span class="num">11</span>Strategy playbook</a>
+  <a href="#protections" class="navitem"><span class="num">12</span>Protections &amp; rules</a>
+  <a href="#glossary" class="navitem"><span class="num">13</span>Glossary</a>
+  <a href="#contacts" class="navitem"><span class="num">14</span>Contacts &amp; sources</a>
+</nav>
+
+<main>
+
+<div class="hero" id="start">
+  <div class="gear"></div>
+  <div class="eyebrow">Onboarding · Internal Reference</div>
+  <h1>The AT&amp;T Union Retirement Benefits Guide</h1>
+  <p class="lead">Everything a new Farther advisor needs to confidently read, explain, and advise on the pension and 401(k) for AT&amp;T's bargained (union) employees — from cash balance mechanics to the strategic decisions that move the needle for clients.</p>
+  <div class="meta">
+    <div><span class="k">Plan</span><span class="v">AT&amp;T Pension Benefit Plan</span></div>
+    <div><span class="k">Population</span><span class="v">CWA &amp; IBEW bargained employees</span></div>
+    <div><span class="k">Recordkeeper</span><span class="v">Fidelity (NetBenefits)</span></div>
+    <div><span class="k">Source</span><span class="v">Summary Plan Descriptions (SPDs)</span></div>
+  </div>
+</div>
+
+<section class="block" id="landscape">
+  <div class="pn">Section 01</div>
+  <h2>The benefit landscape</h2>
+  <p>A retiring AT&amp;T union employee may draw income from up to three layers. Understanding how they stack helps you frame the whole picture in a first meeting.</p>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="ico">🏛️</div>
+      <h4>AT&amp;T Pension</h4>
+      <p>Employer-funded lifetime benefit. Paid as a monthly annuity or, for many bargained groups, a lump sum. The core of this guide.</p>
+    </div>
+    <div class="pillar b">
+      <div class="ico">💼</div>
+      <h4>AT&amp;T 401(k)</h4>
+      <p>Employee + employer money at Fidelity. Investable, portable, inheritable. Grows with the market.</p>
+    </div>
+    <div class="pillar c">
+      <div class="ico">🇺🇸</div>
+      <h4>Social Security</h4>
+      <p>The federal layer. Not an AT&amp;T benefit, but it shapes claiming timing and the income gap you're solving for.</p>
+    </div>
+  </div>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>The pension and 401(k) play <strong>complementary roles</strong>. The pension is a guaranteed-floor / longevity asset; the 401(k) is the flexible, growth-and-legacy asset. A common planning move is to use the guaranteed pension income to cover essential expenses, freeing the 401(k) to be invested for growth and used for discretionary spending and inheritance.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Accuracy first</span>
+    <p>Figures and tables here are drawn from the Summary Plan Descriptions in your project library. Specific factors, bands, and dollar limits change by contract and by year. <strong>Always verify a client's actual numbers in NetBenefits before giving advice.</strong> This guide builds intuition; it is not a substitute for the controlling plan documents.</p>
+  </div>
+</section>
+
+<section class="block" id="eligibility">
+  <div class="pn">Section 02</div>
+  <h2>Eligibility &amp; vesting</h2>
+  <p>Two gates control whether a client has a benefit at all: are they an <em>Eligible Employee</em>, and are they <em>vested</em>?</p>
+
+  <h3>Who is eligible</h3>
+  <p>Eligibility flows from the <strong>collective bargaining agreement</strong>. An employee is generally eligible if their job title and classification are covered by an applicable CWA or IBEW agreement with a participating AT&amp;T company. Participation begins after completing <strong>one year of participation service</strong>.</p>
+  <div class="callout">
+    <span class="tag blue">Common exclusions</span>
+    <p>Management employees, leased employees, independent contractors, employees already earning a benefit under another plan program, and nonresident aliens with no U.S. income are <em>not</em> eligible. A short (&le;1 year) "acting" promotion into management does not break eligibility.</p>
+  </div>
+
+  <h3>How vesting works</h3>
+  <p>Vesting is when the benefit becomes the employee's to keep, even if they leave. The threshold depends on which formula governs the benefit:</p>
+  <table>
+    <thead><tr><th>Benefit type</th><th>Vesting requirement</th></tr></thead>
+    <tbody>
+      <tr><td>Cash Balance formula (current)</td><td><strong>3 years</strong> of vesting service — or reaching Normal Retirement Age while employed</td></tr>
+      <tr><td>Older / Pension Band formula</td><td><strong>5 years</strong> of vesting service — or reaching Normal Retirement Age while employed</td></tr>
+    </tbody>
+  </table>
+  <p class="small">One year of vesting service is earned by completing a 12-month period of service. <strong>Normal Retirement Age</strong> is the later of age 65 or completing the required years of participation in the plan.</p>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>A client who is <strong>not yet vested</strong> and considering leaving AT&amp;T is making a far bigger decision than they may realize — walking away can mean forfeiting the entire pension. If a client is close to a vesting cliff, that timing belongs in the conversation.</p>
+  </div>
+</section>
+
+<section class="block" id="two-formulas">
+  <div class="pn">Section 03 · The Pension</div>
+  <h2>Two formulas under one roof</h2>
+  <p class="lead">This is the single most important concept in the pension. A client's monthly benefit can be built from <strong>two different formulas</strong>, depending on when they earned their service.</p>
+  <div class="cols">
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h4>Cash Balance Account</h4>
+      <p class="small" style="margin-bottom:10px">Service earned <strong>1999 and later</strong></p>
+      <p>A hypothetical account that grows monthly with pay-based credits plus interest. Looks and feels like a savings account, but it's a defined-benefit promise. Often lump-sum eligible.</p>
+    </div>
+    <div class="card" style="border-top:4px solid var(--gold)">
+      <h4>Pre-99 Pension Band Benefit</h4>
+      <p class="small" style="margin-bottom:10px">Service earned <strong>before Jan 1, 1999</strong></p>
+      <p>A classic "dollars &times; years of service" monthly annuity tied to a job-title pension band. Carries the powerful <em>Modified Rule of 75</em> early-retirement features.</p>
+    </div>
+  </div>
+  <div class="callout gold">
+    <span class="tag">The key question</span>
+    <p>For any client, ask: <strong>"When did you start at AT&amp;T?"</strong> Long-tenured employees with pre-1999 service have a blended benefit — both formulas — and the Pre-99 portion may unlock service-pension features the Cash Balance portion does not. Newer employees have a Cash Balance benefit only.</p>
+  </div>
+  <p>A client's total Normal Retirement Pension is the sum of whatever portions apply:</p>
+  <div class="formula">
+    <div class="fbox ghost"><span class="ft">Total pension</span><span class="fv">Monthly Annuity/Lump-sum Benefit</span></div>
+    <div class="fop">=</div>
+    <div class="fbox"><span class="ft">Portion A</span><span class="fv">Cash Balance Account</span></div>
+    <div class="fop">+</div>
+    <div class="fbox alt"><span class="ft">Portion B</span><span class="fv">Pre-99 Pension Band</span></div>
+  </div>
+</section>
+
+<section class="block" id="cash-balance">
+  <div class="pn">Section 04</div>
+  <h2>Cash balance mechanics</h2>
+  <p>The Cash Balance Account is a <strong>hypothetical</strong> account — there's no segregated pot of money, but the recordkeeper tracks a running balance that determines the benefit. It starts at $0 and grows from three kinds of credits.</p>
+
+  <div class="formula">
+    <div class="fbox"><span class="ft">Monthly</span><span class="fv">Basic Benefit Credit</span></div>
+    <div class="fop">+</div>
+    <div class="fbox alt"><span class="ft">Monthly</span><span class="fv">Interest Credit</span></div>
+    <div class="fop">+</div>
+    <div class="fbox ghost"><span class="ft">If applicable</span><span class="fv">Supplemental Pay Credit</span></div>
+    <div class="fop">=</div>
+    <div class="fbox" style="background:var(--ink)"><span class="ft">Result</span><span class="fv">Cash Balance Account</span></div>
+  </div>
+
+  <h3>① Basic Benefit Credit — the main engine</h3>
+  <p>Each month, the account is credited with the employee's <strong>Pension Compensation &times; an Age Credit Factor</strong>. Pension Compensation includes base pay, commissions, group/individual incentive pay, and certain other amounts. The Age Credit Factor rises with age, so the same paycheck buys a bigger credit as the employee gets older:</p>
+  <table>
+    <thead><tr><th>Age</th><th>Age Credit Factor (representative)</th></tr></thead>
+    <tbody>
+      <tr><td>Under 30</td><td class="num">1.77%</td></tr>
+      <tr><td>30 – 36</td><td class="num">2.27%</td></tr>
+      <tr><td>37 – 43</td><td class="num">2.78%</td></tr>
+      <tr><td>44 – 49</td><td class="num">3.28%</td></tr>
+      <tr><td>50 and older</td><td class="num">4.04%</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Some bargaining units use a slightly different schedule (e.g., 1.75% / 2.25% / 2.75% / 3.25% / 4.00%). Always confirm the client's contract.</p>
+  <div class="callout">
+    <span class="tag blue">Worked example</span>
+    <p>Age 40, monthly Pension Compensation $4,000, Age Credit Factor 2.78%. Basic Benefit Credit = $4,000 &times; 2.78% = <strong>$111.20</strong> added that month.</p>
+  </div>
+
+  <h3>② Interest Credit — steady compounding</h3>
+  <p>Each month the prior balance earns interest at a monthly rate that compounds to <strong>4.5% annually</strong> (some older program variants instead use the prior-November 30-year Treasury rate — verify per SPD).</p>
+  <div class="callout">
+    <span class="tag blue">Worked example</span>
+    <p>Balance $10,000, this month's Basic Benefit Credit $200. Interest = $10,000 &times; 0.367% &approx; $36.70. New balance = $10,000 + $200 + $36.70 = <strong>$10,236.70</strong>.</p>
+  </div>
+
+  <h3>③ Supplemental Pay Credit — higher earners only</h3>
+  <p>Social Security only taxes and replaces income up to an annual ceiling — the <strong>Social Security Wage Base</strong> ($168,600 in 2024, indexed up each year). The Supplemental Pay Credit adds extra pension credit on the slice of pay <em>above</em> that ceiling — the compensation Social Security won't be replacing in retirement. In any year where year-to-date Pension Compensation crosses the wage base, the excess earns an extra <strong>2%</strong> credit, added monthly alongside the Basic Benefit and Interest Credits.</p>
+  <p class="small">First month over the threshold: 2% &times; all year-to-date pay above the wage base. Each later month that year: 2% &times; that month's full Pension Compensation.</p>
+  <div class="callout">
+    <span class="tag blue">Worked example</span>
+    <p>Year-to-date Pension Compensation $173,600 as of Nov 30; wage base $168,600. Excess = $5,000 &rarr; credit = $5,000 &times; 2% = <strong>$100</strong> that month. December's credit would then be that month's pay &times; 2%.</p>
+  </div>
+  <p>Most bargained clients on standard base pay never reach the wage base and never see this credit. It tends to surface for clients in leveraged or commission-heavy titles, or in an unusually large overtime or incentive year. Note the rate is a flat 2%, unlike the age-stepped Basic Benefit Credit.</p>
+
+  <div class="callout warn">
+    <span class="tag">Don't confuse these two</span>
+    <p>Two similarly-named items live in the <strong>two different pension formulas</strong> and are calculated in entirely different ways:</p>
+    <p style="margin-top:8px"><strong>Supplemental Pay <u>Credit</u></strong> — Cash Balance formula (post-1998). A 2% credit on pay above the Social Security Wage Base, added to the account.</p>
+    <p style="margin-top:6px"><strong>Supplemental <u>Monthly Pension Benefit</u></strong> — Pre-99 Pension Band formula. Based on in-charge allowances, shift/night differentials, and temporary-promotion pay over the 36 months before retirement (average annual supplemental pay &times; pre-99 service &times; 0.001). See <a class="inline" href="#pre99">Section 05</a>.</p>
+    <p style="margin-top:8px">When reading a client's statement, check which formula the line item belongs to before interpreting it.</p>
+  </div>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>Because the Age Credit Factor steps up with age and interest compounds, the cash balance grows <strong>faster in later career years</strong>. A client weighing an early exit is giving up the highest-value accrual years.</p>
+  </div>
+</section>
+
+<section class="block" id="pre99">
+  <div class="pn">Section 05</div>
+  <h2>The Pre-99 Pension Band Benefit</h2>
+  <p>For clients with service before January 1, 1999, this older annuity formula sits alongside the cash balance. It is the sum of a <strong>Basic Monthly Pension Benefit</strong> and a <strong>Supplemental Monthly Pension Benefit</strong>.</p>
+
+  <h4>Basic Monthly Pension Benefit</h4>
+  <div class="formula">
+    <div class="fbox"><span class="ft">From job title</span><span class="fv">Pension Band Amount</span></div>
+    <div class="fop">&times;</div>
+    <div class="fbox"><span class="ft">As of 12/31/1998</span><span class="fv">Pension Calc. Service</span></div>
+    <div class="fop">&times;</div>
+    <div class="fbox alt"><span class="ft">At 65</span><span class="fv">Age Incentive Factor (1.06)</span></div>
+  </div>
+  <div class="callout">
+    <span class="tag blue">Worked example</span>
+    <p>Pension Band 111 amount = $51.81; 15 years of pre-99 calculation service; Age Incentive Factor 1.06.<br>$51.81 &times; 15 &times; 1.06 = <strong>$823.78/month</strong>.</p>
+  </div>
+
+  <h4>Supplemental Monthly Pension Benefit</h4>
+  <p>Adds value for certain extra pay (in-charge allowances, shift differentials, temporary-promotion pay, and the like) received in the 36 months before retirement: average annual supplemental pay &times; pre-99 service &times; 0.001.</p>
+  <div class="callout">
+    <span class="tag blue">Worked example</span>
+    <p>$1,500 of supplemental pay over 3 years &rarr; $500 average annual; 15 years of service.<br>($500 &times; 0.001) &times; 15 = <strong>$7.50/month</strong> added.</p>
+  </div>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>The Pre-99 portion is the part of the benefit that carries the <strong>Modified Rule of 75</strong> and its early-retirement subsidies (next section). It is also where a client may qualify for <strong>retiree health and welfare</strong> eligibility. For long-tenured clients this small-looking annuity can be the deciding factor in <em>when</em> to retire.</p>
+  </div>
+</section>
+
+<section class="block" id="mod75">
+  <div class="pn">Section 06</div>
+  <h2>The Modified Rule of 75</h2>
+  <p class="lead">"Mod 75" determines whether a client can retire early <strong>without</strong> the steep reduction that normally applies — and it's where advisors most often catch costly client misconceptions.</p>
+
+  <p>A client satisfies Mod 75 when their age and years of service hit one of these combinations:</p>
+  <table>
+    <thead><tr><th>Age</th><th>Years of service required</th></tr></thead>
+    <tbody>
+      <tr><td>Any age</td><td><strong>30</strong></td></tr>
+      <tr><td>50</td><td>25</td></tr>
+      <tr><td>55</td><td>20</td></tr>
+      <tr><td>65 or older</td><td>10</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Eligibility is tested <strong>at Termination of Employment</strong>, using completed whole years of age and service. The status is locked in the moment the client separates — it cannot be earned afterward.</p>
+
+  <h3>Separating <em>before</em> vs. <em>after</em> satisfying Mod 75</h3>
+  <p>This is the line that changes a client's retirement. The same person can walk away with a dramatically different benefit depending on which side of Mod 75 they're standing on when they leave.</p>
+  <div class="cols">
+    <div class="card" style="border-top:4px solid var(--warn)">
+      <h4>If they separate BEFORE meeting Mod 75</h4>
+      <p>They leave with only a <strong>Deferred Vested Pension</strong> (assuming they're vested at all). Three consequences follow:</p>
+      <p style="margin-top:8px"><strong>Locked out permanently.</strong> Because eligibility is frozen at termination, they can never "age into" a service pension later — even after they're old enough on paper. The door closes when they walk out.</p>
+      <p style="margin-top:8px"><strong>Heavy early-commencement reductions.</strong> When they later start the Pre-99 benefit, it's cut by the program's early-reduction factors based on their age at commencement — a much steeper haircut than the Mod 75 subsidy. They also generally can't commence until age 55 (with 20 yrs) or age 50 (with 25 yrs).</p>
+      <p style="margin-top:8px"><strong>No retiree healthcare.</strong> A former bargained employee eligible only for a Deferred Vested Pension is <em>not</em> an eligible former employee for AT&amp;T retiree medical. This is often the largest loss of all.</p>
+    </div>
+    <div class="card" style="border-top:4px solid var(--good)">
+      <h4>What they GAIN once they meet Mod 75</h4>
+      <p>Crossing the threshold converts a deferred vested benefit into a <strong>service pension</strong>, which unlocks:</p>
+      <p style="margin-top:8px"><strong>Subsidized (or zero) early-retirement reduction.</strong> With 30+ years, the Pre-99 benefit is fully unreduced at any age. With fewer than 30 years, it's reduced only 0.5%/month before the threshold age (55 or 56 by contract) — far gentler than the deferred-vested factors, and zero once they reach that age.</p>
+      <p style="margin-top:8px"><strong>Access to retiree health &amp; welfare.</strong> Satisfying Mod 75 (or qualifying for a Disability Pension) at termination is what makes a client a candidate for subsidized AT&amp;T retiree medical — the bridge that matters most for pre-65 retirees.</p>
+      <p style="margin-top:8px"><strong>The ability to start sooner, with more.</strong> Service-pension status removes the "wait until 50/55 to commence" gate that constrains a deferred vested benefit.</p>
+    </div>
+  </div>
+  <div class="callout warn">
+    <span class="tag">The leaving-too-early scenario</span>
+    <p>A client a few months short of a Mod 75 milestone who resigns is often trading away both a large unreduced-pension subsidy <em>and</em> retiree-medical eligibility — frequently a six-figure decision. The cash balance portion is unaffected (it's just the account value), but the Pre-99 service-pension features and healthcare access can be lost for good. Always map exact age and service before a client gives notice.</p>
+  </div>
+
+  <div class="callout warn">
+    <span class="tag">Four traps to flag</span>
+    <p><strong>1. It's specific pairs, not simple addition.</strong> "My age plus my service is 75, so I qualify" is the classic mistake — the combinations are fixed thresholds (multiples of 5), not any sum reaching 75.</p>
+    <p style="margin-top:8px"><strong>2. You can't "age into" service-pension eligibility after you leave.</strong> Eligibility is tested at termination. A vested-but-not-service-pension-eligible client who quits early is locked out of the subsidy.</p>
+    <p style="margin-top:8px"><strong>3. A vested pension that misses Mod 75 is severely penalized for early commencement.</strong> The reductions are large.</p>
+    <p style="margin-top:8px"><strong>4. Meeting Mod 75 doesn't always mean "no reduction."</strong> Only 30+ years of service guarantees a fully unreduced early pension. With fewer than 30 years, the benefit is still cut 0.5% per month (6% per year) for every month commenced before the contract's threshold age — age 55 (Craft/West) or age 56 (Southeast).</p>
+  </div>
+  <p class="small">For example, satisfying Mod 75 with 25 years of service and commencing at age 53 under the West rules is 24 months early &times; 0.5% = a 12% permanent reduction. The takeaway: "I made Rule of 75" is not the same as an unreduced benefit — always check service years and the client's contract threshold age.</p>
+
+  <h3>What Mod 75 changes on the Pre-99 benefit</h3>
+  <div class="compare">
+    <div class="opt">
+      <h4>30+ years of service</h4>
+      <div class="who">Best case</div>
+      <ul>
+        <li class="pro">No reduction at all for early commencement</li>
+        <li class="pro">Full normal-retirement pension, paid early</li>
+      </ul>
+    </div>
+    <div class="opt">
+      <h4>Mod 75, under 30 years</h4>
+      <div class="who">Subsidized</div>
+      <ul>
+        <li class="con">Reduced 0.5%/month (6%/yr) for each month under the threshold age (55 or 56, by contract)</li>
+        <li class="pro">No reduction once at/after the threshold age</li>
+      </ul>
+    </div>
+    <div class="opt">
+      <h4>Does NOT meet Mod 75</h4>
+      <div class="who">Penalized</div>
+      <ul>
+        <li class="con">Vested only; benefit reduced by program early-reduction factors</li>
+        <li class="con">May not commence until age 55 (20 yrs) or age 50 (25 yrs)</li>
+      </ul>
+    </div>
+  </div>
+  <p class="small">Reduction mechanics differ slightly between contract families (e.g., the West "Craft" SPD measures from age 55; the Southeast SPD measures from age 56). The cash-balance portion itself is simply the account value and is not subject to these Pre-99 early-reduction rules.</p>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>When a client is <strong>close to a Mod 75 milestone</strong>, a few extra months of work can be worth tens of thousands in lifetime income — turning a penalized vested pension into an unreduced service pension, and sometimes unlocking retiree healthcare. Mapping the client's exact age/service against this table is one of the highest-leverage things you do.</p>
+  </div>
+
+  <h3>Subsidized retiree healthcare — often the bigger prize</h3>
+  <p>The SPDs note that employees who satisfy the Modified Rule of 75 (or who qualify for a Disability Pension) on or before termination <strong>may also be eligible for AT&amp;T retiree health and welfare benefits</strong>. For many clients this access to subsidized retiree medical coverage is worth more than the pension subsidy itself — and it's the single most important reason a union employee might keep working to hit a Mod 75 milestone.</p>
+  <div class="callout gold">
+    <span class="tag">Why this matters most for pre-65 retirees</span>
+    <p>A client who retires before <strong>age 65 is not yet Medicare-eligible</strong>. Buying individual coverage in that gap can run well over $1,000–$2,000/month per person. Access to AT&amp;T retiree medical can bridge those pre-Medicare years at a fraction of open-market cost. A client weighing an early exit who would <em>lose</em> retiree-medical eligibility by leaving a few months short of Mod 75 is often making a six-figure mistake without realizing it.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Verify — don't assume</span>
+    <p>Retiree H&amp;W eligibility, contribution levels, and whether coverage is even offered are governed by the <strong>separate health &amp; welfare SPDs and the current bargaining agreement</strong> — not the pension SPD, and they have changed materially over time. Confirm the client's specific situation before promising anything. The pension documents only tell you Mod 75 <em>may</em> open the door.</p>
+  </div>
+</section>
+
+<section class="block" id="elig-calc">
+  <div class="pn">Section 07 · Interactive</div>
+  <h2>Mod 75 eligibility calculator</h2>
+  <p>Enter a client's age and years of service to see where they stand: whether they satisfy the Modified Rule of 75, the earliest age they could commence the Pre-99 pension, whether an early-commencement reduction applies, and whether they're a candidate for subsidized retiree healthcare. Use it to map the milestones in a first meeting.</p>
+
+  <div class="calc">
+    <div class="row">
+      <label for="cAge">Current age (whole years)</label>
+      <span class="num-input"><input type="number" id="cAge" min="18" max="75" value="52"></span>
+    </div>
+    <div class="row">
+      <label for="cSvc">Years of service (Term of Employment)</label>
+      <span class="num-input"><input type="number" id="cSvc" min="0" max="50" value="22"></span>
+    </div>
+    <div class="row">
+      <label for="cContract">Contract family (sets threshold age)</label>
+      <select id="cContract">
+        <option value="55">West / Craft &amp; most contracts — age 55</option>
+        <option value="56">Southeast — age 56</option>
+      </select>
+    </div>
+
+    <div id="statusBanner"></div>
+    <div class="results" id="resCards"></div>
+
+    <div class="note" id="calcNote"></div>
+  </div>
+
+  <div class="callout warn">
+    <span class="tag">Read this before relying on the output</span>
+    <p>This tool models the <strong>Pre-99 Pension Band</strong> service-pension rules from the SPDs and is an educational estimate only. It assumes the client has pre-1999 service (the cash balance portion has no early-reduction rules — it's just the account value), uses completed whole years, and applies the standard Mod 75 thresholds. Deferred-vested early-reduction factors, exact contract terms, disability provisions, and retiree-medical eligibility vary by bargaining agreement and the separate health &amp; welfare SPDs. <strong>Always confirm a client's actual status in NetBenefits and the controlling documents.</strong></p>
+  </div>
+</section>
+
+<section class="block" id="payment">
+  <div class="pn">Section 08</div>
+  <h2>How the pension gets paid</h2>
+  <p>At retirement the client chooses a <strong>form of payment</strong>. The choice is permanent — once payments begin, it cannot be changed — so this is a decision to get right the first time.</p>
+
+  <div class="compare">
+    <div class="opt">
+      <h4>Single Life Annuity</h4>
+      <div class="who">Covers one lifetime</div>
+      <ul>
+        <li class="pro">Highest monthly payment</li>
+        <li class="pro">PBGC-guaranteed</li>
+        <li class="con">Stops at death — nothing for survivor</li>
+        <li class="con">No inflation adjustment</li>
+        <li class="con">Taxable as income</li>
+      </ul>
+    </div>
+    <div class="opt">
+      <h4>Joint &amp; Survivor (50 / 75 / 100%)</h4>
+      <div class="who">Covers two lifetimes</div>
+      <ul>
+        <li class="pro">Continues to spouse/partner after death</li>
+        <li class="pro">PBGC-guaranteed</li>
+        <li class="con">Lower monthly payment than single life</li>
+        <li class="con">No inflation adjustment</li>
+        <li class="con">Taxable as income</li>
+      </ul>
+    </div>
+    <div class="opt">
+      <h4>Lump Sum</h4>
+      <div class="who">If lump-sum eligible</div>
+      <ul>
+        <li class="pro">Rollable to IRA — tax-deferred</li>
+        <li class="pro">Investable &amp; inheritable</li>
+        <li class="con">Subject to RMDs later</li>
+        <li class="con">Longevity &amp; market risk shift to client</li>
+        <li class="con">Loses PBGC guarantee</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout gold">
+    <span class="tag">Defaults &amp; consent</span>
+    <p>If the client has a spouse at commencement, the <strong>default is the 50% Joint &amp; Survivor</strong> annuity. Electing anything else (including single life or lump sum) requires <strong>notarized spousal consent</strong>. If unmarried, the default is single life.</p>
+  </div>
+
+  <h4>How the annuity amounts relate (illustrative)</h4>
+  <p>Using the SPD's example of an $800/month single-life benefit:</p>
+  <table>
+    <thead><tr><th>Form</th><th>To retiree</th><th>To survivor after death</th></tr></thead>
+    <tbody>
+      <tr><td>Single Life Annuity</td><td class="num">$800</td><td class="num">$0</td></tr>
+      <tr><td>50% Joint &amp; Survivor</td><td class="num">$720 <span class="small">(90%)</span></td><td class="num">$360</td></tr>
+      <tr><td>75% Joint &amp; Survivor</td><td class="num">$680 <span class="small">(85%)</span></td><td class="num">$510</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Cash balance &rarr; annuity conversion uses an age-based factor (the SPD illustrates ~141.5 at age 65 &rarr; $100,000 &approx; $706.57/month). Reduction percentages for J&amp;S vary by contract.</p>
+
+  <div class="callout warn">
+    <span class="tag">Small-benefit cash-out</span>
+    <p>If the present value of the pension is small (thresholds range by SPD — e.g., $1,000, $5,000, or $7,000), the plan will automatically cash out or roll over the benefit. The normal election rules don't apply. Flag this so a client isn't surprised by an automatic distribution.</p>
+  </div>
+
+  <div class="lens">
+    <span class="tag">The advisor's lens — annuity vs. lump sum</span>
+    <p>This is the marquee pension decision. The annuity is a <strong>longevity hedge</strong> with a guaranteed floor and no market risk; the lump sum offers <strong>control, growth potential, flexibility, and a legacy asset</strong> but transfers investment and longevity risk to the client. The two most critical factors to discuss with your client are their current health and their family medical history. The annuity option becomes more viable the longer that the client is likely to outlive the IRS mortality tables. Weigh the client's health, other guaranteed income, spousal needs, legacy goals, and the implied "payout rate" of the annuity versus what a diversified portfolio could reasonably support. There is no universal right answer, but there's a right answer for this client.</p>
+  </div>
+  <div class="callout">
+    <span class="tag blue">Tax mechanic to know</span>
+    <p>A lump sum paid directly to the client triggers a mandatory <strong>20% federal withholding</strong>. A <strong>direct rollover</strong> to an IRA or other eligible plan avoids withholding and preserves tax deferral — usually the cleaner path when a lump sum is chosen.</p>
+  </div>
+</section>
+
+<section class="block" id="savings">
+  <div class="pn">Section 09 · The Savings Plan</div>
+  <h2>The AT&amp;T 401(k)</h2>
+  <p>The defined-contribution side, administered by <strong>Fidelity</strong> through NetBenefits. Unlike the pension, the employee funds this and directs the investments, and AT&amp;T adds a match negotiated in the bargaining agreement.</p>
+
+  <div class="callout warn">
+    <span class="tag">Verify the specifics</span>
+    <p>The detailed 401(k) provisions — exact match formula, contribution caps, vesting of the match, Roth availability, and the investment lineup — are governed by the <strong>savings plan SPD and the current collective bargaining agreement</strong>, which aren't fully contained in this library. The items below are the standard features to confirm for each client in NetBenefits.</p>
+  </div>
+
+  <h3>Two different limits: 402(g) vs. 415(c)</h3>
+  <p>Two separate IRS ceilings govern how much can go into a 401(k) in a year. Mixing them up is a common error.</p>
+  <table class="v-lines">
+    <thead><tr><th></th><th>402(g) — elective deferral limit</th><th>415(c) — total additions limit</th></tr></thead>
+    <tbody>
+      <tr><td><strong>What it caps</strong></td><td>The employee's own pre-tax + Roth elective deferrals</td><td><strong>All</strong> money into the plan for the year combined</td></tr>
+      <tr><td><strong>Counts toward it</strong></td><td>Pre-tax deferrals · Roth deferrals</td><td>Pre-tax · Roth  · employer match · after-tax contributions</td></tr>
+      <tr><td><strong>Does NOT count</strong></td><td>Employer match · after-tax · catch-up contributions</td><td>Catch-up contributions (exempt from 415(c))</td></tr>
+      <tr><td><strong>Standard Limit (Under 50)</strong></td><td class="num text-center">$24,500</td><td class="num text-center">$72,000</td></tr>
+      <tr><td><strong>Catch-up: Age 50–59 &amp; 64+ Maximum<br><span style="font-size:11px; font-weight:normal; opacity:0.8;">(Includes $8,000 catch-up)</span></strong></td><td class="num text-center">$32,500</td><td class="num text-center">$80,000</td></tr>
+      <tr><td><strong>Catch-up: Age 60–63 Maximum<br><span style="font-size:11px; font-weight:normal; opacity:0.8;">(Includes $11,250 super catch-up)</span></strong></td><td class="num text-center">$35,750</td><td class="num text-center">$83,250</td></tr>
+    </tbody>
+  </table>
+  <p class="small">*Age-based catch-up contributions ($8,000 for ages 50–59/64+; $11,250 for ages 60–63) sit on top of the standard elective limit and are exempt from the 415(c) total additions limit. The headroom between an employee's regular deferrals + match and the 415(c) standard ceiling is exactly the room available for after-tax (bucket ③) contributions — the fuel for the mega-backdoor Roth. Limits are indexed and change annually; confirm current-year figures at the IRS: <a class="inline" href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" target="_blank" rel="noopener">irs.gov — 401(k) contribution limits</a>.</p>
+
+  <h4>Catch-up contributions — now Roth for higher earners</h4>
+  <p>Clients <strong>age 50+</strong> can make additional elective deferrals above the standard limit, with an enhanced "super catch-up" for those <strong>ages 60–63</strong>. A SECURE 2.0 change requires catch-up contributions to be made as <strong>Roth</strong> for participants whose prior-year FICA wages exceeded $150,000 (indexed).</p>
+  <div class="callout gold">
+    <span class="tag">Union-plan timing nuance</span>
+    <p>The Roth-catch-up mandate generally takes effect in 2026 — but <strong>collectively bargained plans have a later compliance deadline</strong> (plan years beginning on or after Jan 1, 2029), and plans may exclude union employees from the enhanced age 60–63 catch-up. So for AT&amp;T's bargained population, exactly when and how these rules bite depends on the plan's adoption. Verify the plan's current provisions rather than assuming the general effective date applies.</p>
+  </div>
+
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>For most union clients the 415(c) limit is invisible — match plus modest deferrals never approach it. But for a high-earning, high-saving client, the gap between their deferrals + match and the $72,000 total is a large, underused Roth opportunity. The sequence to coach: <strong>capture the full match every pay period &rarr; max the 402(g) deferral (pre-tax or Roth per career stage) &rarr; fill remaining 415(c) room with after-tax contributions &rarr; convert those to Roth promptly.</strong></p>
+  </div>
+
+  <h3>The four funding buckets</h3>
+  <p>A 401(k) account is built from four distinct funding sources. Understanding how employee choices interact with employer money is essential for maximizing the plan.</p>
+  <div class="pillars four">
+    <div class="pillar">
+      <div class="ico">①</div>
+      <h4>Pre-tax</h4>
+      <p>Deducted before tax; grows tax-deferred; taxed as ordinary income at withdrawal. Counts toward the elective-deferral limit.</p>
+    </div>
+    <div class="pillar b">
+      <div class="ico">②</div>
+      <h4>Roth</h4>
+      <p>Contributed after tax; qualified growth and withdrawals are tax-free. Also counts toward the elective-deferral limit.</p>
+    </div>
+    <div class="pillar c">
+      <div class="ico">③</div>
+      <h4>After-tax (non-Roth)</h4>
+      <p>A separate, often-overlooked bucket above the deferral limit. Contributed after tax; only the <em>growth</em> is taxable — which is exactly why it pairs with conversion.</p>
+    </div>
+    <div class="pillar d">
+      <div class="ico">④</div>
+      <h4>Employer Match</h4>
+      <p>Company-funded matching dollars matching a percentage of pay up to a bargained cap. Helps build baseline wealth automatically.</p>
+    </div>
+  </div>
+
+  <h3>Employer Contributions</h3>
+  <p>Employer money represents a key engine of wealth accumulation within the AT&amp;T Savings Plan. Rather than a flat, discretionary profit-sharing allocation, company contributions are directly tied to participant behavior through an incentive match program established by collective bargaining.</p>
+  <div class="callout good">
+    <span class="tag">The Matching Formula</span>
+    <p>Under most standard bargaining contracts, AT&amp;T contributes a specified percentage match on your weekly pre-tax or Roth weekly contributions, capped up to a distinct percentage of your basic weekly pay titles. This basic match represents a guaranteed 100% rate of return on mapped employee deferrals up to the cap—making full capture an absolute priority in baseline optimization plans.</p>
+  </div>
+  <p>Employer match dollars always deposit into the traditional pre-tax portion of the account, regardless of whether the matching employee contributions were allocated as pre-tax or Roth. These employer additions accumulate separate from standard participant elective limits, feeding directly into the total Section 415(c) annual threshold.</p>
+
+  <h3>Pre-tax vs. Roth: a career-stage decision</h3>
+  <p>Whether a client should direct 401(k) contributions to pre-tax or Roth turns largely on <strong>their tax rate now versus their expected tax rate when the money comes out</strong>. Career stage is usually the best proxy.</p>
+  <div class="cols">
+    <div class="card" style="border-top:4px solid var(--good)">
+      <h4>Early career / lower-earning years &rarr; lean Roth</h4>
+      <p>A younger or lower-paid union employee is often in a <strong>low marginal bracket</strong>, so the deduction from a pre-tax contribution is worth little. Paying tax now at a low rate and letting decades of growth come out tax-free is frequently the stronger trade. Roth dollars also don't add to MAGI in retirement, which helps with future IRMAA and Social Security taxation.</p>
+    </div>
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h4>Peak-earning years &rarr; lean pre-tax</h4>
+      <p>A senior employee at the top of the wage scale (plus heavy overtime) may be in a <strong>high bracket</strong> where the pre-tax deduction is genuinely valuable. Deferring now and drawing later — potentially in lower-income early-retirement years before pension/Social Security/RMDs stack up — can lower the lifetime tax bill.</p>
+    </div>
+  </div>
+  <p class="small">It's rarely all-or-nothing. Tax diversification — holding both pre-tax and Roth buckets — gives the client levers to manage MAGI year by year in retirement (e.g., drawing from Roth in a year they'd otherwise cross an IRMAA tier).</p>
+
+  <h4>After-tax contributions &rarr; the "mega backdoor Roth"</h4>
+  <p>The after-tax bucket is powerful because of what you do next: if the plan allows, the client can <strong>immediately convert after-tax dollars to Roth</strong> (in-plan, or via in-service rollover to a Roth IRA). Converting right away means little or no growth has accrued yet, so there's <strong>little or no tax on the conversion</strong> — and from that point the money grows tax-free. The longer after-tax dollars sit unconverted, the more taxable growth builds up, so the move is to convert promptly and regularly.</p>
+  <div class="callout">
+    <span class="tag blue">Prerequisites to confirm</span>
+    <p>This only works if the AT&amp;T plan permits both (a) after-tax contributions and (b) in-plan Roth conversions or in-service withdrawals. Confirm both in NetBenefits before building a strategy around it.</p>
+  </div>
+
+  <h4>Watch the per-pay-period match trap</h4>
+  <div class="callout warn">
+    <span class="tag">Front-loading can forfeit match</span>
+    <p>AT&amp;T's employer match is typically calculated <strong>each pay period</strong>, not annually. If a client uses a large bonus or aggressive early-year deferrals to hit the elective-deferral limit before year-end, their contributions stop — and so does the per-paycheck match for the rest of the year. Front-loading can mean <strong>leaving employer money on the table</strong>. Unless the plan offers a "true-up" that retroactively makes up the shortfall, spread deferrals across all pay periods to capture every matching dollar. Confirm whether a true-up exists.</p>
+    <p style="margin-top:8px">Also note: <strong>the employer match applies only to pre-tax and Roth deferrals — not to after-tax (bucket ③) contributions.</strong> After-tax dollars are for getting <em>more</em> money into the plan once the match and deferral limit are already captured, not for earning additional match.</p>
+  </div>
+
+  <h3>What to confirm for every 401(k) client</h3>
+  <div class="cols">
+    <div class="card">
+      <h4>Employee contributions</h4>
+      <p>Pre-tax and (often) Roth elections, subject to the annual IRS deferral limit. Confirm the client is at least capturing the full match — leaving match on the table is free money lost.</p>
+    </div>
+    <div class="card">
+      <h4>Company match</h4>
+      <p>AT&amp;T matches a percentage of pay up to a bargained cap. Confirm the formula and the match's own vesting schedule.</p>
+    </div>
+    <div class="card">
+      <h4>Investment lineup</h4>
+      <p>Target-date funds, index and active options, and possibly a self-directed brokerage window. Farther can manage these Fidelity-held funds and advise on allocation.</p>
+    </div>
+    <div class="card">
+      <h4>At separation</h4>
+      <p>Options: leave it, roll to IRA, or roll to a new plan. Coordinate with any pension lump sum so the household's rollovers are planned together.</p>
+    </div>
+  </div>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>Farther's program is built specifically for AT&amp;T employees — <strong>we manage funds held at Fidelity and consult across the full benefits stack</strong> (pension, 401(k), medical). The 401(k) is where ongoing investment management lives, and it's the natural complement to the pension's guaranteed income. Make sure contribution rate, match capture, and allocation are all working before optimizing anything fancier.</p>
+  </div>
+</section>
+
+<section class="block" id="irmaa">
+  <div class="pn">Section 10</div>
+  <h2>IRMAA planning</h2>
+  
+  <h3>Coordinating pension &amp; 401(k) income with IRMAA in mind</h3>
+  <p>Once a client reaches Medicare, their premiums are no longer flat. The <strong>Income-Related Monthly Adjustment Amount (IRMAA)</strong> adds a surcharge to Medicare Part B and Part D premiums when modified adjusted gross income (MAGI) crosses a threshold. Pension income, 401(k) withdrawals, and Roth conversions all feed MAGI — so how a client sequences distributions directly drives what they pay for Medicare.</p>
+  <p>Three features make IRMAA a planning problem rather than an afterthought:</p>
+  <table>
+    <thead><tr><th>Feature</th><th>What it means for planning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Two-year lookback</strong></td><td>2026 premiums are set by 2024 MAGI. A distribution or conversion today shows up in premiums ~2 years later — so plan the income, then watch the downstream year.</td></tr>
+      <tr><td><strong>Cliff, not a ramp</strong></td><td>Crossing a threshold by even $1 triggers the full surcharge for that tier — there's no phase-in. The dollar that puts a client over can carry a very high effective marginal cost.</td></tr>
+      <tr><td><strong>Per person</strong></td><td>For a married couple, both Medicare-enrolled spouses pay the surcharge once joint MAGI crosses a tier.</td></tr>
+    </tbody>
+  </table>
+  <p>For reference, 2026 IRMAA begins above <strong>$109,000 MAGI (single)</strong> and <strong>$218,000 (married filing jointly)</strong>, on a five-tier sliding scale. Because the thresholds and surcharge amounts change yearly, always pull the current figures rather than relying on a remembered number.</p>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>A retiree in, say, the 22% federal bracket who nudges over an IRMAA line can face a combined effective marginal rate well above the headline bracket once the surcharge is counted. The practical move is to <strong>project MAGI for each year and size distributions and conversions to stay just under the next tier</strong> — especially in the years before age 65 and in the lookback years feeding the first Medicare premiums. Note: a voluntary Roth conversion or asset sale is <strong>not</strong> a qualifying event for an IRMAA appeal, so it has to be planned, not appealed.</p>
+  </div>
+
+  <h3>Roth conversions with brackets and IRMAA in view</h3>
+  <p>Converting pre-tax dollars to Roth means voluntarily recognizing income now to buy tax-free growth and future MAGI control. The window that often makes this attractive for AT&amp;T clients is the <strong>gap between retiring and the onset of Social Security and required minimum distributions</strong> — a stretch of unusually low taxable income, especially for someone who retired early under Mod 75.</p>
+  <div class="callout gold">
+    <span class="tag">How to size a conversion</span>
+    <p>The disciplined approach is to <strong>"fill the bracket"</strong>: convert just enough to use up a low or moderate tax bracket without spilling into the next one — and, once the client is within two years of Medicare or already enrolled, without crossing the next IRMAA tier. Because both the bracket and the IRMAA threshold are cliffs of a sort, the last dollars converted are the ones to watch. Model the conversion's MAGI impact <strong>two years forward</strong> for the IRMAA effect, not just the current-year tax.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Not advice — a framework</span>
+    <p>Conversion and contribution strategy depend on the individual's full tax picture, state taxes, legacy goals, and assumptions about future rates. Use these as factors to evaluate with the client and their tax professional, not as a default recommendation. Farther advisors are not providing tax advice.</p>
+  </div>
+</section>
+
+<section class="block" id="strategy">
+  <div class="pn">Section 11 · Advisor Toolkit</div>
+  <h2>Strategy playbook</h2>
+  <p>The recurring, high-value decisions where an AT&amp;T client benefits most from advice.</p>
+
+  <div class="steps">
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Map age &amp; service against Mod 75</strong><p>The first thing to check for any pre-2014 hire. Identify the nearest milestone and what reaching it is worth in unreduced income and retiree benefits.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Decode the two formulas</strong><p>Pull the client's NetBenefits statement and separate the Cash Balance portion from any Pre-99 Pension Band portion. They follow different rules for vesting, early retirement, and lump-sum eligibility.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Run the annuity-vs-lump-sum analysis</strong><p>Compare the guaranteed annuity income against a prudent withdrawal from the rolled-over lump sum, factoring health, longevity, spouse, and legacy. Document the reasoning.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Choose the survivor structure deliberately</strong><p>Single life vs. 50/75/100% J&amp;S is permanent and needs spousal consent. Align it with life insurance, the survivor's own income, and the couple's risk tolerance.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Sequence the income layers</strong><p>Coordinate pension start date, Social Security claiming age, and 401(k) withdrawals to manage taxes and bridge any early-retirement gap.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Plan rollovers to avoid withholding</strong><p>Use direct rollovers for any lump sum or 401(k) move so the client keeps tax deferral and avoids the mandatory 20% withholding.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Maximize the 401(k) — capture match, then go after-tax &rarr; Roth</strong><p>Spread deferrals across every pay period to capture the full per-paycheck match, max the 402(g) deferral, then (if the plan allows) fill the remaining 415(c) room with after-tax contributions and convert them to Roth promptly — the mega-backdoor Roth. Match career-stage pre-tax/Roth choice to the client's bracket.</p></div></div>
+    <div class="step"><div class="sn"></div><div class="sc"><strong>Manage MAGI around IRMAA &amp; brackets</strong><p>In the pre-Medicare and lookback years, size withdrawals and Roth conversions to "fill the bracket" without crossing the next tax bracket or IRMAA tier — projecting MAGI two years forward for the Medicare effect.</p></div></div>
+  </div>
+
+  <div class="callout gold">
+    <span class="tag">First-meeting question set</span>
+    <p>When did you start at AT&amp;T? · Which union/contract? · Current age and years of service? · Married, and what's your spouse's own income/coverage? · Target retirement age? · Health and longevity outlook? · What other savings and Social Security expectations do you have? — These answers drive every recommendation above.</p>
+  </div>
+</section>
+
+<section class="block" id="protections">
+  <div class="pn">Section 12</div>
+  <h2>Protections &amp; rules to know</h2>
+  <div class="cols">
+    <div class="card">
+      <h4>PBGC insurance</h4>
+      <p>The pension is federally insured by the Pension Benefit Guaranty Corporation. If the plan terminated underfunded, PBGC covers normal/early retirement and certain survivor and disability benefits — up to legal limits. Lump sums forfeit this guarantee.</p>
+    </div>
+    <div class="card">
+      <h4>QDRO (divorce)</h4>
+      <p>A Qualified Domestic Relations Order can assign part of the pension to a former spouse. Benefits otherwise can't be assigned, pledged, or garnished by creditors.</p>
+    </div>
+    <div class="card">
+      <h4>Disability pension</h4>
+      <p>Generally available with 15+ years of service if totally disabled and not yet Mod-75 eligible. Paid as a single life annuity, unreduced for early commencement; convertible to a regular pension (with lump-sum option) later.</p>
+    </div>
+    <div class="card">
+      <h4>Survivor benefits</h4>
+      <p>Death before commencement can provide a surviving spouse/partner a benefit (often a 50% J&amp;S equivalent, or a lump sum equal to the cash balance for lump-sum-eligible employees). Beneficiary designations live on Fidelity's system.</p>
+    </div>
+    <div class="card">
+      <h4>Funding-level limits</h4>
+      <p>Federal law can restrict lump sums, plant-shutdown benefits, and benefit increases if plan funding drops below thresholds. The plan reports being funded above those levels; clients get notice if limits ever apply.</p>
+    </div>
+    <div class="card">
+      <h4>No double crediting</h4>
+      <p>Service or pay can't count twice across plan programs; an offset prevents double counting for clients who moved between AT&amp;T entities or programs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="glossary">
+  <div class="pn">Section 13</div>
+  <h2>Glossary</h2>
+  <dl class="gloss">
+    <dt>Cash Balance Account</dt><dd>The hypothetical, account-style portion of the pension for service from 1999 on; grows via Basic Benefit, Interest, and Supplemental Pay Credits.</dd>
+    <dt>Basic Benefit Credit</dt><dd>Monthly credit = Pension Compensation &times; Age Credit Factor.</dd>
+    <dt>Age Credit Factor</dt><dd>The age-based percentage (&approx;1.77%–4.04%) applied to pay to determine the Basic Benefit Credit; rises with age.</dd>
+    <dt>Interest Credit</dt><dd>Monthly credit compounding to roughly 4.5%/year on the prior balance (or a Treasury-linked rate in some variants).</dd>
+    <dt>Supplemental Pay Credit</dt><dd>Extra 2% credit on pay above the Social Security Wage Base.</dd>
+    <dt>Pre-99 Pension Band Benefit</dt><dd>The older annuity formula for pre-1999 service: Basic Monthly + Supplemental Monthly Pension Benefit.</dd>
+    <dt>Pension Band Amount</dt><dd>A dollar figure tied to job title used in the Pre-99 Basic Monthly Pension Benefit.</dd>
+    <dt>Pension Calculation Service</dt><dd>Continuous service used in the Pre-99 formula (measured as of 12/31/1998 for the Basic Monthly piece).</dd>
+    <dt>Age Incentive Factor</dt><dd>A multiplier (1.06 at age 65) applied in the Pre-99 Basic Monthly Pension Benefit.</dd>
+    <dt>Modified Rule of 75 (Mod 75)</dt><dd>Age/service combinations that grant unreduced or subsidized early retirement on the Pre-99 benefit (and can unlock retiree benefits).</dd>
+    <dt>Normal Retirement Age</dt><dd>Later of age 65 or the required years of plan participation.</dd>
+    <dt>Benefit Commencement Date</dt><dd>The date pension payments begin.</dd>
+    <dt>Vested Interest</dt><dd>The point the benefit is the employee's to keep (3 yrs cash balance / 5 yrs older formula).</dd>
+    <dt>Joint &amp; Survivor (J&amp;S)</dt><dd>An annuity that continues a percentage (50/75/100%) to a survivor after the retiree's death.</dd>
+    <dt>PBGC</dt><dd>Pension Benefit Guaranty Corporation — federal insurer of the pension.</dd>
+    <dt>QDRO</dt><dd>Qualified Domestic Relations Order — court order splitting the benefit in divorce.</dd>
+    <dt>SPD</dt><dd>Summary Plan Description — the controlling plain-language plan document.</dd>
+    <dt>402(g) limit</dt><dd>The annual cap on an employee's own elective deferrals (pre-tax + Roth). $24,500 in 2026.</dd>
+    <dt>415(c) limit</dt><dd>The annual cap on all additions to the plan combined — deferrals, employer match, and after-tax contributions. $72,000 in 2026.</dd>
+    <dt>After-tax (non-Roth) contributions</dt><dd>A third 401(k) bucket above the deferral limit; only the growth is taxable, which is why it's converted to Roth promptly.</dd>
+    <dt>Mega-backdoor Roth</dt><dd>Making after-tax contributions and converting them to Roth (in-plan or to a Roth IRA), turning 415(c) headroom into tax-free Roth money.</dd>
+    <dt>Catch-up contribution</dt><dd>Extra deferrals allowed at age 50+ (with an enhanced amount at ages 60–63); must be Roth for higher earners under SECURE 2.0, subject to special timing for bargained plans.</dd>
+    <dt>True-up</dt><dd>An optional plan feature that retroactively pays any match missed because deferrals stopped early in the year. Not all plans offer it.</dd>
+    <dt>IRMAA</dt><dd>Income-Related Monthly Adjustment Amount — an income-based surcharge on Medicare Part B and D premiums, set by MAGI from two years prior.</dd>
+    <dt>MAGI</dt><dd>Modified adjusted gross income — the income measure that drives IRMAA tiers; fed by pension income, 401(k) withdrawals, and Roth conversions.</dd>
+    <dt>Roth conversion</dt><dd>Moving pre-tax dollars to Roth by recognizing income now in exchange for tax-free growth and lower future MAGI.</dd>
+  </dl>
+</section>
+
+<section class="block" id="contacts">
+  <div class="pn">Section 14</div>
+  <h2>Contacts &amp; sources</h2>
+  <h4>For clients — administrators</h4>
+  <div class="contacts">
+    <div class="contact"><div class="cn">Fidelity Service Center (Pension &amp; Savings)</div><div class="cd">netbenefits.com · 800-416-2363<br>Mon–Fri, 7:30 a.m.–11 p.m. Central</div></div>
+    <div class="contact"><div class="cn">AT&amp;T Benefits Center</div><div class="cd">877-722-0020<br>Address &amp; general benefits questions</div></div>
+    <div class="contact"><div class="cn">Beneficiary designations</div><div class="cd">Fidelity NetBenefits &rarr; online beneficiary tool</div></div>
+    <div class="contact"><div class="cn">PBGC</div><div class="cd">pbgc.gov · 800-400-7242</div></div>
+  </div>
+
+  <h4>Farther AT&amp;T Focus Team</h4>
+  <div class="contacts">
+    <div class="contact"><div class="cn">Michael Lee — Principal &amp; Focus Team Lead</div><div class="cd">+1 510 335 8808 · michael.lee@farther.com</div></div>
+    <div class="contact"><div class="cn">James Bauman — VP, Wealth Advisor</div><div class="cd">+1 360 615 2431 · james.bauman@farther.com</div></div>
+  </div>
+
+  <h4>Source documents (project library)</h4>
+  <p class="small">AT&amp;T Pension Benefit Plan — Bargained Cash Balance Program #2 SPD · Southeast SPD · Craft Pension West SPD · related plan materials. These SPDs are the controlling references; this guide summarizes them for training. Specific factors, bands, and limits vary by collective bargaining agreement and plan year.</p>
+</section>
+
+<div class="foot">
+  <div class="ftitle">Farther · AT&amp;T Focus Team — Advisor Field Guide</div>
+  <div>Built as an internal onboarding reference. Pair it with each client's NetBenefits statement and the controlling SPD before advising.</div>
+  <div class="disc">
+    This material is for internal educational and training use by Farther advisors. It is a simplified summary of complex plan provisions and is not legal, tax, or investment advice, nor a guarantee of any benefit. Plan terms are governed solely by the official plan documents and Summary Plan Descriptions, which control in any conflict. Benefit formulas, factors, bands, vesting schedules, dollar limits, and 401(k) provisions vary by collective bargaining agreement and plan year and change over time — always verify a client's actual figures in Fidelity NetBenefits and the current SPD before making recommendations. Calculator outputs are illustrative approximations only.
+  </div>
+</div>
+
+</main>
+</div>
+
+<script>
+// ---- nav active state ----
+const links=[...document.querySelectorAll('nav.side a.navitem')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const id='#'+e.target.id;
+      links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')===id));
+    }
+  });
+},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>s&&obs.observe(s));
+
+// ---- Mod 75 eligibility calculator ----
+(function(){
+  const aEl=document.getElementById('cAge');
+  const sEl=document.getElementById('cSvc');
+  const cEl=document.getElementById('cContract');
+  if(!aEl) return;
+  const banner=document.getElementById('statusBanner');
+  const cards=document.getElementById('resCards');
+  const note=document.getElementById('calcNote');
+
+  // Mod 75: any/30, 50/25, 55/20, 65/10
+  function meetsMod75(age,svc){
+    if(svc>=30) return true;
+    if(age>=50 && svc>=25) return true;
+    if(age>=55 && svc>=20) return true;
+    if(age>=65 && svc>=10) return true;
+    return false;
+  }
+  // Nearest Mod75 milestone the client could still reach, for messaging
+  function nextMilestone(age,svc){
+    // returns {addYears, via} for the soonest combo, assuming continued service (age and svc both rise together)
+    const combos=[{a:0,s:30},{a:50,s:25},{a:55,s:20},{a:65,s:10}];
+    let best=null;
+    combos.forEach(c=>{
+      // years needed so that (age+t>=c.a) AND (svc+t>=c.s)
+      const tAge = c.a>0 ? Math.max(0, c.a-age) : 0;
+      const tSvc = Math.max(0, c.s-svc);
+      const t = Math.max(tAge,tSvc);
+      if(best===null || t<best.t) best={t:t, combo:c};
+    });
+    return best;
+  }
+
+  function render(){
+    let age=parseInt(aEl.value,10); let svc=parseInt(sEl.value,10);
+    const thr=parseInt(cEl.value,10); // 55 or 56
+    if(isNaN(age)) age=0; if(isNaN(svc)) svc=0;
+    const met=meetsMod75(age,svc);
+
+    // ----- earliest commencement age -----
+    let earliest, earliestDesc;
+    if(met){
+      earliest = age; // already eligible; can commence now (subject to plan admin)
+      earliestDesc = 'Satisfies Mod 75 — may commence as a service pension following termination.';
+    } else if(svc>=25){
+      earliest = Math.max(age,50);
+      earliestDesc = 'Deferred vested: with 25+ yrs, may commence on/after age 50.';
+    } else if(svc>=20){
+      earliest = Math.max(age,55);
+      earliestDesc = 'Deferred vested: with 20+ yrs, may commence on/after age 55.';
+    } else if(svc>=( (age>=65)?10:3 ) || svc>=3){
+      earliest = Math.max(age,55);
+      earliestDesc = 'Deferred vested (if vested): generally commences early-reduced before NRA; full benefit at Normal Retirement Age (65).';
+    } else {
+      earliest = null;
+      earliestDesc = 'May not be vested yet (3 yrs cash balance / 5 yrs older formula). Confirm vesting.';
+    }
+
+    // ----- reduction status -----
+    let redClass, redVal, redDesc;
+    if(met && svc>=30){
+      redClass='good'; redVal='None';
+      redDesc='30+ years — Pre-99 benefit is fully unreduced at any commencement age.';
+    } else if(met){
+      // subsidized: 0.5%/mo before threshold age
+      if(age>=thr){
+        redClass='good'; redVal='None';
+        redDesc='Mod 75 met and already at/after age '+thr+' — no early-commencement reduction.';
+      } else {
+        const months=(thr-age)*12;
+        const pct=(months*0.5);
+        redClass='warn'; redVal='~'+pct.toFixed(0)+'% if now';
+        redDesc='Subsidized: 0.5%/mo ('+months+' mos to age '+thr+'). Reduction disappears at age '+thr+';.';
+      }
+    } else {
+      redClass='warn'; redVal='Program factors';
+      redDesc='Does not meet Mod 75 — Pre-99 benefit cut by deferred-vested early-reduction factors (steeper). Unreduced only at age 65.';
+    }
+
+    // ----- retiree healthcare subsidy -----
+    let hcClass, hcVal, hcDesc;
+    if(met){
+      hcClass='good'; hcVal='Candidate';
+      hcDesc='Satisfying Mod 75 at termination may open eligibility for subsidized AT&T retiree medical. Verify in the H&W SPD.';
+    } else {
+      hcClass='warn'; hcVal='Not eligible';
+      hcDesc='Deferred-vested-only former bargained employees are generally NOT eligible for retiree medical. Often the biggest loss of leaving early.';
+    }
+
+    // ----- status banner -----
+    if(met){
+      banner.className='status-banner met';
+      banner.innerHTML='&check; Satisfies the Modified Rule of 75'+
+        '<span class="sb-sub">This client qualifies for a service pension at termination — subsidized reductions and a path to retiree healthcare.</span>';
+    } else {
+      const nm=nextMilestone(age,svc);
+      let msg='';
+      if(nm && nm.t>0){
+        const c=nm.combo;
+        const target = c.a>0 ? ('age '+Math.max(c.a,age+nm.t)+' with '+(svc+nm.t)+' yrs ('+(c.a>0?c.a:'any')+'/'+c.s+' combo)') : ((svc+nm.t)+' years of service');
+        msg='Closest milestone: about '+nm.t+' more year'+(nm.t===1?'':'s')+' of continued service &rarr; '+target+'.';
+      }
+      banner.className='status-banner notmet';
+      banner.innerHTML='&times; Does not yet satisfy the Modified Rule of 75'+
+        (msg?('<span class="sb-sub">'+msg+'</span>'):'');
+    }
+
+    // ----- result cards -----
+    cards.innerHTML='';
+    const mk=(cls,label,val,desc)=>{
+      const d=document.createElement('div'); d.className='rcard '+cls;
+      d.innerHTML='<div class="rlabel">'+label+'</div><div class="rval">'+val+'</div><div class="rdesc">'+desc+'</div>';
+      cards.appendChild(d);
+    };
+    mk('neutral','Earliest commencement age', earliest===null?'Verify':('Age '+earliest), earliestDesc);
+    mk(redClass,'Early-commencement reduction', redVal, redDesc);
+    mk(hcClass,'Retiree healthcare subsidy', hcVal, hcDesc);
+
+    note.innerHTML='Threshold age set to <strong>'+thr+'</strong> for the selected contract family. Cash balance portion is unaffected by these reduction rules. Estimates apply to the Pre-99 service-pension benefit and use completed whole years.';
+  }
+
+  [aEl,sEl,cEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
+  render();
+})();
+</script>
+</body>
+</html>
