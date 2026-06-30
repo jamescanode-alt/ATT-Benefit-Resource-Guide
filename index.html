@@ -572,19 +572,40 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <div class="calc">
     <div class="row">
+      <label for="cContract">Contract family / union (sets threshold age)</label>
+      <select id="cContract">
+        <optgroup label="West Program: age 55">
+          <option value="55">CWA District 9 (West Core)</option>
+          <option value="55">IBEW Local 1269 (Pacific Bell)</option>
+        </optgroup>
+        <optgroup label="Mobility Bargained: age 55">
+          <option value="55">CWA District 6 (Purple Contract)</option>
+        </optgroup>
+        <optgroup label="Midwest Program: age 55">
+          <option value="55">CWA District 4 (Midwest Core)</option>
+          <option value="55">IBEW System Council T-3: Locals 21, 58, 134</option>
+        </optgroup>
+        <optgroup label="East Program: Cash Balance">
+          <option value="55">CWA District 1 / AT&amp;T Corp. Core (East)</option>
+        </optgroup>
+        <optgroup label="Legacy Bargained: age 55">
+          <option value="55">AT&amp;T Corp. CWA (Legacy)</option>
+          <option value="55">IBEW System Council T-3 (National Contract)</option>
+        </optgroup>
+        <optgroup label="Southeast Program: age 56">
+          <option value="56">CWA District 3 (Southeast Core)</option>
+          <option value="56">AT&amp;T Billing Southeast (CWA)</option>
+          <option value="56">BellSouth ND/CA</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="row">
       <label for="cAge">Current age (whole years)</label>
       <span class="num-input"><input type="number" id="cAge" min="18" max="75" value="52"></span>
     </div>
     <div class="row">
       <label for="cSvc">Years of service (Term of Employment)</label>
       <span class="num-input"><input type="number" id="cSvc" min="0" max="50" value="22"></span>
-    </div>
-    <div class="row">
-      <label for="cContract">Contract family (sets threshold age)</label>
-      <select id="cContract">
-        <option value="55">West / Craft &amp; most contracts — age 55</option>
-        <option value="56">Southeast — age 56</option>
-      </select>
     </div>
 
     <div id="statusBanner"></div>
