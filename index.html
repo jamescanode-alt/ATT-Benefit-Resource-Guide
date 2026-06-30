@@ -1099,7 +1099,7 @@ secs.forEach(s=>s&&obs.observe(s));
     mk(redClass,'Early-commencement reduction', redVal, redDesc);
     mk(hcClass,'Retiree healthcare subsidy', hcVal, hcDesc);
 
-    note.innerHTML='Threshold age set to <strong>'+thr+'</strong> for the selected contract family. Cash balance portion is unaffected by these reduction rules. Estimates apply to the Pre-99 service-pension benefit and use completed whole years.';
+    note.innerHTML='Threshold age set to <strong>'+thr+'</strong> for the selected contract family. The <em>threshold age</em> is when the subsidized early-commencement reduction (0.5%/mo) fully disappears, which is different from the <em>earliest commencement age</em> above, the youngest age the Pre-99 pension may be turned on. They can differ: a client may be able to start benefits before reaching the threshold age, but commencing early may carry a reduction until the threshold is reached. Cash balance portion is unaffected by these reduction rules. Estimates apply to the Pre-99 service-pension benefit and use completed whole years; verify specifics against the applicable SPD/SMM.';
   }
 
   [aEl,sEl,cEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
