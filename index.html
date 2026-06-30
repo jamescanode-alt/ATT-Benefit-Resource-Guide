@@ -1037,7 +1037,7 @@ secs.forEach(s=>s&&obs.observe(s));
       earliestDesc = 'Deferred vested: with 20+ yrs, may commence on/after age 55.';
     } else if(svc>=( (age>=65)?10:3 ) || svc>=3){
       earliest = Math.max(age,55);
-      earliestDesc = 'Deferred vested (if vested): generally commences early-reduced before NRA; full benefit at Normal Retirement Age (65).';
+      earliestDesc = 'Deferred vested (if vested): generally reduced if commenced before Normal Retirement Age (65).';
     } else {
       earliest = null;
       earliestDesc = 'May not be vested yet (3 yrs cash balance / 5 yrs older formula). Confirm vesting.';
@@ -1099,7 +1099,8 @@ secs.forEach(s=>s&&obs.observe(s));
       d.innerHTML='<div class="rlabel">'+label+'</div><div class="rval">'+val+'</div><div class="rdesc">'+desc+'</div>';
       cards.appendChild(d);
     };
-    mk('neutral','Earliest commencement age', earliest===null?'Verify':('Age '+earliest), earliestDesc);
+    const earliestCls = (earliest!==null && age<earliest) ? 'warn' : 'neutral';
+    mk(earliestCls,'Earliest commencement age', earliest===null?'Verify':('Age '+earliest), earliestDesc);
     mk(redClass,'Early-commencement reduction', redVal, redDesc);
     mk(hcClass,'Retiree healthcare subsidy', hcVal, hcDesc);
 
