@@ -1099,7 +1099,8 @@ secs.forEach(s=>s&&obs.observe(s));
     mk(redClass,'Early-commencement reduction', redVal, redDesc);
     mk(hcClass,'Retiree healthcare subsidy', hcVal, hcDesc);
 
-    note.innerHTML='Commencing before threshold age <strong>'+thr+'</strong> reduces the Pre-99 benefit by 0.5%/mo. Cash balance portion is unaffected. Estimates use completed whole years; verify against the applicable SPD/SMM.';
+    const warnTxt = (age>=thr) ? '' : 'Commencing before threshold age <strong>'+thr+'</strong> reduces the Pre-99 benefit by 0.5%/mo. Cash balance portion is unaffected. ';
+    note.innerHTML=warnTxt+'Estimates use completed whole years; verify against the applicable SPD/SMM.';
   }
 
   [aEl,sEl,cEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
