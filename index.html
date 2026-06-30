@@ -1022,6 +1022,9 @@ secs.forEach(s=>s&&obs.observe(s));
     const met=meetsMod75(age,svc);
 
     // ----- earliest commencement age -----
+    // NOTE: commencement floors (50 w/25yrs, 55 w/20yrs) are program-INDEPENDENT per the SPDs
+    // (West §4.1 and Southeast §4.2 both use age 50/55). Only the subsidy-reduction threshold
+    // (thr: 55 West / 56 Southeast) is contract-aware. Do not tie these floors to thr.
     let earliest, earliestDesc;
     if(met){
       earliest = age; // already eligible; can commence now (subject to plan admin)
