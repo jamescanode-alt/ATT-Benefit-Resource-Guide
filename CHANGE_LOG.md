@@ -1,5 +1,34 @@
 # CHANGE_LOG
 
+## 2026-07-01 (2) — Fill 401(k) and retiree-medical gaps from new SPDs
+
+**Summary.** Two SPDs were added to `Management SPDs/` (`ATT-Retirement-Savings-Plan_78-63233.pdf`,
+`Medical SPD 2021.pdf`). Updated `non-bargained.html` to replace "verify, not in library" placeholders
+with facts sourced directly from these documents.
+
+**401(k) (Section 11), from the Retirement Savings Plan SPD:**
+- Real match tiers: 80% of first 6% (default), or 133⅓% of first 3% + 100% of next 3% (~7% of pay)
+  for management hired/rehired on/after 1/1/15. Match on first 6% only; catch-up not matched.
+- Match eligibility upon hire; match in AT&T Shares with immediate diversification; 100% vested after
+  3 Years of Service (auto at death/disability/age 65).
+- Mega-backdoor confirmed: after-tax contributions permitted + Roth In-Plan Rollover (irrevocable).
+- No "true-up" described in the SPD, front-loading caution retained and grounded accordingly.
+
+**Retiree medical (Section 08 + calculator), from the Medical Program SPD:**
+- Confirmed Mod 75 (same table) at termination is the gate to retiree ("Post-Employment") medical
+  eligibility for former Management/Bargained/Nonmanagement-Nonunion employees.
+- Compliance correction: changed "subsidized retiree medical" to "eligible to enroll," since the
+  retiree pays a monthly contribution and the company subsidy varies by group/hire date (up to 100%
+  of cost for some). Added the pre-Medicare-bridge nuance (coverage ends at Medicare eligibility,
+  transition to private exchange + possible Part B/D premium reimbursement) and the legacy
+  Pension-Based Eligibility path.
+- Calculator healthcare card relabeled "Eligible to enroll" / "Not eligible" with accurate detail.
+
+**Sources section** updated to cite both new SPDs. **Verified:** calculator re-tested (3 cases),
+content assertions confirmed present in the served page.
+
+**Note.** The two new source PDFs are large binaries and were left untracked (only referenced).
+
 ## 2026-07-01 — Add Non-Bargained (management) resource page
 
 **Summary.** Added a dedicated advisor field guide for AT&T Non-Bargained (non-union / management)
