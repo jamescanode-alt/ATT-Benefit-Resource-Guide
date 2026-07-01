@@ -45,9 +45,11 @@ nav.side .brand{padding:0 26px 22px}
 nav.side .brand .logo{font-size:25px;font-weight:bold;letter-spacing:.5px;color:#fff;font-family:Georgia,serif}
 nav.side .brand .team{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:4px;color:var(--gold-soft);margin-top:3px}
 nav.side .brand .sub{font-size:12px;color:#9fb4d4;margin-top:14px;line-height:1.5;font-family:'Helvetica Neue',Arial,sans-serif}
-nav.side .switch{display:block;margin-top:16px;padding:9px 12px;border:1px solid #24426b;border-radius:6px;color:var(--gold-soft);text-decoration:none;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11.5px;letter-spacing:.4px;transition:.15s}
-nav.side .switch:hover{background:#163459;color:#fff}
-nav.side .switch .sw-k{display:block;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#7d93b6;margin-bottom:2px}
+nav.side .planpick{margin-top:16px}
+nav.side .planpick .pp-k{display:block;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#7d93b6;margin-bottom:5px;font-family:'Helvetica Neue',Arial,sans-serif}
+nav.side .planpick select{width:100%;padding:9px 30px 9px 11px;background-color:#163459;color:#fff;border:1px solid #24426b;border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;letter-spacing:.3px;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%23E4C98A'/></svg>");background-repeat:no-repeat;background-position:right 11px center}
+nav.side .planpick select:hover{border-color:var(--gold)}
+nav.side .planpick select:focus{outline:none;border-color:var(--gold)}
 nav.side .navlabel{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;color:#7d93b6;padding:18px 26px 8px;text-transform:uppercase}
 nav.side a{
   display:block;padding:8px 26px 8px 26px;
@@ -257,7 +259,14 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <div class="logo">Farther</div>
     <div class="team">FOCUS TEAM</div>
     <div class="sub">AT&amp;T Retirement Benefits<br>Advisor Field Guide</div>
-    <a class="switch" href="non-bargained.html"><span class="sw-k">Switch guide &rarr;</span>Non-Bargained / management employees</a>
+    <div class="planpick">
+      <div class="pp-k">Viewing plan</div>
+      <select id="planSel" aria-label="Choose plan guide" onchange="if(this.value)window.location.href=this.value;">
+        <option value="index.html" selected>Union / Bargained</option>
+        <option value="non-bargained.html">Legacy Non-Bargained</option>
+        <option value="mobility.html">Mobility Program</option>
+      </select>
+    </div>
   </div>
   <div class="navlabel">Foundations</div>
   <a href="#landscape" class="navitem"><span class="num">01</span>The benefit landscape</a>

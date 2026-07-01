@@ -45,9 +45,11 @@ nav.side .brand{padding:0 26px 22px}
 nav.side .brand .logo{font-size:25px;font-weight:bold;letter-spacing:.5px;color:#fff;font-family:Georgia,serif}
 nav.side .brand .team{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:4px;color:var(--gold-soft);margin-top:3px}
 nav.side .brand .sub{font-size:12px;color:#9fb4d4;margin-top:14px;line-height:1.5;font-family:'Helvetica Neue',Arial,sans-serif}
-nav.side .switch{display:block;margin-top:16px;padding:9px 12px;border:1px solid #24426b;border-radius:6px;color:var(--gold-soft);text-decoration:none;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11.5px;letter-spacing:.4px;transition:.15s}
-nav.side .switch:hover{background:#163459;color:#fff}
-nav.side .switch .sw-k{display:block;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#7d93b6;margin-bottom:2px}
+nav.side .planpick{margin-top:16px}
+nav.side .planpick .pp-k{display:block;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#7d93b6;margin-bottom:5px;font-family:'Helvetica Neue',Arial,sans-serif}
+nav.side .planpick select{width:100%;padding:9px 30px 9px 11px;background-color:#163459;color:#fff;border:1px solid #24426b;border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;letter-spacing:.3px;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M0 0l5 6 5-6z' fill='%23E4C98A'/></svg>");background-repeat:no-repeat;background-position:right 11px center}
+nav.side .planpick select:hover{border-color:var(--gold)}
+nav.side .planpick select:focus{outline:none;border-color:var(--gold)}
 nav.side .navlabel{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:2.5px;color:#7d93b6;padding:18px 26px 8px;text-transform:uppercase}
 nav.side a.navitem{
   display:block;padding:8px 26px 8px 26px;
@@ -246,7 +248,14 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <div class="logo">Farther</div>
     <div class="team">FOCUS TEAM</div>
     <div class="sub">AT&amp;T Retirement Benefits<br>Advisor Field Guide</div>
-    <a class="switch" href="index.html"><span class="sw-k">Switch guide &rarr;</span>Union / Bargained employees</a>
+    <div class="planpick">
+      <div class="pp-k">Viewing plan</div>
+      <select id="planSel" aria-label="Choose plan guide" onchange="if(this.value)window.location.href=this.value;">
+        <option value="index.html">Union / Bargained</option>
+        <option value="non-bargained.html" selected>Legacy Non-Bargained</option>
+        <option value="mobility.html">Mobility Program</option>
+      </select>
+    </div>
   </div>
   <div class="navlabel">Foundations</div>
   <a href="#landscape" class="navitem"><span class="num">01</span>The benefit landscape</a>
@@ -276,8 +285,8 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 <div class="hero" id="start">
   <div class="gear"></div>
   <div class="eyebrow">Onboarding · Internal Reference</div>
-  <h1>The AT&amp;T Non-Bargained Retirement Benefits Guide</h1>
-  <p class="lead">What a new Farther advisor needs to read, explain, and advise on the pension and 401(k) for AT&amp;T's non-bargained (management) employees, from the "greatest of three formulas" pension structure to the decisions that matter most for clients.</p>
+  <h1>The AT&amp;T Legacy Non-Bargained Retirement Benefits Guide</h1>
+  <p class="lead">What a new Farther advisor needs to read, explain, and advise on the pension and 401(k) for AT&amp;T's legacy non-bargained (management) employees under the Nonbargained Program, from the "greatest of three formulas" pension structure to the decisions that matter most for clients. For AT&amp;T Mobility employees, use the Mobility Program guide in the sidebar's plan selector.</p>
   <div class="meta">
     <div><span class="k">Plan</span><span class="v">AT&amp;T/WarnerMedia Pension Benefit Plan</span></div>
     <div><span class="k">Program</span><span class="v">Nonbargained Program (NIN 78-49754)</span></div>
@@ -335,25 +344,12 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <div class="callout gold">
     <span class="tag">The first question to ask</span>
-    <p><strong>"Which legacy company did you come from, and when were you hired?"</strong> A legacy SBC manager hired before 2007 is likely in the <strong>Nonbargained Program</strong> covered here. A Mobility manager, or almost anyone hired after the mid-2000s cutoffs, is in a <strong>cash-balance-only</strong> program and will not have the CAM/PBM formulas or the Modified Rule of 75.</p>
+    <p><strong>"Which legacy company did you come from, and when were you hired?"</strong> A legacy SBC manager hired before 2007 is likely in the <strong>Nonbargained Program</strong> covered here. If instead the client is at <strong>AT&amp;T Mobility</strong>, or was hired after the mid-2000s cutoffs, they are in a different, cash-balance-only program, use the plan selector, not this guide.</p>
   </div>
 
-  <div class="callout warn">
-    <span class="tag">Scope of this guide &amp; a source gap</span>
-    <p>This page documents the <strong>Nonbargained Program</strong> in full and notes the relevant <strong>Mobility</strong> management differences inline. The <strong>Management Cash Balance Program</strong> SPD is <em>not</em> in the current project library, so post-cutoff hires should be confirmed directly against that plan's SPD and NetBenefits. For a mostly cash-balance client, the Mobility summary below is the closest available model, verify before relying on it.</p>
-  </div>
-
-  <h3>The Mobility management difference, in brief</h3>
-  <p>For a management client who turns out to be in the <strong>Mobility Program</strong> rather than Nonbargained, the pension is simply a <strong>Cash Balance Account</strong>:</p>
-  <div class="cols">
-    <div class="card" style="border-top:4px solid var(--blue)">
-      <h4>What's the same</h4>
-      <p>Vesting at 3 years; Fidelity recordkeeping; direct-rollover and 20% withholding rules; QDRO, PBGC, and survivor-lump-sum concepts.</p>
-    </div>
-    <div class="card" style="border-top:4px solid var(--gold)">
-      <h4>What's different</h4>
-      <p><strong>No CAM/PBM, no Modified Rule of 75, no early-retirement subsidy.</strong> Normal Retirement Age is a flat 65. Annuity forms are SLA, 50% and 75% J&amp;S (<strong>no 100% J&amp;S</strong>); the pop-up applies always; J&amp;S cannot be waived by QDRO. The lump sum always equals the Cash Balance Account. There is <strong>no Retiree Death Benefit</strong>.</p>
-    </div>
+  <div class="callout">
+    <span class="tag blue">If this isn't the right guide</span>
+    <p><strong>AT&amp;T Mobility employee?</strong> Switch to the <strong>Mobility Program</strong> guide with the <em>Viewing plan</em> selector at the top of the sidebar, it's a dedicated, cash-balance-only page, so you don't have to read around legacy-plan rules that don't apply. <strong>Union / bargained employee?</strong> Use the <strong>Union / Bargained</strong> guide. <strong>Management hired after the cutoff?</strong> They're likely in the <strong>Management Cash Balance Program</strong>, whose SPD is not yet in this library, confirm directly against that plan and NetBenefits.</p>
   </div>
 </section>
 
@@ -652,7 +648,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <tr><td>100% Joint &amp; Survivor</td><td class="num">$640 <span class="small">(80%)</span></td><td class="num">$640</td></tr>
     </tbody>
   </table>
-  <p class="small">The <strong>pop-up</strong> feature (benefit restored to the SLA level if the survivor dies first) applies to any J&amp;S form <strong>only if the client satisfied Mod 75</strong> at termination. Note the Mobility Program has no 100% J&amp;S and applies pop-up always.</p>
+  <p class="small">The <strong>pop-up</strong> feature (benefit restored to the SLA level if the survivor dies first) applies to any J&amp;S form <strong>only if the client satisfied Mod 75</strong> at termination.</p>
 
   <div class="callout gold">
     <span class="tag">Defaults &amp; consent</span>
@@ -968,8 +964,8 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <div class="foot">
-  <div class="ftitle">Farther · AT&amp;T Focus Team, Advisor Field Guide (Non-Bargained)</div>
-  <div>Built as an internal onboarding reference. Pair it with each client's NetBenefits statement and the controlling SPD before advising. Looking for the union population? <a href="index.html">See the Bargained (union) guide &rarr;</a></div>
+  <div class="ftitle">Farther · AT&amp;T Focus Team, Advisor Field Guide (Legacy Non-Bargained)</div>
+  <div>Built as an internal onboarding reference. Pair it with each client's NetBenefits statement and the controlling SPD before advising. Use the <strong>Viewing plan</strong> selector at the top of the sidebar to switch to the Union or Mobility Program guides.</div>
   <div class="disc">
     This material is for internal educational and training use by Farther advisors. It is a simplified summary of complex plan provisions and is not legal, tax, or investment advice, nor a guarantee of any benefit. Plan terms are governed solely by the official plan documents and Summary Plan Descriptions, which control in any conflict. Benefit formulas, factors, bands, vesting schedules, dollar limits, and 401(k) provisions vary by plan year and company history and change over time, always verify a client's actual figures in Fidelity NetBenefits and the current SPD before making recommendations. Calculator outputs are illustrative approximations only.
   </div>

@@ -1,5 +1,32 @@
 # CHANGE_LOG
 
+## 2026-07-01 (3) — Split into three plan guides + left-rail plan selector
+
+**Summary.** Added a "Viewing plan" dropdown to the left rail of every guide (Union / Legacy
+Non-Bargained / Mobility Program) and split the content so each population has a clean, dedicated
+page without cross-plan comparison clutter.
+
+**Files.**
+- `mobility.html` (new) — standalone AT&T Mobility Program guide (12 sections): cash-balance-only
+  pension (5% basic benefit credit + 30-yr-Treasury interest), no Mod 75, SLA/50/75 J&S with
+  always-on pop-up (no 100% J&S), lump sum = account, 401(k), IRMAA, and a retiree-healthcare
+  section explaining that the Medical Program's own age/service test (not the pension) gates
+  retiree-medical access.
+- `non-bargained.html` — retitled to "Legacy Non-Bargained"; added the plan dropdown; removed the
+  Mobility comparison cards and the inline Mobility difference note (now its own page). Section 02
+  slimmed to a short "which guide" table + pointer.
+- `index.html` — added the plan dropdown (replaced the earlier single "Switch guide" link + CSS).
+
+**Nav mechanism.** Each page's `<select id="planSel">` marks its own page `selected` and navigates
+on change (`window.location.href`). Styled to match the dark sidebar with a gold caret.
+
+**Verified (DOM parse of all three served pages + live eval):** dropdown present with correct
+selected option and all 3 targets; every sidebar anchor resolves (14 Union / 17 Legacy NB / 12
+Mobility); Mobility content present; no console errors; the Legacy NB Mod-75 calculator still
+computes correctly (6% for 53/30 met; Appendix B / Not eligible for 52/22). Screenshot capture was
+flaky in this session (backgrounded renderer reporting 0-width); layout parity is high-confidence
+since all three pages share the identical, previously screenshot-verified stylesheet.
+
 ## 2026-07-01 (2) — Fill 401(k) and retiree-medical gaps from new SPDs
 
 **Summary.** Two SPDs were added to `Management SPDs/` (`ATT-Retirement-Savings-Plan_78-63233.pdf`,
