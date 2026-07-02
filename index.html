@@ -220,9 +220,7 @@ table.v-lines th:not(:last-child) { border-right-color: rgba(255, 255, 255, 0.2)
 
 /* decision compare */
 .compare{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:24px 0}
-.compare.grid2{grid-template-columns:1fr 1fr}
 @media(max-width:760px){.compare{grid-template-columns:1fr}}
-@media(max-width:760px){.compare.grid2{grid-template-columns:1fr}}
 .opt{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column}
 .opt h4{margin-top:0;color:var(--ink);font-size:13px}
 .opt .who{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:var(--blue);margin-bottom:12px;font-weight:600}
@@ -536,23 +534,14 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <p class="small">For example, satisfying Mod 75 with 25 years of service and commencing at age 53 under the West rules is 24 months early &times; 0.5% = a 12% permanent reduction. The takeaway: "I made Rule of 75" is not the same as an unreduced benefit, always check service years and the client's contract threshold age.</p>
 
   <h3>What Mod 75 changes on the Pre-99 benefit</h3>
-  <div class="compare grid2">
+  <div class="compare">
     <div class="opt">
-      <h4>Mod 75 met, 30+ years of service</h4>
-      <div class="who">Best case</div>
+      <h4>Meets Mod 75 &amp; threshold age</h4>
+      <div class="who">Unreduced</div>
       <ul>
-        <li class="pro">Satisfies Mod 75 via the any-age + 30-year combination</li>
-        <li class="pro">Unreduced at any age, the threshold age (55/56) doesn't apply</li>
-        <li class="pro">Full normal-retirement pension, paid early</li>
-      </ul>
-    </div>
-    <div class="opt">
-      <h4>Mod 75 &amp; threshold age met, under 30 yrs of service</h4>
-      <div class="who">Unreduced (via age)</div>
-      <ul>
-        <li class="pro">Satisfies Mod 75 by an age/service combo (e.g., 50/25 or 55/20)</li>
-        <li class="pro">At/after the threshold age (55 or 56, by contract), so <strong>no</strong> early-commencement reduction</li>
-        <li class="pro">Full pension, paid early, without needing 30 years of service</li>
+        <li class="pro">No early-commencement reduction, full normal-retirement pension, paid early</li>
+        <li class="pro"><strong>30+ years:</strong> unreduced at any age (threshold age not required)</li>
+        <li class="pro"><strong>Under 30 years:</strong> unreduced once at/after the threshold age (55 or 56, by contract)</li>
       </ul>
     </div>
     <div class="opt">
@@ -560,7 +549,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <div class="who">Subsidized</div>
       <ul>
         <li class="con">Reduced 0.5%/month (6%/yr) for each month commenced before the threshold age (55 or 56, by contract)</li>
-        <li class="pro">Reduction disappears at the threshold age (becomes the card above)</li>
+        <li class="pro">No reduction once at/after the threshold age (becomes the unreduced case at left)</li>
         <li class="pro">Far gentler than the deferred-vested factors</li>
       </ul>
     </div>

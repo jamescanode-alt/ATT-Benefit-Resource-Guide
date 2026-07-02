@@ -1,5 +1,14 @@
 # CHANGE_LOG
 
+## 2026-07-02 (6) — Merge the two "unreduced" Mod 75 cards back to one
+
+The 30+ years and "under 30 yrs, at/after threshold age" cards produce the *same* employee benefit
+(a fully unreduced pension), so they were merged into a single "Meets Mod 75 & threshold age /
+Unreduced" card. Back to three cards on the standard 3-column grid (removed the temporary
+`.compare.grid2` CSS). Kept the body explicit about both paths, 30+ years is unreduced at any age
+(threshold not required); under 30 years is unreduced once at/after 55/56, so a 30+-year client below
+the threshold age doesn't misread the heading as a requirement.
+
 ## 2026-07-02 (5) — Add the missing Mod 75 scenario (Union guide)
 
 The "What Mod 75 changes on the Pre-99 benefit" comparison (Section 06) was missing a distinct
