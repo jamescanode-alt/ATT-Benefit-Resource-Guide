@@ -1,5 +1,17 @@
 # CHANGE_LOG
 
+## 2026-07-02 (5) — Add the missing Mod 75 scenario (Union guide)
+
+The "What Mod 75 changes on the Pre-99 benefit" comparison (Section 06) was missing a distinct
+outcome: <strong>Mod 75 met, under 30 years, at/after the threshold age</strong> = fully unreduced
+(same result as 30+ years, reached via age rather than service). It had been buried as a sub-bullet
+inside the "before threshold age" card. Broke it out into its own card, so the comparison is now four
+scenarios: (1) Mod 75 met, 30+ yrs (unreduced at any age); (2) Mod 75 met, under 30 yrs, at/after
+threshold age (unreduced via age); (3) Mod 75 met, under 30 yrs, before threshold age (0.5%/mo
+reduction); (4) does not meet Mod 75 (penalized). Switched this block to a 2×2 grid (new
+`.compare.grid2` class with a mobile 1-column override). Verified 2 columns at desktop, 1 at mobile,
+no overflow.
+
 ## 2026-07-02 (4) — Clarify the "30+ years" Mod 75 card (Union guide)
 
 In the Union guide's "What Mod 75 changes on the Pre-99 benefit" comparison (Section 06), the first
