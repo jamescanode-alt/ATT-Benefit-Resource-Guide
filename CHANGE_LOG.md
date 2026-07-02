@@ -1,5 +1,32 @@
 # CHANGE_LOG
 
+## 2026-07-02 (2) — Retiree-medical rewrite (A4), $7,000 cash-out (SMM), severance section
+
+Implemented the reviewed items from `REVIEW-Jordan-Notes-vs-Guides.md` after the Bargained SPDs,
+Medical SPD, 2024 SMM, and Severance Pay Plan were confirmed as controlling sources.
+
+**A4 — Retiree-medical subsidy (all 3 guides).** Rewrote the retiree-healthcare sections to
+distinguish *coverage eligibility* (Mod 75, unchanged) from *subsidy* (largely eliminated), per the
+Medical Program SPD (2021) + the Dec 2020 Retiree Benefit Changes announcement:
+- Hired on/after 1/1/2001 → 100% of cost (no subsidy).
+- Management pre-Medicare subsidy eliminated for last day on/after 1/1/2022.
+- 65+ Medicare subsidy eliminated for bargained *and* management for last day on/after 1/1/2021.
+- Corrected the Union guide's over-optimistic "subsidized" framing; sharpened the Legacy
+  Non-Bargained and Mobility "up to 100% of cost" callouts with the concrete dates.
+- Added **Alight** (retiree-health enrollment) to the contacts on all three pages.
+
+**NEW-1 — Mandatory cash-out $5,000 → $7,000 (all 3 guides).** Per the July 2024 SMM (NIN 78-72720),
+effective Jan 1, 2024, across all programs. Corrected the small-benefit cash-out callouts.
+
+**NEW-2 — Severance & surplus section (Legacy Non-Bargained only).** New Section 14 documenting the
+AT&T Severance Pay Plan (management): allowance = % of Annual Basic Pay by TOE (4%/yr, capped 50% at
+13+ yrs), tied to the Mod 75 "should I leave now?" decision. Renumbered subsequent sections (15–18)
+and added the nav entry. Added the Severance Pay Plan, 2024 SMM, and Dec 2020 changes to Sources.
+
+**Verified:** all three pages parse clean (no broken anchors; NB nav now 18 items ending at
+Section 18 Contacts); the NB Mod-75 calculator still computes (51/26 → ~24%, "Eligible to enroll");
+$7,000, A4 subsidy language, and Alight present on all pages.
+
 ## 2026-07-02 — Authoritative source links + annual-figures reference
 
 **Summary.** Added IRS.gov / Medicare.gov / SSA.gov links next to every tax-year-specific figure
