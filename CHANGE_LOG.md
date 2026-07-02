@@ -1,5 +1,28 @@
 # CHANGE_LOG
 
+## 2026-07-02 (3) — Lump-sum rate timing (A1), Rule of 55 (A2), 401(k) loan handling (A3)
+
+Implemented the remaining Priority-A items from `REVIEW-Jordan-Notes-vs-Guides.md`.
+
+**A1 — Lump-sum interest-rate / segment-rate timing.** Added a "Timing the lump sum around interest
+rates" callout to the payment sections of the **Union** and **Legacy Non-Bargained** guides: a
+defined-benefit annuity-to-lump-sum conversion uses IRS minimum present-value segment rates and moves
+inversely to rates; AT&T locks the prior-November rates for the commencement calendar year. Linked
+the IRS segment-rate page. Added the contrasting "no interest-rate timing to worry about" note to the
+**Mobility** payment section (its lump sum is the account, not rate-converted).
+
+**A2 — Rule of 55.** Added a callout (all 3 guides, 401(k) section): separating in the year one turns
+55+ allows penalty-free 401(k) withdrawals in-plan, and **rolling to an IRA forfeits it** (back to
+59½). Note the plan may limit how withdrawals are taken.
+
+**A3 — 401(k) loan at separation.** Added a callout (all 3 guides): pay off (allow ~72h to post),
+default (1099-R taxable distribution + possible penalty), or keep (leave enough balance). Grouped
+A2+A3 under a new "At separation: two traps to handle" subheading.
+
+**Verified:** all 3 pages parse clean (no broken anchors; sections 14/18/12); IRS segment link on
+Union + Legacy NB; Rule-of-55 and 1099-R present on all 3; Mobility carries the contrast note only;
+NB Mod-75 calculator still computes (58/31 → "None", "Eligible to enroll").
+
 ## 2026-07-02 (2) — Retiree-medical rewrite (A4), $7,000 cash-out (SMM), severance section
 
 Implemented the reviewed items from `REVIEW-Jordan-Notes-vs-Guides.md` after the Bargained SPDs,

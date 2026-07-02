@@ -8,13 +8,19 @@
 
 ---
 
-# STATUS — 2026-07-02: A4, NEW-1, and NEW-2 have been IMPLEMENTED
+# STATUS — 2026-07-02: A1–A4 + NEW-1 + NEW-2 IMPLEMENTED
 
-The three items below were implemented across the guides (see `CHANGE_LOG.md` entry
-"2026-07-02 (2)"): A4 (retiree-medical subsidy rewrite, all 3 guides), NEW-1 ($7,000 cash-out, all
-3 guides), and NEW-2 (Severance & surplus section on the Legacy Non-Bargained guide). The remaining
-Priority A/B/C items from the original report (A1 lump-sum interest-rate timing, A2 Rule of 55,
-A3 401(k) loan handling, B-items) are **not yet implemented** and await your go-ahead.
+Implemented across the guides (see `CHANGE_LOG.md`):
+- **A1** — lump-sum interest-rate / IRS segment-rate timing (Union + Legacy Non-Bargained payment
+  sections; Mobility got the contrasting "no timing risk" note). ✅
+- **A2** — Rule of 55 and how an IRA rollover forfeits it (401(k) sections, all 3 guides). ✅
+- **A3** — outstanding 401(k) loan handling at separation/rollover (401(k) sections, all 3). ✅
+- **A4** — retiree-medical subsidy rewrite (all 3 guides). ✅
+- **NEW-1** — $7,000 mandatory cash-out (all 3 guides). ✅
+- **NEW-2** — Severance & surplus section (Legacy Non-Bargained). ✅
+
+**Still not implemented** (optional polish, await go-ahead): the Priority-B items (B1 commencement-
+date mechanics, B3 NUA, B4 COBRA, B5 disability detail, B6 Roth-vs-RMD note). C1 confirmed no change.
 
 ---
 
