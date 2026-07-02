@@ -1,5 +1,33 @@
 # CHANGE_LOG
 
+## 2026-07-02 — Authoritative source links + annual-figures reference
+
+**Summary.** Added IRS.gov / Medicare.gov / SSA.gov links next to every tax-year-specific figure
+in the three guides, verified the 2026 values against the official sources, and created a
+maintenance reference file listing every figure that must be updated each tax year.
+
+**Verification of 2026 figures (against official sources, 2026-07-02):**
+- 402(g) $24,500 · 415(c) $72,000 · catch-up $8,000 · super catch-up (60–63) $11,250 · totals
+  $32,500 / $35,750 / $80,000 / $83,250 — all confirmed via IRS Notice 2025-67 / IRS newsroom.
+  (Confirmed the 60–63 super catch-up correctly *stays* $11,250 for 2026, not 150% of $8,000.)
+- IRMAA 2026 thresholds $109,000 single / $218,000 MFJ, 5 tiers (top $500k / $750k) — confirmed.
+- Social Security wage base 2026 = **$184,500**. The union guide showed a stale "$168,600 in
+  2024"; corrected the figure and its worked example ($189,500 YTD / $184,500 base).
+
+**Links added.**
+- 401(k) footnote (all 3 pages): added the IRS COLA limits-table link alongside the existing
+  401(k) topic-page link; labeled the figures "for 2026."
+- IRMAA paragraph (all 3 pages): added a Medicare.gov "Medicare costs & IRMAA" link and the
+  top-tier thresholds.
+- Union Supplemental Pay Credit: added an SSA "contribution & benefit base" link.
+
+**New file.** `ANNUAL-TAX-FIGURES.md` — a per-tax-year update checklist: every indexed figure with
+its 2026 value, where it appears, the authoritative source URL, and grep-able search strings, plus
+a "figures that are statutory / don't change yearly" section.
+
+**Link health.** medicare.gov and both IRS pages return 200; ssa.gov cbb.html 403s to automated
+clients (anti-bot) but is the canonical page and loads in a browser.
+
 ## 2026-07-01 (3) — Split into three plan guides + left-rail plan selector
 
 **Summary.** Added a "Viewing plan" dropdown to the left rail of every guide (Union / Legacy
