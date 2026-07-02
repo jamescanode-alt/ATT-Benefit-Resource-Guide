@@ -1,5 +1,15 @@
 # CHANGE_LOG
 
+## 2026-07-02 (4) — Clarify the "30+ years" Mod 75 card (Union guide)
+
+In the Union guide's "What Mod 75 changes on the Pre-99 benefit" comparison (Section 06), the first
+card said only "30+ years of service" while the other two referenced Mod 75, reading like a separate
+category. Relabeled it "Mod 75 met, 30+ years of service" and added that it satisfies Mod 75 via the
+any-age + 30-year combination and is unreduced at **any** age (the threshold age doesn't apply).
+Declined to add "meets threshold age" as literally suggested, since 30+ years is unreduced regardless
+of age, so implying the client must reach 55/56 would be inaccurate. Union guide only; the Legacy
+Non-Bargained card already references Mod 75 and follows that plan's different 0.25%/mo rule.
+
 ## 2026-07-02 (3) — Lump-sum rate timing (A1), Rule of 55 (A2), 401(k) loan handling (A3)
 
 Implemented the remaining Priority-A items from `REVIEW-Jordan-Notes-vs-Guides.md`.
