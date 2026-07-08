@@ -1,5 +1,27 @@
 # PLAN_LOG
 
+## 2026-07-08 — Advisor case-study training page (case-studies.html)
+
+**Task.** Build an interactive case-study page that tests an advisor's knowledge of the AT&T
+union plan: Mod 75 (pairs vs. sum, tested-at-termination), early-commencement reduction math
+(0.5%/mo, 55 vs. 56 threshold), Pre-99 pension-band calculation, cash-balance mechanics,
+interest-rate effects on lump sums (segment rates, prior-November lock), and retiree healthcare
+(enroll vs. subsidize, 2001 hire-date rule, 2021 Medicare-subsidy elimination). The advisor must
+answer (numeric input or multiple choice) to advance; questions gate sequentially and cases
+unlock in order. Link the page from `index.html`.
+
+**Source of truth.** All facts and figures come from the already-SPD-verified content of
+`index.html` (sections 04–08, 10) — no new plan claims are introduced. Every answer explanation
+links back to the relevant guide section.
+
+**Files.** New `case-studies.html`; nav link + strategy-section callout in `index.html`.
+
+**Risks.** Numeric answers must tolerate rounding (accept small tolerances, strip $/%/commas);
+must not contradict the guide (e.g., 30+ yrs = unreduced at any age; cash balance never
+rate-converted or reduced). Keep the union guide's visual system.
+
+**Next steps.** Build page → validate in preview (flow, math, responsive) → push → CHANGE_LOG.
+
 ## 2026-07-01 — Non-Bargained (management) resource page
 
 **Task.** Build a dedicated resource page for AT&T Non-Bargained (non-union / management)

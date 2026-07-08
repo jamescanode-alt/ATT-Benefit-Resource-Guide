@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AT&T Advisor Case Studies: Test Your Plan Knowledge</title>
+<style>
+:root{
+  --cream:#F7F4E9;
+  --cream-deep:#EFE9D6;
+  --ink:#10243F;
+  --ink-soft:#33486A;
+  --blue:#1E55C0;
+  --blue-bright:#2E84D6;
+  --sky:#cfe1f5;
+  --gold:#C08A2D;
+  --gold-soft:#E4C98A;
+  --line:#D8D0BA;
+  --paper:#FDFCF6;
+  --good:#2E7D52;
+  --warn:#B5532A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.sans{font-family:'Helvetica Neue',Arial,sans-serif}
+main{max-width:880px;margin:0 auto;padding:0 24px 90px}
+p{margin-bottom:14px;font-size:16.5px}
+p.lead{font-size:19px;color:var(--ink-soft);line-height:1.55}
+strong{font-weight:bold}
+a.inline{color:var(--blue)}
+.small{font-size:13.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(160deg,#10243F 0%,#16345b 60%,#1d4377 100%);
+  color:var(--cream);padding:58px 24px 48px;border-bottom:5px solid var(--gold);
+  position:relative;overflow:hidden;
+}
+.hero .inner{max-width:880px;margin:0 auto;position:relative}
+.hero .gear{position:absolute;right:-90px;top:-90px;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, rgba(46,132,214,.28), transparent 60%);pointer-events:none}
+.hero .eyebrow{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:14px}
+.hero h1{color:#fff;font-size:42px;line-height:1.1;font-weight:normal;letter-spacing:-.5px;margin-bottom:16px;max-width:680px}
+.hero p.lead{color:#cdddf2;max-width:640px}
+.hero .backlink{display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--gold-soft);text-decoration:none;margin-bottom:22px;letter-spacing:.3px}
+.hero .backlink:hover{color:#fff}
+.hero .meta{display:flex;gap:38px;margin-top:28px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.hero .meta div span{display:block}
+.hero .meta .k{font-size:10.5px;letter-spacing:2px;color:#8fb0d6;text-transform:uppercase}
+.hero .meta .v{font-size:15px;color:#fff;margin-top:3px}
+
+/* ---------- Progress rail ---------- */
+.rail{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid #24426b;padding:10px 24px}
+.rail .inner{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.rail .chips{display:flex;gap:6px;flex-wrap:wrap}
+.rail .chip{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.5px;padding:4px 11px;border-radius:20px;border:1px solid #2c4a75;color:#7d93b6;background:transparent;cursor:default;white-space:nowrap}
+.rail .chip.active{background:var(--gold);border-color:var(--gold);color:#10243F;font-weight:700;cursor:pointer}
+.rail .chip.done{background:#163459;border-color:#2c4a75;color:#9fe0b9;cursor:pointer}
+.rail .bar{flex:1;min-width:120px;height:6px;background:#163459;border-radius:4px;overflow:hidden}
+.rail .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));width:0%;transition:width .4s}
+.rail .pct{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#c6d4e8;min-width:104px;text-align:right}
+
+/* ---------- Intro ---------- */
+.intro{padding:44px 0 8px}
+.pn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+h2{font-size:30px;line-height:1.15;font-weight:normal;letter-spacing:-.4px;margin:6px 0 12px}
+.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 8px}
+@media(max-width:720px){.howto{grid-template-columns:1fr}}
+.howto .h{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px;border-top:4px solid var(--blue)}
+.howto .h.b{border-top-color:var(--gold)}
+.howto .h.c{border-top-color:var(--good)}
+.howto .h h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;font-weight:700}
+.howto .h p{font-size:13.5px;margin:0;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif}
+
+/* ---------- Case cards ---------- */
+.case{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin:26px 0;box-shadow:0 2px 14px rgba(16,36,63,.06);overflow:hidden}
+.case.locked{opacity:.62;background:var(--cream-deep)}
+.chead{padding:20px 26px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+.case.locked .chead{border-bottom:none}
+.chead .cnum{flex:0 0 44px;height:44px;border-radius:50%;background:var(--ink);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:16px}
+.case.done .chead .cnum{background:var(--good);color:#fff}
+.case.locked .chead .cnum{background:#b9b19a;color:#fff}
+.chead .ct{flex:1}
+.chead .ct h3{font-size:20px;font-weight:normal;line-height:1.25}
+.chead .ct .concepts{margin-top:5px;display:flex;gap:6px;flex-wrap:wrap}
+.chead .ct .concepts span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;background:var(--cream-deep);color:var(--ink-soft);border-radius:20px;padding:2px 10px}
+.chead .cstat{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+.case.done .chead .cstat{color:var(--good);font-weight:700}
+.cbody{padding:6px 26px 26px}
+@media(max-width:640px){.chead{padding:16px 18px}.cbody{padding:6px 18px 20px}}
+
+/* client facts */
+.facts{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:18px 0}
+.facts .ftag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;display:block;margin-bottom:8px}
+.facts ul{list-style:none}
+.facts li{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:var(--ink-soft);padding:3px 0 3px 18px;position:relative}
+.facts li::before{content:"·";position:absolute;left:4px;color:var(--gold);font-weight:700}
+.facts li strong{color:var(--ink)}
+
+/* questions */
+.q{border-top:1px dashed var(--line);padding:20px 0 4px;margin-top:16px}
+.q .qlab{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700}
+.q .qtext{font-size:17px;margin:8px 0 14px}
+.q .opts{display:flex;flex-direction:column;gap:8px}
+.q .opt{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;text-align:left;padding:12px 16px;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;color:var(--ink);line-height:1.45;transition:.12s}
+.q .opt:hover{border-color:var(--blue);background:#f4f8fe}
+.q .opt.wrong{border-color:var(--warn);background:#fbf0ea;color:var(--warn);cursor:not-allowed}
+.q .opt.right{border-color:var(--good);background:#eef6f1;color:var(--good);font-weight:700}
+.q .opt:disabled{cursor:not-allowed}
+.q .numrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.q .numrow .pre{font-size:15px;color:var(--ink-soft)}
+.q .numrow input{width:170px;padding:11px 13px;border:1px solid var(--line);border-radius:8px;font-size:16px;font-family:'Helvetica Neue',Arial,sans-serif;text-align:right;background:#fff}
+.q .numrow input:focus{outline:none;border-color:var(--blue)}
+.q .numrow input.wrong{border-color:var(--warn);background:#fbf0ea}
+.q .numrow input.right{border-color:var(--good);background:#eef6f1;color:var(--good);font-weight:700}
+.btn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.3px;padding:11px 22px;border-radius:8px;border:none;cursor:pointer;background:var(--ink);color:#fff;transition:.12s}
+.btn:hover{background:#1d3a63}
+.btn.gold{background:var(--gold);color:#10243F}
+.btn.gold:hover{background:#ad7b25;color:#fff}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink-soft)}
+.btn.ghost:hover{border-color:var(--warn);color:var(--warn)}
+.feedback{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;margin-top:10px;padding:10px 14px;border-radius:8px}
+.feedback.bad{background:#fbf0ea;color:var(--warn);border:1px solid #e6c3b2}
+.feedback.hint{background:#fbf6ea;color:#8a6416;border:1px solid var(--gold-soft)}
+.explain{border-left:4px solid var(--good);background:#eef6f1;padding:15px 18px;margin:14px 0 6px;border-radius:0 8px 8px 0}
+.explain.revealed{border-left-color:var(--warn);background:#fbf0ea}
+.explain .etag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--good);display:block;margin-bottom:5px}
+.explain.revealed .etag{color:var(--warn)}
+.explain p{font-size:14.5px;margin-bottom:6px}
+.explain p:last-child{margin-bottom:0}
+.explain .ref{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px}
+.qnav{margin-top:14px}
+
+/* answered question, compact record */
+.q.answered .qtext{color:var(--ink-soft)}
+.q .youranswer{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:var(--ink-soft);margin-bottom:4px}
+.q .youranswer b{color:var(--good)}
+.q.missed .youranswer b{color:var(--warn)}
+
+/* case complete strip */
+.casedone{margin-top:20px;background:var(--ink);color:#fff;border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.casedone .cd-t{flex:1;font-size:14.5px}
+.casedone .cd-t b{color:var(--gold-soft)}
+
+/* summary */
+.summary{background:linear-gradient(160deg,#10243F 0%,#16345b 60%,#1d4377 100%);color:var(--cream);border-radius:14px;padding:38px 34px;margin:34px 0;border-bottom:5px solid var(--gold)}
+.summary h2{color:#fff}
+.summary .score{font-size:54px;color:var(--gold-soft);font-family:Georgia,serif;line-height:1;margin:10px 0 4px}
+.summary .grade{font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;color:#cdddf2;margin-bottom:18px}
+.summary .misslist{background:rgba(255,255,255,.06);border:1px solid #2c4a75;border-radius:10px;padding:16px 20px;margin:16px 0}
+.summary .misslist h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+.summary .misslist ul{list-style:none}
+.summary .misslist li{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:#cdddf2;padding:4px 0 4px 16px;position:relative}
+.summary .misslist li::before{content:"→";position:absolute;left:0;color:var(--gold-soft)}
+.summary .misslist a{color:var(--gold-soft)}
+.summary p{color:#cdddf2;font-size:15px}
+
+/* footer */
+.foot{padding:40px 24px;background:var(--ink);color:#c6d4e8;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.7}
+.foot .inner{max-width:880px;margin:0 auto}
+.foot .ftitle{color:#fff;font-size:15px;letter-spacing:1px;margin-bottom:8px;font-weight:600}
+.foot a{color:var(--gold-soft)}
+.foot .disc{margin-top:18px;font-size:11.5px;color:#7d93b6;border-top:1px solid #24426b;padding-top:16px}
+
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.shake{animation:shake .25s ease-in-out 2}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="gear"></div>
+  <div class="inner">
+    <a class="backlink" href="index.html">&larr; Back to the AT&amp;T Advisor Field Guide</a>
+    <div class="eyebrow">Training &middot; Knowledge Check</div>
+    <h1>Advisor Case Studies: Prove You Know the AT&amp;T Plan</h1>
+    <p class="lead">Six client scenarios built around the concepts that most often trip up advisors: the Modified Rule of 75, early-commencement reductions, pension-band math, cash-balance mechanics, interest-rate effects on lump sums, and retiree healthcare. You must calculate or choose the right answer to advance.</p>
+    <div class="meta">
+      <div><span class="k">Format</span><span class="v">6 cases &middot; 30 checkpoints</span></div>
+      <div><span class="k">Progression</span><span class="v">Answer correctly to unlock the next step</span></div>
+      <div><span class="k">Source</span><span class="v">Union guide &amp; SPD library</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="rail">
+  <div class="inner">
+    <div class="chips" id="railChips"></div>
+    <div class="bar"><i id="railBar"></i></div>
+    <div class="pct" id="railPct">0 of 30 answered</div>
+  </div>
+</div>
+
+<main>
+
+<div class="intro">
+  <div class="pn">How this works</div>
+  <h2>Work each case like a first meeting</h2>
+  <div class="howto">
+    <div class="h"><h4>Read the client facts</h4><p>Each case opens with a profile. Everything you need is in the facts, or in the field guide if you want to look it up. Using the guide is encouraged; that is the workflow on a real client.</p></div>
+    <div class="h b"><h4>Calculate or choose</h4><p>Numeric questions want a number (rounding is fine; $ and % signs are OK). Multiple choice locks out wrong picks. A hint appears after a miss, and you can reveal the answer after two misses.</p></div>
+    <div class="h c"><h4>Advance and review</h4><p>A correct answer shows the full reasoning with a link back to the guide section. Finish a case to unlock the next. First-attempt answers count toward your score.</p></div>
+  </div>
+  <p class="small" style="margin-top:12px">Figures follow the illustrative values used in the <a class="inline" href="index.html">Union / Bargained field guide</a> (representative pension bands, factors, and thresholds). Real client numbers always come from NetBenefits and the controlling SPD.</p>
+</div>
+
+<div id="cases"></div>
+<div id="summaryHost"></div>
+
+</main>
+
+<div class="foot">
+  <div class="inner">
+    <div class="ftitle">Farther &middot; AT&amp;T Focus Team, Advisor Case Studies</div>
+    <div>Companion knowledge check to the <a href="index.html">AT&amp;T Union Retirement Benefits Guide</a>. Also see the <a href="non-bargained.html">Legacy Non-Bargained</a> and <a href="mobility.html">Mobility</a> guides.</div>
+    <div class="disc">
+      This material is for internal educational and training use by Farther advisors. Scenarios and people are fictional; figures are illustrative values drawn from the Summary Plan Descriptions in the project library and simplify complex plan provisions. Factors, bands, thresholds, and dollar limits vary by collective bargaining agreement and plan year and change over time. Nothing here is legal, tax, or investment advice or a promise of any benefit. Always verify a client's actual figures in Fidelity NetBenefits and the current SPD before advising.
+    </div>
+  </div>
+</div>
+
+<script>
+// ------------------------------------------------------------------
+// Case data. All facts mirror index.html (SPD-verified guide content).
+// Question types: 'mc' {options:[{t, correct?, why?}]} and 'num' {answer, tol}.
+// ------------------------------------------------------------------
+const REF = {
+  mod75:  {href:'index.html#mod75',       label:'Guide Section 06: The Modified Rule of 75'},
+  calc:   {href:'index.html#elig-calc',   label:'Guide Section 07: Mod 75 calculator'},
+  pre99:  {href:'index.html#pre99',       label:'Guide Section 05: Pre-99 Pension Band'},
+  cb:     {href:'index.html#cash-balance',label:'Guide Section 04: Cash balance mechanics'},
+  pay:    {href:'index.html#payment',     label:'Guide Section 08: How the pension gets paid'},
+};
+
+const CASES = [
+{
+  title:'Denise and the 75 that does not add up',
+  concepts:['Mod 75 combos','Tested at termination','Deferred vested'],
+  facts:[
+    '<strong>Denise, age 47</strong>, CWA District 9 (West), hired June 1998',
+    '<strong>28 completed years</strong> of service (Term of Employment)',
+    'Fully vested; has a small Pre-99 pension band portion plus a cash balance account',
+    'A competitor has offered her a job. She plans to resign next month and says: <strong>&ldquo;47 plus 28 is 75, I made the Rule of 75, so I&rsquo;m safe.&rdquo;</strong>',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Is Denise right that she satisfies the Modified Rule of 75?',
+    options:[
+      {t:'Yes. Any combination of age plus service totaling 75 qualifies.', why:'This is the classic mistake. Mod 75 is not a sum.'},
+      {t:'No. Mod 75 is a set of fixed age/service pairs, and 47 with 28 years hits none of them.', correct:true},
+      {t:'Yes, but only because she is vested.', why:'Vesting and Mod 75 are separate gates. Vesting keeps the benefit; Mod 75 grants service-pension status.'},
+      {t:'No, because Mod 75 requires age 50 in every case.', why:'There is an any-age path: 30 years of service qualifies at any age.'},
+    ],
+    explain:'Mod 75 uses fixed combinations: <strong>any age / 30 years, 50 / 25, 55 / 20, 65 / 10</strong>. Denise is 47 with 28 years. She fails any-age/30 (needs 30), fails 50/25 (not yet 50), and the rest. &ldquo;My age plus service equals 75&rdquo; is the single most common client misconception to catch.',
+    ref:REF.mod75 },
+  { type:'num',
+    q:'Assume Denise stays at AT&T instead. In how many more whole years of continued service does she FIRST satisfy Mod 75? (Age and service both rise together.)',
+    pre:'Years:', answer:2, tol:0,
+    hint:'Test each combo. In t years she is 47+t years old with 28+t years of service. Which combo is satisfied at the smallest t?',
+    explain:'In <strong>2 years</strong> she is 49 with <strong>30 years of service</strong>, which satisfies the any-age / 30-year combination. She does not need to wait for age 50/25 (which would also be satisfied by then anyway). Two more years of work converts a penalized deferred-vested pension into a service pension.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'Suppose she resigns next month anyway. At age 55 she would be &ldquo;55 with 28 years&rdquo; on paper, which looks like the 55/20 combo. Can she claim service-pension status then?',
+    options:[
+      {t:'Yes. Once her age catches up, the 55/20 combination is met.', why:'Service and age stop counting for this test the day she terminates.'},
+      {t:'Yes, if she defers commencement until 55.', why:'Deferring changes when she is paid, not her status. Status was fixed at termination.'},
+      {t:'No. Mod 75 is tested at termination of employment and is locked in that day; she can never age into it afterward.', correct:true},
+    ],
+    explain:'Eligibility is tested <strong>at Termination of Employment</strong> using completed whole years at that moment. Leaving at 47/28 locks her out permanently, no matter how old she gets. This is why mapping exact age and service before a client gives notice is one of the highest-leverage things an advisor does.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'If Denise leaves now, what does she walk away with, and what happens to retiree healthcare?',
+    options:[
+      {t:'A service pension with subsidized reductions, but no healthcare.', why:'Without Mod 75 at termination there is no service pension at all.'},
+      {t:'A Deferred Vested Pension with steep early-reduction factors, and NO eligibility to enroll in AT&T retiree medical.', correct:true},
+      {t:'A Deferred Vested Pension, but she can still buy into AT&T retiree medical at full cost.', why:'Deferred-vested-only former bargained employees are not eligible former employees under the medical program. She cannot enroll at any price.'},
+      {t:'She forfeits the pension entirely.', why:'She is vested, so the benefit itself is hers to keep. What she loses is service-pension status and healthcare access.'},
+    ],
+    explain:'She keeps a <strong>Deferred Vested Pension</strong> (she is vested), but when she later commences the Pre-99 portion it is cut by the much steeper deferred-vested factors, and she generally cannot commence before 50 (with 25+ yrs) or 55 (with 20+ yrs). Worse: a deferred-vested-only former bargained employee is <strong>not eligible to enroll</strong> in AT&T retiree medical. That healthcare loss is often the biggest number in the whole decision. Her cash balance account is unaffected; it is simply the account value.',
+    ref:REF.mod75 },
+  ]
+},
+{
+  title:'Marcus and the reduction he did not expect',
+  concepts:['Early commencement','0.5%/month subsidy','55 vs 56 threshold'],
+  facts:[
+    '<strong>Marcus, age 53</strong>, CWA District 9 (West program: threshold age <strong>55</strong>)',
+    '<strong>26 completed years</strong> of service',
+    'Pre-99 Basic Monthly Pension Benefit at normal retirement: <strong>$1,400/month</strong>',
+    'Cash balance account: <strong>$150,000</strong>',
+    'He wants to retire now and start the pension immediately: <strong>&ldquo;I made Rule of 75, so my check is unreduced, right?&rdquo;</strong>',
+  ],
+  questions:[
+  { type:'mc',
+    q:'First: does Marcus satisfy the Modified Rule of 75?',
+    options:[
+      {t:'No. 53 plus 26 is only 79, but he needs a listed combo and has none.', why:'Check again: he passed age 50 with more than 25 years.'},
+      {t:'Yes. He satisfied the 50/25 combination (he is over 50 with 25+ years).', correct:true},
+      {t:'No. He needs 30 years of service to qualify at any age under 55.', why:'30 years is the any-age path, but 50/25 is its own combo and he meets it.'},
+    ],
+    explain:'He is 53 with 26 years: the <strong>50 / 25 combination</strong> is satisfied, so at termination he is service-pension eligible. But satisfying Mod 75 is not the same as being unreduced, as the next steps show.',
+    ref:REF.mod75 },
+  { type:'num',
+    q:'Marcus commences at exactly age 53 under the West rules (threshold age 55). How many months before the threshold age is that?',
+    pre:'Months:', answer:24, tol:0,
+    hint:'Threshold age minus commencement age, in months.',
+    explain:'Age 55 minus age 53 is 2 years, which is <strong>24 months</strong> early. With fewer than 30 years of service, each of those months costs him 0.5% of the Pre-99 benefit, permanently.',
+    ref:REF.mod75 },
+  { type:'num',
+    q:'With under 30 years of service, the subsidized reduction is 0.5% per month before the threshold age. What total percentage reduction applies to his Pre-99 benefit?',
+    pre:'Reduction %:', answer:12, tol:0.01,
+    hint:'24 months multiplied by 0.5% per month.',
+    explain:'24 &times; 0.5% = <strong>12%</strong>, a permanent reduction. Still far gentler than the deferred-vested factors he would face without Mod 75, and it would shrink to zero if he waited until 55 to commence. If he had 30+ years, there would be no reduction at any age.',
+    ref:REF.mod75 },
+  { type:'num',
+    q:'Apply that reduction: what is his reduced Pre-99 monthly benefit in dollars?',
+    pre:'$ / month:', answer:1232, tol:1,
+    hint:'$1,400 &times; (1 - 0.12).',
+    explain:'$1,400 &times; 0.88 = <strong>$1,232/month</strong>, or $168/month less, for life. Waiting 24 months to commence restores the full $1,400. That trade (retire now and start later, or start now and take 12% less) is exactly the analysis to run with the client.',
+    ref:REF.calc },
+  { type:'mc',
+    q:'Same client, same ages, but he is CWA District 3 (Southeast program). What is the reduction if he commences at 53?',
+    options:[
+      {t:'12%, the same. The reduction rule is identical everywhere.', why:'The rate is the same, but the Southeast measures from a different threshold age.'},
+      {t:'18%, because the Southeast threshold age is 56, making him 36 months early.', correct:true},
+      {t:'0%. The Southeast has no early-commencement reduction.', why:'The Southeast uses the same 0.5%/month subsidy, just measured from age 56.'},
+    ],
+    explain:'Contract families differ: the West measures from <strong>age 55</strong>, the Southeast from <strong>age 56</strong>. At 53 that is 36 months early &times; 0.5% = <strong>18%</strong>. Always confirm the client&rsquo;s contract before quoting a reduction.',
+    ref:REF.calc },
+  { type:'mc',
+    q:'Does the 12% (or 18%) reduction also apply to his $150,000 cash balance account?',
+    options:[
+      {t:'Yes. The whole pension is reduced for early commencement.', why:'The two formulas follow different rules. The reduction lives in the Pre-99 formula only.'},
+      {t:'No. The cash balance portion is simply the account value; the early-reduction rules apply only to the Pre-99 pension band benefit.', correct:true},
+      {t:'Yes, but at half the rate.', why:'There is no reduced-rate version for the cash balance. It is not reduced at all.'},
+    ],
+    explain:'The early-commencement reduction is a <strong>Pre-99 pension band</strong> mechanic. The cash balance account has no early-reduction factors; it is worth its balance whenever taken. This is a core reason to decode which formula each piece of a client&rsquo;s benefit comes from before talking numbers.',
+    ref:REF.cb },
+  ]
+},
+{
+  title:'Gloria and the pension band arithmetic',
+  concepts:['Pension bands','Pre-99 formula','Supplemental benefit'],
+  facts:[
+    '<strong>Gloria, age 65</strong>, retiring this month with about 45 total years at AT&T (hired 1981)',
+    'Job title maps to <strong>Pension Band 111: $51.81</strong>',
+    'Pension Calculation Service <strong>as of 12/31/1998: 17 years</strong>',
+    'Age Incentive Factor at 65: <strong>1.06</strong>',
+    'Supplemental pay (shift differentials and in-charge allowance) over the final 36 months: <strong>$1,800 total</strong>',
+    'She also has a separate cash balance account for her 1999-and-later service',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Set up the Basic Monthly Pension Benefit: Pension Band Amount &times; service &times; Age Incentive Factor. Which service number goes in the formula?',
+    options:[
+      {t:'45 years: her total service through today.', why:'Post-1998 service is earning cash balance credits instead. Using 45 would double-count it.'},
+      {t:'17 years: her Pension Calculation Service as of 12/31/1998.', correct:true},
+      {t:'28 years: her service since 1999.', why:'That is the period covered by the cash balance formula, not the band formula.'},
+    ],
+    explain:'The Pre-99 band formula uses <strong>Pension Calculation Service measured as of 12/31/1998</strong>, here 17 years. Her 1999-and-later service is compensated through the cash balance account instead. Multiplying the band by total service is a frequent (and flattering, and wrong) client miscalculation.',
+    ref:REF.pre99 },
+  { type:'num',
+    q:'Now compute her Basic Monthly Pension Benefit: $51.81 &times; 17 years &times; 1.06.',
+    pre:'$ / month:', answer:933.62, tol:2,
+    hint:'$51.81 &times; 17 = $880.77, then apply the 1.06 Age Incentive Factor.',
+    explain:'$51.81 &times; 17 &times; 1.06 = <strong>$933.62/month</strong> as a single life annuity at 65. Note how band-based benefits scale: the band amount is per year of pre-99 service, so tenure drives the number more than pay does.',
+    ref:REF.pre99 },
+  { type:'num',
+    q:'The Supplemental Monthly Pension Benefit uses AVERAGE ANNUAL supplemental pay over the final 36 months. With $1,800 total over 3 years, what is the average annual figure?',
+    pre:'$ / year:', answer:600, tol:0.5,
+    hint:'$1,800 spread over 3 years.',
+    explain:'$1,800 &divide; 3 = <strong>$600 average annual</strong> supplemental pay. Only certain pay types count here: in-charge allowances, shift/night differentials, temporary-promotion pay, and the like, received in the 36 months before retirement.',
+    ref:REF.pre99 },
+  { type:'num',
+    q:'Finish it: Supplemental Monthly Pension Benefit = (average annual supplemental pay &times; 0.001) &times; pre-99 service years. What does Gloria get?',
+    pre:'$ / month:', answer:10.20, tol:0.25,
+    hint:'($600 &times; 0.001) &times; 17.',
+    explain:'($600 &times; 0.001) &times; 17 = <strong>$10.20/month</strong>, bringing the Pre-99 total to about <strong>$943.82/month</strong>. Small on its own, but do not confuse this <em>Supplemental Monthly Pension Benefit</em> (a Pre-99 band mechanic) with the <em>Supplemental Pay Credit</em> (a 2% cash-balance credit on pay above the Social Security wage base). Same word, different formulas.',
+    ref:REF.pre99 },
+  ]
+},
+{
+  title:'Sam and the cash balance engine',
+  concepts:['Age credit factors','Interest credits','Supplemental pay credit'],
+  facts:[
+    '<strong>Sam, age 45</strong>, hired 2004, so his pension is <strong>cash balance only</strong> (no Pre-99 portion)',
+    'Monthly Pension Compensation: <strong>$5,000</strong>',
+    'Current cash balance: <strong>$80,000</strong>',
+    'Standard age credit factor schedule: under 30: 1.77% &middot; 30&ndash;36: 2.27% &middot; 37&ndash;43: 2.78% &middot; 44&ndash;49: 3.28% &middot; 50+: 4.04%',
+    'Interest compounds to 4.5% annually; use an illustrative monthly rate of <strong>0.367%</strong>',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Which Age Credit Factor applies to Sam this month?',
+    options:[
+      {t:'2.78%', why:'That is the 37 to 43 tier. Sam is 45.'},
+      {t:'3.28%', correct:true},
+      {t:'4.04%', why:'That tier starts at 50. Sam is 45.'},
+      {t:'4.5%', why:'4.5% is the annual interest crediting rate, not an age credit factor.'},
+    ],
+    explain:'At 45 he sits in the <strong>44&ndash;49 tier: 3.28%</strong>. The factor steps up with age, which is what makes late-career years the highest-accrual years. (Also worth catching: 4.5% is the interest rate, a different lever entirely.)',
+    ref:REF.cb },
+  { type:'num',
+    q:'Compute his Basic Benefit Credit for the month: Pension Compensation &times; Age Credit Factor.',
+    pre:'$:', answer:164, tol:0.5,
+    hint:'$5,000 &times; 3.28%.',
+    explain:'$5,000 &times; 3.28% = <strong>$164</strong> credited this month. The same paycheck would have bought only $139 at age 40 (2.78%) and will buy $202 at age 50 (4.04%).',
+    ref:REF.cb },
+  { type:'num',
+    q:'Now the Interest Credit on his existing $80,000 balance at the illustrative 0.367% monthly rate.',
+    pre:'$:', answer:293.60, tol:1,
+    hint:'$80,000 &times; 0.367%.',
+    explain:'$80,000 &times; 0.367% &asymp; <strong>$293.60</strong> of interest this month, on top of the $164 pay credit. At his balance, compounding already adds more per month than his own accrual, and both keep growing.',
+    ref:REF.cb },
+  { type:'mc',
+    q:'Sam is weighing leaving at 49 versus staying past 50. From a pure cash-balance accrual standpoint, what changes at 50?',
+    options:[
+      {t:'Nothing. The credit rate is flat for everyone.', why:'The schedule is age-stepped; the top tier begins at 50.'},
+      {t:'His Age Credit Factor steps up from 3.28% to 4.04%, so every later paycheck buys a bigger credit while interest compounds on an ever-larger balance.', correct:true},
+      {t:'His interest rate doubles at age 50.', why:'The interest crediting basis does not change with age. The pay-credit factor does.'},
+    ],
+    explain:'At 50 the factor jumps to <strong>4.04%</strong>, a 23% raise in accrual on the same pay, stacked on compounding interest. A client leaving just before 50 is walking away from the plan&rsquo;s highest-value accrual years, which belongs in any early-exit conversation.',
+    ref:REF.cb },
+  { type:'mc',
+    q:'Sam&rsquo;s teammate is in a commission-heavy title and will earn about $200,000 of Pension Compensation this year (2026 Social Security Wage Base: $184,500). What extra pension credit does she get that Sam does not?',
+    options:[
+      {t:'The Supplemental Monthly Pension Benefit on her commissions.', why:'That is a Pre-99 band mechanic for things like shift differentials, not a cash balance credit.'},
+      {t:'A Supplemental Pay Credit: 2% on the roughly $15,500 of pay above the Social Security Wage Base, added to her cash balance.', correct:true},
+      {t:'An age-stepped bonus credit on all compensation.', why:'The supplemental rate is a flat 2%, unlike the age-stepped basic credit, and applies only to the excess over the wage base.'},
+      {t:'Nothing. Cash balance credits stop at the wage base.', why:'It is the opposite: pay above the wage base earns an extra flat 2% credit.'},
+    ],
+    explain:'Pay above the wage base earns a flat <strong>2% Supplemental Pay Credit</strong> (here about $15,500 &times; 2% &asymp; $310 for the year), because Social Security will not be replacing that slice of income. Most bargained clients on standard base pay never see it; it surfaces with commissions, leverage, or a big overtime year.',
+    ref:REF.cb },
+  ]
+},
+{
+  title:'Priya, the lump sum, and the rate clock',
+  concepts:['Segment rates','November lock','Lump sum vs cash balance'],
+  facts:[
+    '<strong>Priya, age 58</strong>, <strong>32 years</strong> of service (Mod 75 met with 30+, so her Pre-99 benefit is unreduced at any age)',
+    'Pre-99 benefit: <strong>$2,100/month</strong> single life annuity; she is leaning toward taking it as a <strong>lump sum</strong> instead',
+    'Cash balance account: <strong>$210,000</strong>',
+    'It is <strong>late 2026</strong>. IRS minimum present-value segment rates rose sharply all year and are widely expected to be higher again in 2027',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Her monthly annuity gets converted to a lump sum using IRS minimum present-value segment rates. When those rates RISE, what happens to the lump sum?',
+    options:[
+      {t:'It rises too. Higher rates mean more money.', why:'A lump sum is a present value. Discounting the same monthly stream at a higher rate produces a smaller present value.'},
+      {t:'It falls. The lump sum is a present value of the annuity, so it moves inversely to rates.', correct:true},
+      {t:'Nothing. The lump sum is fixed when she vests.', why:'The conversion happens at commencement, using the rates that apply to that commencement year.'},
+    ],
+    explain:'The lump sum is the <strong>present value</strong> of her $2,100/month promise. Higher discount rates shrink present values, so <strong>rates up = lump sum down</strong>, often by double-digit percentages in a fast-moving year.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'Which segment rates apply to a benefit commencing anytime during calendar 2026?',
+    options:[
+      {t:'The rates in effect the month she commences.', why:'AT&T does not float the rate month to month; it locks one measurement month for the whole year.'},
+      {t:'The November 2025 rates: AT&T locks the prior-November rates for the entire commencement calendar year.', correct:true},
+      {t:'An average of the 2026 monthly rates.', why:'No averaging. One prior-November snapshot governs the whole calendar year.'},
+    ],
+    explain:'AT&T uses the <strong>prior-November segment rates, locked for the entire commencement calendar year</strong>. Every 2026 commencement prices off November 2025 rates; every 2027 commencement prices off November 2026 rates. That single fact is what creates the year-end timing decision.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'Given that rates rose sharply through 2026, what does the rate math favor: commencing in December 2026 or waiting until January 2027?',
+    options:[
+      {t:'January 2027, to get one more year of growth.', why:'Waiting rolls her into the November 2026 rate lock, and those rates are much higher, which shrinks the lump sum.'},
+      {t:'December 2026: she stays on the lower locked November 2025 rates; a January commencement reprices the lump sum at the higher November 2026 rates.', correct:true},
+      {t:'It makes no difference; one month cannot matter.', why:'Crossing the calendar year-end changes the entire rate basis. In a fast-rising-rate year that one month can be a double-digit-percent difference.'},
+    ],
+    explain:'A December 2026 commencement uses the <strong>lower November 2025 locked rates</strong>; slipping to January reprices everything at the higher November 2026 rates and can cut the lump sum materially. The advisor&rsquo;s job is to model both commencement years with actual published rates, not to guess. (Rate timing is one input; health, taxes, and the annuity-vs-lump-sum decision itself still come first.)',
+    ref:REF.pay },
+  { type:'mc',
+    q:'Does the same rising-rate risk apply to her $210,000 cash balance account?',
+    options:[
+      {t:'Yes. All lump sums are rate-converted.', why:'Only an annuity converted to a lump sum is rate-sensitive. The cash balance is already an account value.'},
+      {t:'No. A cash balance account paid as a lump sum is simply the account balance; it is not rate-converted.', correct:true},
+      {t:'Yes, but only the interest credits are affected.', why:'Her interest credits accrue under the plan&rsquo;s crediting basis. The payout itself is the balance, with no segment-rate conversion.'},
+    ],
+    explain:'The segment-rate conversion applies when a <strong>monthly annuity is turned into a lump sum</strong>. The cash balance portion is already an account: taken as a lump sum, it is worth its balance regardless of where rates sit. Knowing which dollars are rate-sensitive keeps the timing conversation focused on the right bucket.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'Priya decides on the lump sum and asks Fidelity to mail HER the check, planning to deposit it into an IRA herself. What happens?',
+    options:[
+      {t:'Nothing special; she has 60 days, so the check is made out for the full amount.', why:'The 60-day window exists, but a check payable to her still triggers mandatory 20% federal withholding up front.'},
+      {t:'Mandatory 20% federal withholding comes off the top. A direct rollover to the IRA would have avoided withholding entirely.', correct:true},
+      {t:'A 10% early-withdrawal penalty applies because she is under 59½.', why:'The immediate, avoidable issue is the 20% withholding. (And she has separated after 55, which matters for penalty analysis, but withholding is the trap here.)'},
+    ],
+    explain:'A lump sum paid <strong>to the client</strong> triggers mandatory <strong>20% federal withholding</strong>; to complete a full rollover she would have to replace the withheld amount from other money within 60 days or owe tax on the shortfall. The clean path is a <strong>direct rollover</strong>, trustee to trustee, with no withholding. Set this up before the paperwork is filed, not after.',
+    ref:REF.pay },
+  ]
+},
+{
+  title:'Ray reads the healthcare fine print',
+  concepts:['Enroll vs subsidize','2001 hire-date rule','Pre-65 bridge'],
+  facts:[
+    '<strong>Ray, age 56</strong>, hired <strong>1994</strong>, <strong>32 years</strong> of service, CWA District 9',
+    'Meets Mod 75 (any age / 30+); retiring at the end of this month (2026)',
+    'Medicare eligibility begins at <strong>65</strong>, so he faces a <strong>9-year</strong> pre-Medicare gap',
+    'His coworker <strong>Tina was hired in 2005</strong> and also meets Mod 75',
+    'Another colleague plans to quit <strong>14 months short</strong> of any Mod 75 combination',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Can Ray enroll in AT&T retiree medical when he retires?',
+    options:[
+      {t:'No. Retiree medical was eliminated for everyone in 2021.', why:'What was eliminated in 2021 was the 65+/Medicare-era subsidy, not the ability of Mod 75 retirees to enroll.'},
+      {t:'Yes. Satisfying Mod 75 at termination is the gate to eligibility to enroll in AT&T retiree medical.', correct:true},
+      {t:'Only if he retires after age 60.', why:'The gate is Mod 75 status at termination, not a separate age-60 test.'},
+    ],
+    explain:'Satisfying <strong>Mod 75 at termination</strong> (or qualifying for a Disability Pension) is what makes a former bargained employee eligible to <em>enroll</em> in AT&T retiree medical, governed by the separate Medical Program SPD. Ray qualifies. Whether anyone pays part of his premium is a different question, which comes next.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'Does &ldquo;eligible to enroll&rdquo; mean AT&T pays part of Ray&rsquo;s premium?',
+    options:[
+      {t:'Yes. Enrollment and subsidy go together.', why:'They are two separate questions: can you enroll (Mod 75) and will the company pay part of the cost (subsidy rules by hire date and legacy group).'},
+      {t:'Not automatically. Enrollment and subsidy are separate. As a pre-2001 hire he MAY qualify for subsidized pre-Medicare contributions under his legacy group&rsquo;s rules; verify before promising anything.', correct:true},
+      {t:'No. All retirees pay 100% of cost now.', why:'Post-2000 hires pay 100%, but pre-2001 bargained hires may still qualify for subsidized pre-Medicare contributions under legacy-group rules.'},
+    ],
+    explain:'Two separate questions: <strong>can you enroll</strong> (Mod 75) and <strong>is it subsidized</strong> (hire date and legacy-company rules). Ray was hired in 1994, so he may qualify for subsidized pre-Medicare contributions under the Bargained Contribution Rules for his legacy group. Confirm in his Total Reward statement; never assume the subsidy.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'Tina (hired 2005) also meets Mod 75 when she retires. What is her healthcare position?',
+    options:[
+      {t:'Identical to Ray&rsquo;s: possible subsidy under legacy rules.', why:'The subsidy line is the hire date. Hired on or after 1/1/2001 means no subsidy, ever.'},
+      {t:'She can enroll in the group plan, but she pays 100% of the cost: employees hired on or after 1/1/2001 get no subsidy.', correct:true},
+      {t:'She cannot enroll at all.', why:'Mod 75 at termination still opens enrollment. What she loses is any company contribution toward the premium.'},
+    ],
+    explain:'Hired on or after <strong>1/1/2001</strong> means <strong>100% of cost</strong>, always; only pre-2001 hires can qualify for a subsidy under legacy rules. Both women can enroll (Mod 75), but their premiums can look very different. Hire date is one of the first facts to collect.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'Ray asks: &ldquo;And once I&rsquo;m on Medicare at 65, AT&T keeps helping, right?&rdquo; What changed in 2021?',
+    options:[
+      {t:'Nothing. The 65+ subsidy continues for union retirees.', why:'The 65+/Medicare-era subsidy was eliminated for anyone leaving payroll on or after 1/1/2021, bargained and management alike.'},
+      {t:'The 65+/Medicare-era subsidy was eliminated for both bargained and management employees whose last day on payroll is on or after 1/1/2021. Ray retires in 2026, so no 65+ subsidy.', correct:true},
+      {t:'The subsidy was eliminated only for management.', why:'The management-only cut was the pre-Medicare one (2022). The 65+ elimination hit bargained and management alike.'},
+    ],
+    explain:'The <strong>65+/Medicare-era subsidy was eliminated</strong> for both bargained and management retirees with a last day on payroll on or after <strong>1/1/2021</strong>. Ray&rsquo;s planning should treat AT&T help as (at most) a pre-65 phenomenon, then shift to Medicare, a supplement, and IRMAA management at 65.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'If Ray&rsquo;s subsidy turns out to be small or zero, why does eligibility to enroll still matter for the 9 years before Medicare?',
+    options:[
+      {t:'It does not; unsubsidized coverage is worthless.', why:'Group access itself has value. Individual pre-Medicare coverage can run well over $1,000 to $2,000 per month per person.'},
+      {t:'Individual pre-Medicare coverage can easily run $1,000 to $2,000+ per month per person; even unsubsidized group retiree coverage (enrolled through Alight) can beat the open market across a 9-year bridge.', correct:true},
+      {t:'Because enrolling keeps his pension unreduced.', why:'Healthcare enrollment and the pension reduction rules are entirely separate mechanics.'},
+    ],
+    explain:'The pre-65 bridge is where retiree-coverage value is concentrated. Nine years of individual-market premiums for a 56-year-old is a very large number; group access through <strong>Alight</strong> can beat it even without a subsidy, and beats it decisively where a bargained subsidy still applies.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'Last one. Ray&rsquo;s colleague plans to quit 14 months short of his first Mod 75 combination. What is the healthcare consequence?',
+    options:[
+      {t:'He can still enroll, just without a subsidy.', why:'Enrollment itself requires Mod 75 (or a Disability Pension) at termination. Deferred-vested-only former employees cannot enroll at any price.'},
+      {t:'He is not eligible to enroll in AT&T retiree medical at all: deferred-vested-only former bargained employees are outside the program. Fourteen more months of work would change that.', correct:true},
+      {t:'He keeps healthcare but loses the pension.', why:'It is closer to the reverse: he keeps his vested pension (reduced rules apply), and it is the healthcare access that vanishes.'},
+    ],
+    explain:'Missing Mod 75 at termination means <strong>no eligibility to enroll</strong>, not merely no subsidy. Combined with the steeper deferred-vested pension reductions, quitting 14 months early is frequently a six-figure decision. This colleague needs a milestone map before giving notice, which is precisely the advisor&rsquo;s highest-leverage move.',
+    ref:REF.mod75 },
+  ]
+},
+];
+
+// ------------------------------------------------------------------
+// Quiz engine
+// ------------------------------------------------------------------
+const TOTALQ = CASES.reduce((n,c)=>n+c.questions.length,0);
+const state = {
+  ci:0, qi:0,
+  attempts:0,
+  results: CASES.map(c=>c.questions.map(()=>null)), // {firstTry:bool, revealed:bool}
+  finished:false,
+};
+
+const casesHost = document.getElementById('cases');
+const railChips = document.getElementById('railChips');
+const railBar = document.getElementById('railBar');
+const railPct = document.getElementById('railPct');
+
+function answeredCount(){
+  let n=0; state.results.forEach(c=>c.forEach(r=>{if(r)n++;})); return n;
+}
+function firstTryCount(){
+  let n=0; state.results.forEach(c=>c.forEach(r=>{if(r&&r.firstTry)n++;})); return n;
+}
+function caseDone(ci){ return state.results[ci].every(r=>r!==null); }
+function caseScore(ci){ return state.results[ci].filter(r=>r&&r.firstTry).length; }
+
+function esc(s){return s;} // authored content is trusted HTML
+
+function renderRail(){
+  railChips.innerHTML='';
+  CASES.forEach((c,i)=>{
+    const chip=document.createElement('button');
+    chip.type='button';
+    let cls='chip', label='Case '+(i+1);
+    if(caseDone(i)){cls+=' done';label='✓ Case '+(i+1);}
+    else if(i===state.ci){cls+=' active';}
+    chip.className=cls; chip.textContent=label;
+    if(caseDone(i)||i===state.ci){
+      chip.addEventListener('click',()=>{ document.getElementById('case-'+i).scrollIntoView({behavior:'smooth',block:'start'}); });
+    }
+    railChips.appendChild(chip);
+  });
+  const a=answeredCount();
+  railBar.style.width=(a/TOTALQ*100)+'%';
+  railPct.textContent=a+' of '+TOTALQ+' answered';
+}
+
+function refLink(ref){
+  return '<div class="ref">Review: <a class="inline" href="'+ref.href+'" target="_blank" rel="noopener">'+ref.label+'</a></div>';
+}
+
+function renderAnsweredQ(caseIdx,qIdx){
+  const q=CASES[caseIdx].questions[qIdx];
+  const r=state.results[caseIdx][qIdx];
+  const div=document.createElement('div');
+  div.className='q answered'+(r.firstTry?'':' missed');
+  let yourTxt;
+  if(r.revealed) yourTxt='<b>Revealed</b> after two misses';
+  else if(r.firstTry) yourTxt='<b>Correct on the first attempt</b>';
+  else yourTxt='<b>Correct after '+(r.tries)+' attempts</b>';
+  let ansTxt;
+  if(q.type==='num'){ ansTxt=(q.pre?q.pre+' ':'')+fmtAnswer(q); }
+  else { ansTxt=q.options.find(o=>o.correct).t; }
+  div.innerHTML=
+    '<div class="qlab">Checkpoint '+(qIdx+1)+' of '+CASES[caseIdx].questions.length+'</div>'+
+    '<div class="qtext">'+q.q+'</div>'+
+    '<div class="youranswer">'+yourTxt+' &middot; Answer: <strong>'+ansTxt+'</strong></div>'+
+    '<div class="explain'+(r.revealed?' revealed':'')+'"><span class="etag">'+(r.revealed?'Answer revealed':'Why')+'</span><p>'+q.explain+'</p>'+refLink(q.ref)+'</div>';
+  return div;
+}
+
+function fmtAnswer(q){
+  const n=q.answer;
+  return (Number.isInteger(n)?n.toLocaleString('en-US'):n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}));
+}
+
+function parseNum(v){
+  const cleaned=String(v).replace(/[$,%\s,]/g,'');
+  if(cleaned==='') return NaN;
+  return parseFloat(cleaned);
+}
+
+function renderActiveQ(caseIdx,qIdx,container){
+  const q=CASES[caseIdx].questions[qIdx];
+  const div=document.createElement('div');
+  div.className='q';
+  let inner='<div class="qlab">Checkpoint '+(qIdx+1)+' of '+CASES[caseIdx].questions.length+'</div>'+
+            '<div class="qtext">'+q.q+'</div>';
+  div.innerHTML=inner;
+
+  const finish=(firstTry,revealed,tries)=>{
+    state.results[caseIdx][qIdx]={firstTry:firstTry,revealed:revealed,tries:tries};
+    state.attempts=0;
+    advance(caseIdx,qIdx,div,q,revealed);
+  };
+
+  if(q.type==='mc'){
+    const opts=document.createElement('div'); opts.className='opts';
+    q.options.forEach(o=>{
+      const b=document.createElement('button');
+      b.type='button'; b.className='opt'; b.innerHTML=o.t;
+      b.addEventListener('click',()=>{
+        if(b.disabled) return;
+        state.attempts++;
+        if(o.correct){
+          b.classList.add('right');
+          opts.querySelectorAll('.opt').forEach(x=>x.disabled=true);
+          finish(state.attempts===1,false,state.attempts);
+        } else {
+          b.classList.add('wrong','shake'); b.disabled=true;
+          const fb=document.createElement('div'); fb.className='feedback bad';
+          fb.innerHTML=o.why||'Not quite. Look again at the facts.';
+          b.insertAdjacentElement('afterend',fb);
+        }
+      });
+      opts.appendChild(b);
+    });
+    div.appendChild(opts);
+  } else {
+    const row=document.createElement('div'); row.className='numrow';
+    if(q.pre){const p=document.createElement('span');p.className='pre';p.innerHTML=q.pre;row.appendChild(p);}
+    const input=document.createElement('input');
+    input.type='text'; input.inputMode='decimal'; input.setAttribute('aria-label','Your answer');
+    input.placeholder='Your answer';
+    const check=document.createElement('button'); check.type='button'; check.className='btn'; check.textContent='Check';
+    row.appendChild(input); row.appendChild(check);
+    div.appendChild(row);
+    const fbHost=document.createElement('div'); div.appendChild(fbHost);
+
+    const tryCheck=()=>{
+      if(input.disabled) return;
+      const v=parseNum(input.value);
+      fbHost.innerHTML='';
+      if(isNaN(v)){
+        fbHost.innerHTML='<div class="feedback hint">Enter a number. $ signs, commas, and % are fine.</div>';
+        return;
+      }
+      state.attempts++;
+      if(Math.abs(v-q.answer)<=q.tol){
+        input.classList.remove('wrong'); input.classList.add('right');
+        input.disabled=true; check.disabled=true;
+        finish(state.attempts===1,false,state.attempts);
+      } else {
+        input.classList.add('wrong','shake');
+        setTimeout(()=>input.classList.remove('shake'),600);
+        let msg='<div class="feedback bad">Not it. Check the setup and try again.</div>';
+        if(state.attempts>=1 && q.hint) msg+='<div class="feedback hint"><strong>Hint:</strong> '+q.hint+'</div>';
+        fbHost.innerHTML=msg;
+        if(state.attempts>=2){
+          const rv=document.createElement('button'); rv.type='button'; rv.className='btn ghost'; rv.style.marginTop='10px';
+          rv.textContent='Reveal the answer';
+          rv.addEventListener('click',()=>{
+            input.value=fmtAnswer(q); input.disabled=true; check.disabled=true;
+            input.classList.remove('wrong');
+            fbHost.innerHTML='';
+            finish(false,true,state.attempts);
+          });
+          fbHost.appendChild(rv);
+        }
+      }
+    };
+    check.addEventListener('click',tryCheck);
+    input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();tryCheck();}});
+    setTimeout(()=>input.focus({preventScroll:true}),50);
+  }
+  container.appendChild(div);
+  return div;
+}
+
+function advance(caseIdx,qIdx,qDiv,q,revealed){
+  // show explanation + continue button in place
+  const r=state.results[caseIdx][qIdx];
+  const ex=document.createElement('div');
+  ex.className='explain'+(revealed?' revealed':'');
+  ex.innerHTML='<span class="etag">'+(revealed?'Answer revealed':(r.firstTry?'Correct':'Correct (attempt '+r.tries+')'))+'</span><p>'+q.explain+'</p>'+refLink(q.ref);
+  qDiv.appendChild(ex);
+
+  const nav=document.createElement('div'); nav.className='qnav';
+  const btn=document.createElement('button'); btn.type='button'; btn.className='btn gold';
+  const lastQ = qIdx===CASES[caseIdx].questions.length-1;
+  const lastCase = caseIdx===CASES.length-1;
+  btn.textContent = lastQ ? (lastCase?'Finish and see your results':'Complete case, unlock the next') : 'Next checkpoint';
+  btn.addEventListener('click',()=>{
+    if(lastQ){ state.ci=caseIdx+1; state.qi=0; }
+    else { state.qi=qIdx+1; }
+    renderAll();
+    const target = lastQ ? (lastCase?document.getElementById('summaryHost'):document.getElementById('case-'+(caseIdx+1)))
+                         : document.getElementById('case-'+caseIdx+'-q'+(qIdx+1));
+    if(target) setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:lastQ?'start':'center'}),60);
+  });
+  nav.appendChild(btn);
+  qDiv.appendChild(nav);
+  renderRail();
+}
+
+function renderCase(ci){
+  const c=CASES[ci];
+  const done=caseDone(ci);
+  const locked=!done && ci>state.ci;
+  const active=!done && ci===state.ci;
+  const card=document.createElement('div');
+  card.className='case'+(locked?' locked':'')+(done?' done':'');
+  card.id='case-'+ci;
+
+  const stat = done ? (caseScore(ci)+' / '+c.questions.length+' first try')
+             : locked ? '🔒 Locked' : 'In progress';
+  let head='<div class="chead">'+
+    '<div class="cnum">'+(done?'✓':(ci+1))+'</div>'+
+    '<div class="ct"><h3>Case '+(ci+1)+': '+c.title+'</h3>'+
+    '<div class="concepts">'+c.concepts.map(k=>'<span>'+k+'</span>').join('')+'</div></div>'+
+    '<div class="cstat">'+stat+'</div></div>';
+  card.innerHTML=head;
+
+  if(locked){
+    const b=document.createElement('div'); b.className='cbody';
+    b.innerHTML='<p class="small" style="padding:12px 0 8px">Complete the previous case to unlock this one.</p>';
+    card.appendChild(b);
+    return card;
+  }
+
+  const body=document.createElement('div'); body.className='cbody';
+  const facts=document.createElement('div'); facts.className='facts';
+  facts.innerHTML='<span class="ftag">Client facts</span><ul>'+c.facts.map(f=>'<li>'+f+'</li>').join('')+'</ul>';
+  body.appendChild(facts);
+
+  const upto = done ? c.questions.length : state.qi;
+  for(let qi=0; qi<upto; qi++){
+    const el=renderAnsweredQ(ci,qi);
+    el.id='case-'+ci+'-q'+qi;
+    body.appendChild(el);
+  }
+  if(active && state.qi<c.questions.length){
+    const el=renderActiveQ(ci,state.qi,body);
+    el.id='case-'+ci+'-q'+state.qi;
+  }
+  card.appendChild(body);
+  return card;
+}
+
+function renderSummary(){
+  const host=document.getElementById('summaryHost');
+  host.innerHTML='';
+  if(!CASES.every((c,i)=>caseDone(i))) return;
+  const ft=firstTryCount();
+  const pct=Math.round(ft/TOTALQ*100);
+  let grade;
+  if(pct>=90) grade='Excellent. You are ready to run these conversations with real clients.';
+  else if(pct>=75) grade='Strong. Re-read the sections linked below and you are there.';
+  else if(pct>=55) grade='A solid start. The linked guide sections cover every miss.';
+  else grade='Worth a full pass through the field guide before client meetings, then retake this.';
+
+  const missed=[];
+  CASES.forEach((c,ci)=>c.questions.forEach((q,qi)=>{
+    const r=state.results[ci][qi];
+    if(!r.firstTry) missed.push({c:ci,q:qi,ref:q.ref});
+  }));
+  const missHtml = missed.length
+    ? '<div class="misslist"><h4>Missed on the first attempt</h4><ul>'+
+      missed.map(m=>'<li>Case '+(m.c+1)+', checkpoint '+(m.q+1)+' &middot; <a href="'+m.ref.href+'" target="_blank" rel="noopener">'+m.ref.label+'</a></li>').join('')+
+      '</ul></div>'
+    : '<div class="misslist"><h4>Missed on the first attempt</h4><ul><li>Nothing. A clean sweep.</li></ul></div>';
+
+  const div=document.createElement('div');
+  div.className='summary';
+  div.innerHTML='<div class="pn" style="color:var(--gold-soft)">Results</div>'+
+    '<h2>Knowledge check complete</h2>'+
+    '<div class="score">'+ft+' / '+TOTALQ+'</div>'+
+    '<div class="grade">first-attempt score ('+pct+'%) &middot; '+grade+'</div>'+
+    missHtml+
+    '<p>Every scenario here maps to a live client decision: milestone mapping before a resignation, quoting a reduction correctly, decoding a NetBenefits statement, timing a commencement year, and reading the healthcare fine print. Keep the <a class="inline" style="color:var(--gold-soft)" href="index.html">field guide</a> open in real meetings.</p>'+
+    '<button type="button" class="btn gold" id="resetBtn">Start over</button>';
+  host.appendChild(div);
+  document.getElementById('resetBtn').addEventListener('click',()=>{
+    state.ci=0;state.qi=0;state.attempts=0;state.finished=false;
+    state.results=CASES.map(c=>c.questions.map(()=>null));
+    renderAll();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+}
+
+function renderAll(){
+  casesHost.innerHTML='';
+  CASES.forEach((c,i)=>casesHost.appendChild(renderCase(i)));
+  renderRail();
+  renderSummary();
+}
+renderAll();
+</script>
+</body>
+</html>

@@ -25,6 +25,7 @@
 
 ## Design hook (Impeccable) — intentional, not defects
 
-- The `side-tab`, `border-accent-on-rounded`, and `overused-font` (Helvetica) findings on both
-  `index.html` and `non-bargained.html` are deliberate: the new page must mirror the established
-  union guide's visual system. Not changing unless the user wants both guides restyled together.
+- The `side-tab`, `border-accent-on-rounded`, and `overused-font` (Helvetica) findings on
+  `index.html`, `non-bargained.html`, and `case-studies.html` are deliberate: every page in the
+  set mirrors the established union guide's visual system. Not changing unless the user wants
+  the whole set restyled together.
