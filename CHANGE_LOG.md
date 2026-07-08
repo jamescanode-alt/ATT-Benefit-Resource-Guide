@@ -1,5 +1,39 @@
 # CHANGE_LOG
 
+## 2026-07-08 (2) — Legacy Non-Bargained case studies (case-studies-nb.html)
+
+Companion to the union case-studies page: **six client scenarios (30 checkpoints)** built around
+what makes the Nonbargained (management) plan different, and where union-trained advisors slip.
+Same engine and visual system as `case-studies.html` (gated numeric/multiple-choice checkpoints,
+hint after one miss, reveal after two, first-attempt scoring, miss-list with review links, reset).
+
+Coverage: (1) which program applies + greatest-of-three, not a sum (CAM $2,800 vs $95k cash
+balance; Mod 75 attaches to CAM/PBM only); (2) CAM math ($70k × 12 = $840k pre-2000 piece,
+$2.4M CAM Income, 1.6%/12 → $3,200/mo; still accruing vs the frozen CB); (3) the two lump-sum
+doors (frozen-since-1/14/2005 interest-only CB; post-2018 full lump sum; SPD's CAM Excess
+example: $180k − $90k → $500/mo ≥ $400 → partial $90k lump sum + residual annuity; segment-rate
+exposure on CAM only); (4) NB Mod 75 vs the union rule (30+ yrs is NOT unreduced at any age here:
+0.25%/mo before 55 → 36 mo = 9% → $2,730; under 30 yrs 0.5%/mo → 18%; pop-up gated on Mod 75);
+(5) severance vs Mod 75 timing (50% cap → $65,000 vs 1 more year to 50/25; taxable, not
+rollable); (6) healthcare + Retiree Death Benefit (same Mod 75 gate; management pre-Medicare
+subsidy gone for last day ≥ 1/1/2022 regardless of hire date; greater-of $120k × 0.70 = $84,000
+vs $2,900 × 12 = $34,800; fixed beneficiary order; one-year claim deadline). All facts mirror the
+SPD-verified `non-bargained.html`; explanations deep-link its sections.
+
+**Links:** "Training" nav item + Strategy Playbook callout in `non-bargained.html` (plain anchor,
+kept off the `.navitem` observer); footer cross-link in `case-studies.html`; the NB page footer
+links back to the union case studies.
+
+**Validated in preview:** no console errors on either page; wrong/right MC flow; all 30
+checkpoints solvable with the authored answer key (every numeric value accepted exactly); score
+29/30 after one deliberate miss; every MC has exactly one correct option; reset re-locks cases;
+all nine deep-link anchors exist in `non-bargained.html`; its Mod 75 calculator and nav observer
+still run; no horizontal overflow at desktop or 375px mobile. Design-hook findings are the
+documented intentional visual-system exceptions (TODO.md note extended).
+
+**Files:** `case-studies-nb.html` (new), `non-bargained.html`, `case-studies.html`,
+`PLAN_LOG.md`, `TODO.md`. Pushed as b9c641c.
+
 ## 2026-07-08 — Interactive advisor case studies (case-studies.html)
 
 New standalone training page with **six client case studies (30 checkpoints)** testing the
