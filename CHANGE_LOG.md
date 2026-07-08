@@ -1,5 +1,38 @@
 # CHANGE_LOG
 
+## 2026-07-08 — Interactive advisor case studies (case-studies.html)
+
+New standalone training page with **six client case studies (30 checkpoints)** testing the
+concepts advisors most often get wrong. The advisor must calculate (numeric input) or choose
+(multiple choice) correctly to advance; questions gate sequentially within a case and cases
+unlock in order. Wrong picks lock out with an explanation of the specific misconception; numeric
+questions give a hint after one miss and a reveal option after two. First-attempt answers score,
+and a results screen links every miss back to the guide section to review.
+
+Coverage: (1) Mod 75 pairs-vs-sum + tested-at-termination + deferred-vested consequences;
+(2) early-commencement reduction math (0.5%/mo, 24 mo → 12% → $1,232, West 55 vs Southeast 56,
+cash balance unaffected); (3) Pre-99 pension-band arithmetic ($51.81 × 17 × 1.06 = $933.62,
+supplemental $10.20, service-as-of-12/31/1998 trap); (4) cash-balance mechanics (age credit
+factors, $164 pay credit, $293.60 interest credit, wage-base Supplemental Pay Credit);
+(5) segment rates and the lump sum (inverse relationship, prior-November calendar-year lock,
+Dec-vs-Jan commencement, cash balance not rate-converted, 20% withholding vs direct rollover);
+(6) retiree healthcare (enroll-vs-subsidize, 2001 hire-date rule, 2021 Medicare-subsidy
+elimination, pre-65 bridge value, deferred-vested = no enrollment). All facts mirror the
+SPD-verified content of `index.html`; every explanation deep-links the relevant guide section.
+
+**Links added in `index.html`:** a "Training" nav item (plain anchor, kept off the `.navitem`
+scroll-observer to avoid an invalid-selector throw) and a callout at the end of the Strategy
+Playbook (Section 11).
+
+**Validated in preview:** no console errors; wrong/right MC flow, hint + reveal flow, tolerant
+number parsing ("$ 2 ", commas, %), case gating/unlock, 30/30 solvable with the authored answer
+key, first-try scoring (28/30 after two deliberate misses), miss-list links, reset; index nav +
+callout links resolve; no horizontal overflow at desktop or 375px mobile. (Preview screenshot
+tool timed out repeatedly; verification done via DOM snapshot/inspect/eval instead.) Design-hook
+findings are the documented intentional visual-system exceptions (see TODO.md).
+
+**Files:** `case-studies.html` (new), `index.html`, `PLAN_LOG.md`, `TODO.md`. Pushed as a4643d5.
+
 ## 2026-07-02 (6) — Merge the two "unreduced" Mod 75 cards back to one
 
 The 30+ years and "under 30 yrs, at/after threshold age" cards produce the *same* employee benefit
