@@ -1,5 +1,28 @@
 # PLAN_LOG
 
+## 2026-07-08 (2) — Legacy Non-Bargained case-study training page (case-studies-nb.html)
+
+**Task.** Mirror the union case-studies page for the Nonbargained (management) plan, testing the
+concepts that differ from (and get confused with) the union rules: which program applies and
+greatest-of-three (not a sum); CAM formula math (1.6% x CAM Income / 12, two-piece CAM Income);
+the frozen cash balance (pay credits stopped 1/14/2005, interest only, lump-sum lever); NB Mod 75
+(0.25%/mo with 30+ yrs before 55, NOT fully unreduced; 0.5%/mo under 30; flat age-55 threshold;
+CAM/PBM only; J&S pop-up gated on Mod 75); lump-sum paths (post-2018 full lump sum vs CAM Excess
+Calculation, $400/mo test) and segment-rate timing; severance vs Mod 75 timing (4%/yr capped 50%
+at 13+); healthcare (2022 management pre-Medicare subsidy elimination) and the Retiree Death
+Benefit (greater-of, 10%/yr decay, 1-year claim deadline).
+
+**Source of truth.** All facts mirror the SPD-verified content of `non-bargained.html`; the CAM
+Excess numbers reuse the SPD's own worked example. No new plan claims.
+
+**Files.** New `case-studies-nb.html` (same engine/visual system as `case-studies.html`);
+nav link + strategy callout in `non-bargained.html`; footer cross-link in `case-studies.html`.
+
+**Risks.** Do not import union-only rules (30+ yrs unreduced at any age, 55/56 split, additive
+formulas). Numeric tolerance for rounding. Keep the shared visual system.
+
+**Next steps.** Build page → validate in preview (flow, math, responsive) → push → CHANGE_LOG.
+
 ## 2026-07-08 — Advisor case-study training page (case-studies.html)
 
 **Task.** Build an interactive case-study page that tests an advisor's knowledge of the AT&T

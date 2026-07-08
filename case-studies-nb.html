@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AT&T Legacy Non-Bargained Case Studies: Test Your Plan Knowledge</title>
+<style>
+:root{
+  --cream:#F7F4E9;
+  --cream-deep:#EFE9D6;
+  --ink:#10243F;
+  --ink-soft:#33486A;
+  --blue:#1E55C0;
+  --blue-bright:#2E84D6;
+  --sky:#cfe1f5;
+  --gold:#C08A2D;
+  --gold-soft:#E4C98A;
+  --line:#D8D0BA;
+  --paper:#FDFCF6;
+  --good:#2E7D52;
+  --warn:#B5532A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.sans{font-family:'Helvetica Neue',Arial,sans-serif}
+main{max-width:880px;margin:0 auto;padding:0 24px 90px}
+p{margin-bottom:14px;font-size:16.5px}
+p.lead{font-size:19px;color:var(--ink-soft);line-height:1.55}
+strong{font-weight:bold}
+a.inline{color:var(--blue)}
+.small{font-size:13.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(160deg,#10243F 0%,#16345b 60%,#1d4377 100%);
+  color:var(--cream);padding:58px 24px 48px;border-bottom:5px solid var(--gold);
+  position:relative;overflow:hidden;
+}
+.hero .inner{max-width:880px;margin:0 auto;position:relative}
+.hero .gear{position:absolute;right:-90px;top:-90px;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, rgba(46,132,214,.28), transparent 60%);pointer-events:none}
+.hero .eyebrow{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:14px}
+.hero h1{color:#fff;font-size:42px;line-height:1.1;font-weight:normal;letter-spacing:-.5px;margin-bottom:16px;max-width:720px}
+.hero p.lead{color:#cdddf2;max-width:640px}
+.hero .backlink{display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--gold-soft);text-decoration:none;margin-bottom:22px;letter-spacing:.3px}
+.hero .backlink:hover{color:#fff}
+.hero .meta{display:flex;gap:38px;margin-top:28px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.hero .meta div span{display:block}
+.hero .meta .k{font-size:10.5px;letter-spacing:2px;color:#8fb0d6;text-transform:uppercase}
+.hero .meta .v{font-size:15px;color:#fff;margin-top:3px}
+
+/* ---------- Progress rail ---------- */
+.rail{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid #24426b;padding:10px 24px}
+.rail .inner{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.rail .chips{display:flex;gap:6px;flex-wrap:wrap}
+.rail .chip{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.5px;padding:4px 11px;border-radius:20px;border:1px solid #2c4a75;color:#7d93b6;background:transparent;cursor:default;white-space:nowrap}
+.rail .chip.active{background:var(--gold);border-color:var(--gold);color:#10243F;font-weight:700;cursor:pointer}
+.rail .chip.done{background:#163459;border-color:#2c4a75;color:#9fe0b9;cursor:pointer}
+.rail .bar{flex:1;min-width:120px;height:6px;background:#163459;border-radius:4px;overflow:hidden}
+.rail .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));width:0%;transition:width .4s}
+.rail .pct{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#c6d4e8;min-width:104px;text-align:right}
+
+/* ---------- Intro ---------- */
+.intro{padding:44px 0 8px}
+.pn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+h2{font-size:30px;line-height:1.15;font-weight:normal;letter-spacing:-.4px;margin:6px 0 12px}
+.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 8px}
+@media(max-width:720px){.howto{grid-template-columns:1fr}}
+.howto .h{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px;border-top:4px solid var(--blue)}
+.howto .h.b{border-top-color:var(--gold)}
+.howto .h.c{border-top-color:var(--good)}
+.howto .h h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;font-weight:700}
+.howto .h p{font-size:13.5px;margin:0;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif}
+
+/* ---------- Case cards ---------- */
+.case{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin:26px 0;box-shadow:0 2px 14px rgba(16,36,63,.06);overflow:hidden}
+.case.locked{opacity:.62;background:var(--cream-deep)}
+.chead{padding:20px 26px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+.case.locked .chead{border-bottom:none}
+.chead .cnum{flex:0 0 44px;height:44px;border-radius:50%;background:var(--ink);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:16px}
+.case.done .chead .cnum{background:var(--good);color:#fff}
+.case.locked .chead .cnum{background:#b9b19a;color:#fff}
+.chead .ct{flex:1}
+.chead .ct h3{font-size:20px;font-weight:normal;line-height:1.25}
+.chead .ct .concepts{margin-top:5px;display:flex;gap:6px;flex-wrap:wrap}
+.chead .ct .concepts span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;background:var(--cream-deep);color:var(--ink-soft);border-radius:20px;padding:2px 10px}
+.chead .cstat{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+.case.done .chead .cstat{color:var(--good);font-weight:700}
+.cbody{padding:6px 26px 26px}
+@media(max-width:640px){.chead{padding:16px 18px}.cbody{padding:6px 18px 20px}}
+
+/* client facts */
+.facts{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:18px 0}
+.facts .ftag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;display:block;margin-bottom:8px}
+.facts ul{list-style:none}
+.facts li{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:var(--ink-soft);padding:3px 0 3px 18px;position:relative}
+.facts li::before{content:"·";position:absolute;left:4px;color:var(--gold);font-weight:700}
+.facts li strong{color:var(--ink)}
+
+/* questions */
+.q{border-top:1px dashed var(--line);padding:20px 0 4px;margin-top:16px}
+.q .qlab{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700}
+.q .qtext{font-size:17px;margin:8px 0 14px}
+.q .opts{display:flex;flex-direction:column;gap:8px}
+.q .opt{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;text-align:left;padding:12px 16px;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;color:var(--ink);line-height:1.45;transition:.12s}
+.q .opt:hover{border-color:var(--blue);background:#f4f8fe}
+.q .opt.wrong{border-color:var(--warn);background:#fbf0ea;color:var(--warn);cursor:not-allowed}
+.q .opt.right{border-color:var(--good);background:#eef6f1;color:var(--good);font-weight:700}
+.q .opt:disabled{cursor:not-allowed}
+.q .numrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.q .numrow .pre{font-size:15px;color:var(--ink-soft)}
+.q .numrow input{width:170px;padding:11px 13px;border:1px solid var(--line);border-radius:8px;font-size:16px;font-family:'Helvetica Neue',Arial,sans-serif;text-align:right;background:#fff}
+.q .numrow input:focus{outline:none;border-color:var(--blue)}
+.q .numrow input.wrong{border-color:var(--warn);background:#fbf0ea}
+.q .numrow input.right{border-color:var(--good);background:#eef6f1;color:var(--good);font-weight:700}
+.btn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.3px;padding:11px 22px;border-radius:8px;border:none;cursor:pointer;background:var(--ink);color:#fff;transition:.12s}
+.btn:hover{background:#1d3a63}
+.btn.gold{background:var(--gold);color:#10243F}
+.btn.gold:hover{background:#ad7b25;color:#fff}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink-soft)}
+.btn.ghost:hover{border-color:var(--warn);color:var(--warn)}
+.feedback{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;margin-top:10px;padding:10px 14px;border-radius:8px}
+.feedback.bad{background:#fbf0ea;color:var(--warn);border:1px solid #e6c3b2}
+.feedback.hint{background:#fbf6ea;color:#8a6416;border:1px solid var(--gold-soft)}
+.explain{border-left:4px solid var(--good);background:#eef6f1;padding:15px 18px;margin:14px 0 6px;border-radius:0 8px 8px 0}
+.explain.revealed{border-left-color:var(--warn);background:#fbf0ea}
+.explain .etag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--good);display:block;margin-bottom:5px}
+.explain.revealed .etag{color:var(--warn)}
+.explain p{font-size:14.5px;margin-bottom:6px}
+.explain p:last-child{margin-bottom:0}
+.explain .ref{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px}
+.qnav{margin-top:14px}
+
+/* answered question, compact record */
+.q.answered .qtext{color:var(--ink-soft)}
+.q .youranswer{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:var(--ink-soft);margin-bottom:4px}
+.q .youranswer b{color:var(--good)}
+.q.missed .youranswer b{color:var(--warn)}
+
+/* case complete strip */
+.casedone{margin-top:20px;background:var(--ink);color:#fff;border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.casedone .cd-t{flex:1;font-size:14.5px}
+.casedone .cd-t b{color:var(--gold-soft)}
+
+/* summary */
+.summary{background:linear-gradient(160deg,#10243F 0%,#16345b 60%,#1d4377 100%);color:var(--cream);border-radius:14px;padding:38px 34px;margin:34px 0;border-bottom:5px solid var(--gold)}
+.summary h2{color:#fff}
+.summary .score{font-size:54px;color:var(--gold-soft);font-family:Georgia,serif;line-height:1;margin:10px 0 4px}
+.summary .grade{font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;color:#cdddf2;margin-bottom:18px}
+.summary .misslist{background:rgba(255,255,255,.06);border:1px solid #2c4a75;border-radius:10px;padding:16px 20px;margin:16px 0}
+.summary .misslist h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+.summary .misslist ul{list-style:none}
+.summary .misslist li{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:#cdddf2;padding:4px 0 4px 16px;position:relative}
+.summary .misslist li::before{content:"→";position:absolute;left:0;color:var(--gold-soft)}
+.summary .misslist a{color:var(--gold-soft)}
+.summary p{color:#cdddf2;font-size:15px}
+
+/* footer */
+.foot{padding:40px 24px;background:var(--ink);color:#c6d4e8;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.7}
+.foot .inner{max-width:880px;margin:0 auto}
+.foot .ftitle{color:#fff;font-size:15px;letter-spacing:1px;margin-bottom:8px;font-weight:600}
+.foot a{color:var(--gold-soft)}
+.foot .disc{margin-top:18px;font-size:11.5px;color:#7d93b6;border-top:1px solid #24426b;padding-top:16px}
+
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.shake{animation:shake .25s ease-in-out 2}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="gear"></div>
+  <div class="inner">
+    <a class="backlink" href="non-bargained.html">&larr; Back to the Legacy Non-Bargained Field Guide</a>
+    <div class="eyebrow">Training &middot; Knowledge Check &middot; Nonbargained Program</div>
+    <h1>Legacy Non-Bargained Case Studies: Prove You Know the Management Plan</h1>
+    <p class="lead">Six client scenarios built around what makes the Nonbargained (management) plan different, and where advisors who learned the union rules first get burned: greatest-of-three formulas, CAM math, the frozen cash balance, the management flavor of Mod 75, severance timing, and the healthcare and death-benefit fine print. You must calculate or choose the right answer to advance.</p>
+    <div class="meta">
+      <div><span class="k">Format</span><span class="v">6 cases &middot; 30 checkpoints</span></div>
+      <div><span class="k">Progression</span><span class="v">Answer correctly to unlock the next step</span></div>
+      <div><span class="k">Source</span><span class="v">Nonbargained guide &amp; SPD library</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="rail">
+  <div class="inner">
+    <div class="chips" id="railChips"></div>
+    <div class="bar"><i id="railBar"></i></div>
+    <div class="pct" id="railPct">0 of 30 answered</div>
+  </div>
+</div>
+
+<main>
+
+<div class="intro">
+  <div class="pn">How this works</div>
+  <h2>Work each case like a first meeting</h2>
+  <div class="howto">
+    <div class="h"><h4>Read the client facts</h4><p>Each case opens with a profile. Everything you need is in the facts, or in the field guide if you want to look it up. Using the guide is encouraged; that is the workflow on a real client.</p></div>
+    <div class="h b"><h4>Calculate or choose</h4><p>Numeric questions want a number (rounding is fine; $ and % signs are OK). Multiple choice locks out wrong picks. A hint appears after a miss, and you can reveal the answer after two misses.</p></div>
+    <div class="h c"><h4>Advance and review</h4><p>A correct answer shows the full reasoning with a link back to the guide section. Finish a case to unlock the next. First-attempt answers count toward your score.</p></div>
+  </div>
+  <p class="small" style="margin-top:12px">Figures follow the illustrative values used in the <a class="inline" href="non-bargained.html">Legacy Non-Bargained field guide</a> and its SPD's own worked examples. Several questions deliberately test where these rules <strong>differ from the union plan</strong>; if you have not taken the <a class="inline" href="case-studies.html">union case studies</a>, they pair well. Real client numbers always come from NetBenefits and the controlling SPD.</p>
+</div>
+
+<div id="cases"></div>
+<div id="summaryHost"></div>
+
+</main>
+
+<div class="foot">
+  <div class="inner">
+    <div class="ftitle">Farther &middot; AT&amp;T Focus Team, Legacy Non-Bargained Case Studies</div>
+    <div>Companion knowledge check to the <a href="non-bargained.html">Legacy Non-Bargained Guide</a>. Also see the <a href="case-studies.html">Union / Bargained case studies</a> and the <a href="index.html">Union</a> and <a href="mobility.html">Mobility</a> guides.</div>
+    <div class="disc">
+      This material is for internal educational and training use by Farther advisors. Scenarios and people are fictional; figures are illustrative values drawn from the Nonbargained Program SPD in the project library and simplify complex plan provisions. Formulas, factors, thresholds, and dollar limits vary by legacy company and plan year and change over time. Nothing here is legal, tax, or investment advice or a promise of any benefit. Always verify a client's actual figures in Fidelity NetBenefits and the current SPD before advising.
+    </div>
+  </div>
+</div>
+
+<script>
+// ------------------------------------------------------------------
+// Case data. All facts mirror non-bargained.html (SPD-verified guide content).
+// Question types: 'mc' {options:[{t, correct?, why?}]} and 'num' {answer, tol}.
+// ------------------------------------------------------------------
+const REF = {
+  program: {href:'non-bargained.html#which-program', label:'NB Guide Section 02: Which program applies'},
+  formulas:{href:'non-bargained.html#formulas',      label:'NB Guide Section 04: Greatest of three formulas'},
+  cam:     {href:'non-bargained.html#cam',           label:'NB Guide Section 05: The CAM formula'},
+  cb:      {href:'non-bargained.html#cash-balance',  label:'NB Guide Section 06: Cash balance (frozen)'},
+  mod75:   {href:'non-bargained.html#mod75',         label:'NB Guide Section 08: The Modified Rule of 75'},
+  calc:    {href:'non-bargained.html#elig-calc',     label:'NB Guide Section 09: Mod 75 calculator'},
+  pay:     {href:'non-bargained.html#payment',       label:'NB Guide Section 10: Payment &amp; lump sum'},
+  death:   {href:'non-bargained.html#death-benefit', label:'NB Guide Section 13: The Retiree Death Benefit'},
+  sev:     {href:'non-bargained.html#severance',     label:'NB Guide Section 14: Severance &amp; surplus'},
+};
+
+const CASES = [
+{
+  title:'Tom and the statement that does not stack',
+  concepts:['Which program','Greatest of three','Not a sum'],
+  facts:[
+    '<strong>Tom, age 54</strong>, legacy Southwestern Bell manager, hired 1995',
+    'Employed by a Participating Company on <strong>Dec 31, 2006</strong>; never rehired after',
+    'NetBenefits shows a <strong>CAM Formula</strong> figure of $2,800/month, a <strong>Cash Balance Formula</strong> account of $95,000 (roughly $610/month as an annuity), and no PBM',
+    'He was never promoted from a bargained band',
+    'Tom&rsquo;s take: <strong>&ldquo;I get the $2,800 pension PLUS the $95,000 account, just like my union buddy&rsquo;s plan.&rdquo;</strong>',
+  ],
+  questions:[
+  { type:'mc',
+    q:'First things first: which pension program is Tom in?',
+    options:[
+      {t:'The Mobility Program.', why:'Mobility covers AT&T Mobility employees. Tom is legacy SBC management.'},
+      {t:'The Nonbargained Program: legacy SBC management employed on Dec 31, 2006 and not rehired after.', correct:true},
+      {t:'The Management Cash Balance Program.', why:'That program covers management hired after the mid-2000s cutoffs. Tom was hired in 1995 and employed on 12/31/2006.'},
+      {t:'The Bargained Program, since he has a cash balance.', why:'Having a cash balance formula does not make him bargained. He is a management employee; the union guide does not apply to him.'},
+    ],
+    explain:'&ldquo;Non-bargained&rdquo; is not one plan. A legacy SBC manager <strong>employed on Dec 31, 2006 and not rehired after</strong> sits in the <strong>Nonbargained Program</strong>, whose formula structure, Mod 75 rules, and lump-sum paths are the subject of this whole case set. Confirming the program is always the first question for a management client.',
+    ref:REF.program },
+  { type:'mc',
+    q:'Is Tom right that he receives the $2,800/month CAM benefit PLUS his $95,000 cash balance?',
+    options:[
+      {t:'Yes. The formulas add together, like the union plan&rsquo;s cash balance plus Pre-99 band.', why:'That additive structure is the union plan. The Nonbargained formulas compete; only the single highest result is paid.'},
+      {t:'No. The Nonbargained pension is the GREATEST of the CAM, Cash Balance, and PBM results; he receives only the single highest, here CAM.', correct:true},
+      {t:'He receives the average of the formulas.', why:'There is no averaging. One formula wins outright.'},
+    ],
+    explain:'The Nonbargained pension is the <strong>greatest of three competing formulas</strong>, not a sum. Tom&rsquo;s CAM ($2,800/month) beats his cash balance (about $610/month as an annuity), so CAM is his controlling benefit. Reading a management statement as if the pieces stack, the way the union benefit genuinely does, <strong>overstates the pension</strong>. This is the single most important structural difference between the two guides.',
+    ref:REF.formulas },
+  { type:'mc',
+    q:'So is the $95,000 cash balance worthless to Tom?',
+    options:[
+      {t:'Essentially yes; the losing formulas are discarded entirely.', why:'The losing formula is not paid as income, but a cash-balance component still matters for how the benefit can be paid.'},
+      {t:'No. A cash balance component historically unlocked lump-sum eligibility through the CAM Excess Calculation, so it shapes HOW his benefit can be paid, even though CAM sets how much.', correct:true},
+      {t:'No, because the cash balance keeps earning pay credits that may overtake CAM.', why:'Pay credits froze on Jan 14, 2005. The account earns interest only and will not overtake a growing CAM.'},
+    ],
+    explain:'The cash balance is an <strong>optionality lever, not an income engine</strong>. CAM sets how much; the cash-balance component historically set whether (and how much of) the benefit could be taken as a lump sum via the CAM Excess Calculation. Since 2018 there is also a full-lump-sum rule, covered in Case 3.',
+    ref:REF.cb },
+  { type:'mc',
+    q:'One more structural rule: which formulas carry the Modified Rule of 75 early-retirement treatment?',
+    options:[
+      {t:'All three; Mod 75 covers the whole pension.', why:'Mod 75 governs the CAM and PBM formulas only. A cash-balance benefit has no Mod 75 treatment to capture.'},
+      {t:'CAM and PBM only. If the Cash Balance Formula were the controlling benefit, Mod 75 would not apply at all.', correct:true},
+      {t:'Cash Balance only.', why:'It is the reverse: the cash balance is simply an account value, with no Mod 75 subsidy attached.'},
+    ],
+    explain:'Mod 75 attaches to the <strong>CAM and PBM formulas only</strong>. A client whose controlling benefit is the cash balance has no early-retirement subsidy to protect, which changes the whole leave-now-or-stay conversation. Tom&rsquo;s controlling formula is CAM, so Mod 75 matters a great deal for him, which is where Case 4 picks up.',
+    ref:REF.mod75 },
+  ]
+},
+{
+  title:'Carol and the career-average engine',
+  concepts:['CAM formula','CAM Income','Still accruing'],
+  facts:[
+    '<strong>Carol, age 58</strong>, Nonbargained Program, planning her retirement math',
+    'Average annual Pension Compensation for the <strong>5 years ending 12/31/1999: $70,000</strong>',
+    'Service as of <strong>12/31/1999: 12 years</strong>',
+    'Total Pension Compensation earned <strong>after 12/31/1999: $1,560,000</strong>',
+    'CAM formula: <strong>1.6% &times; CAM Income &divide; 12</strong>',
+  ],
+  questions:[
+  { type:'num',
+    q:'Build the pre-2000 piece of CAM Income: average annual Pension Compensation (5 years to 12/31/1999) times service to 12/31/1999.',
+    pre:'$:', answer:840000, tol:100,
+    hint:'$70,000 &times; 12 years.',
+    explain:'$70,000 &times; 12 = <strong>$840,000</strong>. The pre-2000 piece converts her pre-2000 career into a fixed dollar base, bolted onto everything she earns afterward.',
+    ref:REF.cam },
+  { type:'num',
+    q:'Now total CAM Income: the pre-2000 piece plus all Pension Compensation earned after 12/31/1999.',
+    pre:'$:', answer:2400000, tol:100,
+    hint:'$840,000 + $1,560,000.',
+    explain:'$840,000 + $1,560,000 = <strong>$2,400,000</strong> of CAM Income. Note what feeds the post-1999 piece: base pay, group incentive (annual bonus), nondiscretionary individual incentives such as commissions, certain special payments, and STD pay while employed, not base pay alone.',
+    ref:REF.cam },
+  { type:'num',
+    q:'Finish the formula: 1.6% &times; CAM Income &divide; 12. What is Carol&rsquo;s monthly CAM benefit at Normal Retirement Age?',
+    pre:'$ / month:', answer:3200, tol:5,
+    hint:'1.6% of $2,400,000 is the annual figure; divide by 12 for monthly.',
+    explain:'1.6% &times; $2,400,000 = $38,400 per year, or <strong>$3,200/month</strong>. Every additional dollar of Pension Compensation adds 1.6% to the annual benefit, so each $100,000 of future earnings is worth about $133/month more, for life.',
+    ref:REF.cam },
+  { type:'mc',
+    q:'Carol asks: &ldquo;My union friend says the management pension froze years ago, so working longer adds nothing.&rdquo; True for her CAM benefit?',
+    options:[
+      {t:'True. All Nonbargained accruals froze on Jan 14, 2005.', why:'That freeze applies to the CASH BALANCE formula&rsquo;s pay credits. CAM keeps accruing with every year of Pension Compensation.'},
+      {t:'False. CAM keeps growing every year she works: all future Pension Compensation, including bonuses and commissions, adds directly to CAM Income.', correct:true},
+      {t:'True, unless she is promoted to officer.', why:'No promotion is required. The post-1999 CAM piece grows from ordinary Pension Compensation for everyone still working.'},
+    ],
+    explain:'The freeze she has heard about is real, but it belongs to the <strong>cash balance formula</strong> (pay credits stopped Jan 14, 2005). <strong>CAM is the opposite: still accruing</strong>. A big bonus or commission year lands directly in CAM Income. Continuing to work is usually accretive for a Nonbargained client, on top of any Mod 75 milestone. Confusing the two formulas&rsquo; growth behavior is one of the most common management-plan errors.',
+    ref:REF.cam },
+  ]
+},
+{
+  title:'Hank, Walt, and the two lump-sum doors',
+  concepts:['Frozen cash balance','Full lump sum (2018)','CAM Excess Calculation'],
+  facts:[
+    '<strong>Hank, age 59</strong>, Nonbargained Program, terminating this year (<strong>2026</strong>) with a commencement date shortly after',
+    'Controlling benefit: <strong>CAM = $1,000/month</strong>, worth <strong>$180,000</strong> as a lump sum at current rates',
+    'He also has a frozen <strong>Cash Balance account of $90,000</strong>',
+    'His brother <strong>Walt</strong> had the identical benefit but <strong>terminated in March 2016</strong> and is electing payment under the older rules',
+    'The CAM Excess Calculation&rsquo;s dividing line: an excess annuity of <strong>$400/month</strong>',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Warm-up: what has Hank&rsquo;s $90,000 cash balance account been earning since January 14, 2005?',
+    options:[
+      {t:'Pay-based basic benefit credits plus interest, like the union cash balance.', why:'That is the union plan&rsquo;s still-active design. The Nonbargained cash balance&rsquo;s pay credits froze on Jan 14, 2005.'},
+      {t:'Interest credits only, at the monthly equivalent of the 30-Year U.S. Treasury rate; basic (pay) credits froze on Jan 14, 2005.', correct:true},
+      {t:'Nothing; the account was frozen entirely.', why:'The freeze stopped new pay credits. Interest credits continue, so the balance still grows slowly.'},
+    ],
+    explain:'Since <strong>Jan 14, 2005</strong> the Nonbargained cash balance earns <strong>interest credits only</strong> (30-Year Treasury basis). It is a historical, interest-only balance, not an accrual engine, so do not oversell it as a growth asset. Its value is optionality: the lump-sum doors tested next.',
+    ref:REF.cb },
+  { type:'mc',
+    q:'Door #1: can Hank take his ENTIRE pension as a lump sum?',
+    options:[
+      {t:'No; only the $90,000 cash-balance portion can ever be a lump sum.', why:'That was the old constraint. A 2018 rule change opened a full-lump-sum election for post-2018 terminations.'},
+      {t:'Yes. He terminates on/after May 25, 2018 with a Benefit Commencement Date on/after June 1, 2018, so the full-lump-sum rule applies to the whole benefit.', correct:true},
+      {t:'Only if his cash balance exceeds the CAM lump-sum value.', why:'No such comparison gates the post-2018 rule; it turns on the termination and commencement dates.'},
+    ],
+    explain:'Terminations on/after <strong>May 25, 2018</strong> with a BCD on/after <strong>June 1, 2018</strong> may take the <strong>entire</strong> Pension Benefit as a lump sum, no monthly pension required. Hank qualifies easily. His brother, who left in 2016, does not, which is why the older door still matters.',
+    ref:REF.pay },
+  { type:'num',
+    q:'Door #2, Walt&rsquo;s CAM Excess Calculation: CAM is worth $180,000 as a lump sum and the cash balance is $90,000. The difference converts back to a monthly annuity. Using the SPD&rsquo;s example, what monthly annuity does that $90,000 difference equal?',
+    pre:'$ / month:', answer:500, tol:1,
+    hint:'This is the SPD&rsquo;s own worked example: $180,000 lump-sum value, minus the $90,000 account, converts to a specific monthly figure.',
+    explain:'The $90,000 excess converts to <strong>$500/month</strong> in the SPD&rsquo;s example. That number is not trivia; it gets compared against the $400/month dividing line in the next step.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'Apply the rule: the excess annuity is $500/month, which is at least $400/month. What can Walt actually elect?',
+    options:[
+      {t:'The entire $180,000 as a lump sum.', why:'Only if the excess converted to LESS than $400/month could the whole benefit go out as a lump sum under this path.'},
+      {t:'A PARTIAL lump sum of $90,000 (the cash-balance amount) plus a residual monthly annuity for the rest.', correct:true},
+      {t:'No lump sum at all.', why:'The cash-balance component is exactly what makes a partial lump sum available under the CAM Excess Calculation.'},
+    ],
+    explain:'Because the excess (<strong>$500/month</strong>) is <strong>&ge; $400/month</strong>, Walt takes a <em>partial</em> lump sum equal to the $90,000 cash balance, with the remainder paid as a monthly annuity (SLA or J&amp;S). Had the excess been under $400/month, the entire benefit could have gone out as a lump sum. Two brothers, identical benefits, different termination dates, materially different options.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'Rates check: segment rates are rising sharply. Which parts of Hank&rsquo;s money are exposed?',
+    options:[
+      {t:'Everything shrinks: CAM lump sum and cash balance alike.', why:'The cash balance is already an account value; it is not rate-converted. Only the annuity-to-lump-sum conversion is exposed.'},
+      {t:'The CAM lump-sum value shrinks (annuity converted at IRS segment rates, locked from the prior November for the whole commencement year); the $90,000 cash balance is unaffected.', correct:true},
+      {t:'Nothing; AT&T lump sums are rate-immune.', why:'A CAM/PBM benefit taken as a lump sum is a present value and moves inversely to the locked segment rates.'},
+    ],
+    explain:'A <strong>CAM or PBM</strong> benefit taken as a lump sum is an annuity converted at the <strong>IRS minimum present-value segment rates</strong>, with AT&T locking the <strong>prior-November</strong> rates for the entire commencement calendar year, so rising rates shrink it, and the commencement year matters. The frozen <strong>cash balance</strong> is simply its account value. This bites hardest on a full-lump-sum election, exactly what Hank is considering.',
+    ref:REF.pay },
+  ]
+},
+{
+  title:'Diane and the union rule that does not travel',
+  concepts:['NB Mod 75','0.25%/mo with 30+ yrs','Pop-up'],
+  facts:[
+    '<strong>Diane, age 52</strong>, Nonbargained Program, <strong>30 completed years</strong> Term of Employment',
+    'Controlling benefit: <strong>CAM = $3,000/month</strong> at Normal Retirement Age',
+    'Married; weighing retiring now at 52 versus waiting',
+    'Her sister retired from a <strong>union</strong> AT&T job with 30 years and told her: <strong>&ldquo;With 30 years you&rsquo;re unreduced at ANY age, take it now.&rdquo;</strong>',
+    'A colleague, also 52, has <strong>26 years</strong> and the same question',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Does Diane satisfy the Modified Rule of 75?',
+    options:[
+      {t:'No; at 52 she needs to reach age 55 first.', why:'The any-age/30-years combination has no age requirement, and she has 30 years.'},
+      {t:'Yes: 30 years of Term of Employment satisfies the any-age / 30-year combination.', correct:true},
+      {t:'Only if her age plus service totals 75.', why:'Mod 75 is fixed pairs (any/30, 50/25, 55/20, 65/10), not a sum. At 52 + 30 she happens to total 82, but it is the 30-year combo doing the work.'},
+    ],
+    explain:'The combinations are the same as the union table: <strong>any age / 30, 50 / 25, 55 / 20, 65 / 10</strong>, tested at termination using completed whole years. Diane qualifies through the 30-year path. What that qualification buys her, though, differs from her sister&rsquo;s plan, and that is the trap in this case.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'Her sister&rsquo;s union rule: &ldquo;30+ years means fully unreduced at ANY age.&rdquo; Does that rule apply to Diane&rsquo;s Nonbargained CAM benefit if she commences now at 52?',
+    options:[
+      {t:'Yes; 30 years is unreduced at any age in every AT&T program.', why:'That is the union Pre-99 rule. The Nonbargained plan still reduces before age 55, just at a gentler rate for 30+ years.'},
+      {t:'No. In the Nonbargained Program, even with 30+ years, commencing before age 55 is reduced 0.25% per month; unreduced applies only at/after 55.', correct:true},
+      {t:'No; commencing before 55 costs 0.5% per month regardless of service.', why:'0.5%/month is the under-30-years rate. With 30+ years the rate is halved to 0.25%/month.'},
+    ],
+    explain:'This is the classic cross-plan error. Union Pre-99 rule: 30+ years is <strong>fully unreduced at any age</strong>. Nonbargained rule: 30+ years earns a <strong>half-rate reduction of 0.25%/month before 55</strong> (versus 0.5%/month with under 30 years), and unreduced status arrives only <strong>at/after age 55</strong>, a flat threshold with no 55/56 contract split. Advice built on the wrong plan&rsquo;s rule quotes the client a benefit she will not get.',
+    ref:REF.mod75 },
+  { type:'num',
+    q:'Quantify it: Diane commences at exactly 52 (36 months before 55) with 30+ years, so 0.25% per month applies. What total percentage reduction hits her CAM benefit?',
+    pre:'Reduction %:', answer:9, tol:0.01,
+    hint:'36 months &times; 0.25% per month.',
+    explain:'36 &times; 0.25% = <strong>9%</strong>, permanently. Painful but half of what the under-30 crowd pays, and it vanishes entirely if she commences at 55.',
+    ref:REF.calc },
+  { type:'num',
+    q:'Apply it: what is her reduced monthly benefit in dollars?',
+    pre:'$ / month:', answer:2730, tol:2,
+    hint:'$3,000 &times; (1 - 0.09).',
+    explain:'$3,000 &times; 0.91 = <strong>$2,730/month</strong>. The alternative framings for the client: wait 36 months to collect $3,000 unreduced, or start now at $2,730 for life, and remember CAM also keeps growing with every additional year of Pension Compensation if she keeps working.',
+    ref:REF.calc },
+  { type:'num',
+    q:'Her colleague is also 52 but has 26 years (Mod 75 met via 50/25, under 30 years). What percentage reduction applies if HE commences at 52?',
+    pre:'Reduction %:', answer:18, tol:0.01,
+    hint:'Under 30 years the rate is 0.5% per month; he is 36 months early.',
+    explain:'36 &times; 0.5% = <strong>18%</strong>, double Diane&rsquo;s reduction, because the half-rate 0.25%/month is reserved for 30+ years. Same age, same Mod 75 status, very different haircut: service depth changes the rate, not just eligibility.',
+    ref:REF.calc },
+  { type:'mc',
+    q:'Diane elects a 75% Joint &amp; Survivor annuity. Her advisor mentions the &ldquo;pop-up.&rdquo; When does the pop-up apply in this program?',
+    options:[
+      {t:'On every J&S election, automatically.', why:'In the Nonbargained Program the pop-up is conditioned on Mod 75 status at termination.'},
+      {t:'Only if the client satisfied Mod 75 at termination; then, if the survivor dies first, the benefit pops back up to the single-life amount.', correct:true},
+      {t:'Never; pop-ups do not exist in this plan.', why:'The pop-up exists, but it is gated on having met Mod 75.'},
+    ],
+    explain:'The <strong>pop-up</strong> restores the retiree&rsquo;s payment to the single-life level if the survivor dies first, and in the Nonbargained Program it attaches to a J&amp;S election <strong>only when Mod 75 was met at termination</strong>. Diane qualifies, so her 75% J&amp;S (85% of SLA, versus 90% for 50% J&amp;S and 80% for 100% J&amp;S) carries that protection. One more quietly valuable thing Mod 75 buys.',
+    ref:REF.pay },
+  ]
+},
+{
+  title:'Victor and the surplus letter',
+  concepts:['Severance schedule','Mod 75 timing','Taxable, not rollable'],
+  facts:[
+    '<strong>Victor, age 53</strong>, Nonbargained Program, <strong>24 completed years</strong> Term of Employment',
+    'Annual Basic Pay: <strong>$130,000</strong>',
+    'Just received a <strong>surplus notice</strong>: take the severance package, or find another internal role within the window',
+    'Severance schedule: <strong>4% of Annual Basic Pay per year of TOE, capped at 50% at 13+ years</strong>',
+    'His CAM benefit is substantial, and he wants retiree medical someday',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Start with the stakes: does Victor satisfy the Modified Rule of 75 today?',
+    options:[
+      {t:'Yes: 53 + 24 = 77, which beats 75.', why:'Fixed pairs, not a sum. Check him against any/30, 50/25, 55/20, and 65/10.'},
+      {t:'No. He has neither 30 years (any age), nor 25 years at 50+, nor 20 years at 55+. At 53 with 24 years he misses every combination.', correct:true},
+      {t:'Yes, through the 55/20 combination.', why:'He has more than 20 years, but he is 53, not 55. The 55/20 combo requires both.'},
+    ],
+    explain:'At 53 with 24 years Victor misses every combination: not 30 years, not 25-at-50, not 55 yet. If he terminates today, that status is <strong>locked at termination</strong>, taking the deferred-vested early-retirement factors (much steeper than 0.5%/month) and retiree-medical eligibility off the table permanently.',
+    ref:REF.mod75 },
+  { type:'num',
+    q:'Price the package: with 24 years of TOE, the schedule caps at 50% of Annual Basic Pay (13+ years). What Severance Allowance is on the table?',
+    pre:'$:', answer:65000, tol:100,
+    hint:'50% of $130,000.',
+    explain:'50% &times; $130,000 = <strong>$65,000</strong>, paid as a lump sum roughly 45 days after the signed General Release and Waiver. A real number, but it has to be weighed against what leaving today costs him, which is the next step.',
+    ref:REF.sev },
+  { type:'num',
+    q:'The alternative: if Victor lands another internal role and keeps working, in how many more whole years does he FIRST satisfy Mod 75?',
+    pre:'Years:', answer:1, tol:0,
+    hint:'In t years he is 53+t with 24+t years. Test the 50/25 combination first.',
+    explain:'In <strong>1 year</strong> he is 54 with <strong>25 years</strong>: the 50 / 25 combination is met (he passed age 50 long ago). One year of continued employment converts a penalized deferred-vested exit into a service-level retirement with subsidized reductions.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'So what does that one extra year actually buy, compared with taking the $65,000 now?',
+    options:[
+      {t:'Only a slightly better pension reduction; the severance usually wins.', why:'The pension subsidy is only half of it. Mod 75 at termination is also the gate to retiree-medical enrollment eligibility.'},
+      {t:'Mod 75 status at termination: the subsidized 0.5%/month reduction instead of the steep age-based deferred-vested factors, PLUS eligibility to enroll in AT&T retiree medical as a pre-Medicare bridge. Often worth far more than $65,000.', correct:true},
+      {t:'Nothing; Mod 75 can be earned after leaving once his age catches up.', why:'Mod 75 is tested at termination and can never be earned afterward. That is exactly why the surplus window is so consequential.'},
+    ],
+    explain:'Staying one more year flips <strong>both</strong> levers: his CAM benefit gets the subsidized reduction schedule instead of the Appendix B deferred-vested factors, and he becomes <strong>eligible to enroll</strong> in AT&T retiree medical (the same Mod 75 table gates it). Against a 12-year pre-Medicare gap, that is routinely worth more than a $65,000 package. The right move on a surplus notice is to map the milestone first, then decide.',
+    ref:REF.sev },
+  { type:'mc',
+    q:'Tax mechanics: Victor asks whether he can roll the $65,000 severance into his IRA the way he could a pension lump sum. Can he?',
+    options:[
+      {t:'Yes; severance is eligible rollover money like any lump sum.', why:'Severance is wages, not a retirement-plan distribution. There is nothing to roll over.'},
+      {t:'No. Severance is taxable as ordinary income in the year received and cannot be rolled over, unlike a pension lump sum, which can go IRA-direct and defer tax.', correct:true},
+      {t:'He can roll half.', why:'There is no partial-rollover provision for severance; none of it is rollover-eligible.'},
+    ],
+    explain:'Severance is <strong>ordinary wage income in the year paid</strong>, typically within about 45 days of separation, and is not rollover-eligible. A pension lump sum, by contrast, can be directly rolled to an IRA and deferred. When a package lands, coordinate severance, the pension election, and any 401(k) rollover in one plan so the year&rsquo;s taxable income is deliberate rather than accidental.',
+    ref:REF.sev },
+  ]
+},
+{
+  title:'Alan, the healthcare fine print, and the benefit nobody claims',
+  concepts:['Enroll vs subsidize','2022 management cutoff','Retiree Death Benefit'],
+  facts:[
+    '<strong>Alan, age 57</strong>, Nonbargained Program, hired <strong>1988</strong>, <strong>38 years</strong> Term of Employment; meets Mod 75 easily',
+    'Retiring at the end of this month (<strong>2026</strong>); Medicare begins at 65, an <strong>8-year</strong> gap',
+    'Wages (base pay) at termination: <strong>$120,000</strong>; monthly pension about <strong>$2,900</strong>',
+    'His late father, a 1990s Bell retiree, once mentioned a company <strong>death benefit</strong>; Alan asks whether he has one too',
+    'Assume for the death-benefit math that death occurs <strong>3 full years</strong> after termination and Alan&rsquo;s legacy company&rsquo;s dates would make him eligible',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Can Alan enroll in AT&T retiree (Post-Employment) medical when he retires?',
+    options:[
+      {t:'No; management retiree medical was abolished in 2021.', why:'What ended were subsidies (65+ in 2021; management pre-Medicare in 2022). Mod 75 retirees can still enroll.'},
+      {t:'Yes. The Medical Program SPD gates retiree-medical eligibility on the same Modified Rule of 75 table, met at termination, and Alan meets it.', correct:true},
+      {t:'Only after he turns 65.', why:'It is closer to the opposite: the program&rsquo;s main value is as a pre-Medicare bridge before 65, after which he transitions off the active-style program.'},
+    ],
+    explain:'The <strong>same Mod 75 table</strong> that subsidizes the pension also gates <strong>eligibility to enroll</strong> in AT&T retiree medical, tested at termination. Alan qualifies, and can use the program as a bridge until he becomes Medicare-eligible at 65 (then transitions off, typically to a private exchange).',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'Alan was hired in 1988, well before 2001. Does his early hire date get him a company SUBSIDY on that pre-Medicare coverage?',
+    options:[
+      {t:'Yes; pre-2001 hires keep the legacy subsidy.', why:'For management, the pre-Medicare subsidy itself was eliminated for anyone whose last day on payroll is on/after 1/1/2022, regardless of hire date.'},
+      {t:'No. The management pre-Medicare subsidy was eliminated for last days on payroll on/after 1/1/2022, and the 65+ subsidy ended at 1/1/2021. Retiring in 2026, Alan buys in at full cost (through Alight).', correct:true},
+      {t:'Yes, but only half.', why:'There is no half-subsidy tier for a 2026 management retiree; the management subsidy windows closed in 2021 and 2022.'},
+    ],
+    explain:'Two separate cutoffs closed the door for management: the <strong>65+/Medicare subsidy</strong> ended for last days on/after <strong>1/1/2021</strong>, and the <strong>management pre-Medicare subsidy</strong> ended for last days on/after <strong>1/1/2022</strong> (a manager had to retire by 12/31/2021 to keep it). Hire date stopped mattering once those passed; a 2026 management retiree <strong>pays full cost</strong>. Note this is stricter than the union side, where qualifying pre-2001 bargained hires can still see pre-Medicare subsidies.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'Full cost sounds bad. Why is Alan&rsquo;s eligibility to enroll still genuinely valuable?',
+    options:[
+      {t:'It is not; unsubsidized coverage is worthless.', why:'Group access has standalone value. Individual pre-Medicare coverage can run well over $1,000 to $2,000 per month per person.'},
+      {t:'Because his alternative for the 8-year pre-Medicare gap is the individual market at $1,000 to $2,000+ per month per person; group buy-in through Alight can beat that, and losing eligibility entirely (by missing Mod 75) would have been the six-figure version of this problem.', correct:true},
+      {t:'Because enrolling increases his pension.', why:'Medical enrollment and the pension calculation are entirely separate; one does not change the other.'},
+    ],
+    explain:'The value is concentrated in the <strong>pre-65 bridge</strong>. Eight years of individual-market premiums for a 57-year-old household is a very large number; group access, even at full cost, is typically better, and it exists for Alan only because he met Mod 75 at termination.',
+    ref:REF.mod75 },
+  { type:'mc',
+    q:'Now his father&rsquo;s question: what IS the Retiree Death Benefit?',
+    options:[
+      {t:'A universal AT&T benefit: every retiree&rsquo;s family gets one year of pay.', why:'Eligibility is narrow and date-driven by legacy company; it is a check-the-dates benefit, not a general one.'},
+      {t:'A Nonbargained-Program-only lump-sum death benefit for certain long-tenured legacy retirees, paid on top of any survivor annuity, with company-specific date tests.', correct:true},
+      {t:'Another name for the 50% Joint &amp; Survivor annuity.', why:'The J&S is a pension payment form. The Retiree Death Benefit is a separate, additional lump sum with its own rules.'},
+    ],
+    explain:'It exists in the <strong>Nonbargained Program only</strong> (not Mobility or the cash-balance programs): a separate lump-sum death benefit for qualifying long-tenured legacy retirees, over and above any survivor annuity. Eligibility tests are <strong>company-specific and date-driven</strong> (Ameritech, PTG, SNET, Southwestern Bell each differ), so it is always a &ldquo;check this client&rsquo;s company and dates&rdquo; item, and clients rarely know they have it.',
+    ref:REF.death },
+  { type:'num',
+    q:'Size option (a) for Alan: one times Wages ($120,000), reduced 10% for each full year since Termination of Employment, with death 3 full years after termination. What does option (a) pay?',
+    pre:'$:', answer:84000, tol:100,
+    hint:'Three full years since termination means a 30% reduction: $120,000 &times; 0.70.',
+    explain:'$120,000 &times; (1 &minus; 0.30) = <strong>$84,000</strong>. The 10%-per-year decay is why the benefit&rsquo;s value erodes the longer the retiree lives past termination, and why which option controls can flip over time.',
+    ref:REF.death },
+  { type:'mc',
+    q:'Finish it: option (b) is the monthly pension &times; 12, and the benefit pays the GREATER of the two. With a $2,900/month pension, what controls, and what is the one trap the family must not miss?',
+    options:[
+      {t:'Option (b) controls at $34,800; claims can be filed anytime.', why:'Compare again: option (a) is $84,000, which is larger, and the claims window is hard.'},
+      {t:'Option (a) controls at $84,000 (versus $34,800 under option (b)), and ALL claims must be filed within ONE YEAR of death, an easy deadline for a grieving family to miss.', correct:true},
+      {t:'The two options are added for $118,800.', why:'It is the greater of the two, not the sum.'},
+    ],
+    explain:'Option (b) = $2,900 &times; 12 = <strong>$34,800</strong>; option (a) = <strong>$84,000</strong> controls. Payment goes to Eligible Beneficiaries in a <strong>fixed order</strong> (spouse, partner, dependent children, dependent parents; regular beneficiary designations do not govern it), and <strong>claims must be made within one year of death</strong>. The advisor&rsquo;s job: confirm eligibility against the client&rsquo;s legacy-company dates now, and make sure the household knows this benefit exists before it is needed.',
+    ref:REF.death },
+  ]
+},
+];
+
+// ------------------------------------------------------------------
+// Quiz engine (shared with case-studies.html)
+// ------------------------------------------------------------------
+const TOTALQ = CASES.reduce((n,c)=>n+c.questions.length,0);
+const state = {
+  ci:0, qi:0,
+  attempts:0,
+  results: CASES.map(c=>c.questions.map(()=>null)), // {firstTry:bool, revealed:bool}
+  finished:false,
+};
+
+const casesHost = document.getElementById('cases');
+const railChips = document.getElementById('railChips');
+const railBar = document.getElementById('railBar');
+const railPct = document.getElementById('railPct');
+
+function answeredCount(){
+  let n=0; state.results.forEach(c=>c.forEach(r=>{if(r)n++;})); return n;
+}
+function firstTryCount(){
+  let n=0; state.results.forEach(c=>c.forEach(r=>{if(r&&r.firstTry)n++;})); return n;
+}
+function caseDone(ci){ return state.results[ci].every(r=>r!==null); }
+function caseScore(ci){ return state.results[ci].filter(r=>r&&r.firstTry).length; }
+
+function renderRail(){
+  railChips.innerHTML='';
+  CASES.forEach((c,i)=>{
+    const chip=document.createElement('button');
+    chip.type='button';
+    let cls='chip', label='Case '+(i+1);
+    if(caseDone(i)){cls+=' done';label='✓ Case '+(i+1);}
+    else if(i===state.ci){cls+=' active';}
+    chip.className=cls; chip.textContent=label;
+    if(caseDone(i)||i===state.ci){
+      chip.addEventListener('click',()=>{ document.getElementById('case-'+i).scrollIntoView({behavior:'smooth',block:'start'}); });
+    }
+    railChips.appendChild(chip);
+  });
+  const a=answeredCount();
+  railBar.style.width=(a/TOTALQ*100)+'%';
+  railPct.textContent=a+' of '+TOTALQ+' answered';
+}
+
+function refLink(ref){
+  return '<div class="ref">Review: <a class="inline" href="'+ref.href+'" target="_blank" rel="noopener">'+ref.label+'</a></div>';
+}
+
+function renderAnsweredQ(caseIdx,qIdx){
+  const q=CASES[caseIdx].questions[qIdx];
+  const r=state.results[caseIdx][qIdx];
+  const div=document.createElement('div');
+  div.className='q answered'+(r.firstTry?'':' missed');
+  let yourTxt;
+  if(r.revealed) yourTxt='<b>Revealed</b> after two misses';
+  else if(r.firstTry) yourTxt='<b>Correct on the first attempt</b>';
+  else yourTxt='<b>Correct after '+(r.tries)+' attempts</b>';
+  let ansTxt;
+  if(q.type==='num'){ ansTxt=(q.pre?q.pre+' ':'')+fmtAnswer(q); }
+  else { ansTxt=q.options.find(o=>o.correct).t; }
+  div.innerHTML=
+    '<div class="qlab">Checkpoint '+(qIdx+1)+' of '+CASES[caseIdx].questions.length+'</div>'+
+    '<div class="qtext">'+q.q+'</div>'+
+    '<div class="youranswer">'+yourTxt+' &middot; Answer: <strong>'+ansTxt+'</strong></div>'+
+    '<div class="explain'+(r.revealed?' revealed':'')+'"><span class="etag">'+(r.revealed?'Answer revealed':'Why')+'</span><p>'+q.explain+'</p>'+refLink(q.ref)+'</div>';
+  return div;
+}
+
+function fmtAnswer(q){
+  const n=q.answer;
+  return (Number.isInteger(n)?n.toLocaleString('en-US'):n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}));
+}
+
+function parseNum(v){
+  const cleaned=String(v).replace(/[$,%\s,]/g,'');
+  if(cleaned==='') return NaN;
+  return parseFloat(cleaned);
+}
+
+function renderActiveQ(caseIdx,qIdx,container){
+  const q=CASES[caseIdx].questions[qIdx];
+  const div=document.createElement('div');
+  div.className='q';
+  let inner='<div class="qlab">Checkpoint '+(qIdx+1)+' of '+CASES[caseIdx].questions.length+'</div>'+
+            '<div class="qtext">'+q.q+'</div>';
+  div.innerHTML=inner;
+
+  const finish=(firstTry,revealed,tries)=>{
+    state.results[caseIdx][qIdx]={firstTry:firstTry,revealed:revealed,tries:tries};
+    state.attempts=0;
+    advance(caseIdx,qIdx,div,q,revealed);
+  };
+
+  if(q.type==='mc'){
+    const opts=document.createElement('div'); opts.className='opts';
+    q.options.forEach(o=>{
+      const b=document.createElement('button');
+      b.type='button'; b.className='opt'; b.innerHTML=o.t;
+      b.addEventListener('click',()=>{
+        if(b.disabled) return;
+        state.attempts++;
+        if(o.correct){
+          b.classList.add('right');
+          opts.querySelectorAll('.opt').forEach(x=>x.disabled=true);
+          finish(state.attempts===1,false,state.attempts);
+        } else {
+          b.classList.add('wrong','shake'); b.disabled=true;
+          const fb=document.createElement('div'); fb.className='feedback bad';
+          fb.innerHTML=o.why||'Not quite. Look again at the facts.';
+          b.insertAdjacentElement('afterend',fb);
+        }
+      });
+      opts.appendChild(b);
+    });
+    div.appendChild(opts);
+  } else {
+    const row=document.createElement('div'); row.className='numrow';
+    if(q.pre){const p=document.createElement('span');p.className='pre';p.innerHTML=q.pre;row.appendChild(p);}
+    const input=document.createElement('input');
+    input.type='text'; input.inputMode='decimal'; input.setAttribute('aria-label','Your answer');
+    input.placeholder='Your answer';
+    const check=document.createElement('button'); check.type='button'; check.className='btn'; check.textContent='Check';
+    row.appendChild(input); row.appendChild(check);
+    div.appendChild(row);
+    const fbHost=document.createElement('div'); div.appendChild(fbHost);
+
+    const tryCheck=()=>{
+      if(input.disabled) return;
+      const v=parseNum(input.value);
+      fbHost.innerHTML='';
+      if(isNaN(v)){
+        fbHost.innerHTML='<div class="feedback hint">Enter a number. $ signs, commas, and % are fine.</div>';
+        return;
+      }
+      state.attempts++;
+      if(Math.abs(v-q.answer)<=q.tol){
+        input.classList.remove('wrong'); input.classList.add('right');
+        input.disabled=true; check.disabled=true;
+        finish(state.attempts===1,false,state.attempts);
+      } else {
+        input.classList.add('wrong','shake');
+        setTimeout(()=>input.classList.remove('shake'),600);
+        let msg='<div class="feedback bad">Not it. Check the setup and try again.</div>';
+        if(state.attempts>=1 && q.hint) msg+='<div class="feedback hint"><strong>Hint:</strong> '+q.hint+'</div>';
+        fbHost.innerHTML=msg;
+        if(state.attempts>=2){
+          const rv=document.createElement('button'); rv.type='button'; rv.className='btn ghost'; rv.style.marginTop='10px';
+          rv.textContent='Reveal the answer';
+          rv.addEventListener('click',()=>{
+            input.value=fmtAnswer(q); input.disabled=true; check.disabled=true;
+            input.classList.remove('wrong');
+            fbHost.innerHTML='';
+            finish(false,true,state.attempts);
+          });
+          fbHost.appendChild(rv);
+        }
+      }
+    };
+    check.addEventListener('click',tryCheck);
+    input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();tryCheck();}});
+    setTimeout(()=>input.focus({preventScroll:true}),50);
+  }
+  container.appendChild(div);
+  return div;
+}
+
+function advance(caseIdx,qIdx,qDiv,q,revealed){
+  // show explanation + continue button in place
+  const r=state.results[caseIdx][qIdx];
+  const ex=document.createElement('div');
+  ex.className='explain'+(revealed?' revealed':'');
+  ex.innerHTML='<span class="etag">'+(revealed?'Answer revealed':(r.firstTry?'Correct':'Correct (attempt '+r.tries+')'))+'</span><p>'+q.explain+'</p>'+refLink(q.ref);
+  qDiv.appendChild(ex);
+
+  const nav=document.createElement('div'); nav.className='qnav';
+  const btn=document.createElement('button'); btn.type='button'; btn.className='btn gold';
+  const lastQ = qIdx===CASES[caseIdx].questions.length-1;
+  const lastCase = caseIdx===CASES.length-1;
+  btn.textContent = lastQ ? (lastCase?'Finish and see your results':'Complete case, unlock the next') : 'Next checkpoint';
+  btn.addEventListener('click',()=>{
+    if(lastQ){ state.ci=caseIdx+1; state.qi=0; }
+    else { state.qi=qIdx+1; }
+    renderAll();
+    const target = lastQ ? (lastCase?document.getElementById('summaryHost'):document.getElementById('case-'+(caseIdx+1)))
+                         : document.getElementById('case-'+caseIdx+'-q'+(qIdx+1));
+    if(target) setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:lastQ?'start':'center'}),60);
+  });
+  nav.appendChild(btn);
+  qDiv.appendChild(nav);
+  renderRail();
+}
+
+function renderCase(ci){
+  const c=CASES[ci];
+  const done=caseDone(ci);
+  const locked=!done && ci>state.ci;
+  const active=!done && ci===state.ci;
+  const card=document.createElement('div');
+  card.className='case'+(locked?' locked':'')+(done?' done':'');
+  card.id='case-'+ci;
+
+  const stat = done ? (caseScore(ci)+' / '+c.questions.length+' first try')
+             : locked ? '🔒 Locked' : 'In progress';
+  let head='<div class="chead">'+
+    '<div class="cnum">'+(done?'✓':(ci+1))+'</div>'+
+    '<div class="ct"><h3>Case '+(ci+1)+': '+c.title+'</h3>'+
+    '<div class="concepts">'+c.concepts.map(k=>'<span>'+k+'</span>').join('')+'</div></div>'+
+    '<div class="cstat">'+stat+'</div></div>';
+  card.innerHTML=head;
+
+  if(locked){
+    const b=document.createElement('div'); b.className='cbody';
+    b.innerHTML='<p class="small" style="padding:12px 0 8px">Complete the previous case to unlock this one.</p>';
+    card.appendChild(b);
+    return card;
+  }
+
+  const body=document.createElement('div'); body.className='cbody';
+  const facts=document.createElement('div'); facts.className='facts';
+  facts.innerHTML='<span class="ftag">Client facts</span><ul>'+c.facts.map(f=>'<li>'+f+'</li>').join('')+'</ul>';
+  body.appendChild(facts);
+
+  const upto = done ? c.questions.length : state.qi;
+  for(let qi=0; qi<upto; qi++){
+    const el=renderAnsweredQ(ci,qi);
+    el.id='case-'+ci+'-q'+qi;
+    body.appendChild(el);
+  }
+  if(active && state.qi<c.questions.length){
+    const el=renderActiveQ(ci,state.qi,body);
+    el.id='case-'+ci+'-q'+state.qi;
+  }
+  card.appendChild(body);
+  return card;
+}
+
+function renderSummary(){
+  const host=document.getElementById('summaryHost');
+  host.innerHTML='';
+  if(!CASES.every((c,i)=>caseDone(i))) return;
+  const ft=firstTryCount();
+  const pct=Math.round(ft/TOTALQ*100);
+  let grade;
+  if(pct>=90) grade='Excellent. You are ready to run these conversations with real management clients.';
+  else if(pct>=75) grade='Strong. Re-read the sections linked below and you are there.';
+  else if(pct>=55) grade='A solid start. The linked guide sections cover every miss.';
+  else grade='Worth a full pass through the Non-Bargained guide before client meetings, then retake this.';
+
+  const missed=[];
+  CASES.forEach((c,ci)=>c.questions.forEach((q,qi)=>{
+    const r=state.results[ci][qi];
+    if(!r.firstTry) missed.push({c:ci,q:qi,ref:q.ref});
+  }));
+  const missHtml = missed.length
+    ? '<div class="misslist"><h4>Missed on the first attempt</h4><ul>'+
+      missed.map(m=>'<li>Case '+(m.c+1)+', checkpoint '+(m.q+1)+' &middot; <a href="'+m.ref.href+'" target="_blank" rel="noopener">'+m.ref.label+'</a></li>').join('')+
+      '</ul></div>'
+    : '<div class="misslist"><h4>Missed on the first attempt</h4><ul><li>Nothing. A clean sweep.</li></ul></div>';
+
+  const div=document.createElement('div');
+  div.className='summary';
+  div.innerHTML='<div class="pn" style="color:var(--gold-soft)">Results</div>'+
+    '<h2>Knowledge check complete</h2>'+
+    '<div class="score">'+ft+' / '+TOTALQ+'</div>'+
+    '<div class="grade">first-attempt score ('+pct+'%) &middot; '+grade+'</div>'+
+    missHtml+
+    '<p>Every scenario here maps to a live management-client decision: confirming the program, decoding the winning formula, quoting the right reduction rate, pricing a surplus package against a Mod 75 milestone, and reading the healthcare and death-benefit fine print. Keep the <a class="inline" style="color:var(--gold-soft)" href="non-bargained.html">Non-Bargained guide</a> open in real meetings, and try the <a class="inline" style="color:var(--gold-soft)" href="case-studies.html">union case studies</a> to lock in the differences.</p>'+
+    '<button type="button" class="btn gold" id="resetBtn">Start over</button>';
+  host.appendChild(div);
+  document.getElementById('resetBtn').addEventListener('click',()=>{
+    state.ci=0;state.qi=0;state.attempts=0;state.finished=false;
+    state.results=CASES.map(c=>c.questions.map(()=>null));
+    renderAll();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+}
+
+function renderAll(){
+  casesHost.innerHTML='';
+  CASES.forEach((c,i)=>casesHost.appendChild(renderCase(i)));
+  renderRail();
+  renderSummary();
+}
+renderAll();
+</script>
+</body>
+</html>
