@@ -1,5 +1,40 @@
 # CHANGE_LOG
 
+## 2026-07-08 (3) — Mobility Program case studies (case-studies-mobility.html)
+
+Completes the training set: **five client scenarios (24 checkpoints)** for the cash-balance-only
+Mobility Program, same engine and visual system as the other two case-study pages. The plan is
+simpler, so the quiz centers on NOT importing legacy-plan rules.
+
+Coverage: (1) who's covered (Orange Contract bargained; legacy mgmt employed 12/31/2005) +
+single-account structure, no greatest-of, no pension Mod 75, flat NRA 65, 3-yr vesting;
+(2) mechanics (flat 5% credit → $300 on $6,000; broad Pension Compensation incl. §125/457/132(f)
+and NQ deferrals; $120,000 × 0.327% ≈ $392.40 interest; no age-stepped factor, not frozen;
+interest continues after termination); (3) annuity conversion ($100,000 ÷ 141.5292 = $706.57
+SLA; 50/75% J&S only, no 100%; pop-up ALWAYS applies; 90%-of-SLA floor = $635.91 for pre-2006
+participants; J&S cannot be waived by QDRO); (4) the timing game that is not there (lump sum =
+account, not segment-rate-converted; only the quarterly Treasury crediting rate matters; 20%
+withholding vs direct rollover; Rule of 55 forfeited by IRA rollover; $7,000 cash-out);
+(5) the milestone that survived (Medical Program's own Rule-of-75-style test still gates retiree
+medical for Mobility employees; 1 more year → 50/25 for a 53/24 client; post-2001 hire = 100% of
+cost but group access still beats the individual market; no Retiree Death Benefit, survivor value
+is the account, estate default). All facts mirror the SPD-verified `mobility.html`, including the
+SPD's annuity-factor example; explanations deep-link its sections.
+
+**Links:** "Training" nav item + Strategy Playbook callout in `mobility.html` (plain anchor, off
+the `.navitem` observer); footer cross-links added in `case-studies.html` and
+`case-studies-nb.html`; the new page's footer links back to both.
+
+**Validated in preview:** no console errors on the quiz or the guide; wrong/right MC flow;
+numeric wrong→hint→reveal-offer path; all 24 checkpoints solvable with the authored answer key
+(every numeric accepted exactly); score 22/24 after two deliberate misses; every MC has exactly
+one correct option; reset re-locks cases; all seven deep-link anchors exist in `mobility.html`;
+its nav observer still runs; no horizontal overflow at desktop or 375px mobile. Design-hook
+findings are the documented intentional visual-system exceptions (TODO.md note extended).
+
+**Files:** `case-studies-mobility.html` (new), `mobility.html`, `case-studies.html`,
+`case-studies-nb.html`, `PLAN_LOG.md`, `TODO.md`. Pushed as 5bdc354.
+
 ## 2026-07-08 (2) — Legacy Non-Bargained case studies (case-studies-nb.html)
 
 Companion to the union case-studies page: **six client scenarios (30 checkpoints)** built around
