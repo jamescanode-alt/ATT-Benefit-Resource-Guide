@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AT&T Mobility Case Studies: Test Your Plan Knowledge</title>
+<style>
+:root{
+  --cream:#F7F4E9;
+  --cream-deep:#EFE9D6;
+  --ink:#10243F;
+  --ink-soft:#33486A;
+  --blue:#1E55C0;
+  --blue-bright:#2E84D6;
+  --sky:#cfe1f5;
+  --gold:#C08A2D;
+  --gold-soft:#E4C98A;
+  --line:#D8D0BA;
+  --paper:#FDFCF6;
+  --good:#2E7D52;
+  --warn:#B5532A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.sans{font-family:'Helvetica Neue',Arial,sans-serif}
+main{max-width:880px;margin:0 auto;padding:0 24px 90px}
+p{margin-bottom:14px;font-size:16.5px}
+p.lead{font-size:19px;color:var(--ink-soft);line-height:1.55}
+strong{font-weight:bold}
+a.inline{color:var(--blue)}
+.small{font-size:13.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:linear-gradient(160deg,#10243F 0%,#16345b 60%,#1d4377 100%);
+  color:var(--cream);padding:58px 24px 48px;border-bottom:5px solid var(--gold);
+  position:relative;overflow:hidden;
+}
+.hero .inner{max-width:880px;margin:0 auto;position:relative}
+.hero .gear{position:absolute;right:-90px;top:-90px;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%, rgba(46,132,214,.28), transparent 60%);pointer-events:none}
+.hero .eyebrow{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin-bottom:14px}
+.hero h1{color:#fff;font-size:42px;line-height:1.1;font-weight:normal;letter-spacing:-.5px;margin-bottom:16px;max-width:720px}
+.hero p.lead{color:#cdddf2;max-width:640px}
+.hero .backlink{display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--gold-soft);text-decoration:none;margin-bottom:22px;letter-spacing:.3px}
+.hero .backlink:hover{color:#fff}
+.hero .meta{display:flex;gap:38px;margin-top:28px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.hero .meta div span{display:block}
+.hero .meta .k{font-size:10.5px;letter-spacing:2px;color:#8fb0d6;text-transform:uppercase}
+.hero .meta .v{font-size:15px;color:#fff;margin-top:3px}
+
+/* ---------- Progress rail ---------- */
+.rail{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:1px solid #24426b;padding:10px 24px}
+.rail .inner{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.rail .chips{display:flex;gap:6px;flex-wrap:wrap}
+.rail .chip{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:.5px;padding:4px 11px;border-radius:20px;border:1px solid #2c4a75;color:#7d93b6;background:transparent;cursor:default;white-space:nowrap}
+.rail .chip.active{background:var(--gold);border-color:var(--gold);color:#10243F;font-weight:700;cursor:pointer}
+.rail .chip.done{background:#163459;border-color:#2c4a75;color:#9fe0b9;cursor:pointer}
+.rail .bar{flex:1;min-width:120px;height:6px;background:#163459;border-radius:4px;overflow:hidden}
+.rail .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));width:0%;transition:width .4s}
+.rail .pct{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:#c6d4e8;min-width:104px;text-align:right}
+
+/* ---------- Intro ---------- */
+.intro{padding:44px 0 8px}
+.pn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+h2{font-size:30px;line-height:1.15;font-weight:normal;letter-spacing:-.4px;margin:6px 0 12px}
+.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 8px}
+@media(max-width:720px){.howto{grid-template-columns:1fr}}
+.howto .h{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px;border-top:4px solid var(--blue)}
+.howto .h.b{border-top-color:var(--gold)}
+.howto .h.c{border-top-color:var(--good)}
+.howto .h h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;font-weight:700}
+.howto .h p{font-size:13.5px;margin:0;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif}
+
+/* ---------- Case cards ---------- */
+.case{background:var(--paper);border:1px solid var(--line);border-radius:12px;margin:26px 0;box-shadow:0 2px 14px rgba(16,36,63,.06);overflow:hidden}
+.case.locked{opacity:.62;background:var(--cream-deep)}
+.chead{padding:20px 26px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+.case.locked .chead{border-bottom:none}
+.chead .cnum{flex:0 0 44px;height:44px;border-radius:50%;background:var(--ink);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;font-size:16px}
+.case.done .chead .cnum{background:var(--good);color:#fff}
+.case.locked .chead .cnum{background:#b9b19a;color:#fff}
+.chead .ct{flex:1}
+.chead .ct h3{font-size:20px;font-weight:normal;line-height:1.25}
+.chead .ct .concepts{margin-top:5px;display:flex;gap:6px;flex-wrap:wrap}
+.chead .ct .concepts span{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;background:var(--cream-deep);color:var(--ink-soft);border-radius:20px;padding:2px 10px}
+.chead .cstat{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+.case.done .chead .cstat{color:var(--good);font-weight:700}
+.cbody{padding:6px 26px 26px}
+@media(max-width:640px){.chead{padding:16px 18px}.cbody{padding:6px 18px 20px}}
+
+/* client facts */
+.facts{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:18px 0}
+.facts .ftag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;display:block;margin-bottom:8px}
+.facts ul{list-style:none}
+.facts li{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;color:var(--ink-soft);padding:3px 0 3px 18px;position:relative}
+.facts li::before{content:"·";position:absolute;left:4px;color:var(--gold);font-weight:700}
+.facts li strong{color:var(--ink)}
+
+/* questions */
+.q{border-top:1px dashed var(--line);padding:20px 0 4px;margin-top:16px}
+.q .qlab{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);font-weight:700}
+.q .qtext{font-size:17px;margin:8px 0 14px}
+.q .opts{display:flex;flex-direction:column;gap:8px}
+.q .opt{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14.5px;text-align:left;padding:12px 16px;border:1px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;color:var(--ink);line-height:1.45;transition:.12s}
+.q .opt:hover{border-color:var(--blue);background:#f4f8fe}
+.q .opt.wrong{border-color:var(--warn);background:#fbf0ea;color:var(--warn);cursor:not-allowed}
+.q .opt.right{border-color:var(--good);background:#eef6f1;color:var(--good);font-weight:700}
+.q .opt:disabled{cursor:not-allowed}
+.q .numrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.q .numrow .pre{font-size:15px;color:var(--ink-soft)}
+.q .numrow input{width:170px;padding:11px 13px;border:1px solid var(--line);border-radius:8px;font-size:16px;font-family:'Helvetica Neue',Arial,sans-serif;text-align:right;background:#fff}
+.q .numrow input:focus{outline:none;border-color:var(--blue)}
+.q .numrow input.wrong{border-color:var(--warn);background:#fbf0ea}
+.q .numrow input.right{border-color:var(--good);background:#eef6f1;color:var(--good);font-weight:700}
+.btn{font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.3px;padding:11px 22px;border-radius:8px;border:none;cursor:pointer;background:var(--ink);color:#fff;transition:.12s}
+.btn:hover{background:#1d3a63}
+.btn.gold{background:var(--gold);color:#10243F}
+.btn.gold:hover{background:#ad7b25;color:#fff}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink-soft)}
+.btn.ghost:hover{border-color:var(--warn);color:var(--warn)}
+.feedback{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;margin-top:10px;padding:10px 14px;border-radius:8px}
+.feedback.bad{background:#fbf0ea;color:var(--warn);border:1px solid #e6c3b2}
+.feedback.hint{background:#fbf6ea;color:#8a6416;border:1px solid var(--gold-soft)}
+.explain{border-left:4px solid var(--good);background:#eef6f1;padding:15px 18px;margin:14px 0 6px;border-radius:0 8px 8px 0}
+.explain.revealed{border-left-color:var(--warn);background:#fbf0ea}
+.explain .etag{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--good);display:block;margin-bottom:5px}
+.explain.revealed .etag{color:var(--warn)}
+.explain p{font-size:14.5px;margin-bottom:6px}
+.explain p:last-child{margin-bottom:0}
+.explain .ref{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px}
+.qnav{margin-top:14px}
+
+/* answered question, compact record */
+.q.answered .qtext{color:var(--ink-soft)}
+.q .youranswer{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:var(--ink-soft);margin-bottom:4px}
+.q .youranswer b{color:var(--good)}
+.q.missed .youranswer b{color:var(--warn)}
+
+/* case complete strip */
+.casedone{margin-top:20px;background:var(--ink);color:#fff;border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
+.casedone .cd-t{flex:1;font-size:14.5px}
+.casedone .cd-t b{color:var(--gold-soft)}
+
+/* summary */
+.summary{background:linear-gradient(160deg,#10243F 0%,#16345b 60%,#1d4377 100%);color:var(--cream);border-radius:14px;padding:38px 34px;margin:34px 0;border-bottom:5px solid var(--gold)}
+.summary h2{color:#fff}
+.summary .score{font-size:54px;color:var(--gold-soft);font-family:Georgia,serif;line-height:1;margin:10px 0 4px}
+.summary .grade{font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;color:#cdddf2;margin-bottom:18px}
+.summary .misslist{background:rgba(255,255,255,.06);border:1px solid #2c4a75;border-radius:10px;padding:16px 20px;margin:16px 0}
+.summary .misslist h4{font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:8px}
+.summary .misslist ul{list-style:none}
+.summary .misslist li{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;color:#cdddf2;padding:4px 0 4px 16px;position:relative}
+.summary .misslist li::before{content:"→";position:absolute;left:0;color:var(--gold-soft)}
+.summary .misslist a{color:var(--gold-soft)}
+.summary p{color:#cdddf2;font-size:15px}
+
+/* footer */
+.foot{padding:40px 24px;background:var(--ink);color:#c6d4e8;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.7}
+.foot .inner{max-width:880px;margin:0 auto}
+.foot .ftitle{color:#fff;font-size:15px;letter-spacing:1px;margin-bottom:8px;font-weight:600}
+.foot a{color:var(--gold-soft)}
+.foot .disc{margin-top:18px;font-size:11.5px;color:#7d93b6;border-top:1px solid #24426b;padding-top:16px}
+
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.shake{animation:shake .25s ease-in-out 2}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="gear"></div>
+  <div class="inner">
+    <a class="backlink" href="mobility.html">&larr; Back to the Mobility Program Field Guide</a>
+    <div class="eyebrow">Training &middot; Knowledge Check &middot; Mobility Program</div>
+    <h1>Mobility Case Studies: Prove You Know the Cash-Balance Plan</h1>
+    <p class="lead">Five client scenarios for the simplest of the three AT&amp;T pensions, where the traps are mostly about NOT applying legacy-plan rules: no pension Rule of 75, no segment-rate timing game, no 100% survivor option, and a healthcare milestone that still exists even though the pension subsidy does not. You must calculate or choose the right answer to advance.</p>
+    <div class="meta">
+      <div><span class="k">Format</span><span class="v">5 cases &middot; 24 checkpoints</span></div>
+      <div><span class="k">Progression</span><span class="v">Answer correctly to unlock the next step</span></div>
+      <div><span class="k">Source</span><span class="v">Mobility guide &amp; SPD library</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="rail">
+  <div class="inner">
+    <div class="chips" id="railChips"></div>
+    <div class="bar"><i id="railBar"></i></div>
+    <div class="pct" id="railPct">0 of 24 answered</div>
+  </div>
+</div>
+
+<main>
+
+<div class="intro">
+  <div class="pn">How this works</div>
+  <h2>Work each case like a first meeting</h2>
+  <div class="howto">
+    <div class="h"><h4>Read the client facts</h4><p>Each case opens with a profile. Everything you need is in the facts, or in the field guide if you want to look it up. Using the guide is encouraged; that is the workflow on a real client.</p></div>
+    <div class="h b"><h4>Calculate or choose</h4><p>Numeric questions want a number (rounding is fine; $ and % signs are OK). Multiple choice locks out wrong picks. A hint appears after a miss, and you can reveal the answer after two misses.</p></div>
+    <div class="h c"><h4>Advance and review</h4><p>A correct answer shows the full reasoning with a link back to the guide section. Finish a case to unlock the next. First-attempt answers count toward your score.</p></div>
+  </div>
+  <p class="small" style="margin-top:12px">Figures follow the illustrative values used in the <a class="inline" href="mobility.html">Mobility Program field guide</a> and its SPD's own worked examples. Several questions deliberately test where this plan <strong>differs from the legacy plans</strong>; the <a class="inline" href="case-studies.html">union</a> and <a class="inline" href="case-studies-nb.html">non-bargained</a> case studies pair well. Real client numbers always come from NetBenefits and the controlling SPD.</p>
+</div>
+
+<div id="cases"></div>
+<div id="summaryHost"></div>
+
+</main>
+
+<div class="foot">
+  <div class="inner">
+    <div class="ftitle">Farther &middot; AT&amp;T Focus Team, Mobility Program Case Studies</div>
+    <div>Companion knowledge check to the <a href="mobility.html">Mobility Program Guide</a>. Also see the <a href="case-studies.html">Union / Bargained</a> and <a href="case-studies-nb.html">Legacy Non-Bargained</a> case studies.</div>
+    <div class="disc">
+      This material is for internal educational and training use by Farther advisors. Scenarios and people are fictional; figures are illustrative values drawn from the Mobility Program SPD in the project library and simplify complex plan provisions. Interest crediting rates, annuity factors, match tiers, and dollar limits vary by plan year and contract and change over time. Nothing here is legal, tax, or investment advice or a promise of any benefit. Always verify a client's actual figures in Fidelity NetBenefits and the current SPD before advising.
+    </div>
+  </div>
+</div>
+
+<script>
+// ------------------------------------------------------------------
+// Case data. All facts mirror mobility.html (SPD-verified guide content).
+// Question types: 'mc' {options:[{t, correct?, why?}]} and 'num' {answer, tol}.
+// ------------------------------------------------------------------
+const REF = {
+  elig:   {href:'mobility.html#eligibility',  label:'Mobility Guide Section 02: Who&rsquo;s covered &amp; vesting'},
+  cb:     {href:'mobility.html#cash-balance', label:'Mobility Guide Section 03: One formula: cash balance'},
+  mech:   {href:'mobility.html#mechanics',    label:'Mobility Guide Section 04: Cash balance mechanics'},
+  pay:    {href:'mobility.html#payment',      label:'Mobility Guide Section 05: Payment &amp; lump sum'},
+  save:   {href:'mobility.html#savings',      label:'Mobility Guide Section 06: The 401(k) plan'},
+  hc:     {href:'mobility.html#healthcare',   label:'Mobility Guide Section 08: Retiree healthcare'},
+  prot:   {href:'mobility.html#protections',  label:'Mobility Guide Section 10: Protections &amp; rules'},
+};
+
+const CASES = [
+{
+  title:'Nina and the plan with one moving part',
+  concepts:['Who&rsquo;s covered','Single account','No pension Mod 75'],
+  facts:[
+    '<strong>Nina, age 49</strong>, AT&amp;T Mobility retail-side employee, CWA <strong>Orange Contract</strong> (District 7), hired 2004',
+    'Fully vested; NetBenefits shows one pension item: a <strong>Cash Balance Account of $88,000</strong>',
+    'Her brother is a legacy SBC manager in the Nonbargained Program and keeps giving her advice from HIS plan',
+    'She asks: <strong>&ldquo;Which of my formulas is winning, and when do I hit my Rule of 75?&rdquo;</strong>',
+  ],
+  questions:[
+  { type:'mc',
+    q:'First, confirm the program. Which populations does the Mobility Program cover?',
+    options:[
+      {t:'All AT&T management, whatever the hire date.', why:'Management hired or rehired after Dec 31, 2005 generally falls under the Management Cash Balance Program instead.'},
+      {t:'Bargaining-unit employees under the CWA Orange Contract, plus legacy management employed by a Participating Company on Dec 31, 2005 and not rehired on/after Jan 1, 2006.', correct:true},
+      {t:'Only union technicians in the old regional Bell companies.', why:'Those populations belong to the union (bargained) legacy programs, a different guide entirely.'},
+    ],
+    explain:'The Mobility Program covers <strong>Orange Contract bargained employees</strong> (CWA Districts 1, 2-13, 4, 7, 9) and <strong>legacy management employed on Dec 31, 2005</strong> and not rehired after. Nina, an Orange Contract employee, is squarely in it. Post-2005 management hires usually sit in the Management Cash Balance Program, whose SPD is not in this library, always confirm the program before quoting rules.',
+    ref:REF.elig },
+  { type:'mc',
+    q:'Now her &ldquo;which formula is winning&rdquo; question. What is the structure of the Mobility pension?',
+    options:[
+      {t:'The greatest of three formulas, like her brother&rsquo;s Nonbargained plan.', why:'That competing-formulas structure is the Nonbargained Program. Mobility has exactly one formula.'},
+      {t:'A cash balance account PLUS a pre-1999 pension band, like the union plan.', why:'The additive structure is the union legacy design. Mobility has no band component.'},
+      {t:'A single Cash Balance Account. The account IS the pension: whatever it is worth is what she has, payable as a lump sum or converted to an annuity.', correct:true},
+    ],
+    explain:'One formula, one number. The Mobility benefit <strong>is the Cash Balance Account</strong>, $88,000 in Nina&rsquo;s case, payable as a lump sum or annuitized. There is no &ldquo;greatest of&rdquo; to decode and no band benefit stacked on top. Her brother&rsquo;s advice comes from a structurally different plan.',
+    ref:REF.cb },
+  { type:'mc',
+    q:'And her &ldquo;when do I hit my Rule of 75&rdquo; question. Does the Mobility PENSION have a Modified Rule of 75 or any early-retirement subsidy?',
+    options:[
+      {t:'Yes, the same any/30, 50/25, 55/20, 65/10 table as the legacy plans.', why:'That table exists in the legacy pension programs (and, separately, in the Medical Program), but the Mobility pension has no Rule of 75 at all.'},
+      {t:'No. There is no Modified Rule of 75 and no early-retirement reduction or subsidy in the Mobility pension. Early or late, the starting value is the account.', correct:true},
+      {t:'Yes, but only for bargained employees.', why:'No Mobility population has a pension Rule of 75; the account value is the benefit for everyone in the program.'},
+    ],
+    explain:'The Mobility pension has <strong>no Mod 75, no subsidy, and no early-commencement reduction</strong>. There is no &ldquo;magic&rdquo; age-and-service combination that changes the pension&rsquo;s value; the account is the account. (Careful, though: a Rule-of-75-style test still matters for her <em>healthcare</em>, which Case 5 covers.) The retire-or-stay conversation here turns on the 401(k), Social Security, and healthcare rather than a pension cliff.',
+    ref:REF.cb },
+  { type:'mc',
+    q:'Housekeeping: what are Normal Retirement Age and vesting in this program?',
+    options:[
+      {t:'NRA is 65 or the 5th anniversary of participation if later; 5-year vesting.', why:'The 5th-anniversary extension is the Nonbargained rule, and 5-year vesting belongs to the union&rsquo;s older formula. Mobility uses neither.'},
+      {t:'NRA is a flat age 65, and vesting is 3 Years of Vesting Service (or reaching NRA while employed).', correct:true},
+      {t:'NRA is 62; vesting is immediate.', why:'There is no age-62 NRA or immediate vesting here: flat 65, and 3 years.'},
+    ],
+    explain:'<strong>Flat age 65</strong> (no 5th-anniversary extension as in the Nonbargained Program) and <strong>3-year cliff vesting</strong>. Nina, hired 2004, cleared vesting long ago; the account is hers wherever her career goes.',
+    ref:REF.elig },
+  ]
+},
+{
+  title:'Owen and the flat five percent',
+  concepts:['5% pay credit','Pension Compensation','Interest credits'],
+  facts:[
+    '<strong>Owen, age 44</strong>, Mobility Program, monthly <strong>Pension Compensation $6,000</strong>',
+    'Prior month-end <strong>Cash Balance: $120,000</strong>',
+    'Illustrative interest crediting rate this quarter: <strong>0.327% per month</strong> (monthly equivalent of a ~4% 30-Year Treasury rate)',
+    'His union cousin retires next year and has been telling Owen about her &ldquo;age credit factor going up at 50&rdquo;',
+  ],
+  questions:[
+  { type:'num',
+    q:'Compute Owen&rsquo;s Basic Benefit Credit for the month: the Mobility pay credit is a flat 5% of Pension Compensation.',
+    pre:'$:', answer:300, tol:0.5,
+    hint:'5% &times; $6,000.',
+    explain:'5% &times; $6,000 = <strong>$300</strong> credited on the last day of the month. Simple by design: one flat rate, no age tiers, no supplemental wage-base credit.',
+    ref:REF.mech },
+  { type:'mc',
+    q:'Which pay counts as Pension Compensation for that 5% credit?',
+    options:[
+      {t:'Base pay only.', why:'The Mobility definition is broader than base pay.'},
+      {t:'W-2 wages PLUS before-tax elective deferrals under IRC sections 125, 457, and 132(f), plus before-tax salary deferrals to a nonqualified deferred-comp plan.', correct:true},
+      {t:'Only pay above the Social Security Wage Base.', why:'That describes the union plan&rsquo;s Supplemental Pay Credit trigger, which does not exist in the Mobility Program.'},
+    ],
+    explain:'Mobility&rsquo;s Pension Compensation is <strong>broad</strong>: W-2 wages plus the listed before-tax deferrals. A client reducing W-2 pay through cafeteria-plan or deferred-comp elections is not shrinking their pension credit. And there is no separate above-the-wage-base credit here; that is a union-plan feature.',
+    ref:REF.mech },
+  { type:'num',
+    q:'Now the Interest Credit: apply the illustrative 0.327% monthly rate to his prior $120,000 balance.',
+    pre:'$:', answer:392.40, tol:2,
+    hint:'$120,000 &times; 0.327%.',
+    explain:'$120,000 &times; 0.327% &asymp; <strong>$392.40</strong> this month, credited before the $300 pay credit is added. At his balance, compounding already outpaces his own accrual. One caution: the crediting rate tracks the <strong>30-Year Treasury and resets each quarter</strong>, so never quote a fixed rate; pull the current one from the Recordkeeper.',
+    ref:REF.mech },
+  { type:'mc',
+    q:'Owen&rsquo;s union cousin says her pay credit jumps at 50 and warns him not to &ldquo;leave before your factor steps up.&rdquo; Does that apply to Owen?',
+    options:[
+      {t:'Yes; the Mobility credit also steps up with age.', why:'The age-stepped schedule (1.77% up to 4.04%) is the union cash balance. Mobility&rsquo;s credit is a flat 5% at every age.'},
+      {t:'No. The Mobility pay credit is a flat 5% at every age, so the account grows steadily rather than accelerating late-career. There is no &ldquo;highest-value accrual years&rdquo; cliff to protect.', correct:true},
+      {t:'No, because Mobility accruals are frozen.', why:'The frozen account is the Nonbargained cash balance (pay credits stopped in 2005). Mobility&rsquo;s 5% credit is alive and accruing.'},
+    ],
+    explain:'The union schedule steps from 1.77% up to 4.04% with age; the Nonbargained account froze in 2005; <strong>Mobility is neither</strong>: a flat, still-accruing 5%. So the &ldquo;don&rsquo;t leave before 50&rdquo; pension argument doesn&rsquo;t carry over, and the retire-or-stay analysis leans on the 401(k), Social Security timing, and healthcare instead.',
+    ref:REF.cb },
+  { type:'mc',
+    q:'Suppose Owen leaves AT&T at 58 but doesn&rsquo;t start payments until 62. What happens to his account in between?',
+    options:[
+      {t:'It is frozen at the termination-date value.', why:'Interest credits continue after termination; only the pay credits stop.'},
+      {t:'Pay credits stop, but interest credits keep accruing every month until the month before payments begin.', correct:true},
+      {t:'It converts automatically to an annuity at termination.', why:'Nothing converts until he elects a benefit commencement date and payment form.'},
+    ],
+    explain:'After termination the 5% pay credits end, but <strong>interest credits continue until the month before the Benefit Commencement Date</strong>. Deferring commencement is not free money left idle; the account keeps compounding at the crediting rate while he waits.',
+    ref:REF.mech },
+  ]
+},
+{
+  title:'Rosa converts the account',
+  concepts:['Annuity factor','50/75% J&S only','Pop-up always'],
+  facts:[
+    '<strong>Rosa, age 65</strong>, Mobility Program, married, first became a Participant <strong>before 2006</strong>',
+    'Cash Balance Account: <strong>$100,000</strong>',
+    'SPD&rsquo;s illustrative annuity factor at 65: <strong>141.5292</strong>',
+    'She wants lifetime income and is comparing the annuity forms; her husband has his own pension',
+  ],
+  questions:[
+  { type:'num',
+    q:'Convert the account: a Single Life Annuity is the account divided by the age-based factor. What monthly SLA does $100,000 buy at the 141.5292 factor?',
+    pre:'$ / month:', answer:706.57, tol:1,
+    hint:'$100,000 &divide; 141.5292.',
+    explain:'$100,000 &divide; 141.5292 = <strong>$706.57/month</strong> for life, the SPD&rsquo;s own illustration. The factor comes from the 1994 GAR mortality table and the 30-Year Treasury rate, so it moves with rates and age; always pull a current quote rather than reusing this one.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'Rosa asks for the 100% Joint &amp; Survivor option she saw in her sister&rsquo;s Nonbargained paperwork. What payment forms does the Mobility Program actually offer?',
+    options:[
+      {t:'Lump sum, SLA, and 50 / 75 / 100% J&S, the standard AT&T menu.', why:'The 100% J&S exists in the legacy programs. Mobility caps the survivor options at 75%.'},
+      {t:'Lump sum (always available, equal to the account), Single Life Annuity, and 50% or 75% Joint & Survivor. There is NO 100% J&S in this program.', correct:true},
+      {t:'Lump sum only.', why:'Annuity forms are available; it is the 100% survivor option specifically that does not exist here.'},
+    ],
+    explain:'Mobility offers the <strong>lump sum, SLA, and 50% / 75% J&amp;S only</strong>. A client wanting full survivor continuation cannot get it from this pension; the workaround is planning-level (life insurance, or annuitizing less and investing the rest). Quoting a 100% J&amp;S from a legacy-plan menu is a real cross-plan error.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'On the pop-up (benefit restored to the SLA level if the survivor dies first): when does it apply to a Mobility J&S election?',
+    options:[
+      {t:'Only if the client met the Modified Rule of 75 at termination.', why:'That condition is the Nonbargained rule. Mobility has no Rule of 75, and its pop-up is unconditional.'},
+      {t:'Always. Every Mobility J&S election carries the pop-up, no Rule-of-75 condition exists in this program.', correct:true},
+      {t:'Never; Mobility annuities have no pop-up.', why:'The pop-up exists and always applies here.'},
+    ],
+    explain:'In the Mobility Program the <strong>pop-up always applies</strong>, unconditionally, unlike the Nonbargained Program, where it is gated on Mod 75 at termination. That makes the J&amp;S forms slightly more forgiving here: if Rosa&rsquo;s husband dies first, her payment returns to the single-life level.',
+    ref:REF.pay },
+  { type:'num',
+    q:'Because Rosa was a Participant before 2006, her 50% J&S is the GREATER of 90% of the SLA or the Actuarial Equivalent. What is the 90%-of-SLA floor on her $706.57 single-life amount?',
+    pre:'$ / month:', answer:635.91, tol:1,
+    hint:'90% &times; $706.57.',
+    explain:'0.90 &times; $706.57 = <strong>$635.91/month</strong>, her guaranteed floor for the 50% J&amp;S election (she gets the Actuarial Equivalent instead if it computes higher). Participants who joined on/after Jan 1, 2006 get the straight Actuarial Equivalent with no 90% floor, another date-driven detail worth checking before quoting.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'Rosa&rsquo;s attorney asks about divorce contingencies: can a QDRO waive the Joint & Survivor annuity in this program?',
+    options:[
+      {t:'Yes; QDROs can waive the J&S, as in the Nonbargained Program.', why:'That waiver power exists in the Nonbargained Program, but the Mobility SPD specifically excludes it.'},
+      {t:'No. In the Mobility Program a J&S election cannot be waived by a QDRO. A QDRO can still assign part of the benefit to a former spouse.', correct:true},
+      {t:'No, because QDROs do not apply to cash balance plans.', why:'QDROs absolutely apply here for dividing the benefit; it is specifically the J&S waiver that is unavailable.'},
+    ],
+    explain:'A QDRO can divide the Mobility benefit, but it <strong>cannot waive a Joint &amp; Survivor election</strong> in this program, one more spot where the Nonbargained rule does not travel. For a client with divorce proceedings in view, that changes what the attorney can and cannot draft around.',
+    ref:REF.prot },
+  ]
+},
+{
+  title:'Felix and the timing game that is not there',
+  concepts:['Lump sum = account','No rate conversion','Rollover traps'],
+  facts:[
+    '<strong>Felix, age 57</strong>, Mobility Program, separating from AT&amp;T this year',
+    'Cash Balance Account: <strong>$250,000</strong>; 401(k) at Fidelity: <strong>$480,000</strong>',
+    'IRS segment rates rose sharply all year; his Nonbargained friend warned: <strong>&ldquo;Commence before January or your lump sum shrinks!&rdquo;</strong>',
+    'He wants the pension as a lump sum into his IRA, and may need income before 59&frac12;',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Is his friend right? Does Felix need to commence before January to protect his $250,000 lump sum from the segment-rate reset?',
+    options:[
+      {t:'Yes: AT&T locks the prior-November segment rates per calendar year, so January reprices his lump sum.', why:'True for a legacy CAM/PBM or Pre-99 annuity converted to a lump sum. The Mobility lump sum is not a rate conversion at all.'},
+      {t:'No. The Mobility lump sum IS the Cash Balance Account. It is not converted from an annuity with segment rates, so there is no commence-before-January timing game.', correct:true},
+      {t:'Yes, but only for the portion above $100,000.', why:'There is no rate-converted portion at any size; the entire lump sum is simply the account balance.'},
+    ],
+    explain:'The segment-rate/November-lock timing game applies when a <strong>defined-benefit annuity is converted</strong> to a lump sum (union Pre-99, Nonbargained CAM/PBM). Felix&rsquo;s lump sum is just his <strong>account balance on the Benefit Commencement Date</strong>: rate moves neither shrink nor grow it. One less variable to model, and a common piece of misplaced legacy-plan advice to correct.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'So is Felix&rsquo;s account completely untouched by interest rates?',
+    options:[
+      {t:'Yes, rates are irrelevant to a Mobility account.', why:'One rate does touch it: the monthly interest credit tracks the 30-Year Treasury.'},
+      {t:'Not completely: the monthly INTEREST CREDIT tracks the 30-Year Treasury rate (reset quarterly), so rates drive how fast the account grows, just not what it is worth at payout.', correct:true},
+      {t:'No; rising rates shrink the account balance itself.', why:'The balance never shrinks from rate moves. Rates only change the pace of future interest credits, and higher rates actually help.'},
+    ],
+    explain:'Rates matter to the <strong>growth</strong> of the account (the quarterly-reset Treasury-based interest credit, which rising rates actually improve), but not to its <strong>payout value</strong>. Contrast with the legacy plans, where rising rates directly shrink the annuity-converted lump sum.',
+    ref:REF.mech },
+  { type:'mc',
+    q:'Felix asks Fidelity to mail him a $250,000 check so he can deposit it into his IRA himself. What happens?',
+    options:[
+      {t:'Nothing special; he has 60 days to complete the rollover.', why:'The 60-day window exists, but a check payable to him arrives minus mandatory 20% federal withholding.'},
+      {t:'Mandatory 20% federal withholding ($50,000) comes off the top; to complete a full rollover he must replace that from other money within 60 days. A direct rollover avoids withholding entirely.', correct:true},
+      {t:'The plan refuses; lump sums must be annuitized at 57.', why:'The lump sum is always available in this program. The issue is purely how the payment is directed.'},
+    ],
+    explain:'A lump sum paid <strong>to the client</strong> triggers <strong>20% mandatory withholding</strong>, $50,000 on this account, and any unreplaced shortfall becomes taxable (plus possibly penalized). The clean path is a <strong>direct rollover</strong>, trustee to trustee. Set the paperwork up correctly before the distribution is requested.',
+    ref:REF.pay },
+  { type:'mc',
+    q:'Felix may need income before 59&frac12;. He plans to roll BOTH the pension and his $480,000 401(k) to his IRA on day one. What should stop you?',
+    options:[
+      {t:'Nothing; consolidating everything immediately is always cleanest.', why:'Consolidation costs him the Rule of 55: IRA money is locked behind 59½, with penalties.'},
+      {t:'The Rule of 55: separating in the year he turns 55 or older lets him take penalty-free withdrawals from the AT&T 401(k) while it stays in the plan. Rolling the 401(k) to an IRA forfeits that bridge.', correct:true},
+      {t:'The pension cannot be rolled to an IRA.', why:'The pension lump sum is rollover-eligible. It is the 401(k) that carries the penalty-free-access feature worth preserving.'},
+    ],
+    explain:'At 57 and separated, Felix qualifies for the <strong>Rule of 55</strong> on the AT&amp;T 401(k), penalty-free withdrawals while the money stays in the plan. An IRA has no such rule; rolling everything over puts his bridge income behind the 59&frac12; wall. Consider leaving enough in the 401(k) to fund the gap (confirm with Fidelity how withdrawals can be taken), and roll the rest. The pension rollover itself is fine.',
+    ref:REF.save },
+  { type:'num',
+    q:'His colleague&rsquo;s account is tiny. Below what present value does the plan bypass the normal election rules entirely (paid out or auto-rolled; threshold effective Jan 1, 2024)?',
+    pre:'$:', answer:7000, tol:0,
+    hint:'The threshold rose from $5,000 in 2024 (per the 2024 SMM).',
+    explain:'<strong>$7,000</strong>: at or under $1,000 is paid automatically as a lump sum; over $1,000 up to $7,000 is automatically rolled to an IRA unless the client elects otherwise. Flag it so a small-balance client is not surprised by an automatic distribution.',
+    ref:REF.pay },
+  ]
+},
+{
+  title:'Grace, the milestone that survived',
+  concepts:['Medical Rule-of-75 test','Enroll vs subsidize','Survivors'],
+  facts:[
+    '<strong>Grace, age 53</strong>, Mobility Program, hired <strong>2003</strong>, <strong>24 completed years</strong> Term of Employment',
+    'Burned out and planning to resign next month; Medicare is 12 years away',
+    'Cash Balance Account: <strong>$140,000</strong>; fully vested',
+    'She reasons: <strong>&ldquo;My plan has no Rule of 75, so leaving now costs me nothing.&rdquo;</strong>',
+    'Her husband does not work; she carries the household&rsquo;s health coverage',
+  ],
+  questions:[
+  { type:'mc',
+    q:'Start with the pension side of her claim. Does resigning now damage her PENSION?',
+    options:[
+      {t:'Yes; leaving before a milestone triggers early-commencement reductions.', why:'There is no milestone and no reduction in this pension. The account is the account.'},
+      {t:'No. She is vested, and the Mobility pension has no Rule of 75 or early-exit penalty: her $140,000 account keeps earning interest credits until she commences.', correct:true},
+      {t:'Yes; unvested amounts are forfeited.', why:'She cleared 3-year vesting long ago; nothing is forfeited.'},
+    ],
+    explain:'On the pension she is right: <strong>no subsidy exists, so none can be lost</strong>. The account is hers, and it keeps compounding after she leaves. But her sentence started with &ldquo;so leaving now costs me nothing,&rdquo; and that is where she is wrong, next question.',
+    ref:REF.cb },
+  { type:'mc',
+    q:'Here is the subtle point. Her pension has no Rule of 75, so is there NO age-and-service milestone to check before she resigns?',
+    options:[
+      {t:'Correct, no milestone exists anywhere for Mobility employees.', why:'The MEDICAL Program has its own age/service test using the same Rule-of-75 combinations, independent of the pension.'},
+      {t:'Wrong. Retiree medical eligibility is decided by the Medical Program&rsquo;s OWN age-and-service test (any/30, 50/25, 55/20, 65/10, at termination), which applies to Mobility employees even though their pension has no Rule of 75.', correct:true},
+      {t:'Wrong, but the healthcare test only applies to management.', why:'The Medical Program test covers former Management, Bargained, and Nonmanagement-Nonunion employees alike.'},
+    ],
+    explain:'This is the highest-value Mobility fact: the <strong>pension</strong> has no Rule of 75, but the <strong>Medical Program</strong> runs its own test on the same combinations, met at termination. A Mobility employee can still earn, or forfeit, retiree-medical access at those milestones. &ldquo;No Rule of 75 in my plan&rdquo; is true for the pension and dangerously false for healthcare.',
+    ref:REF.hc },
+  { type:'num',
+    q:'Map her to the table: at 53 with 24 years she misses every combination today. With continued service, in how many more whole years does she FIRST meet one?',
+    pre:'Years:', answer:1, tol:0,
+    hint:'In t years she is 53+t with 24+t years. Test the 50/25 combination first.',
+    explain:'In <strong>1 year</strong> she is 54 with <strong>25 years</strong>: the 50 / 25 combination is met (she passed 50 long ago). Resigning next month, twelve months short, forfeits retiree-medical eligibility she could lock in by staying one more year, with a 12-year pre-Medicare gap and a dependent spouse riding on it.',
+    ref:REF.hc },
+  { type:'mc',
+    q:'Say she stays the year and qualifies. Hired in 2003, what does she PAY for that retiree coverage?',
+    options:[
+      {t:'AT&T subsidizes most of it; that is the point of qualifying.', why:'Hired on/after 1/1/2001 means 100% of cost. What she earns by qualifying is the right to enroll, not a subsidy.'},
+      {t:'Full cost: hired on/after 1/1/2001 means no subsidy. But group buy-in through Alight for the pre-Medicare bridge can still beat $1,000 to $2,000+ per month per person on the individual market.', correct:true},
+      {t:'Nothing until 65, then Medicare rates.', why:'Retiree coverage is contributory from day one, and the 65+ subsidy was eliminated for anyone with a last day on/after 1/1/2021 anyway.'},
+    ],
+    explain:'<strong>Enrollment and subsidy are separate questions.</strong> As a 2003 hire she pays <strong>100% of cost</strong> (and the 65+ subsidy ended for post-2020 departures regardless). The prize is <strong>access</strong>: 11 subsequent years of group-rate pre-Medicare coverage for a two-person household is routinely worth tens of thousands versus the individual market, and it exists only if she meets the test at termination.',
+    ref:REF.hc },
+  { type:'mc',
+    q:'Last one. Her husband asks what happens to the pension if Grace dies before starting payments, and whether there is a separate death benefit like her Nonbargained neighbor described. What do you tell him?',
+    options:[
+      {t:'He gets a survivor annuity or a lump sum of the account, and there is NO separate Retiree Death Benefit in the Mobility Program; the survivor value is the account itself.', correct:true},
+      {t:'He receives one times her Wages, reduced 10% per year since termination.', why:'That greater-of Wages formula is the Nonbargained Retiree Death Benefit, which does not exist in the Mobility Program.'},
+      {t:'The account is forfeited at death before commencement.', why:'Nothing is forfeited: a spouse can take an annuity or a lump sum of the account, and with no spouse, partner, or beneficiary it goes to the estate.'},
+    ],
+    explain:'Before commencement, a surviving spouse can elect an annuity (the greater of 50% of the day-before-death 50% J&amp;S benefit or the actuarial-equivalent SLA of the account) or a <strong>lump sum of the account</strong>; with no spouse, partner, or beneficiary, the account goes to the <strong>estate</strong>. And the Nonbargained <strong>Retiree Death Benefit does not exist here</strong>: the account is the whole story. Check the beneficiary designation on file at Fidelity while the paperwork is fresh.',
+    ref:REF.prot },
+  ]
+},
+];
+
+// ------------------------------------------------------------------
+// Quiz engine (shared with case-studies.html / case-studies-nb.html)
+// ------------------------------------------------------------------
+const TOTALQ = CASES.reduce((n,c)=>n+c.questions.length,0);
+const state = {
+  ci:0, qi:0,
+  attempts:0,
+  results: CASES.map(c=>c.questions.map(()=>null)), // {firstTry:bool, revealed:bool}
+  finished:false,
+};
+
+const casesHost = document.getElementById('cases');
+const railChips = document.getElementById('railChips');
+const railBar = document.getElementById('railBar');
+const railPct = document.getElementById('railPct');
+
+function answeredCount(){
+  let n=0; state.results.forEach(c=>c.forEach(r=>{if(r)n++;})); return n;
+}
+function firstTryCount(){
+  let n=0; state.results.forEach(c=>c.forEach(r=>{if(r&&r.firstTry)n++;})); return n;
+}
+function caseDone(ci){ return state.results[ci].every(r=>r!==null); }
+function caseScore(ci){ return state.results[ci].filter(r=>r&&r.firstTry).length; }
+
+function renderRail(){
+  railChips.innerHTML='';
+  CASES.forEach((c,i)=>{
+    const chip=document.createElement('button');
+    chip.type='button';
+    let cls='chip', label='Case '+(i+1);
+    if(caseDone(i)){cls+=' done';label='✓ Case '+(i+1);}
+    else if(i===state.ci){cls+=' active';}
+    chip.className=cls; chip.textContent=label;
+    if(caseDone(i)||i===state.ci){
+      chip.addEventListener('click',()=>{ document.getElementById('case-'+i).scrollIntoView({behavior:'smooth',block:'start'}); });
+    }
+    railChips.appendChild(chip);
+  });
+  const a=answeredCount();
+  railBar.style.width=(a/TOTALQ*100)+'%';
+  railPct.textContent=a+' of '+TOTALQ+' answered';
+}
+
+function refLink(ref){
+  return '<div class="ref">Review: <a class="inline" href="'+ref.href+'" target="_blank" rel="noopener">'+ref.label+'</a></div>';
+}
+
+function renderAnsweredQ(caseIdx,qIdx){
+  const q=CASES[caseIdx].questions[qIdx];
+  const r=state.results[caseIdx][qIdx];
+  const div=document.createElement('div');
+  div.className='q answered'+(r.firstTry?'':' missed');
+  let yourTxt;
+  if(r.revealed) yourTxt='<b>Revealed</b> after two misses';
+  else if(r.firstTry) yourTxt='<b>Correct on the first attempt</b>';
+  else yourTxt='<b>Correct after '+(r.tries)+' attempts</b>';
+  let ansTxt;
+  if(q.type==='num'){ ansTxt=(q.pre?q.pre+' ':'')+fmtAnswer(q); }
+  else { ansTxt=q.options.find(o=>o.correct).t; }
+  div.innerHTML=
+    '<div class="qlab">Checkpoint '+(qIdx+1)+' of '+CASES[caseIdx].questions.length+'</div>'+
+    '<div class="qtext">'+q.q+'</div>'+
+    '<div class="youranswer">'+yourTxt+' &middot; Answer: <strong>'+ansTxt+'</strong></div>'+
+    '<div class="explain'+(r.revealed?' revealed':'')+'"><span class="etag">'+(r.revealed?'Answer revealed':'Why')+'</span><p>'+q.explain+'</p>'+refLink(q.ref)+'</div>';
+  return div;
+}
+
+function fmtAnswer(q){
+  const n=q.answer;
+  return (Number.isInteger(n)?n.toLocaleString('en-US'):n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}));
+}
+
+function parseNum(v){
+  const cleaned=String(v).replace(/[$,%\s,]/g,'');
+  if(cleaned==='') return NaN;
+  return parseFloat(cleaned);
+}
+
+function renderActiveQ(caseIdx,qIdx,container){
+  const q=CASES[caseIdx].questions[qIdx];
+  const div=document.createElement('div');
+  div.className='q';
+  let inner='<div class="qlab">Checkpoint '+(qIdx+1)+' of '+CASES[caseIdx].questions.length+'</div>'+
+            '<div class="qtext">'+q.q+'</div>';
+  div.innerHTML=inner;
+
+  const finish=(firstTry,revealed,tries)=>{
+    state.results[caseIdx][qIdx]={firstTry:firstTry,revealed:revealed,tries:tries};
+    state.attempts=0;
+    advance(caseIdx,qIdx,div,q,revealed);
+  };
+
+  if(q.type==='mc'){
+    const opts=document.createElement('div'); opts.className='opts';
+    q.options.forEach(o=>{
+      const b=document.createElement('button');
+      b.type='button'; b.className='opt'; b.innerHTML=o.t;
+      b.addEventListener('click',()=>{
+        if(b.disabled) return;
+        state.attempts++;
+        if(o.correct){
+          b.classList.add('right');
+          opts.querySelectorAll('.opt').forEach(x=>x.disabled=true);
+          finish(state.attempts===1,false,state.attempts);
+        } else {
+          b.classList.add('wrong','shake'); b.disabled=true;
+          const fb=document.createElement('div'); fb.className='feedback bad';
+          fb.innerHTML=o.why||'Not quite. Look again at the facts.';
+          b.insertAdjacentElement('afterend',fb);
+        }
+      });
+      opts.appendChild(b);
+    });
+    div.appendChild(opts);
+  } else {
+    const row=document.createElement('div'); row.className='numrow';
+    if(q.pre){const p=document.createElement('span');p.className='pre';p.innerHTML=q.pre;row.appendChild(p);}
+    const input=document.createElement('input');
+    input.type='text'; input.inputMode='decimal'; input.setAttribute('aria-label','Your answer');
+    input.placeholder='Your answer';
+    const check=document.createElement('button'); check.type='button'; check.className='btn'; check.textContent='Check';
+    row.appendChild(input); row.appendChild(check);
+    div.appendChild(row);
+    const fbHost=document.createElement('div'); div.appendChild(fbHost);
+
+    const tryCheck=()=>{
+      if(input.disabled) return;
+      const v=parseNum(input.value);
+      fbHost.innerHTML='';
+      if(isNaN(v)){
+        fbHost.innerHTML='<div class="feedback hint">Enter a number. $ signs, commas, and % are fine.</div>';
+        return;
+      }
+      state.attempts++;
+      if(Math.abs(v-q.answer)<=q.tol){
+        input.classList.remove('wrong'); input.classList.add('right');
+        input.disabled=true; check.disabled=true;
+        finish(state.attempts===1,false,state.attempts);
+      } else {
+        input.classList.add('wrong','shake');
+        setTimeout(()=>input.classList.remove('shake'),600);
+        let msg='<div class="feedback bad">Not it. Check the setup and try again.</div>';
+        if(state.attempts>=1 && q.hint) msg+='<div class="feedback hint"><strong>Hint:</strong> '+q.hint+'</div>';
+        fbHost.innerHTML=msg;
+        if(state.attempts>=2){
+          const rv=document.createElement('button'); rv.type='button'; rv.className='btn ghost'; rv.style.marginTop='10px';
+          rv.textContent='Reveal the answer';
+          rv.addEventListener('click',()=>{
+            input.value=fmtAnswer(q); input.disabled=true; check.disabled=true;
+            input.classList.remove('wrong');
+            fbHost.innerHTML='';
+            finish(false,true,state.attempts);
+          });
+          fbHost.appendChild(rv);
+        }
+      }
+    };
+    check.addEventListener('click',tryCheck);
+    input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();tryCheck();}});
+    setTimeout(()=>input.focus({preventScroll:true}),50);
+  }
+  container.appendChild(div);
+  return div;
+}
+
+function advance(caseIdx,qIdx,qDiv,q,revealed){
+  // show explanation + continue button in place
+  const r=state.results[caseIdx][qIdx];
+  const ex=document.createElement('div');
+  ex.className='explain'+(revealed?' revealed':'');
+  ex.innerHTML='<span class="etag">'+(revealed?'Answer revealed':(r.firstTry?'Correct':'Correct (attempt '+r.tries+')'))+'</span><p>'+q.explain+'</p>'+refLink(q.ref);
+  qDiv.appendChild(ex);
+
+  const nav=document.createElement('div'); nav.className='qnav';
+  const btn=document.createElement('button'); btn.type='button'; btn.className='btn gold';
+  const lastQ = qIdx===CASES[caseIdx].questions.length-1;
+  const lastCase = caseIdx===CASES.length-1;
+  btn.textContent = lastQ ? (lastCase?'Finish and see your results':'Complete case, unlock the next') : 'Next checkpoint';
+  btn.addEventListener('click',()=>{
+    if(lastQ){ state.ci=caseIdx+1; state.qi=0; }
+    else { state.qi=qIdx+1; }
+    renderAll();
+    const target = lastQ ? (lastCase?document.getElementById('summaryHost'):document.getElementById('case-'+(caseIdx+1)))
+                         : document.getElementById('case-'+caseIdx+'-q'+(qIdx+1));
+    if(target) setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:lastQ?'start':'center'}),60);
+  });
+  nav.appendChild(btn);
+  qDiv.appendChild(nav);
+  renderRail();
+}
+
+function renderCase(ci){
+  const c=CASES[ci];
+  const done=caseDone(ci);
+  const locked=!done && ci>state.ci;
+  const active=!done && ci===state.ci;
+  const card=document.createElement('div');
+  card.className='case'+(locked?' locked':'')+(done?' done':'');
+  card.id='case-'+ci;
+
+  const stat = done ? (caseScore(ci)+' / '+c.questions.length+' first try')
+             : locked ? '🔒 Locked' : 'In progress';
+  let head='<div class="chead">'+
+    '<div class="cnum">'+(done?'✓':(ci+1))+'</div>'+
+    '<div class="ct"><h3>Case '+(ci+1)+': '+c.title+'</h3>'+
+    '<div class="concepts">'+c.concepts.map(k=>'<span>'+k+'</span>').join('')+'</div></div>'+
+    '<div class="cstat">'+stat+'</div></div>';
+  card.innerHTML=head;
+
+  if(locked){
+    const b=document.createElement('div'); b.className='cbody';
+    b.innerHTML='<p class="small" style="padding:12px 0 8px">Complete the previous case to unlock this one.</p>';
+    card.appendChild(b);
+    return card;
+  }
+
+  const body=document.createElement('div'); body.className='cbody';
+  const facts=document.createElement('div'); facts.className='facts';
+  facts.innerHTML='<span class="ftag">Client facts</span><ul>'+c.facts.map(f=>'<li>'+f+'</li>').join('')+'</ul>';
+  body.appendChild(facts);
+
+  const upto = done ? c.questions.length : state.qi;
+  for(let qi=0; qi<upto; qi++){
+    const el=renderAnsweredQ(ci,qi);
+    el.id='case-'+ci+'-q'+qi;
+    body.appendChild(el);
+  }
+  if(active && state.qi<c.questions.length){
+    const el=renderActiveQ(ci,state.qi,body);
+    el.id='case-'+ci+'-q'+state.qi;
+  }
+  card.appendChild(body);
+  return card;
+}
+
+function renderSummary(){
+  const host=document.getElementById('summaryHost');
+  host.innerHTML='';
+  if(!CASES.every((c,i)=>caseDone(i))) return;
+  const ft=firstTryCount();
+  const pct=Math.round(ft/TOTALQ*100);
+  let grade;
+  if(pct>=90) grade='Excellent. You are ready to run these conversations with real Mobility clients.';
+  else if(pct>=75) grade='Strong. Re-read the sections linked below and you are there.';
+  else if(pct>=55) grade='A solid start. The linked guide sections cover every miss.';
+  else grade='Worth a full pass through the Mobility guide before client meetings, then retake this.';
+
+  const missed=[];
+  CASES.forEach((c,ci)=>c.questions.forEach((q,qi)=>{
+    const r=state.results[ci][qi];
+    if(!r.firstTry) missed.push({c:ci,q:qi,ref:q.ref});
+  }));
+  const missHtml = missed.length
+    ? '<div class="misslist"><h4>Missed on the first attempt</h4><ul>'+
+      missed.map(m=>'<li>Case '+(m.c+1)+', checkpoint '+(m.q+1)+' &middot; <a href="'+m.ref.href+'" target="_blank" rel="noopener">'+m.ref.label+'</a></li>').join('')+
+      '</ul></div>'
+    : '<div class="misslist"><h4>Missed on the first attempt</h4><ul><li>Nothing. A clean sweep.</li></ul></div>';
+
+  const div=document.createElement('div');
+  div.className='summary';
+  div.innerHTML='<div class="pn" style="color:var(--gold-soft)">Results</div>'+
+    '<h2>Knowledge check complete</h2>'+
+    '<div class="score">'+ft+' / '+TOTALQ+'</div>'+
+    '<div class="grade">first-attempt score ('+pct+'%) &middot; '+grade+'</div>'+
+    missHtml+
+    '<p>Every scenario here maps to a live Mobility-client decision: confirming the program, valuing and rolling the account, choosing survivor forms that actually exist here, preserving Rule-of-55 access, and catching the healthcare milestone the pension does not advertise. Keep the <a class="inline" style="color:var(--gold-soft)" href="mobility.html">Mobility guide</a> open in real meetings, and try the <a class="inline" style="color:var(--gold-soft)" href="case-studies.html">union</a> and <a class="inline" style="color:var(--gold-soft)" href="case-studies-nb.html">non-bargained</a> case studies to lock in the differences.</p>'+
+    '<button type="button" class="btn gold" id="resetBtn">Start over</button>';
+  host.appendChild(div);
+  document.getElementById('resetBtn').addEventListener('click',()=>{
+    state.ci=0;state.qi=0;state.attempts=0;state.finished=false;
+    state.results=CASES.map(c=>c.questions.map(()=>null));
+    renderAll();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+}
+
+function renderAll(){
+  casesHost.innerHTML='';
+  CASES.forEach((c,i)=>casesHost.appendChild(renderCase(i)));
+  renderRail();
+  renderSummary();
+}
+renderAll();
+</script>
+</body>
+</html>

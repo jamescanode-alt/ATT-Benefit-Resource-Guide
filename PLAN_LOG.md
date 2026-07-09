@@ -1,5 +1,30 @@
 # PLAN_LOG
 
+## 2026-07-08 (3) — Mobility Program case-study training page (case-studies-mobility.html)
+
+**Task.** Complete the case-study set with a Mobility Program quiz. The plan is simpler
+(cash-balance-only), so 5 cases / 24 checkpoints: who's covered (Orange Contract bargained;
+legacy mgmt employed 12/31/2005) and single-account structure (no greatest-of, no pension
+Mod 75, flat NRA 65); mechanics (flat 5% Basic Benefit Credit, broad Pension Compensation,
+quarterly 30-Yr Treasury interest that continues after termination); payment forms (SLA =
+account / 141.5292 example, 50/75% J&S only, pop-up always applies, 90%-of-SLA floor for
+pre-2006 participants, no QDRO waiver); rates and rollover (lump sum = account, NOT
+segment-rate-converted, 20% withholding vs direct rollover, Rule of 55, $7,000 cash-out);
+healthcare and survivors (Medical Program's own Rule-of-75-style test still applies, post-2001
+hires pay 100%, no Retiree Death Benefit; estate default).
+
+**Source of truth.** All facts mirror the SPD-verified content of `mobility.html`, including the
+SPD's own annuity-factor worked example. Several questions deliberately contrast the legacy
+plans' rules (rate timing, pop-up condition, death benefit).
+
+**Files.** New `case-studies-mobility.html` (same engine/visual system); nav link + strategy
+callout in `mobility.html`; footer cross-links in `case-studies.html` and `case-studies-nb.html`.
+
+**Risks.** Don't import legacy rules (segment-rate timing, Mod 75 pension subsidy, 100% J&S,
+death benefit). Numeric tolerance for rounding. Keep the shared visual system.
+
+**Next steps.** Build page → validate in preview (flow, math, responsive) → push → CHANGE_LOG.
+
 ## 2026-07-08 (2) — Legacy Non-Bargained case-study training page (case-studies-nb.html)
 
 **Task.** Mirror the union case-studies page for the Nonbargained (management) plan, testing the
