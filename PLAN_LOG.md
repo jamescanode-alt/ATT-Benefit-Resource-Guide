@@ -1,5 +1,23 @@
 # PLAN_LOG
 
+## 2026-07-14 — Fix inaccurate "match excludes after-tax" claim (Section 09/11)
+
+**Task.** User flagged the Section 09 claim that "the employer match applies only to pre-tax and
+Roth deferrals, not to after-tax (bucket ③) contributions" as possibly inaccurate. Verified against
+`ATT-Retirement-Savings-Plan_78-63233.pdf`: the claim is wrong. The SPD (p. 22–24) defines matched
+Basic Contributions (first 6% of Compensation) as before-tax, Roth, after-tax, or any combination,
+and the default spillover election exists specifically so contributions continue as after-tax and
+"continue to receive Company Match" after the 402(g) limit. Only catch-up contributions and amounts
+above the 6% matched cap never earn match.
+
+**Files.** `index.html` (Matching Formula callout + front-loading callout), `non-bargained.html`
+(front-loading callout). Case-study pages verified clean.
+
+**Risks.** Keep the front-loading warning coherent — it's real only when spillover is opted out of
+or contributions are suspended; don't overstate or erase it.
+
+**Next steps.** Edit both files → verify in preview → push → CHANGE_LOG.
+
 ## 2026-07-08 (3) — Mobility Program case-study training page (case-studies-mobility.html)
 
 **Task.** Complete the case-study set with a Mobility Program quiz. The plan is simpler

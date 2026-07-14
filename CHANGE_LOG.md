@@ -1,5 +1,29 @@
 # CHANGE_LOG
 
+## 2026-07-14 — Correct "match excludes after-tax" claim (user-flagged; SPD-verified)
+
+User flagged the Section 09 claim that the employer match applies only to pre-tax and Roth
+deferrals, not after-tax contributions. Verified against
+`ATT-Retirement-Savings-Plan_78-63233.pdf` — **the claim was wrong**: matched Basic
+Contributions (first 6% of Compensation) "may be Before-tax Contributions, After-tax
+Contributions, Roth Contributions, or a combination of any of the three" (p. 23), and the
+default spillover election exists specifically so post-402(g) contributions continue as
+after-tax and "continue to receive Company Match" (p. 24). Only catch-up contributions and
+amounts above the 6% matched cap never earn match (pp. 24, 26).
+
+**Fixes (all three guides for consistency):**
+- `index.html` — Matching Formula callout no longer says "pre-tax or Roth contributions";
+  front-loading callout rewritten: no true-up + per-period 6% cap stays, but spillover keeps
+  the match alive after the deferral limit unless the client opted out or suspends; "Also
+  note" paragraph replaced with the corrected rule (after-tax within 6% is matched; catch-up
+  and >6% are not).
+- `non-bargained.html` — same two-paragraph rewrite of the front-loading callout.
+- `mobility.html` — same front-loading correction (its callout repeated the "contributions
+  stop and so does the match" claim).
+
+**Validated in preview** (localhost static server): old claim absent, new copy renders on all
+three pages. Case-study pages checked — they don't repeat the claim.
+
 ## 2026-07-08 (3) — Mobility Program case studies (case-studies-mobility.html)
 
 Completes the training set: **five client scenarios (24 checkpoints)** for the cash-balance-only
