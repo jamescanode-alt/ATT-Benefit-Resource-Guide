@@ -1,5 +1,25 @@
 # PLAN_LOG
 
+## 2026-07-14 (2) — Remove implication that Mod 75 yields subsidized healthcare (non-bargained Section 08/09)
+
+**Task.** User flagged Section 08 of `non-bargained.html` as implying management employees can
+still get *subsidized* retiree healthcare once Mod 75 is met. Verified against
+`ATT Benefit changes 12-2020.pdf` (pp. 3–5) and `Medical SPD 2021.pdf` (pp. 51–52): Mod 75 gates
+*coverage eligibility* only. Subsidy is gone for anyone retiring now — pre-Medicare subsidy
+eliminated for management with last day on payroll on/after 1/1/2022 regardless of hire date;
+Medicare-side subsidy eliminated for last day on/after 1/1/2021. Hire-date/legacy rules now only
+matter for those who retired by the cutoffs.
+
+**Files.** `non-bargained.html`: Section 08 gold + warn callouts (Part B/D reimbursement line,
+"only pre-2001 hires may qualify" line), Mod 75 trap #2 wording, Section 09 calculator intro,
+calculator card label ("Retiree healthcare subsidy" → eligibility) and result text.
+`case-studies-nb.html` already teaches this correctly — no change.
+
+**Risks.** Don't erase the real value: Mod 75 access to unsubsidized group coverage is still a
+material pre-Medicare bridge. Keep the historic cutoffs for context.
+
+**Next steps.** Edit → verify in preview (incl. calculator output) → push → CHANGE_LOG.
+
 ## 2026-07-14 — Fix inaccurate "match excludes after-tax" claim (Section 09/11)
 
 **Task.** User flagged the Section 09 claim that "the employer match applies only to pre-tax and

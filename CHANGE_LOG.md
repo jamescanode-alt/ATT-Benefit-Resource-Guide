@@ -1,5 +1,32 @@
 # CHANGE_LOG
 
+## 2026-07-14 (2) — Mod 75 no longer implies subsidized healthcare (non-bargained guide)
+
+User flagged Section 08 of `non-bargained.html` as implying management employees can still get
+subsidized retiree healthcare once Mod 75 is met. Verified against the **Dec 2020 Retiree Benefit
+Changes** notice (pp. 3–5) and **Medical SPD 2021** (pp. 51–52): Mod 75 gates *eligibility to
+enroll* only. For any management employee whose last day on payroll is on/after **1/1/2022**
+there is **no Company subsidy**, regardless of hire date (pre-Medicare sunset announced
+12/15/2020; the Medicare-side subsidy/HRA already ended for last days on/after 1/1/2021). The
+old hire-date/legacy rules matter only for those who retired by the cutoffs.
+
+**Fixes in `non-bargained.html`:**
+- Subsidy callout retagged "For management retiring now, there is no subsidy" and restructured
+  to lead with the bottom line; the "only pre-2001 hires may qualify" line reframed as history
+  that creates no subsidy path today; added that Mod 75's healthcare value is guaranteed group
+  access, not a discount.
+- Gold "pre-Medicare bridge" callout: enrollment now noted as at the retiree's own cost, and the
+  Medicare Part B/D premium-reimbursement mention corrected (that subsidy ended 1/1/2021).
+- Mod 75 trap #2 clarified (pension subsidy + retiree-medical *enrollment eligibility*).
+- Section 09 calculator: intro no longer says "candidate for subsidized retiree healthcare";
+  result card renamed "Retiree healthcare eligibility"; eligible-state text now says access
+  only, 100% of Cost of Coverage for management retiring on/after 1/1/2022; status-banner
+  subtitle marks healthcare as unsubsidized for management retiring today.
+
+**Validated in preview:** calculator exercised (55/25 → eligible card shows corrected label and
+copy), old phrasing absent, no console errors. `case-studies-nb.html` already taught the rule
+correctly (no change).
+
 ## 2026-07-14 — Correct "match excludes after-tax" claim (user-flagged; SPD-verified)
 
 User flagged the Section 09 claim that the employer match applies only to pre-tax and Roth
