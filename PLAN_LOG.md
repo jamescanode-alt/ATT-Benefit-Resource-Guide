@@ -1,5 +1,27 @@
 # PLAN_LOG
 
+## 2026-07-20 (4) — Trigger Finder: MOD 75 card, FRA relabel, radio reorder
+
+**Task.** Three UI tweaks to `triggers.html`: (1) swap the "Enter using" radios so Ages/years is
+first; (2) replace the free-text "Snapshot" status banner with a proper result card, labeled
+"Mod 75", valued Met/On-Track to Meet/Not Met, matching the other cards' look; (3) rename the
+"Birth-year rules" card to "Social Security FRA" and spell out "full retirement age" in its desc.
+
+**Files.** `triggers.html`: swapped the two `<label class="radio-opt">` entries under "Enter
+using"; changed `.results` grid from `repeat(3,1fr)` to `repeat(2,1fr)` to fit 4 cards as 2x2;
+removed the normal-flow `banner.className/innerHTML` "Snapshot: ..." block, replaced with a
+`snapshot` string folded into a new first `mk()` card (Mod 75) driven off `m75Status`; banner now
+only used for the two validation-error early returns; renamed the Birth-year `mk()` call's label
+to "Social Security FRA" and expanded "FRA" to "full retirement age (FRA)" in its description.
+
+**Risk.** Losing the useful client-context line (age/service/group/separation) when removing the
+banner; avoided by folding it into the Mod 75 card's description via the `snapshot` variable
+instead of dropping it.
+
+**Validated in preview:** radio order, 2-column grid at desktop, 1-column at mobile (no overflow),
+all three Mod 75 values/colors (Met/green, On-Track to Meet/blue, Not Met/red), FRA description
+spelled out, console clean, em-dash grep 0.
+
 ## 2026-07-20 (3) — Trigger Finder: wire employment status into eligibility logic
 
 **Task.** User reported the cards (Rule of 55) and timeline don't update when the client is marked

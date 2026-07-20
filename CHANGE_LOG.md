@@ -1,5 +1,28 @@
 # CHANGE_LOG
 
+## 2026-07-20 (4) — Trigger Finder: MOD 75 card, FRA relabel, radio order
+
+Three UI requests on `triggers.html`:
+
+- **Radio order:** "Enter using" now lists **Ages / years first**, Specific dates second (ages
+  remains the default-checked option, unchanged).
+- **Snapshot banner replaced with a MOD 75 card.** The old free-text status banner ("Snapshot:
+  Age... yrs of service... group... separation...") is gone from normal flow; that same client
+  summary is now folded into a new **first result card labeled "Mod 75"**, styled identically to
+  the Rule of 55 / Retiree-medical gate / Birth-year cards, with exactly one of three values:
+  **Met** (good/green), **On-Track to Meet** (neutral/blue), or **Not Met** (warn/red). The banner
+  element still exists but is now used only for the two input-validation error states (future DOB,
+  separation before hire); it renders empty otherwise.
+- **Result-card grid** changed from 3 columns to **2 columns** (`.results` CSS) to hold the new
+  4th card as a clean 2x2 instead of 3-then-1.
+- **Birth-year rules card renamed to "Social Security FRA"**, and its description now spells out
+  "Social Security full retirement age (FRA)" on first use instead of the bare abbreviation.
+
+**Validated in preview:** radio order confirmed (Ages / years, Specific dates); grid renders 2
+columns at desktop width, 1 column on mobile with no overflow; all three Mod 75 states exercised
+(Met/green, On-Track to Meet/blue, Not Met/red) with correct snapshot text folded into each
+description; FRA card description confirmed spelled out; console clean; zero em-dashes.
+
 ## 2026-07-20 (3) — Trigger Finder: employment status now drives eligibility logic
 
 User flagged that toggling **Terminated** only changed labels; the cards and timeline still

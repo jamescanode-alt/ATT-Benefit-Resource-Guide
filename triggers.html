@@ -140,7 +140,7 @@ td.num{font-variant-numeric:tabular-nums;text-align:right}
 .calc .row.hidden{display:none}
 .calc .note{font-size:12.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif;margin-top:14px;line-height:1.5}
 
-.results{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.results{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
 @media(max-width:680px){.results{grid-template-columns:1fr}}
 .rcard{border-radius:10px;padding:18px;border:1px solid var(--line);background:var(--cream);display:flex;flex-direction:column;min-height:140px}
 .rcard .rlabel{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
@@ -276,8 +276,8 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <div class="row">
       <label>Enter using</label>
       <div class="radiogrp" role="radiogroup" aria-label="Date entry mode">
-        <label class="radio-opt"><input type="radio" name="entryMode" value="dates"> Specific dates</label>
         <label class="radio-opt"><input type="radio" name="entryMode" value="ages" checked> Ages / years</label>
+        <label class="radio-opt"><input type="radio" name="entryMode" value="dates"> Specific dates</label>
       </div>
     </div>
 
@@ -512,7 +512,8 @@ secs.forEach(s=>s&&obs.observe(s));
     const vested = vestDate ? (vestDate<=svcEnd) : null;
     const vestLostAtSep = vestDate && ((sep && sep<vestDate) || (termed && !sep && vestDate>today));
 
-    // ---- status banner ----
+    // ---- client snapshot line (folded into the Mod 75 card below) ----
+    banner.className=''; banner.innerHTML='';
     let sub=[];
     sub.push('Age '+ageNow.toFixed(1)+(dobApprox?' (from entered age, approximate)':''));
     if(svcNow!==null) sub.push(svcNow.toFixed(1)+' yrs of service'+(hireApprox?' (approximate)':'')+(termed?' at termination':''));
@@ -520,17 +521,7 @@ secs.forEach(s=>s&&obs.observe(s));
     sub.push(GRP_NAME[grp]);
     if(sep) sub.push('separation '+fmtFull(sep)+(isActive?' (planned)':''));
     else if(termed) sub.push('terminated (separation date not entered)');
-
-    let m75Line='';
-    if(m75Status==='met') m75Line=medGateName+' met since '+fmt(m75Date)+' ('+m75Combo.label+').';
-    else if(m75Status==='ontrack') m75Line='On track to meet the '+medGateName+' '+fmt(m75Date)+' ('+m75Combo.label+') if still employed then.';
-    else if(m75Status==='missed') m75Line=medGateName+' NOT met at termination: milestone ('+m75Combo.label+') '+(sep
-      ? ('would have arrived '+fmt(m75Date)+', '+monthsBetween(sep,m75Date)+' months after the separation date.')
-      : ('would have required about '+monthsBetween(today,m75Date)+' more months of continued service.'));
-    else m75Line='Enter service data to test the '+medGateName+'.';
-
-    banner.className='status-banner '+((m75Status==='missed'||vestLostAtSep)?'notmet':'met');
-    banner.innerHTML='Snapshot: '+sub.join(' · ')+'<span class="sb-sub">'+m75Line+(vestLostAtSep?' Separation is also before the 3-year vesting cliff ('+fmt(vestDate)+').':'')+'</span>';
+    const snapshot = sub.join(' · ')+'.';
 
     // ---- result cards ----
     cards.innerHTML='';
@@ -539,6 +530,26 @@ secs.forEach(s=>s&&obs.observe(s));
       d.innerHTML='<div class="rlabel">'+label+'</div><div class="rval">'+val+'</div><div class="rdesc">'+desc+'</div>';
       cards.appendChild(d);
     };
+
+    let modCls, modVal, modDesc;
+    if(m75Status==='met'){
+      modCls='good'; modVal='Met';
+      modDesc=snapshot+' '+medGateName+' met since '+fmt(m75Date)+' ('+m75Combo.label+').';
+    } else if(m75Status==='ontrack'){
+      modCls='neutral'; modVal='On-Track to Meet';
+      modDesc=snapshot+' On track to meet the '+medGateName+' '+fmt(m75Date)+' ('+m75Combo.label+') if still employed then.';
+    } else if(m75Status==='missed'){
+      modCls='warn'; modVal='Not Met';
+      modDesc=snapshot+' '+medGateName+' NOT met'+(sep
+        ? (': would have arrived '+fmt(m75Date)+', '+monthsBetween(sep,m75Date)+' months after the separation date.')
+        : (': would have required about '+monthsBetween(today,m75Date)+' more months of continued service.'));
+    } else {
+      modCls='neutral'; modVal='Needs service data';
+      modDesc=snapshot+' Enter a hire date or years of service to test the '+medGateName+'.';
+    }
+    if(vestLostAtSep) modDesc+=' Also separating before the 3-year vesting cliff ('+fmt(vestDate)+').';
+    mk(modCls,'Mod 75',modVal,modDesc);
+
     if(r55ok===true) mk('good','Rule of 55','Applies','Separation is in/after the calendar year they turn 55 ('+r55Year+'). AT&amp;T 401(k) withdrawals are penalty-free while the money stays in the plan. An IRA rollover forfeits this.');
     else if(r55ok===false) mk('warn','Rule of 55','Does not apply','Separation is before the calendar year they turn 55 ('+r55Year+'). Penalty-free 401(k)/IRA access generally waits for 59½ ('+fmt(addM(dob,714))+'), or 72(t)/SEPP as a last resort.');
     else if(termed) mk('warn','Rule of 55','Needs sep. date','Client is terminated: the Rule of 55 applies only if the separation year was '+r55Year+' or later. Enter the date of separation to confirm. If earlier, penalty-free access waits for 59½ ('+fmt(addM(dob,714))+').');
@@ -553,7 +564,7 @@ secs.forEach(s=>s&&obs.observe(s));
 
     const rmdNote = rmd.legacy ? ' (already applicable under pre-SECURE rules, confirm status)' : ' ('+rmdDate.getFullYear()+')';
     const born1959 = rmd.note ? ' 1959 birth year: IRS proposed regs say 73, confirm final regs.' : '';
-    mk('neutral','Birth-year rules','FRA '+fra.label+' · RMD '+rmd.label,'Born '+by+': Social Security FRA is '+fra.label+' ('+fmt(fraDate)+'); RMDs begin at '+rmd.label+rmdNote+'.'+born1959+' Claiming window 62–70.');
+    mk('neutral','Social Security FRA','FRA '+fra.label+' · RMD '+rmd.label,'Born '+by+': Social Security full retirement age (FRA) is '+fra.label+' ('+fmt(fraDate)+'); RMDs begin at '+rmd.label+rmdNote+'.'+born1959+' Claiming window 62–70.');
 
     // ---- timeline ----
     const items=[];
