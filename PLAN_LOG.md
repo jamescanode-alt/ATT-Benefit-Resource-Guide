@@ -1,5 +1,29 @@
 # PLAN_LOG
 
+## 2026-07-20 (2) — Trigger Finder input redesign: explicit radios + em-dash cleanup
+
+**Task.** User asked to replace the implicit date-vs-number entry model in `triggers.html` with
+explicit radio buttons: one for entry mode (specific dates vs. age/years of service), one for
+employment status (actively employed vs. terminated), with Employee Group moved to be the first
+field alongside employment status. When actively employed, the separation field reads "Planned
+Date of Separation"; when terminated, "Date of Separation".
+
+**Files.** `triggers.html`: reordered Section 01 inputs (group → employment status → entry mode →
+DOB/hire rows → separation), added `.radiogrp`/`.hidden` CSS, added `empStatus()`/`entryMode()`
+getters, `syncModeVisibility()`/`syncSepLabel()` toggles, and rewired `render()` to read dob/hire
+strictly from the active entry mode and to use the explicit `isActive` flag (not date-guessing)
+for all "(planned)"/"at separation" wording.
+
+**Also.** The design hook flagged em-dash overuse post-edit; caught that the CLAUDE.md financial-copy
+standard explicitly bans em-dashes in user-visible copy, which the initial build violated
+throughout (68 instances). Rewrote all of them (title, labels, table, footer, and every JS-generated
+string) to periods/commas/colons/parentheses, matching the "·" convention used elsewhere in the guide
+set. CHANGE_LOG entry covers both changes together.
+
+**Validated in preview:** default state, both radio toggles in each direction, and a full
+exact-date/terminated-status render all confirmed correct; grep for em-dash returns 0; console
+clean; no mobile overflow.
+
 ## 2026-07-20 — Financial Trigger Finder page (triggers.html)
 
 **Task.** New interactive tool page: advisor enters client DOB (or age), date of hire (or years

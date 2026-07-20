@@ -1,5 +1,29 @@
 # CHANGE_LOG
 
+## 2026-07-20 (2) — Trigger Finder: explicit entry-mode/employment radios, em-dash cleanup
+
+User asked for radio buttons instead of the implicit "date wins over number" input model:
+**Employee group** moved to the first field; a new **Employment status** radio (Actively
+employed / Terminated) sits with it; a new **Enter using** radio (Specific dates / Ages or
+years) explicitly toggles the DOB and hire-date rows between date pickers and
+age/years-of-service number fields (previously both were always visible with an "or" label).
+The separation-date label now reads **"Planned Date of Separation"** when Actively employed is
+selected, and reverts to **"Date of Separation"** for Terminated; the "(planned)" wording in the
+banner/timeline/checklist is now driven by that explicit radio instead of guessing from whether
+the entered date is in the future.
+
+**Also fixed:** the design-hook flagged em-dash overuse (68 instances) introduced in the initial
+build, which violates the explicit CLAUDE.md rule against em-dashes in user-visible copy. Rewrote
+every instance in `triggers.html` (title, labels, table cells, footer disclaimer, and every
+generated timeline/checklist/card string in the JS) using periods, commas, colons, or parentheses
+instead, matching the "·" separator convention already used elsewhere on the site.
+
+**Validated in preview:** default state confirmed (ages mode, date rows hidden, "Planned" label
+shown for the default Actively-employed status); toggling both radios confirmed to flip row
+visibility and label text correctly in both directions; a full render with exact dates and
+"Terminated" selected confirmed the "(planned)"/"at separation" wording now tracks the radio
+rather than the date; zero em-dashes remain (`grep` count 0); console clean; no mobile overflow.
+
 ## 2026-07-20 — Financial Trigger Finder tool (triggers.html)
 
 New interactive advisor tool: enter a client's **DOB (or age), hire date (or years of service),

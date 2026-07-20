@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financial Trigger Finder — AT&T Advisor Field Guide</title>
+<title>Financial Trigger Finder · AT&T Advisor Field Guide</title>
 <style>
 :root{
   --cream:#F7F4E9;
@@ -134,6 +134,10 @@ td.num{font-variant-numeric:tabular-nums;text-align:right}
 .calc .orlab{flex:0 0 auto;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft)}
 .calc .num-input{flex:0 0 96px}
 .calc .num-input input{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;text-align:right}
+.calc .radiogrp{display:flex;gap:20px;flex-wrap:wrap;flex:1}
+.calc .radiogrp label{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--ink);font-weight:400;cursor:pointer}
+.calc .radiogrp input[type=radio]{accent-color:var(--blue);cursor:pointer}
+.calc .row.hidden{display:none}
 .calc .note{font-size:12.5px;color:var(--ink-soft);font-family:'Helvetica Neue',Arial,sans-serif;margin-top:14px;line-height:1.5}
 
 .results{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
@@ -244,39 +248,60 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="meta">
     <div><span class="k">Covers</span><span class="v">Union / Bargained · Legacy Non-Bargained · Mobility</span></div>
     <div><span class="k">Indexed figures</span><span class="v">2026 tax year</span></div>
-    <div><span class="k">Data</span><span class="v">Runs in the browser — nothing is stored or sent</span></div>
+    <div><span class="k">Data</span><span class="v">Runs in the browser. Nothing is stored or sent</span></div>
   </div>
 </div>
 
 <section class="block" id="inputs">
   <div class="pn">Section 01 · Interactive</div>
   <h2>Client inputs</h2>
-  <p>Dates give exact trigger dates; if you only know the age or years of service, enter those instead and the tool approximates (dates then read as "on or about"). A date entered in a field always wins over the number next to it.</p>
+  <p>Start with the employee group and employment status, then choose whether to enter exact dates or age / years of service, whichever the advisor has on hand. Either way the tool computes the same trigger dates (age- and service-based entries just read as "on or about").</p>
 
   <div class="calc">
-    <div class="row">
-      <label for="dob">Date of birth</label>
-      <input type="date" id="dob">
-      <span class="orlab">or age</span>
-      <span class="num-input"><input type="number" id="ageNum" min="18" max="95" step="1" value="52" aria-label="Age in years"></span>
-    </div>
-    <div class="row">
-      <label for="hire">Date of hire</label>
-      <input type="date" id="hire">
-      <span class="orlab">or yrs of service</span>
-      <span class="num-input"><input type="number" id="yosNum" min="0" max="50" step="1" value="22" aria-label="Years of service"></span>
-    </div>
-    <div class="row">
-      <label for="sep">Date of separation <em style="font-style:normal;color:#8a97ad">(actual or planned — leave blank if unknown)</em></label>
-      <input type="date" id="sep">
-    </div>
     <div class="row">
       <label for="grp">Employee group</label>
       <select id="grp" aria-label="Employee group">
         <option value="union" selected>Union / Bargained (legacy)</option>
-        <option value="mgmt">Management — Legacy Non-Bargained</option>
+        <option value="mgmt">Management (Legacy Non-Bargained)</option>
         <option value="mobility">Mobility Program</option>
       </select>
+    </div>
+    <div class="row">
+      <label>Employment status</label>
+      <div class="radiogrp" role="radiogroup" aria-label="Employment status">
+        <label class="radio-opt"><input type="radio" name="empStatus" value="active" checked> Actively employed</label>
+        <label class="radio-opt"><input type="radio" name="empStatus" value="terminated"> Terminated</label>
+      </div>
+    </div>
+    <div class="row">
+      <label>Enter using</label>
+      <div class="radiogrp" role="radiogroup" aria-label="Date entry mode">
+        <label class="radio-opt"><input type="radio" name="entryMode" value="dates"> Specific dates</label>
+        <label class="radio-opt"><input type="radio" name="entryMode" value="ages" checked> Ages / years</label>
+      </div>
+    </div>
+
+    <div class="row" id="dobDateRow">
+      <label for="dob">Date of birth</label>
+      <input type="date" id="dob">
+    </div>
+    <div class="row" id="dobAgeRow">
+      <label for="ageNum">Age (whole years)</label>
+      <span class="num-input"><input type="number" id="ageNum" min="18" max="95" step="1" value="52" aria-label="Age in years"></span>
+    </div>
+
+    <div class="row" id="hireDateRow">
+      <label for="hire">Date of hire</label>
+      <input type="date" id="hire">
+    </div>
+    <div class="row" id="hireYosRow">
+      <label for="yosNum">Years of service</label>
+      <span class="num-input"><input type="number" id="yosNum" min="0" max="50" step="1" value="22" aria-label="Years of service"></span>
+    </div>
+
+    <div class="row">
+      <label for="sep" id="sepLabel">Planned Date of Separation <em style="font-style:normal;color:#8a97ad" id="sepHelp">(optional, leave blank if not yet decided)</em></label>
+      <input type="date" id="sep">
     </div>
 
     <div id="statusBanner"></div>
@@ -301,11 +326,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 <section class="block" id="separation">
   <div class="pn">Section 03 · Output</div>
   <h2>Separation checklist</h2>
-  <p id="sepIntro">What the separation date itself triggers — the items to walk through when the client knows (or is choosing) their last day on payroll.</p>
+  <p id="sepIntro">What the separation date itself triggers: the items to walk through when the client knows (or is choosing) their last day on payroll.</p>
   <div class="steps" id="sepWrap"></div>
   <div class="lens">
     <span class="tag">The advisor's lens</span>
-    <p>The separation date is the <strong>most controllable variable</strong> on this page. A client a few months short of a Mod 75 milestone, the Rule-of-55 year, or their vesting cliff is often trading away subsidized pension income, penalty-free 401(k) access, or retiree-medical eligibility — frequently a six-figure decision. Map the date against the timeline above <em>before</em> the client gives notice.</p>
+    <p>The separation date is the <strong>most controllable variable</strong> on this page. A client a few months short of a Mod 75 milestone, the Rule-of-55 year, or their vesting cliff is often trading away subsidized pension income, penalty-free 401(k) access, or retiree-medical eligibility, frequently a six-figure decision. Map the date against the timeline above <em>before</em> the client gives notice.</p>
   </div>
 </section>
 
@@ -324,24 +349,24 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <tr><td><strong>59½</strong></td><td>Penalty ends everywhere</td><td>10% early-withdrawal penalty ends for 401(k)s and IRAs regardless of employment status.</td></tr>
       <tr><td><strong>60–63</strong></td><td>Super catch-up</td><td>$11,250 (2026) replaces the standard catch-up for calendar years the client turns 60 through 63; reverts at 64.</td></tr>
       <tr><td><strong>62</strong></td><td>Social Security earliest claim</td><td>Permanently reduced (~30% below an FRA-67 benefit); earnings test applies if still working. <a class="inline" href="https://www.ssa.gov/benefits/retirement/planner/agereduction.html" target="_blank" rel="noopener">ssa.gov</a></td></tr>
-      <tr><td><strong>63</strong></td><td>IRMAA lookback begins</td><td>Medicare premiums at 65 are set by MAGI from two years prior — so the year they turn 63 is the first year Roth conversions and gains can raise their first Medicare premiums. 2026 tiers start above $109,000 single / $218,000 MFJ. <a class="inline" href="https://www.medicare.gov/basics/costs/medicare-costs" target="_blank" rel="noopener">medicare.gov</a></td></tr>
+      <tr><td><strong>63</strong></td><td>IRMAA lookback begins</td><td>Medicare premiums at 65 are set by MAGI from two years prior, so the year they turn 63 is the first year Roth conversions and gains can raise their first Medicare premiums. 2026 tiers start above $109,000 single / $218,000 MFJ. <a class="inline" href="https://www.medicare.gov/basics/costs/medicare-costs" target="_blank" rel="noopener">medicare.gov</a></td></tr>
       <tr><td><strong>64¾</strong></td><td>Medicare Initial Enrollment Period</td><td>7-month window opens 3 months before the 65th-birthday month. Missing it (without employer coverage) means lifetime Part B penalties.</td></tr>
       <tr><td><strong>65</strong></td><td>Medicare · IRMAA · coverage handoff</td><td>Pre-65 bridge coverage (retiree group plan or COBRA) hands off to Medicare + supplement. COBRA does <em>not</em> count as employer coverage for delaying Part B. Mobility: also the plan's Normal Retirement Age.</td></tr>
       <tr><td><strong>FRA 66–67</strong></td><td>Social Security Full Retirement Age</td><td>By birth year: 1954 or earlier 66; 1955–59 66 + 2 mo/yr; 1960+ 67. Unreduced benefit; earnings test ends. <a class="inline" href="https://www.ssa.gov/benefits/retirement/planner/agereduction.html" target="_blank" rel="noopener">ssa.gov</a></td></tr>
-      <tr><td><strong>70</strong></td><td>Delayed credits max out</td><td>~8%/yr delayed-retirement credits stop at 70 — no benefit to waiting longer.</td></tr>
+      <tr><td><strong>70</strong></td><td>Delayed credits max out</td><td>~8%/yr delayed-retirement credits stop at 70. No benefit to waiting longer.</td></tr>
       <tr><td><strong>70½</strong></td><td>QCDs available</td><td>Qualified Charitable Distributions direct from IRAs (annual limit indexed); excluded from MAGI and count toward RMDs once those begin. <a class="inline" href="https://www.irs.gov/retirement-plans/retirement-plans-faqs-regarding-iras-distributions-withdrawals" target="_blank" rel="noopener">irs.gov</a></td></tr>
-      <tr><td><strong>73 / 75</strong></td><td>RMDs begin</td><td>Born 1951–1959: age 73. Born 1960 or later: age 75 (SECURE 2.0). First RMD may be delayed to April 1 of the following year (doubling two into one tax year). Roth IRAs and — since 2024 — Roth 401(k)s are exempt. <a class="inline" href="https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs" target="_blank" rel="noopener">irs.gov</a></td></tr>
+      <tr><td><strong>73 / 75</strong></td><td>RMDs begin</td><td>Born 1951–1959: age 73. Born 1960 or later: age 75 (SECURE 2.0). First RMD may be delayed to April 1 of the following year (doubling two into one tax year). Roth IRAs and (since 2024) Roth 401(k)s are exempt. <a class="inline" href="https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs" target="_blank" rel="noopener">irs.gov</a></td></tr>
     </tbody>
   </table>
 
-  <p class="small">Born-1959 note: SECURE 2.0's text created ambiguity for 1959 births (73 vs 75); IRS proposed regulations resolve it to <strong>73</strong> — confirm final regs before relying on it for a 1959-born client. Group-specific pension rules (Mod 75 reductions, threshold ages, lump-sum mechanics) live in the three plan guides in the sidebar.</p>
+  <p class="small">Born-1959 note: SECURE 2.0's text created ambiguity for 1959 births (73 vs 75); IRS proposed regulations resolve it to <strong>73</strong>. Confirm final regs before relying on it for a 1959-born client. Group-specific pension rules (Mod 75 reductions, threshold ages, lump-sum mechanics) live in the three plan guides in the sidebar.</p>
 </section>
 
 <div class="foot">
   <div class="ftitle">Farther · AT&amp;T Focus Team, Advisor Field Guide (Financial Trigger Finder)</div>
   <div>Built as an internal advisor tool. Pair the output with the client's NetBenefits statement, the controlling SPD, and current ssa.gov / medicare.gov / irs.gov figures before advising. Use the <strong>Viewing</strong> selector at the top of the sidebar to open the full plan guides.</div>
   <div class="disc">
-    This material is for internal educational and training use by Farther advisors. It is a simplified summary of complex statutory and plan provisions and is not legal, tax, or investment advice, nor a guarantee of any benefit. Plan terms are governed solely by the official plan documents and Summary Plan Descriptions, which control in any conflict. Statutory thresholds, indexed dollar limits, and plan provisions change over time — always verify a client's actual figures in Fidelity NetBenefits, the current SPD, and the cited government sources before making recommendations. Tool output is an illustrative approximation only.
+    This material is for internal educational and training use by Farther advisors. It is a simplified summary of complex statutory and plan provisions and is not legal, tax, or investment advice, nor a guarantee of any benefit. Plan terms are governed solely by the official plan documents and Summary Plan Descriptions, which control in any conflict. Statutory thresholds, indexed dollar limits, and plan provisions change over time. Always verify a client's actual figures in Fidelity NetBenefits, the current SPD, and the cited government sources before making recommendations. Tool output is an illustrative approximation only.
   </div>
 </div>
 
@@ -368,6 +393,26 @@ secs.forEach(s=>s&&obs.observe(s));
   const dobEl=$('dob'), ageEl=$('ageNum'), hireEl=$('hire'), yosEl=$('yosNum'), sepEl=$('sep'), grpEl=$('grp');
   const banner=$('statusBanner'), cards=$('resCards'), note=$('calcNote');
   const tlWrap=$('tlWrap'), tlNote=$('tlNote'), sepWrap=$('sepWrap'), sepIntro=$('sepIntro');
+  const empRadios=[...document.querySelectorAll('input[name="empStatus"]')];
+  const modeRadios=[...document.querySelectorAll('input[name="entryMode"]')];
+  const sepLabel=$('sepLabel'), sepHelp=$('sepHelp');
+  const dobDateRow=$('dobDateRow'), dobAgeRow=$('dobAgeRow'), hireDateRow=$('hireDateRow'), hireYosRow=$('hireYosRow');
+
+  function empStatus(){ const r=empRadios.find(r=>r.checked); return r?r.value:'active'; }
+  function entryMode(){ const r=modeRadios.find(r=>r.checked); return r?r.value:'ages'; }
+
+  function syncModeVisibility(){
+    const mode=entryMode();
+    dobDateRow.classList.toggle('hidden', mode!=='dates');
+    dobAgeRow.classList.toggle('hidden', mode!=='ages');
+    hireDateRow.classList.toggle('hidden', mode!=='dates');
+    hireYosRow.classList.toggle('hidden', mode!=='ages');
+  }
+  function syncSepLabel(){
+    const active=empStatus()==='active';
+    sepLabel.firstChild.textContent = active ? 'Planned Date of Separation ' : 'Date of Separation ';
+    sepHelp.textContent = active ? '(optional, leave blank if not yet decided)' : '(leave blank if unknown)';
+  }
 
   const MS_YR=365.25*24*3600*1000;
   const GRP_NAME={union:'Union / Bargained', mgmt:'Management (Legacy Non-Bargained)', mobility:'Mobility Program'};
@@ -395,29 +440,32 @@ secs.forEach(s=>s&&obs.observe(s));
     const today=new Date(); today.setHours(0,0,0,0);
 
     // ---- inputs ----
-    let dob=parseD(dobEl.value), dobApprox=false;
-    if(!dob){ const a=parseFloat(ageEl.value); if(!isNaN(a)&&a>0){ dob=addY(today,-a); dobApprox=true; } }
-    let hire=parseD(hireEl.value), hireApprox=false;
-    if(!hire){ const s=parseFloat(yosEl.value); if(!isNaN(s)&&s>=0){ hire=addY(today,-s); hireApprox=true; } }
+    const mode=entryMode();
+    const isActive=empStatus()==='active';
+    let dob=null, dobApprox=false;
+    if(mode==='dates'){ dob=parseD(dobEl.value); }
+    else { const a=parseFloat(ageEl.value); if(!isNaN(a)&&a>0){ dob=addY(today,-a); dobApprox=true; } }
+    let hire=null, hireApprox=false;
+    if(mode==='dates'){ hire=parseD(hireEl.value); }
+    else { const s=parseFloat(yosEl.value); if(!isNaN(s)&&s>=0){ hire=addY(today,-s); hireApprox=true; } }
     const sep=parseD(sepEl.value);
     const grp=grpEl.value;
 
     if(!dob || dob>today){
       banner.className='status-banner notmet';
-      banner.innerHTML=(dob&&dob>today)?'Date of birth is in the future — check the entry.':'Enter a date of birth (or an age) to build the timeline.';
+      banner.innerHTML=(dob&&dob>today)?'Date of birth is in the future. Check the entry.':'Enter a date of birth (or an age) to build the timeline.';
       cards.innerHTML=''; tlWrap.innerHTML=''; sepWrap.innerHTML=''; note.innerHTML=''; tlNote.innerHTML='';
       return;
     }
     if(hire && sep && sep<hire){
       banner.className='status-banner notmet';
-      banner.innerHTML='Separation date is before the hire date — check the entries.';
+      banner.innerHTML='Separation date is before the hire date. Check the entries.';
       cards.innerHTML=''; tlWrap.innerHTML=''; sepWrap.innerHTML=''; note.innerHTML=''; tlNote.innerHTML='';
       return;
     }
 
     const by=dob.getFullYear();
     const ageNow=yrs(dob,today);
-    const stillWorking = !sep || sep>today;
     const svcEnd = (sep && sep<today) ? sep : today;
     const svcNow = hire ? Math.max(0,yrs(hire,svcEnd)) : null;
     const fra=fraFor(by), rmd=rmdFor(by);
@@ -456,16 +504,16 @@ secs.forEach(s=>s&&obs.observe(s));
 
     // ---- status banner ----
     let sub=[];
-    sub.push('Age '+ageNow.toFixed(1)+(dobApprox?' (from entered age — approximate)':''));
-    if(svcNow!==null) sub.push(svcNow.toFixed(1)+' yrs of service'+(hireApprox?' (approximate)':'')+(sep&&sep<today?' at separation':''));
-    else sub.push('service unknown — enter a hire date or years of service');
+    sub.push('Age '+ageNow.toFixed(1)+(dobApprox?' (from entered age, approximate)':''));
+    if(svcNow!==null) sub.push(svcNow.toFixed(1)+' yrs of service'+(hireApprox?' (approximate)':'')+((!isActive&&sep)?' at separation':''));
+    else sub.push('service unknown: enter a hire date or years of service');
     sub.push(GRP_NAME[grp]);
-    if(sep) sub.push('separation '+fmtFull(sep)+(sep>today?' (planned)':''));
+    if(sep) sub.push('separation '+fmtFull(sep)+(isActive?' (planned)':''));
 
     let m75Line='';
     if(m75Status==='met') m75Line=medGateName+' met since '+fmt(m75Date)+' ('+m75Combo.label+').';
     else if(m75Status==='ontrack') m75Line='On track to meet the '+medGateName+' '+fmt(m75Date)+' ('+m75Combo.label+') if still employed then.';
-    else if(m75Status==='missed') m75Line=medGateName+' NOT met at separation — milestone ('+m75Combo.label+') would have arrived '+fmt(m75Date)+', '+monthsBetween(sep,m75Date)+' months after the separation date.';
+    else if(m75Status==='missed') m75Line=medGateName+' NOT met at separation: milestone ('+m75Combo.label+') would have arrived '+fmt(m75Date)+', '+monthsBetween(sep,m75Date)+' months after the separation date.';
     else m75Line='Enter service data to test the '+medGateName+'.';
 
     banner.className='status-banner '+((m75Status==='missed'||vestLostAtSep)?'notmet':'met');
@@ -478,57 +526,59 @@ secs.forEach(s=>s&&obs.observe(s));
       d.innerHTML='<div class="rlabel">'+label+'</div><div class="rval">'+val+'</div><div class="rdesc">'+desc+'</div>';
       cards.appendChild(d);
     };
-    if(r55ok===true) mk('good','Rule of 55','Applies','Separation is in/after the calendar year they turn 55 ('+r55Year+'). AT&amp;T 401(k) withdrawals are penalty-free while the money stays in the plan — an IRA rollover forfeits this.');
-    else if(r55ok===false) mk('warn','Rule of 55','Does not apply','Separation is before the calendar year they turn 55 ('+r55Year+'). Penalty-free 401(k)/IRA access generally waits for 59½ ('+fmt(addM(dob,714))+') — or 72(t)/SEPP as a last resort.');
+    if(r55ok===true) mk('good','Rule of 55','Applies','Separation is in/after the calendar year they turn 55 ('+r55Year+'). AT&amp;T 401(k) withdrawals are penalty-free while the money stays in the plan. An IRA rollover forfeits this.');
+    else if(r55ok===false) mk('warn','Rule of 55','Does not apply','Separation is before the calendar year they turn 55 ('+r55Year+'). Penalty-free 401(k)/IRA access generally waits for 59½ ('+fmt(addM(dob,714))+'), or 72(t)/SEPP as a last resort.');
     else mk('neutral','Rule of 55','Opens Jan '+r55Year,'Separate in/after that calendar year and AT&amp;T 401(k) withdrawals are penalty-free while the money stays in the plan. No separation date entered yet.');
 
-    if(m75Status==='met') mk('good','Retiree-medical gate','Met',''+medGateName+' satisfied ('+m75Combo.label+'). '+(grp==='mgmt'?'Management retiring on/after 1/1/2022: eligibility to enroll only — 100% of the Cost of Coverage, no subsidy.':grp==='union'?'Bargained retirees: pre-65 subsidized contributions may still exist under the Bargained Contribution Rules — confirm in the Total Reward statement.':'Grants access to AT&amp;T retiree medical as a pre-65 bridge — the Mobility pension itself has no Rule of 75.'));
+    if(m75Status==='met') mk('good','Retiree-medical gate','Met',''+medGateName+' satisfied ('+m75Combo.label+'). '+(grp==='mgmt'?'Management retiring on/after 1/1/2022: eligibility to enroll only, 100% of the Cost of Coverage, no subsidy.':grp==='union'?'Bargained retirees: pre-65 subsidized contributions may still exist under the Bargained Contribution Rules. Confirm in the Total Reward statement.':'Grants access to AT&amp;T retiree medical as a pre-65 bridge. The Mobility pension itself has no Rule of 75.'));
     else if(m75Status==='ontrack') mk('neutral','Retiree-medical gate','On track','Milestone arrives '+fmt(m75Date)+' ('+m75Combo.label+') with continued service. Leaving before it generally forfeits retiree-medical enrollment eligibility.');
     else if(m75Status==='missed') mk('warn','Retiree-medical gate','Missed at sep.','Separating '+fmtFull(sep)+' is '+monthsBetween(sep,m75Date)+' months before the milestone ('+fmt(m75Date)+', '+m75Combo.label+'). No retiree-medical enrollment eligibility'+(grp!=='mobility'?' and steeper pension early-reduction factors':'')+'. Re-test the date.');
     else mk('neutral','Retiree-medical gate','Needs service data','Enter a hire date or years of service to test the '+medGateName+'.');
 
-    mk('neutral','Birth-year rules','FRA '+fra.label+' · RMD '+rmd.label,'Born '+by+': Social Security FRA is '+fra.label+' ('+fmt(fraDate)+'); RMDs begin at '+rmd.label+(rmd.legacy?' (already applicable under pre-SECURE rules — confirm status)':' ('+rmdDate.getFullYear()+')')+(rmd.note?' — 1959 birth year: IRS proposed regs say 73, confirm final regs':'')+'. Claiming window 62–70.');
+    const rmdNote = rmd.legacy ? ' (already applicable under pre-SECURE rules, confirm status)' : ' ('+rmdDate.getFullYear()+')';
+    const born1959 = rmd.note ? ' 1959 birth year: IRS proposed regs say 73, confirm final regs.' : '';
+    mk('neutral','Birth-year rules','FRA '+fra.label+' · RMD '+rmd.label,'Born '+by+': Social Security FRA is '+fra.label+' ('+fmt(fraDate)+'); RMDs begin at '+rmd.label+rmdNote+'.'+born1959+' Claiming window 62–70.');
 
     // ---- timeline ----
     const items=[];
     const it=(d,cat,catCls,title,desc,warn)=>{ items.push({d:d,cat:cat,catCls:catCls,title:title,desc:desc,warn:!!warn}); };
 
     if(vestDate && !vested){
-      if(vestLostAtSep) it(vestDate,'Employment','emp','Vesting cliff — AFTER the separation date','Pension and 401(k) match vest at 3 years ('+fmt(vestDate)+'), but separation is '+fmtFull(sep)+'. Employer money is forfeited. If at all possible, revisit the date.',true);
+      if(vestLostAtSep) it(vestDate,'Employment','emp','Vesting cliff: after the separation date','Pension and 401(k) match vest at 3 years ('+fmt(vestDate)+'), but separation is '+fmtFull(sep)+'. Employer money is forfeited. If at all possible, revisit the date.',true);
       else it(vestDate,'Employment','emp','Vesting cliff (3 years of service)','Pension benefit and 401(k) Company Match become non-forfeitable. Separating before this date forfeits both.');
     }
     it(new Date(by+50,0,1),'401(k)','k401','Catch-up contributions unlock','From the calendar year they turn 50: +$8,000 (2026) on top of the $24,500 402(g) limit. Worth switching on the January they qualify, not the birthday.');
 
     if(m75Date && grp!=='mobility'){
-      if(m75Status==='missed') it(m75Date,'Pension','pension','Mod 75 milestone — MISSED at separation ('+m75Combo.label+')','Would have arrived '+fmt(m75Date)+' with continued service, '+monthsBetween(sep,m75Date)+' months after the entered separation date. Leaving before it forfeits the early-retirement subsidy and retiree-medical eligibility — often a six-figure decision.',true);
+      if(m75Status==='missed') it(m75Date,'Pension','pension','Mod 75 milestone: MISSED at separation ('+m75Combo.label+')','Would have arrived '+fmt(m75Date)+' with continued service, '+monthsBetween(sep,m75Date)+' months after the entered separation date. Leaving before it forfeits the early-retirement subsidy and retiree-medical eligibility, often a six-figure decision.',true);
       else it(m75Date,'Pension','pension','Modified Rule of 75 milestone ('+m75Combo.label+')',(grp==='union'
         ? 'Unlocks the service-pension early-retirement subsidy on the Pre-99 benefit and retiree-medical enrollment eligibility. With under 30 yrs of service the benefit is still cut 0.5%/mo before the contract threshold age (55 West/Craft · 56 Southeast); 30+ yrs is fully unreduced.'
-        : 'Unlocks the subsidized early-commencement basis on a CAM/PBM benefit (0.5%/mo before 55; 0.25%/mo with 30+ yrs — zero from 55) and retiree-medical enrollment eligibility. A Cash Balance benefit is unaffected (it is simply the account).'));
+        : 'Unlocks the subsidized early-commencement basis on a CAM/PBM benefit (0.5%/mo before 55; 0.25%/mo with 30+ yrs, zero from 55) and retiree-medical enrollment eligibility. A Cash Balance benefit is unaffected (it is simply the account).'));
     }
     if(m75Date && grp==='mobility'){
-      if(m75Status==='missed') it(m75Date,'Healthcare','hc','Retiree-medical milestone — MISSED at separation ('+m75Combo.label+')','The Mobility pension has no Rule of 75, but the Medical Program’s own age-and-service test (same combinations) gates retiree-medical access — and it would have arrived '+fmt(m75Date)+', after the entered separation date.',true);
-      else it(m75Date,'Healthcare','hc','Retiree-medical milestone (Medical Program’s Rule-of-75 test, '+m75Combo.label+')','The Mobility pension has no Rule of 75 and no early-reduction — but the Medical Program uses the same age-and-service combinations to gate retiree-medical enrollment. Hitting this date preserves the pre-65 healthcare bridge.');
+      if(m75Status==='missed') it(m75Date,'Healthcare','hc','Retiree-medical milestone: MISSED at separation ('+m75Combo.label+')','The Mobility pension has no Rule of 75, but the Medical Program’s own age-and-service test (same combinations) gates retiree-medical access, and it would have arrived '+fmt(m75Date)+', after the entered separation date.',true);
+      else it(m75Date,'Healthcare','hc','Retiree-medical milestone (Medical Program’s Rule-of-75 test, '+m75Combo.label+')','The Mobility pension has no Rule of 75 and no early-reduction, but the Medical Program uses the same age-and-service combinations to gate retiree-medical enrollment. Hitting this date preserves the pre-65 healthcare bridge.');
     }
 
     if(grp!=='mobility'){
-      it(addY(dob,55),'Pension','pension',(grp==='union'?'Contract threshold age — 55 (West/Craft) / 56 (Southeast)':'Age 55 — CAM/PBM early-reduction ends'),(grp==='union'
-        ? 'With Mod 75 met but under 30 yrs of service, the 0.5%/mo early-commencement cut runs until the contract threshold age. Confirm which contract applies — Southeast uses 56 ('+fmt(addY(dob,56))+').'
+      it(addY(dob,55),'Pension','pension',(grp==='union'?'Contract threshold age: 55 (West/Craft) / 56 (Southeast)':'Age 55: CAM/PBM early-reduction ends'),(grp==='union'
+        ? 'With Mod 75 met but under 30 yrs of service, the 0.5%/mo early-commencement cut runs until the contract threshold age. Confirm which contract applies: Southeast uses 56 ('+fmt(addY(dob,56))+').'
         : 'With Mod 75 met, the early-commencement reduction on a CAM/PBM benefit (0.5%/mo, or 0.25%/mo with 30+ yrs) disappears at 55. Without Mod 75, steeper Appendix B factors run to 65.'));
     }
-    it(r55Date,'401(k)','k401','Rule of 55 window opens','Separate from AT&amp;T in/after calendar year '+r55Year+' and 401(k) withdrawals from the AT&amp;T plan are penalty-free — a bridge to 59½. The money must stay in the plan: an IRA rollover forfeits it.'+(r55ok===false?' <strong>The entered separation date is before this window.</strong>':''),r55ok===false);
-    it(addM(dob,714),'401(k)','k401','Age 59½ — early-withdrawal penalty ends','The 10% penalty ends for 401(k)s and IRAs regardless of employment status. Rollover flexibility is no longer constrained by Rule-of-55 mechanics.');
-    it(new Date(by+60,0,1),'401(k)','k401','Super catch-up window (ages 60–63)','For calendar years '+(by+60)+'–'+(by+63)+' the catch-up rises to $11,250 (2026 figure) instead of $8,000; it reverts to the standard catch-up in the year they turn 64. Four high-savings years — plan deferral rates around them.');
-    it(addY(dob,62),'Soc Sec','ss','Social Security — earliest claim','Claiming at 62 is permanently reduced (~30% below an FRA-'+fra.label+' benefit). The earnings test withholds benefits if they claim while still working before FRA. Usually the decision to model, not default into.');
-    it(addY(dob,63),'Medicare','medicare','IRMAA lookback begins','Medicare premiums are set on MAGI from two years prior — so income from the year they turn 63 sets their first premiums at 65. Roth conversions and gain harvesting from here on should be sized against the tiers (2026: above $109,000 single / $218,000 MFJ; cliffs, assessed per person).');
-    it(addM(dob,777),'Medicare','medicare','Medicare Initial Enrollment Period opens','7-month window: 3 months before the 65th-birthday month through 3 months after. Missing it without active employer coverage means lifetime Part B penalties — calendar this one.');
-    it(medDate,'Medicare','medicare','Age 65 — Medicare begins'+(grp==='mobility'?' (and Mobility Normal Retirement Age)':''),'The pre-65 bridge (retiree group coverage or COBRA) hands off to Medicare + supplement. COBRA does <strong>not</strong> count as employer coverage for delaying Part B. IRMAA now applies, based on MAGI from two years back.'+(grp==='union'?' Bargained retirees: the 65+ Medicare-side subsidy ended for last day on payroll on/after 1/1/2021.':''));
+    it(r55Date,'401(k)','k401','Rule of 55 window opens','Separate from AT&amp;T in/after calendar year '+r55Year+' and 401(k) withdrawals from the AT&amp;T plan are penalty-free, a bridge to 59½. The money must stay in the plan: an IRA rollover forfeits it.'+(r55ok===false?' <strong>The entered separation date is before this window.</strong>':''),r55ok===false);
+    it(addM(dob,714),'401(k)','k401','Age 59½: early-withdrawal penalty ends','The 10% penalty ends for 401(k)s and IRAs regardless of employment status. Rollover flexibility is no longer constrained by Rule-of-55 mechanics.');
+    it(new Date(by+60,0,1),'401(k)','k401','Super catch-up window (ages 60–63)','For calendar years '+(by+60)+'–'+(by+63)+' the catch-up rises to $11,250 (2026 figure) instead of $8,000; it reverts to the standard catch-up in the year they turn 64. Four high-savings years. Plan deferral rates around them.');
+    it(addY(dob,62),'Soc Sec','ss','Social Security: earliest claim','Claiming at 62 is permanently reduced (~30% below an FRA-'+fra.label+' benefit). The earnings test withholds benefits if they claim while still working before FRA. Usually the decision to model, not default into.');
+    it(addY(dob,63),'Medicare','medicare','IRMAA lookback begins','Medicare premiums are set on MAGI from two years prior, so income from the year they turn 63 sets their first premiums at 65. Roth conversions and gain harvesting from here on should be sized against the tiers (2026: above $109,000 single / $218,000 MFJ; cliffs, assessed per person).');
+    it(addM(dob,777),'Medicare','medicare','Medicare Initial Enrollment Period opens','7-month window: 3 months before the 65th-birthday month through 3 months after. Missing it without active employer coverage means lifetime Part B penalties. Calendar this one.');
+    it(medDate,'Medicare','medicare','Age 65: Medicare begins'+(grp==='mobility'?' (and Mobility Normal Retirement Age)':''),'The pre-65 bridge (retiree group coverage or COBRA) hands off to Medicare + supplement. COBRA does <strong>not</strong> count as employer coverage for delaying Part B. IRMAA now applies, based on MAGI from two years back.'+(grp==='union'?' Bargained retirees: the 65+ Medicare-side subsidy ended for last day on payroll on/after 1/1/2021.':''));
     it(fraDate,'Soc Sec','ss','Social Security Full Retirement Age ('+fra.label+')','Unreduced benefit and the earnings test ends. Waiting past FRA earns ~8%/yr in delayed credits to 70. Coordinate spousal/survivor claiming here.');
-    it(addY(dob,70),'Soc Sec','ss','Age 70 — delayed credits max out','No benefit to waiting past 70 — if not yet claimed, claim now. A common miss for clients who "forgot" after retiring early.');
-    it(addM(dob,846),'Tax / RMD','tax','Age 70½ — QCDs available','Qualified Charitable Distributions direct from IRAs (annual limit indexed) — excluded from MAGI (IRMAA-friendly giving) and count toward RMDs once those begin.');
+    it(addY(dob,70),'Soc Sec','ss','Age 70: delayed credits max out','No benefit to waiting past 70. If not yet claimed, claim now. A common miss for clients who "forgot" after retiring early.');
+    it(addM(dob,846),'Tax / RMD','tax','Age 70½: QCDs available','Qualified Charitable Distributions direct from IRAs (annual limit indexed), excluded from MAGI (IRMAA-friendly giving), and count toward RMDs once those begin.');
     if(rmd.legacy) it(rmdDate,'Tax / RMD','tax','RMDs (already applicable)','Born '+by+': RMDs began under pre-SECURE rules. Confirm current-year RMDs are being taken on all pre-tax accounts.');
-    else it(rmdDate,'Tax / RMD','tax','Age '+rmd.label+' — RMDs begin ('+rmdDate.getFullYear()+')','Required minimum distributions start on pre-tax balances (Roth IRA and, since 2024, Roth 401(k) are exempt). The first RMD can be delayed to April 1, '+(rmdDate.getFullYear()+1)+' — but that doubles two RMDs into one tax year and can spike IRMAA. The years before this date are the Roth-conversion window.'+(rmd.note?' (1959 birth year: IRS proposed regs say 73 — confirm final regs.)':''));
+    else it(rmdDate,'Tax / RMD','tax','Age '+rmd.label+': RMDs begin ('+rmdDate.getFullYear()+')','Required minimum distributions start on pre-tax balances (Roth IRA and, since 2024, Roth 401(k) are exempt). The first RMD can be delayed to April 1, '+(rmdDate.getFullYear()+1)+', but that doubles two RMDs into one tax year and can spike IRMAA. The years before this date are the Roth-conversion window.'+(rmd.note?' (1959 birth year: IRS proposed regs say 73, confirm final regs.)':''));
 
-    if(sep) it(sep,'Employment','emp','Separation from AT&amp;T'+(sep>today?' (planned)':''),'Run the separation checklist in Section 03: healthcare bridge, pension commencement, 401(k) strategy, severance interplay, and the conversion window that opens here.',(m75Status==='missed'||vestLostAtSep||r55ok===false));
+    if(sep) it(sep,'Employment','emp','Separation from AT&amp;T'+(isActive?' (planned)':''),'Run the separation checklist in Section 03: healthcare bridge, pension commencement, 401(k) strategy, severance interplay, and the conversion window that opens here.',(m75Status==='missed'||vestLostAtSep||r55ok===false));
 
     items.sort((a,b)=>a.d-b.d);
     let nextIdx=-1;
@@ -548,7 +598,7 @@ secs.forEach(s=>s&&obs.observe(s));
         +'</div><div class="tlt">'+x.title+'</div><div class="tldesc">'+x.desc+'</div></div>';
       tlWrap.appendChild(li);
     });
-    tlNote.innerHTML='Dated for this client from '+(dobApprox?'the entered age (approximate — enter a date of birth for exact dates)':'the entered date of birth')
+    tlNote.innerHTML='Dated for this client from '+(dobApprox?'the entered age (approximate, enter a date of birth for exact dates)':'the entered date of birth')
       +(hire?(hireApprox?' and approximate service':''):'; service-based triggers omitted until a hire date or years of service is entered')
       +'. Indexed dollar figures are 2026 values.';
 
@@ -560,48 +610,48 @@ secs.forEach(s=>s&&obs.observe(s));
       sepWrap.appendChild(d);
     };
     if(sep){
-      sepIntro.innerHTML='Keyed to the entered separation date — <strong>'+fmtFull(sep)+'</strong> (age '+yrs(dob,sep).toFixed(1)+(svcNow!==null?', '+Math.max(0,yrs(hire,sep)).toFixed(1)+' yrs of service':'')+').';
+      sepIntro.innerHTML='Keyed to the entered separation date: <strong>'+fmtFull(sep)+'</strong> (age '+yrs(dob,sep).toFixed(1)+(svcNow!==null?', '+Math.max(0,yrs(hire,sep)).toFixed(1)+' yrs of service':'')+').';
     } else {
-      sepIntro.innerHTML='No separation date entered — showing the generic checklist. Enter a date above to get the bridge math and verdicts filled in.';
+      sepIntro.innerHTML='No separation date entered. Showing the generic checklist. Enter a date above to get the bridge math and verdicts filled in.';
     }
 
     // 1. milestone check
-    if(m75Status==='missed') st('flag','Re-test the separation date against the '+medGateName,'Separation lands '+monthsBetween(sep,m75Date)+' months before the milestone ('+fmt(m75Date)+', '+m75Combo.label+'). Staying to the milestone preserves '+(grp==='mobility'?'retiree-medical access':'the pension subsidy and retiree-medical eligibility')+' — quantify what those months buy before the client gives notice.');
-    else if(m75Status==='met') st('ok',medGateName+' — met at termination','Satisfied since '+fmt(m75Date)+' ('+m75Combo.label+'). '+(grp==='union'?'Confirm the specific contract (West/Craft vs Southeast) and any remaining 0.5%/mo reduction if commencing before the threshold age with under 30 yrs.':grp==='mgmt'?'Retiree-medical is access-only for management retiring on/after 1/1/2022 (100% of Cost of Coverage) — still often better than the open market pre-65.':'Preserves retiree-medical access; the Mobility pension itself is unaffected by timing.'));
-    else if(m75Status==='ontrack') st('',medGateName+' — on track','Milestone arrives '+fmt(m75Date)+' ('+m75Combo.label+') with continued service. Any separation date before that forfeits '+(grp==='mobility'?'retiree-medical access':'the subsidy and retiree-medical eligibility')+'.');
+    if(m75Status==='missed') st('flag','Re-test the separation date against the '+medGateName,'Separation lands '+monthsBetween(sep,m75Date)+' months before the milestone ('+fmt(m75Date)+', '+m75Combo.label+'). Staying to the milestone preserves '+(grp==='mobility'?'retiree-medical access':'the pension subsidy and retiree-medical eligibility')+'. Quantify what those months buy before the client gives notice.');
+    else if(m75Status==='met') st('ok',medGateName+': met at termination','Satisfied since '+fmt(m75Date)+' ('+m75Combo.label+'). '+(grp==='union'?'Confirm the specific contract (West/Craft vs Southeast) and any remaining 0.5%/mo reduction if commencing before the threshold age with under 30 yrs.':grp==='mgmt'?'Retiree-medical is access-only for management retiring on/after 1/1/2022 (100% of Cost of Coverage), still often better than the open market pre-65.':'Preserves retiree-medical access; the Mobility pension itself is unaffected by timing.'));
+    else if(m75Status==='ontrack') st('',medGateName+': on track','Milestone arrives '+fmt(m75Date)+' ('+m75Combo.label+') with continued service. Any separation date before that forfeits '+(grp==='mobility'?'retiree-medical access':'the subsidy and retiree-medical eligibility')+'.');
     else st('','Test the '+medGateName,'Enter hire data above. Combinations: 30 yrs any age · 50/25 · 55/20 · 65/10, tested at termination.');
 
     // 2. healthcare bridge
     if(sep){
-      if(sep>=medDate) st('','Healthcare — already Medicare-age at separation','Coordinate Part B enrollment with the 8-month Special Enrollment Period that follows loss of active employer coverage. Do not rely on COBRA to delay Part B.');
+      if(sep>=medDate) st('','Healthcare: already Medicare-age at separation','Coordinate Part B enrollment with the 8-month Special Enrollment Period that follows loss of active employer coverage. Do not rely on COBRA to delay Part B.');
       else {
         const cobraEnd=addM(sep,18);
         const gapM=monthsBetween(sep,medDate);
-        if(cobraEnd>=medDate) st('','Healthcare bridge to Medicare — '+gapM+' months','COBRA (18 months, to '+fmt(cobraEnd)+') can reach Medicare ('+fmt(medDate)+'). Compare its full-premium cost against '+(m75Status==='met'?'the AT&amp;T retiree group plan (eligible via '+medGateName+'; enroll through Alight)':'marketplace coverage')+' before defaulting to COBRA.');
-        else st((m75Status==='met'?'':'flag'),'Healthcare bridge to Medicare — '+gapM+' months','COBRA runs out '+fmt(cobraEnd)+', '+monthsBetween(cobraEnd,medDate)+' months short of Medicare ('+fmt(medDate)+'). '+(m75Status==='met'?'The AT&amp;T retiree group plan (via '+medGateName+', enrolled through Alight) covers the rest of the bridge'+(grp==='union'?' — and a bargained pre-65 subsidy may apply.':' at the retiree’s own cost.'):'Without retiree-medical eligibility, budget for marketplace coverage in the gap — commonly $1,000–$2,000+/month per person.'));
+        if(cobraEnd>=medDate) st('','Healthcare bridge to Medicare: '+gapM+' months','COBRA (18 months, to '+fmt(cobraEnd)+') can reach Medicare ('+fmt(medDate)+'). Compare its full-premium cost against '+(m75Status==='met'?'the AT&amp;T retiree group plan (eligible via '+medGateName+'; enroll through Alight)':'marketplace coverage')+' before defaulting to COBRA.');
+        else st((m75Status==='met'?'':'flag'),'Healthcare bridge to Medicare: '+gapM+' months','COBRA runs out '+fmt(cobraEnd)+', '+monthsBetween(cobraEnd,medDate)+' months short of Medicare ('+fmt(medDate)+'). '+(m75Status==='met'?'The AT&amp;T retiree group plan (via '+medGateName+', enrolled through Alight) covers the rest of the bridge'+(grp==='union'?', and a bargained pre-65 subsidy may apply.':' at the retiree’s own cost.'):'Without retiree-medical eligibility, budget for marketplace coverage in the gap, commonly $1,000–$2,000+/month per person.'));
       }
     } else st('','Healthcare bridge to Medicare','Map coverage from the last day on payroll to 65: retiree group plan (if the '+medGateName+' is met), COBRA (18 months), or marketplace. Then the Medicare handoff at 65.');
 
     // 3. pension action
     st('','Pension decision at separation',(grp==='mobility'
-      ? 'The Mobility account is simply its balance — lump sum (direct rollover avoids the mandatory 20% withholding) or annuity forms. If deferred, quarterly interest credits continue after termination, and the lump sum is NOT interest-rate-sensitive like the legacy plans.'
-      : 'Commence or defer: the benefit can generally start the first of any month after termination'+(m75Status==='met'?' (reduced only if before the threshold age)':' — but without Mod 75, early commencement uses the steeper deferred-vested factors; unreduced only at 65')+'. For a lump sum: direct rollover avoids the mandatory 20% withholding, and check the segment-rate sensitivity of the quote before picking the commencement month.'));
+      ? 'The Mobility account is simply its balance: lump sum (direct rollover avoids the mandatory 20% withholding) or annuity forms. If deferred, quarterly interest credits continue after termination, and the lump sum is NOT interest-rate-sensitive like the legacy plans.'
+      : 'Commence or defer: the benefit can generally start the first of any month after termination'+(m75Status==='met'?' (reduced only if before the threshold age)':', but without Mod 75, early commencement uses the steeper deferred-vested factors; unreduced only at 65')+'. For a lump sum: direct rollover avoids the mandatory 20% withholding, and check the segment-rate sensitivity of the quote before picking the commencement month.'));
 
     // 4. 401(k) strategy
     st(r55ok===false?'flag':'','401(k): Rule of 55, loans, and NUA',(r55ok===true
-      ? 'Rule of 55 applies — keep enough in the AT&amp;T plan for pre-59½ income before any IRA rollover (the rollover forfeits penalty-free access). '
+      ? 'Rule of 55 applies. Keep enough in the AT&amp;T plan for pre-59½ income before any IRA rollover (the rollover forfeits penalty-free access). '
       : r55ok===false
-      ? 'Rule of 55 does NOT apply (separation before calendar year '+r55Year+') — penalty-free access generally waits for 59½ ('+fmt(addM(dob,714))+'); model the bridge income source first. '
+      ? 'Rule of 55 does NOT apply (separation before calendar year '+r55Year+'). Penalty-free access generally waits for 59½ ('+fmt(addM(dob,714))+'); model the bridge income source first. '
       : 'If separation lands in/after the calendar year they turn 55, keep enough in the AT&amp;T plan for pre-59½ income before any IRA rollover. ')
-      +'Settle any 401(k) loan deliberately (pay off, keep with balance, or accept the 1099-R default). If the account holds appreciated AT&amp;T stock, evaluate NUA before any rollover — it is forfeited once the shares are rolled to an IRA.');
+      +'Settle any 401(k) loan deliberately (pay off, keep with balance, or accept the 1099-R default). If the account holds appreciated AT&amp;T stock, evaluate NUA before any rollover. It is forfeited once the shares are rolled to an IRA.');
 
     // 5. severance
     st('','Severance / package interplay','If the separation is part of a surplus or an offer under the AT&amp;T Severance Pay Plan, compare the package against what a few more months would buy on the timeline above (milestone, vesting, Rule-of-55 year). Severance rarely replaces a missed Mod 75 milestone.');
 
     // 6. conversion window
     const winStart = sep ? Math.ceil(yrs(dob,sep)) : null;
-    st('','Roth-conversion window'+(sep?' — roughly ages '+winStart+'–'+Math.min(rmd.age,Math.round(fra.m/12)) :''),(sep
-      ? 'From separation until Social Security ('+fmt(fraDate)+' at FRA, or earlier if claimed) and RMDs ('+rmdDate.getFullYear()+') stack up, taxable income is unusually low — the classic fill-the-bracket conversion years. From the year they turn 63 ('+(by+63)+'), size every conversion against the IRMAA tiers as well as the bracket.'
+    st('','Roth-conversion window'+(sep?': roughly ages '+winStart+'–'+Math.min(rmd.age,Math.round(fra.m/12)) :''),(sep
+      ? 'From separation until Social Security ('+fmt(fraDate)+' at FRA, or earlier if claimed) and RMDs ('+rmdDate.getFullYear()+') stack up, taxable income is unusually low: the classic fill-the-bracket conversion years. From the year they turn 63 ('+(by+63)+'), size every conversion against the IRMAA tiers as well as the bracket.'
       : 'The years between separation and the onset of Social Security and RMDs are the low-bracket conversion window. From the year they turn 63, size conversions against IRMAA tiers as well as the bracket.'));
 
     note.innerHTML=(dobApprox||hireApprox?'Approximate mode: ':'')
@@ -612,6 +662,9 @@ secs.forEach(s=>s&&obs.observe(s));
   }
 
   [dobEl,ageEl,hireEl,yosEl,sepEl,grpEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
+  [...empRadios,...modeRadios].forEach(r=>{r.addEventListener('change',()=>{ syncModeVisibility(); syncSepLabel(); render(); });});
+  syncModeVisibility();
+  syncSepLabel();
   render();
 })();
 </script>
