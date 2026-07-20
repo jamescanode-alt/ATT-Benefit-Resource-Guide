@@ -12,6 +12,10 @@
 - [ ] **Roth catch-up (SECURE 2.0) adoption date.** The Savings Plan SPD in the library is a 2022
       edition and predates the SECURE 2.0 Roth-catch-up specifics. Section 11 states management gets
       the standard (non-delayed) timing; confirm the plan's actual adoption when a current SPD lands.
+- [ ] **Trigger finder enhancements (triggers.html).** Possible follow-ups: a tax-filing-status
+      input so the IRMAA line shows only the relevant tier ($109k vs $218k); a West/Craft vs
+      Southeast sub-select for the union threshold age (55 vs 56); confirm the born-1959 RMD age
+      (73) once IRS final regs land; severance-schedule integration from the Severance Pay Plan.
 
 ## Done (2026-07-01, second pass — new SPDs added)
 
@@ -27,5 +31,6 @@
 
 - The `side-tab`, `border-accent-on-rounded`, and `overused-font` (Helvetica) findings on
   `index.html`, `non-bargained.html`, `mobility.html`, `case-studies.html`, `case-studies-nb.html`,
-  and `case-studies-mobility.html` are deliberate: every page in the set mirrors the established
-  union guide's visual system. Not changing unless the user wants the whole set restyled together.
+  `case-studies-mobility.html`, and `triggers.html` are deliberate: every page in the set mirrors
+  the established union guide's visual system. Not changing unless the user wants the whole set
+  restyled together.

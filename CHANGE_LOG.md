@@ -1,5 +1,35 @@
 # CHANGE_LOG
 
+## 2026-07-20 — Financial Trigger Finder tool (triggers.html)
+
+New interactive advisor tool: enter a client's **DOB (or age), hire date (or years of service),
+separation date (actual or planned), and employee group** (Union/Bargained, Management Legacy
+Non-Bargained, Mobility) and get the dated financial triggers to review — rendered as a
+chronological timeline (passed / next-up / flagged), three verdict cards (Rule of 55,
+retiree-medical gate, birth-year FRA + RMD rules), a separation-date checklist, and a static
+age-trigger reference table with authoritative source links.
+
+**Trigger engine covers:** catch-up at 50 ($8,000) · Rule of 55 (calendar-year test, IRA-rollover
+forfeiture warning) · 59½ · super catch-up 60–63 ($11,250) · Social Security 62 / FRA by birth
+year / 70 · IRMAA two-year lookback from 63 ($109k/$218k 2026 tiers) · Medicare IEP (65 − 3 mo)
+and 65 (COBRA-not-employer-coverage trap) · QCDs at 70½ · RMDs at 73/75 by birth year (born-1959
+footnote) · 3-year vesting cliff · Mod 75 milestone dates (any/30, 50/25, 55/20, 65/10) with
+group-specific reduction rules (union 0.5%/mo + 55/56 threshold ages; NB CAM/PBM 0.5 vs 0.25%/mo;
+Mobility: medical-only Rule-of-75 test, no pension timing). Separation checklist adds COBRA-to-
+Medicare gap math, group-specific retiree-medical copy (management access-only post-1/1/2022,
+bargained subsidy note, Alight), pension commencement, 401(k) loan/NUA, severance interplay, and
+the Roth-conversion window sized to FRA/RMD years. All rules reused from the SPD-verified guides.
+
+**Also:** "Tools" nav link added to all three guides; `ANNUAL-TAX-FIGURES.md` updated so yearly
+figure updates include the new page; TODO notes the design-hook waiver extension and follow-up
+ideas (filing-status input, West/Southeast sub-select, 1959 RMD final regs).
+
+**Validated in preview** (localhost static server): three scenarios exercised — union on-track
+(age 52/22 defaults), management with exact dates (Mod 75 met Mar 2023 via 50/25, Rule of 55
+applies, COBRA gap 58 months short of Medicare), and a union/Mobility missed-milestone case
+(32 months short, warn flags throughout); mobile viewport collapses with no horizontal overflow;
+console clean on all runs.
+
 ## 2026-07-14 (2) — Mod 75 no longer implies subsidized healthcare (non-bargained guide)
 
 User flagged Section 08 of `non-bargained.html` as implying management employees can still get

@@ -1,8 +1,9 @@
 # Annual Tax-Year Figures — Update Checklist
 
 > **Purpose.** Every figure in the three advisor guides (`index.html`, `non-bargained.html`,
-> `mobility.html`) that is **indexed and changes each tax year** is catalogued here with its
-> current value, where it appears, and the authoritative source to check. Update these each year
+> `mobility.html`) and the trigger-finder tool (`triggers.html`) that is **indexed and changes
+> each tax year** is catalogued here with its current value, where it appears, and the
+> authoritative source to check. Update these each year
 > (typically late October–November, when the IRS COLA notice and the CMS/Medicare IRMAA figures
 > for the coming year are released).
 >
@@ -21,7 +22,8 @@
 4. Update the **"Last verified"** date above and the year in each page's IRMAA sentence
    ("For reference, 20XX IRMAA begins above…").
 5. Re-run the local preview and spot-check the 401(k) limits table and IRMAA paragraph on all
-   three pages.
+   three pages, plus `triggers.html` (timeline copy, the summary line under the inputs, and the
+   Section 04 reference table carry the catch-up, 402(g), and IRMAA figures).
 
 ---
 
@@ -35,9 +37,9 @@ Authoritative sources:
 - IRS 401(k) contribution-limits topic page: https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits
 - Official COLA notice (technical): IRS Notice 2025-67 (for TY2026) — https://www.irs.gov/pub/irs-drop/n-25-67.pdf
 
-| Figure | 2026 value | Appears in (all 3 pages, 401(k) section) | Find in code |
+| Figure | 2026 value | Appears in (all 3 pages, 401(k) section; catch-up figures also in `triggers.html`) | Find in code |
 |---|---|---|---|
-| 402(g) elective deferral limit (under 50) | **$24,500** | limits table + glossary | `$24,500` |
+| 402(g) elective deferral limit (under 50) | **$24,500** | limits table + glossary + `triggers.html` | `$24,500` |
 | 415(c) total additions limit | **$72,000** | limits table + glossary | `$72,000` |
 | Catch-up (ages 50–59 & 64+) | **$8,000** | footnote + catch-up copy | `$8,000` |
 | Super catch-up (ages 60–63) | **$11,250** | footnote | `$11,250` |
@@ -60,7 +62,9 @@ Authoritative sources:
 - Medicare.gov costs / IRMAA: https://www.medicare.gov/basics/costs/medicare-costs
 - SSA Medicare premiums (has the full IRMAA table): https://www.ssa.gov/benefits/medicare/medicare-premiums.html
 
-Appears in the **IRMAA section of all 3 pages** ("For reference, 2026 IRMAA begins above …").
+Appears in the **IRMAA section of all 3 pages** ("For reference, 2026 IRMAA begins above …") and
+in **`triggers.html`** (IRMAA-lookback timeline entry, the note under the inputs, and the
+Section 04 reference table).
 
 | Figure | 2026 value | Find in code |
 |---|---|---|

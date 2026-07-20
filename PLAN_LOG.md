@@ -1,5 +1,37 @@
 # PLAN_LOG
 
+## 2026-07-20 — Financial Trigger Finder page (triggers.html)
+
+**Task.** New interactive tool page: advisor enters client DOB (or age), date of hire (or years
+of service), date of separation (actual or planned), and employee group (Union/Bargained,
+Management Legacy Non-Bargained, Mobility), and gets the dated list of financial triggers to
+review: catch-up at 50, Rule of 55, 59½ penalty end, super catch-up 60–63, Social Security
+62/FRA/70 (FRA by birth year), IRMAA two-year lookback beginning at 63, Medicare IEP and 65,
+QCDs at 70½, RMD age 73/75 by birth year, plus plan-specific Mod 75 milestone dates and a
+separation-date checklist (retiree-medical eligibility by group, COBRA-to-Medicare gap math,
+pension commencement, rollover/Rule-of-55 interplay, 401(k) loan, NUA, Roth-conversion window).
+
+**Files.** New `triggers.html` (same visual system as the three guides). Nav link added to
+`index.html`, `non-bargained.html`, `mobility.html` (new "Tools" navlabel). `ANNUAL-TAX-FIGURES.md`
+updated so the yearly checklist covers the new page's indexed figures (catch-up amounts, IRMAA
+thresholds). TODO/CHANGE_LOG per workflow.
+
+**Sources/rules reused from the guides (already SPD-verified there):** Mod 75 combos any/30,
+50/25, 55/20, 65/10; NB early-reduction 0.5%/mo (<30 yrs) vs 0.25%/mo (30+), gone at 55; union
+threshold age 55 West/Craft, 56 Southeast, unreduced only at 30+ yrs; Mobility has no pension
+Mod 75 but the Medical Program's own Rule-of-75 test gates retiree medical; management retiring
+on/after 1/1/2022 gets access only (no subsidy); bargained pre-65 subsidy may still exist;
+Medicare-side subsidy ended for last day on/after 1/1/2021; 2026 figures: catch-up $8,000,
+super catch-up $11,250, IRMAA $109,000/$218,000 five tiers, 2-yr lookback.
+
+**Risks.** Statutory birth-year rules must be right: FRA 66+2mo/yr for 1955–59, 67 for 1960+;
+RMD 73 for born 1951–1959 (note the 1959 drafting-glitch footnote, IRS proposed regs say 73),
+75 for 1960+; Rule of 55 keys on separation in/after the calendar YEAR of the 55th birthday.
+Tool is educational-estimate only — carry the standard "verify in NetBenefits/SPD" warning.
+
+**Next steps.** Build page → wire nav links → verify in static preview (inputs exercised,
+console clean) → push → CHANGE_LOG.
+
 ## 2026-07-14 (2) — Remove implication that Mod 75 yields subsidized healthcare (non-bargained Section 08/09)
 
 **Task.** User flagged Section 08 of `non-bargained.html` as implying management employees can
