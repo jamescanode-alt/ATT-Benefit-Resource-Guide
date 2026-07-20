@@ -1,5 +1,41 @@
 # CHANGE_LOG
 
+## 2026-07-20 (3) — Trigger Finder: employment status now drives eligibility logic
+
+User flagged that toggling **Terminated** only changed labels; the cards and timeline still
+treated the client as accruing service, so a milestone the client can no longer reach (Mod 75,
+the age-55 subsidy) was still shown as reachable. Employment status now feeds the engine, not
+just the copy.
+
+**Rule applied (per the guides: Mod 75 is tested *at termination*).** A terminated client accrues
+no further service, so the Modified Rule of 75 / Medical-Program Rule-of-75 is now resolved to
+**met or missed as of the termination reference date** (the separation date, or today if none is
+entered), never "on track". Age-based triggers (59½, Social Security, IRMAA, Medicare, RMDs) are
+unaffected because they do not depend on employment.
+
+**What now changes when Terminated is selected:**
+- **Retiree-medical gate card** flips from "On track" to "Missed at sep." / "Not met at term."
+  when the milestone was not reached by termination.
+- **Rule of 55 card** shows "Needs sep. date" (with guidance) when terminated without a date,
+  instead of the active-client "Opens Jan YYYY".
+- **Mod 75 timeline item** renders as a red warn card ("NOT met at termination") instead of a
+  neutral "on track" milestone.
+- **Age-55 timeline item** explains the subsidized early-commencement schedule does not apply
+  when Mod 75 was missed (steeper deferred-vested factors to 65 instead).
+- **Vesting** is treated as lost if the client is terminated before the 3-year cliff even with no
+  date entered.
+- **Banner, separation checklist, Roth-conversion window, and 401(k)/Rule-of-55 step** all reword
+  for the terminated case (service "at termination", counterfactual milestone framing, etc.).
+- When entering **years of service in Ages mode for a terminated client**, the value is now
+  anchored to the separation date (service *at termination*), not to today.
+
+**Validated in preview:** toggling a 53-yr-old/20-yr union client between Active and Terminated
+flips the retiree-medical gate (On track → Not met), the Rule of 55 card (Opens 2028 → Needs sep.
+date), and the Mod 75 timeline item (neutral → red warn), with the banner updating in step;
+a terminated mgmt client who separated in 2024 at 56/26 correctly shows Mod 75 met + Rule of 55
+applies; a terminated union client who left at 52/22 shows all three missed with the reworded
+age-55 item. Console clean; no em-dashes.
+
 ## 2026-07-20 (2) — Trigger Finder: explicit entry-mode/employment radios, em-dash cleanup
 
 User asked for radio buttons instead of the implicit "date wins over number" input model:

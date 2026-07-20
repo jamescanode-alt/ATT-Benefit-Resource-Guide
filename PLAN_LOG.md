@@ -1,5 +1,27 @@
 # PLAN_LOG
 
+## 2026-07-20 (3) — Trigger Finder: wire employment status into eligibility logic
+
+**Task.** User reported the cards (Rule of 55) and timeline don't update when the client is marked
+Terminated, so benefits the client can no longer qualify for (Mod 75, age-55 subsidy) still showed
+as reachable. Employment status was only driving labels, not the engine.
+
+**Fix.** Added `termed` flag and `termRef` (separation date or today) to `render()`. Mod 75 status
+for a terminated client is now met/missed only (tested at the termination reference, matching the
+guides' "tested at termination" rule), never 'ontrack'. Rewired: Rule-of-55 card (new terminated-
+no-date branch), retiree-medical card (missed-with/without-date wording), vesting (lost if termed
+before cliff even w/o date), the Mod 75 + age-55 + Rule-of-55 timeline items, the banner, and the
+separation checklist steps (milestone, 401(k), conversion window). Years-of-service in Ages mode is
+now anchored to the separation date for a terminated client, not today.
+
+**Risk.** The plan rule is that Mod 75 is tested at termination and does NOT improve by aging after
+you leave; verified this framing against the guides before freezing service. Kept the counterfactual
+"would have arrived" date so advisors still see how far short the client fell.
+
+**Validated in preview:** Active↔Terminated toggle flips the retiree-medical gate, Rule-of-55 card,
+and Mod 75 timeline item (neutral→red warn) with the banner in step; terminated-with-date scenarios
+(56/26 met; 52/22 missed) resolve correctly; console clean; grep em-dash 0.
+
 ## 2026-07-20 (2) — Trigger Finder input redesign: explicit radios + em-dash cleanup
 
 **Task.** User asked to replace the implicit date-vs-number entry model in `triggers.html` with
