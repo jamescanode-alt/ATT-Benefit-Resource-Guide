@@ -1,5 +1,33 @@
 # CHANGE_LOG
 
+## 2026-07-23 (3) — Trigger Finder: rewritten in plain, client-facing language
+
+Reworked all copy on `triggers.html` so it speaks directly to the client in simple language,
+instead of to the advisor.
+
+- **Voice:** "the client / they" became "you" throughout; advisor coaching ("map the date before
+  the client gives notice," "the decision to model," "before advising") became plain guidance or
+  "talk with your advisor."
+- **Plain words for jargon,** without changing the underlying rules or numbers: "Modified Rule of
+  75 / Mod 75" is now just "Rule of 75"; the age/service combos read "age 50 with 25 yrs" instead
+  of "50/25"; MAGI/IRMAA are described as "your income" and "the Medicare surcharge"; 402(g)/415(c)
+  limits are "the standard limit"; segment rates are "the interest rates used to set a lump sum";
+  deferred-vested/Appendix B factors are "bigger cuts"; "commence" is "start your pension"; NUA is
+  "a special tax break for company stock."
+- **Sections touched:** hero, the input form (labels, radios, help text, and the warning box), the
+  timeline heading/intro, the reframed "Why your last day matters most" box (was "The advisor's
+  lens"), the age-reference table and its footnote, and the footer/disclaimer. The sidebar section
+  labels now read "Your information / Your timeline / When you leave / Milestones by age."
+- **The interactive output too:** the four result cards, every timeline entry, the whole
+  separation checklist, and the email-export text now use the same plain second-person voice. The
+  export table keeps the columns Age · Approx. Date · Trigger · Description as before.
+- Calculation logic, dates, dollar amounts, and all disclaimers are unchanged.
+
+**Validated in preview:** no console errors; union, Mobility, and terminated "missed milestone"
+scenarios all render correctly in plain language; the dynamic leaving-date label updates; the email
+export still copies with the new wording; no horizontal overflow at desktop or mobile. **Status:
+complete.**
+
 ## 2026-07-23 (2) — Trigger Finder: export future triggers as an email-ready table
 
 Added a **"Copy future triggers as a table (for client email)"** link to `triggers.html` in the

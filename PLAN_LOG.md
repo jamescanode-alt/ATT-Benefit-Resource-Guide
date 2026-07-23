@@ -1,5 +1,36 @@
 # PLAN_LOG
 
+## 2026-07-23 (3) — Trigger Finder: rewrite all copy to plain, client-facing language
+
+**Task.** Review the Financial Trigger tool (`triggers.html`) so the language is very basic and
+written for the client (second person "you") rather than the advisor.
+
+**Scope.** Rewrote every user-visible string: hero eyebrow/lead/meta, Section 01 inputs (heading,
+intro, labels, status/entry radios, separation label + dynamic JS label, warn callout), Section 02
+timeline heading/intro + export link text, Section 03 heading/intro + the "advisor's lens" box
+(reframed to "Why your last day matters most"), Section 04 reference heading/intro/table/footnote,
+footer descriptive + disclaimer lines and the footer title, and the sidebar section labels. In the
+JS engine: input-error banners, the client snapshot line, all four result cards, every timeline
+item (title + description), the timeline footnote, the separation-checklist intro and all six
+steps, the closing note, and the email-export prose/messages.
+
+**Plain-language choices.** Jargon translated in place while keeping accuracy and every hedge:
+Mod 75 -> "Rule of 75"; combos "50/25" -> "age 50 with 25 yrs"; MAGI/IRMAA -> "your income" /
+"Medicare surcharge"; 402(g)/415(c) -> "standard limit"; QCD kept with plain gloss; segment rates
+-> "the interest rates used to set a lump sum"; deferred-vested/Appendix B factors -> "bigger
+cuts"; commence -> "start your pension"; NUA -> "a special tax break for company stock (NUA)".
+"the client / they" -> "you"; "before advising" -> "before you decide / talk with your advisor".
+Kept the export table's requested column headers (Age, Approx. Date, Trigger, Description).
+
+**Left intentionally.** Shared sidebar brand line ("Advisor Field Guide") and two internal JS code
+comments that still say "Mod 75" (not user-visible). Calculation logic, dates, dollar figures,
+and all disclaimers unchanged.
+
+**Validated in preview:** no console errors (JS parses); default (union/active), Mobility, and a
+terminated-management "missed milestone" scenario all render plain second-person copy; dynamic
+separation label flips to "When you left AT&T"; email export still copies (14 milestones, updated
+subtitle, columns intact); no horizontal overflow at desktop or mobile (375px); em-dash grep 0.
+
 ## 2026-07-23 (2) — Trigger Finder: export future triggers as an email-ready table
 
 **Task.** Add a link on `triggers.html` (Section 02, Trigger timeline) that exports the timeline's
