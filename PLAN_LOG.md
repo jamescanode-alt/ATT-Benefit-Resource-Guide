@@ -1,5 +1,32 @@
 # PLAN_LOG
 
+## 2026-07-23 (2) — Trigger Finder: export future triggers as an email-ready table
+
+**Task.** Add a link on `triggers.html` (Section 02, Trigger timeline) that exports the timeline's
+**future** triggers as a formatted table for pasting into a client email. Columns: Age, Approx.
+Date, Trigger, Description.
+
+**Approach.** The timeline is built in `render()` into an `items` array (`{d,cat,catCls,title,
+desc,warn}`). Exposed the latest build via module-scoped `lastItems`/`lastDob` (cleared at the top
+of `render()` so the two invalid-input early returns leave them empty; repopulated right after
+`items.sort`). New "Copy future triggers as a table (for client email)" link + status span under
+the section intro. `buildExport()` filters `items` to `d >= today`, builds an HTML table with
+**inline styles only** (survives Outlook/Gmail paste, which strip `<style>`/classes) plus a
+tab-separated plain-text twin. `copyPayload()` tries `navigator.clipboard.write` (rich HTML), then
+an `execCommand('copy')` rich-selection fallback, then opens a new tab with the table for manual
+copy. Age/date reuse the timeline's own `yrs`/`fmt` formatting for consistency.
+
+**Risk.** Clipboard API needs a secure context + user gesture (fine on GitHub Pages https and on a
+real click); covered by the execCommand and new-tab fallbacks. Client-facing copy: table uses
+Arial (email-safe) and carries a short "planning aid, not advice; verify" footnote. Title uses a
+colon, not an em-dash, per the project style rule.
+
+**Validated in preview:** default client (age 52, Union) copies 13 future triggers; captured
+clipboard HTML has exactly the 4 columns and 13 rows (first = Rule of 55 / age 54.4 / Jan 2029,
+last = RMDs / age 75 / 2049); plain-text twin present; age-92 client shows the "no future triggers"
+guard (err style); no console errors; no horizontal overflow at desktop or mobile (375px); em-dash
+grep 0.
+
 ## 2026-07-23 — Client Examples across all three guides + non-bargained nav fix
 
 **Task.** (1) Using the PGE Benefit Resource Guide as the pattern, add a recurring-client "Client

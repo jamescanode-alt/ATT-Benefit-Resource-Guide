@@ -1,5 +1,29 @@
 # CHANGE_LOG
 
+## 2026-07-23 (2) — Trigger Finder: export future triggers as an email-ready table
+
+Added a **"Copy future triggers as a table (for client email)"** link to `triggers.html` in the
+Trigger timeline section.
+
+- Clicking it copies every **future** trigger (dated today or later) to the clipboard as a
+  formatted table with columns **Age · Approx. Date · Trigger · Description**, ready to paste into
+  an Outlook/Gmail message. The table uses inline styles (email clients strip `<style>` and
+  classes), a dark header matching the guide, zebra striping, a short title/context line, and a
+  "planning aid, not advice, verify" footnote. A tab-separated plain-text version is copied
+  alongside the HTML.
+- Copy path: `navigator.clipboard.write` (rich HTML) → `execCommand('copy')` rich-selection
+  fallback → open the table in a new tab for manual copy if the clipboard is blocked. A status
+  line confirms how many triggers were copied, warns when the timeline isn't built yet, or notes
+  when the client has no remaining future triggers.
+- Implementation: the timeline `items` array (already built in `render()`) is exposed via
+  module-scoped `lastItems`/`lastDob`; the exporter filters to `d >= today` and reuses the
+  timeline's own age/date formatting so the email matches the on-screen timeline.
+
+**Validated in preview:** default client copied 13 future triggers; captured clipboard HTML had
+exactly the four columns and 13 rows; plain-text twin present; the age-92 "no future triggers"
+guard fired correctly; no console errors; no horizontal overflow at desktop or mobile. **Status:
+complete.**
+
 ## 2026-07-23 — Client Examples across all three guides + non-bargained nav fix
 
 Two requests, modeled on the PGE Benefit Resource Guide.

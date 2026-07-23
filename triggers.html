@@ -187,6 +187,16 @@ td.num{font-variant-numeric:tabular-nums;text-align:right}
 .cat.hc{background:#fbf6ea;color:var(--gold)}
 .cat.emp{background:#10243F;color:#fff}
 
+/* timeline export link */
+.tl-export-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0 2px}
+.export-link{display:inline-flex;align-items:center;gap:8px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13.5px;font-weight:600;color:#fff;background:var(--blue);padding:9px 16px;border-radius:7px;text-decoration:none;cursor:pointer;border:none;transition:.15s}
+.export-link:hover{background:#17469e}
+.export-link:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.export-link .ico{font-size:15px;line-height:1}
+.export-msg{font-family:'Helvetica Neue',Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);line-height:1.4}
+.export-msg.ok{color:var(--good);font-weight:600}
+.export-msg.err{color:var(--warn);font-weight:600}
+
 /* steps */
 .steps{counter-reset:s;margin:22px 0}
 .step{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start}
@@ -319,6 +329,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="pn">Section 02 · Output</div>
   <h2>Trigger timeline</h2>
   <p>Every dated trigger for this client, in order. Faded items have passed (still worth confirming they were handled); the gold item is the next one coming. Items flagged in red need attention <em>before</em> the separation date.</p>
+  <div class="tl-export-row">
+    <a href="#" id="tlExport" class="export-link" role="button"><span class="ico" aria-hidden="true">&#9114;</span> Copy future triggers as a table (for client email)</a>
+    <span class="export-msg" id="tlExportMsg" aria-live="polite"></span>
+  </div>
   <div class="tl" id="tlWrap"></div>
   <p class="small" id="tlNote"></p>
 </section>
@@ -397,6 +411,7 @@ secs.forEach(s=>s&&obs.observe(s));
   const modeRadios=[...document.querySelectorAll('input[name="entryMode"]')];
   const sepLabel=$('sepLabel'), sepHelp=$('sepHelp');
   const dobDateRow=$('dobDateRow'), dobAgeRow=$('dobAgeRow'), hireDateRow=$('hireDateRow'), hireYosRow=$('hireYosRow');
+  let lastItems=[], lastDob=null; // latest computed timeline, for the email export
 
   function empStatus(){ const r=empRadios.find(r=>r.checked); return r?r.value:'active'; }
   function entryMode(){ const r=modeRadios.find(r=>r.checked); return r?r.value:'ages'; }
@@ -438,6 +453,7 @@ secs.forEach(s=>s&&obs.observe(s));
 
   function render(){
     const today=new Date(); today.setHours(0,0,0,0);
+    lastItems=[]; lastDob=null; // cleared here; repopulated once the timeline is built (skipped on invalid input)
 
     // ---- inputs ----
     const mode=entryMode();
@@ -613,6 +629,7 @@ secs.forEach(s=>s&&obs.observe(s));
     if(sep) it(sep,'Employment','emp','Separation from AT&amp;T'+(isActive?' (planned)':''),'Run the separation checklist in Section 03: healthcare bridge, pension commencement, 401(k) strategy, severance interplay, and the conversion window that opens here.',(m75Status==='missed'||vestLostAtSep||r55ok===false));
 
     items.sort((a,b)=>a.d-b.d);
+    lastItems=items; lastDob=dob; // expose the built timeline to the email export
     let nextIdx=-1;
     items.forEach((x,i)=>{ if(nextIdx<0 && x.d>=today) nextIdx=i; });
 
@@ -700,6 +717,85 @@ secs.forEach(s=>s&&obs.observe(s));
       +(hireApprox?'hire date derived from years of service; ':'')
       +((dobApprox||hireApprox)?'enter exact dates for exact trigger dates. ':'')
       +'2026 figures: catch-up $8,000 · super catch-up $11,250 · IRMAA tiers from $109,000 single / $218,000 MFJ. Verify current-year values before advising.';
+  }
+
+  // ---- export the future triggers as an email-ready table ----
+  const exportBtn=$('tlExport'), exportMsg=$('tlExportMsg');
+  function stripHtml(s){ const t=document.createElement('div'); t.innerHTML=s; return (t.textContent||t.innerText||'').replace(/\s+/g,' ').trim(); }
+  function ageStrAt(d){ const a=yrs(lastDob,d); return (Math.round(a*10)/10).toFixed(1).replace(/\.0$/,''); }
+  function buildExport(){
+    const today=new Date(); today.setHours(0,0,0,0);
+    if(!lastDob) return {count:0, reason:'Enter a valid date of birth (or age) above to build the timeline first.'};
+    const future=lastItems.filter(x=>x.d>=today);
+    if(!future.length) return {count:0, reason:'No future triggers for this client, every mapped trigger has already passed.'};
+    const grpName=GRP_NAME[grpEl.value]||'';
+    // Inline styles only, so the table survives a paste into Outlook / Gmail (they strip <style> and classes).
+    const th='padding:9px 12px;border:1px solid #24426b;background:#10243F;color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;text-align:left;';
+    const td='padding:8px 12px;border:1px solid #D8D0BA;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#10243F;vertical-align:top;';
+    let rows='';
+    future.forEach((x,i)=>{
+      const bg=(i%2)?'background:#FBF9F1;':'';
+      rows+='<tr>'
+        +'<td style="'+td+bg+'white-space:nowrap;font-weight:bold;">'+ageStrAt(x.d)+'</td>'
+        +'<td style="'+td+bg+'white-space:nowrap;">'+fmt(x.d)+'</td>'
+        +'<td style="'+td+bg+'font-weight:bold;">'+x.title+'</td>'
+        +'<td style="'+td+bg+'">'+x.desc+'</td>'
+        +'</tr>';
+    });
+    const html='<div style="font-family:Arial,Helvetica,sans-serif;color:#10243F;">'
+      +'<p style="font-size:15px;font-weight:bold;margin:0 0 4px;">AT&amp;T Retirement Trigger Timeline: Upcoming Milestones</p>'
+      +'<p style="font-size:12px;color:#33486A;margin:0 0 10px;">'+grpName+' &middot; future financial triggers to review together. Approximate planning dates; indexed figures are 2026 values.</p>'
+      +'<table style="border-collapse:collapse;width:100%;max-width:820px;">'
+      +'<thead><tr>'
+      +'<th style="'+th+'width:56px;">Age</th>'
+      +'<th style="'+th+'width:104px;">Approx. Date</th>'
+      +'<th style="'+th+'width:230px;">Trigger</th>'
+      +'<th style="'+th+'">Description</th>'
+      +'</tr></thead><tbody>'+rows+'</tbody></table>'
+      +'<p style="font-size:11px;color:#777777;margin:10px 0 0;">Planning aid only, not tax, legal, or investment advice. Verify against your plan documents (Fidelity NetBenefits, the controlling SPD) and current ssa.gov / medicare.gov / irs.gov figures before acting.</p>'
+      +'</div>';
+    let text='AT&T Retirement Trigger Timeline: Upcoming Milestones\n'+grpName+' - future financial triggers.\n\nAge\tApprox. Date\tTrigger\tDescription\n';
+    future.forEach(x=>{ text+=ageStrAt(x.d)+'\t'+fmt(x.d)+'\t'+stripHtml(x.title)+'\t'+stripHtml(x.desc)+'\n'; });
+    text+='\nPlanning aid only, not tax, legal, or investment advice. Verify against your plan documents and current ssa.gov / medicare.gov / irs.gov figures before acting.';
+    return {count:future.length, html:html, text:text};
+  }
+  async function copyPayload(html,text){
+    // 1) modern rich clipboard (keeps the formatted table)
+    try{ if(navigator.clipboard && window.ClipboardItem){
+      await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})]);
+      return true;
+    } }catch(e){}
+    // 2) legacy execCommand over a rich selection (also keeps formatting)
+    try{
+      const tmp=document.createElement('div'); tmp.contentEditable='true';
+      tmp.style.position='fixed'; tmp.style.left='-9999px'; tmp.style.top='0'; tmp.innerHTML=html;
+      document.body.appendChild(tmp);
+      const range=document.createRange(); range.selectNodeContents(tmp);
+      const sel=window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      const ok=document.execCommand('copy'); sel.removeAllRanges(); document.body.removeChild(tmp);
+      if(ok) return true;
+    }catch(e){}
+    return false;
+  }
+  function openFallback(html){
+    const w=window.open('','_blank');
+    if(!w) return false;
+    w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Trigger timeline table</title></head>'
+      +'<body style="margin:24px;"><p style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#333;">Select the table below and copy it into your client email.</p>'+html+'</body></html>');
+    w.document.close();
+    return true;
+  }
+  function showMsg(txt,cls){ exportMsg.textContent=txt; exportMsg.className='export-msg'+(cls?(' '+cls):''); }
+  if(exportBtn){
+    exportBtn.addEventListener('click',async(e)=>{
+      e.preventDefault();
+      const p=buildExport();
+      if(!p.count){ showMsg(p.reason,'err'); return; }
+      const ok=await copyPayload(p.html,p.text);
+      if(ok){ showMsg('Copied '+p.count+' future trigger'+(p.count===1?'':'s')+' as a table. Paste into your client email.','ok'); }
+      else if(openFallback(p.html)){ showMsg('Clipboard blocked, opened the table in a new tab, copy it from there.','err'); }
+      else{ showMsg('Could not access the clipboard or open a tab. Check the browser permissions and retry.','err'); }
+    });
   }
 
   [dobEl,ageEl,hireEl,yosEl,sepEl,grpEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
