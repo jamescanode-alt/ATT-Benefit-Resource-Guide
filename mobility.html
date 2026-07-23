@@ -19,6 +19,7 @@
   --paper:#FDFCF6;
   --good:#2E7D52;
   --warn:#B5532A;
+  --client:#6E4B9E;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -107,6 +108,8 @@ em{color:var(--ink-soft)}
 .callout .tag.blue{color:var(--blue)}
 .callout.warn .tag{color:var(--warn)}
 .callout.good .tag{color:var(--good)}
+.callout.client{border-left-color:var(--client);background:#f2ecf8}
+.callout.client .tag{color:var(--client)}
 .callout p:last-child{margin-bottom:0}
 .callout p{font-size:15.5px}
 
@@ -301,6 +304,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">Accuracy first</span>
     <p>Figures here are drawn from the Mobility Program Summary Plan Description (SPD) in your project library. Interest crediting rates, annuity factors, and dollar limits change by plan year. <strong>Always verify a client's actual account value and figures in NetBenefits before giving advice.</strong> This guide builds intuition; it is not a substitute for the controlling plan documents.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example</span>
+    <p>Meet the client we'll follow through this guide. <strong>Tanya Brooks</strong> is a CWA Orange Contract customer-service rep at AT&amp;T Mobility, hired in 2010. Her entire pension is a single <strong>Cash Balance Account</strong>, no Pre-99 band, no "greatest of" formula, and no Modified Rule of 75 on the pension itself. That shifts her planning center of gravity to the 401(k), the rollover of that account, and the healthcare milestone, which is exactly where we'll spend our time.</p>
+  </div>
 </section>
 
 <section class="block" id="eligibility">
@@ -333,6 +340,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     </tbody>
   </table>
   <p class="small">Participation begins after one Year of Participation Service. <strong>Normal Retirement Age is a flat age 65</strong>, there is no 5th-anniversary extension as in the legacy Nonbargained Program.</p>
+  <div class="callout client">
+    <span class="tag">Client example: Tanya Brooks</span>
+    <p>Tanya is a Bargaining Unit Employee under the CWA Orange Contract, so she's an Eligible Employee, and hired in 2010, she cleared the 3-year vesting bar in 2013. Her benefit is hers to keep even if she leaves. Note she's <em>not</em> legacy management (she wasn't employed on Dec 31, 2005), so her eligibility flows from the bargaining agreement, not the management path, a distinction worth confirming, since post-2005 management hires land in the Management Cash Balance Program instead.</p>
+  </div>
 </section>
 
 <section class="block" id="cash-balance">
@@ -357,6 +368,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">The advisor's lens</span>
     <p>Because the pay credit is a flat percentage of pay (below), the Mobility account grows <strong>steadily rather than accelerating late in a career</strong> the way the legacy age-stepped cash balance did. There's no "give up your highest-value accrual years" argument here, so the retire-or-stay conversation turns on 401(k) growth, Social Security timing, and healthcare, not a pension cliff.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Tanya Brooks</span>
+    <p>For Tanya there's no "greatest of three" to decode and no Pre-99 band, whatever her Cash Balance Account is worth on the day she commences <em>is</em> her pension, payable as a lump sum or converted to an annuity. There's no magic age-and-service combination that suddenly boosts the pension, so the conversation with Tanya is about growing and rolling the account, not timing a subsidy. The one milestone that <em>does</em> matter for her is the healthcare test in Section 08, which lives in a different plan entirely.</p>
+  </div>
 </section>
 
 <section class="block" id="mechanics">
@@ -380,6 +395,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout warn">
     <span class="tag">Rate varies, confirm it</span>
     <p>The interest crediting rate tracks the 30-Year Treasury and <strong>resets each quarter</strong>. Don't quote a fixed rate to a client, pull the current crediting rate from the Recordkeeper and the client's actual balance from NetBenefits.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Tanya Brooks</span>
+    <p>Tanya's monthly Pension Compensation is $5,000, so her Basic Benefit Credit is 5% &times; $5,000 = <strong>$250</strong> this month, a flat 5%, the same whether she's 30 or 60. Her account entered the month at about $70,000; at an illustrative ~4% annual crediting rate the interest credit is roughly $70,000 &times; 0.327% &approx; <strong>$229</strong>. New balance &approx; $70,000 + $229 + $250 = <strong>$70,479</strong>. Because the pay credit is flat, Tanya's account grows steadily rather than accelerating late in her career, and confirm the current quarter's crediting rate rather than quoting the 4%.</p>
   </div>
 </section>
 
@@ -446,6 +465,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag blue">No interest-rate timing to worry about</span>
     <p>Unlike the legacy defined-benefit pensions (where a lump sum is an annuity converted with IRS segment rates, and rising rates shrink the payout), the Mobility lump sum is simply the <strong>Cash Balance Account</strong>. It is <strong>not</strong> rate-converted, so there's no "commence before rates rise" timing game, the only rate that touches it is the monthly interest credit (Section 04). One less variable to model.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Tanya Brooks</span>
+    <p>Suppose Tanya's account grows to <strong>$100,000</strong> by age 65. As a lump sum that's simply $100,000, rollable to an IRA (a direct rollover avoids the mandatory 20% withholding). Or she converts it to an annuity: at the SPD's age-65 factor of 141.5292, $100,000 &divide; 141.5292 = a <strong>$706.57/month</strong> Single Life Annuity. Married, she could instead take a 50% or 75% J&amp;S (there's <strong>no 100% option</strong> here), and the <strong>pop-up always applies</strong>, unlike the legacy plans it isn't conditioned on any Rule of 75. Note a J&amp;S election in this program <strong>can't be waived by a QDRO</strong>.</p>
+  </div>
 </section>
 
 <section class="block" id="savings">
@@ -495,6 +518,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">The advisor's lens</span>
     <p>Farther's program is built specifically for AT&amp;T employees, <strong>we manage funds held at Fidelity and consult across the full benefits stack</strong>. Coordinate the cash-balance rollover and the 401(k) so the household's Fidelity assets are managed together. Make sure contribution rate, full match capture, and allocation are all working before layering on after-tax &rarr; Roth strategies.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Tanya Brooks</span>
+    <p>Tanya earns $70,000. To capture her full match she contributes at least 6% each pay period, $4,200/year. On the Orange Contract's common formula of 80% of the first 6%, her employer adds 80% &times; $4,200 = <strong>$3,360/year</strong> (confirm her exact contract tier in NetBenefits). If she front-loads and drops below 6% late in the year, and has opted out of spillover, those under-6% paychecks leave match behind with no true-up. Earlier in her career and likely in a moderate bracket, Tanya leans <strong>Roth</strong> on the deferral, and any headroom below the $72,000 415(c) ceiling can go to after-tax contributions converted via the plan's Roth In-Plan Rollover.</p>
+  </div>
 </section>
 
 <section class="block" id="irmaa">
@@ -517,6 +544,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout warn">
     <span class="tag">Not advice: a framework</span>
     <p>Conversion and distribution strategy depend on the individual's full tax picture, state taxes, legacy goals, and assumptions about future rates. Use these as factors to evaluate with the client and their tax professional. Farther advisors are not providing tax advice.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Tanya Brooks</span>
+    <p>Because Tanya rolls her cash balance to an IRA, her retirement income is mostly IRA/401(k) withdrawals plus Social Security, highly controllable for MAGI. Say she files single with MAGI around <strong>$90,000</strong>, under the $109,000 single-filer IRMAA threshold. In a low-income year before RMDs, a <strong>$15,000</strong> Roth conversion lands her at $105,000, still under the line; a <strong>$25,000</strong> conversion would push her to $115,000 and trip the full first-tier surcharge two years later. That controllability is the opportunity: project MAGI each year and size withdrawals and conversions to sit just under the next bracket or IRMAA tier.</p>
   </div>
 </section>
 
@@ -551,6 +582,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <p style="margin-top:6px"><strong>65+ Medicare subsidy: eliminated</strong> for anyone (bargained or management) with a last day on/after <strong>1/1/2021</strong>. A management-side pre-Medicare cut also applies for last day on/after 1/1/2022. Mobility covers both bargained and legacy-management populations, so check which rules apply to the specific client.</p>
     <p style="margin-top:6px">Enrollment runs through <strong>Alight</strong>. Contributions and plan tiers (Bronze/Silver/Gold) are in the separate Medical Program SPD and change over time, confirm the client's actual contribution in their Total Reward statement before quoting a figure.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Tanya Brooks</span>
+    <p>Here's the milestone that <em>does</em> matter for Tanya. At 51 with 16 years, she doesn't yet meet any age/service combination. But if she stays to <strong>55 with 20 years</strong> (around 2030), she satisfies the Medical Program's test and earns <strong>eligibility to enroll</strong> in retiree medical, the pre-Medicare bridge from 55 to 65. Leave at 51/16 and she loses that access entirely; the pension is identical either way, but the healthcare door closes. One caveat: hired in 2010 (after 1/1/2001), she'd pay <strong>100% of the Cost of Coverage</strong>, the value is guaranteed access to group coverage, not a subsidy.</p>
+  </div>
 </section>
 
 <section class="block" id="strategy">
@@ -569,6 +604,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout good">
     <span class="tag">Test yourself: advisor case studies</span>
     <p>Five interactive client scenarios drill what makes this plan different and where legacy-plan habits mislead: the single cash-balance structure, the flat 5% credit, the survivor forms that actually exist here, the timing game that doesn't, and the healthcare milestone the pension doesn't advertise. You have to calculate or choose correctly to advance. <a class="inline" href="case-studies-mobility.html"><strong>Start the case studies &rarr;</strong></a></p>
+  </div>
+
+  <div class="callout client">
+    <span class="tag">Client example: Tanya Brooks, the full picture</span>
+    <p>Putting Tanya together: Orange Contract, hired 2010, vested since 2013 (Section 02). Her whole pension is one Cash Balance Account that grows a flat 5% of pay plus interest (Sections 03–04), so there's no subsidy to time, projected to roughly $100,000 by 65, worth either a lump-sum IRA rollover or a $706.57/month annuity (Section 05). While working she captures her ~$3,360 match and leans Roth (Section 06), and in retirement she sizes IRA withdrawals and conversions under the $109,000 IRMAA line (Section 07). The single highest-stakes timing decision isn't about the pension at all, it's staying to <strong>55/20</strong> to unlock retiree-medical access (Section 08). Those pieces move together, which is why we plan them together.</p>
   </div>
 </section>
 
@@ -600,6 +640,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <h4>Direct rollover</h4>
       <p>A lump-sum eligible rollover distribution can roll to an IRA or eligible plan; otherwise 20% mandatory federal withholding applies.</p>
     </div>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Tanya Brooks</span>
+    <p>If Tanya died before commencing, her husband could elect a Single Life Annuity, the greater of 50% of the day-before-death 50% J&amp;S benefit or the actuarial-equivalent SLA of the account, or take the account as a single lump sum; with no spouse, partner, or beneficiary, the account goes to her <strong>estate</strong>. Unlike the legacy Nonbargained Program, there's <strong>no separate Retiree Death Benefit</strong> here, the survivor value is the account itself, so keeping her Fidelity beneficiary designation current is the whole ballgame. And remember her J&amp;S annuity can't be waived by a QDRO in this program.</p>
   </div>
 </section>
 

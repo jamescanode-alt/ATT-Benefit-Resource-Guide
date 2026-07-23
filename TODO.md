@@ -12,6 +12,11 @@
 - [ ] **Roth catch-up (SECURE 2.0) adoption date.** The Savings Plan SPD in the library is a 2022
       edition and predates the SECURE 2.0 Roth-catch-up specifics. Section 11 states management gets
       the standard (non-delayed) timing; confirm the plan's actual adoption when a current SPD lands.
+- [ ] **Strip 5 pre-existing em-dashes.** Non-client-example copy still uses em-dashes against the
+      project style rule: `index.html:858` and `non-bargained.html:839` (401(k) match paragraphs),
+      and `non-bargained.html` lines ~425/430/435 (the "greatest of three" card headings: "CAM —
+      the usual winner", "Cash Balance — frozen", "PBM — narrow"). Left untouched to keep the
+      2026-07-23 Client Examples change focused; fix in a dedicated pass.
 - [ ] **Trigger finder enhancements (triggers.html).** Possible follow-ups: a tax-filing-status
       input so the IRMAA line shows only the relevant tier ($109k vs $218k); a West/Craft vs
       Southeast sub-select for the union threshold age (55 vs 56); confirm the born-1959 RMD age

@@ -1,5 +1,38 @@
 # CHANGE_LOG
 
+## 2026-07-23 — Client Examples across all three guides + non-bargained nav fix
+
+Two requests, modeled on the PGE Benefit Resource Guide.
+
+- **Client Examples added to every teaching section of all three guides.** New CSS in each page:
+  a `--client:#6E4B9E` variable plus `.callout.client{border-left-color:var(--client);
+  background:#f2ecf8}` and `.callout.client .tag{color:var(--client)}`, the same violet callout the
+  PGE guide uses. Each callout is `<div class="callout client"><span class="tag">Client example:
+  NAME</span>…</div>` with worked numbers computed from that section's own formula. Recurring
+  characters carried section to section:
+  - **index.html (Union): 12 examples** — Rosa Alvarez (CWA D9/West, hired 1990, blended Pre-99 +
+    cash balance) and Marcus Bell (IBEW, hired 2012, cash-balance only). Sections 01–12 (landscape
+    intro, eligibility, two-formulas, cash-balance mechanics, Pre-99 band, Mod 75, calculator,
+    payment, 401(k), IRMAA, strategy capstone, protections).
+  - **non-bargained.html (Legacy Non-Bargained): 16 examples** — Karen Whitfield (legacy SBC mgmt,
+    hired 1988, CAM controlling, $3,200/mo) plus Dennis Okafor (promoted from a Midwest band 2003)
+    in the PBM section. Sections 01–16 (all substantive sections through protections).
+  - **mobility.html (Mobility): 10 examples** — Tanya Brooks (CWA Orange, hired 2010, cash-balance
+    only). Sections 01–10. Key teaching beat: staying to 55/20 unlocks retiree-medical access even
+    though the pension has no Rule of 75.
+  - Glossary and Contacts sections intentionally left without examples (definition/directory
+    content, as in the PGE reference). Capstone "full picture" example closes each strategy section.
+- **Left-rail nav fix (non-bargained.html).** The "Financial trigger finder" and "Case studies:
+  test yourself" links were missing `class="navitem"`, so they rendered unstyled (no block padding,
+  hover, or active state). Added the class to both; verified computed styles now match the other
+  nav items (display:block, 26px padding, 3px transparent left border, Helvetica).
+
+**Validated in preview (local http.server):** client-callout counts 12/16/10 (38 total) with the
+correct `#6E4B9E` border / `#f2ecf8` background; nav links styled identically to siblings; no
+console errors; no horizontal overflow at desktop (1280) or mobile (375). Em-dash grep found only
+5 **pre-existing** dashes in unrelated copy (card headings, 401(k) match paragraphs); none in the
+new examples. **Status: complete.**
+
 ## 2026-07-20 (4) — Trigger Finder: MOD 75 card, FRA relabel, radio order
 
 Three UI requests on `triggers.html`:

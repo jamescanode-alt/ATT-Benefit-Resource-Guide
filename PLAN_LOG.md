@@ -1,5 +1,30 @@
 # PLAN_LOG
 
+## 2026-07-23 — Client Examples across all three guides + non-bargained nav fix
+
+**Task.** (1) Using the PGE Benefit Resource Guide as the pattern, add a recurring-client "Client
+example" callout to each teaching section of all three AT&T guide pages (`index.html` Union,
+`non-bargained.html` Legacy Non-Bargained, `mobility.html` Mobility). (2) Fix the two Left-Rail
+links on `non-bargained.html` ("Financial trigger finder", "Case studies") that were missing
+`class="navitem"` and therefore rendered unstyled.
+
+**Pattern (from PGE).** New CSS: `--client:#6E4B9E` var + `.callout.client{border-left-color:
+var(--client);background:#f2ecf8}` and `.callout.client .tag{color:var(--client)}`. Markup:
+`<div class="callout client"><span class="tag">Client example: NAME</span><p>…</p></div>`.
+Recurring characters per page, numbers computed from that section's own formulas:
+- Union: Rosa Alvarez (CWA D9/West, hired 1990, blended Pre-99 + cash balance) + Marcus Bell
+  (IBEW, hired 2012, cash-balance only).
+- Non-Bargained: Karen Whitfield (legacy SBC mgmt, hired 1988, CAM controlling) + Dennis Okafor
+  (promoted from Midwest band 2003, PBM) in the PBM section.
+- Mobility: Tanya Brooks (CWA Orange, hired 2010, cash-balance only).
+
+**Risk.** Financial-copy accuracy: every worked number must tie to the section's stated
+formula/factors and stay hedged/illustrative ("confirm in NetBenefits"). Mitigated by reusing each
+section's own example figures/factors. Nav fix is cosmetic (class only), low risk.
+
+**Next steps.** Verify in preview (desktop + mobile, nav styling, no overflow), em-dash grep = 0,
+update CHANGE_LOG + push.
+
 ## 2026-07-20 (4) — Trigger Finder: MOD 75 card, FRA relabel, radio reorder
 
 **Task.** Three UI tweaks to `triggers.html`: (1) swap the "Enter using" radios so Ages/years is

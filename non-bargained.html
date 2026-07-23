@@ -19,6 +19,7 @@
   --paper:#FDFCF6;
   --good:#2E7D52;
   --warn:#B5532A;
+  --client:#6E4B9E;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -107,6 +108,8 @@ em{color:var(--ink-soft)}
 .callout .tag.blue{color:var(--blue)}
 .callout.warn .tag{color:var(--warn)}
 .callout.good .tag{color:var(--good)}
+.callout.client{border-left-color:var(--client);background:#f2ecf8}
+.callout.client .tag{color:var(--client)}
 .callout p:last-child{margin-bottom:0}
 .callout p{font-size:15.5px}
 
@@ -280,9 +283,9 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <a href="#glossary" class="navitem"><span class="num">17</span>Glossary</a>
   <a href="#contacts" class="navitem"><span class="num">18</span>Contacts &amp; sources</a>
   <div class="navlabel">Tools</div>
-  <a href="triggers.html"><span class="num">▸</span>Financial trigger finder</a>
+  <a href="triggers.html" class="navitem"><span class="num">▸</span>Financial trigger finder</a>
   <div class="navlabel">Training</div>
-  <a href="case-studies-nb.html"><span class="num">▸</span>Case studies: test yourself</a>
+  <a href="case-studies-nb.html" class="navitem"><span class="num">▸</span>Case studies: test yourself</a>
 </nav>
 
 <main>
@@ -329,6 +332,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">Accuracy first</span>
     <p>Figures and tables here are drawn from the Nonbargained Program Summary Plan Description (SPD) in your project library. Specific factors, bands, and dollar limits change by plan year and by the client's company history. <strong>Always verify a client's actual numbers in NetBenefits before giving advice.</strong> This guide builds intuition; it is not a substitute for the controlling plan documents.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example</span>
+    <p>Meet the client we'll follow through this guide. <strong>Karen Whitfield</strong> spent her career in legacy Southwestern Bell management, hired in 1988 and never rehired after 2006, so she sits squarely in the <strong>Nonbargained Program</strong>, and for her, as for most of this population, the <strong>CAM formula</strong> is the controlling (highest) benefit. Where the narrower <strong>PBM</strong> formula matters, we'll bring in <strong>Dennis Okafor</strong>, who was promoted into management from a Midwest bargained band in 2003. We'll compute Karen's actual numbers section by section.</p>
+  </div>
 </section>
 
 <section class="block" id="which-program">
@@ -356,6 +363,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag blue">If this isn't the right guide</span>
     <p><strong>AT&amp;T Mobility employee?</strong> Switch to the <strong>Mobility Program</strong> guide with the <em>Viewing plan</em> selector at the top of the sidebar, it's a dedicated, cash-balance-only page, so you don't have to read around legacy-plan rules that don't apply. <strong>Union / bargained employee?</strong> Use the <strong>Union / Bargained</strong> guide. <strong>Management hired after the cutoff?</strong> They're likely in the <strong>Management Cash Balance Program</strong>, whose SPD is not yet in this library, confirm directly against that plan and NetBenefits.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen's answers to the first question, <em>"Which legacy company, and when were you hired?"</em>, are <strong>Southwestern Bell management, 1988</strong>. That puts her in the Nonbargained Program covered here: legacy SBC management employed on Dec 31, 2006 and not rehired after. Had she instead come from AT&amp;T Mobility, or been hired after the mid-2000s cutoff, she'd be in a cash-balance-only program and we'd switch guides with the plan selector. Confirming the program first is what keeps the next fifteen sections relevant to her.</p>
+  </div>
 </section>
 
 <section class="block" id="eligibility">
@@ -382,6 +393,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="lens">
     <span class="tag">The advisor's lens</span>
     <p>The 3-year vesting cliff is easy to clear for career employees, but a client considering leaving in their first few years should know whether they've crossed it. Far more consequential for this population is <strong>Modified Rule of 75</strong> timing (Section 08), which governs early-retirement subsidies and retiree healthcare access.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen is an Eligible Employee, a Management Employee of a Participating Company who was employed on Dec 31, 2006 and not rehired after, and with 38 years since her 1988 hire she cleared the 3-year vesting bar decades ago. So the vesting question is settled for her; if she walked away today the pension is entirely hers. What actually drives Karen's timing is the Modified Rule of 75 milestone in Section 08, not vesting.</p>
   </div>
 </section>
 
@@ -426,6 +441,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">The advisor's lens</span>
     <p>You rarely need to compute all three by hand, NetBenefits reports the controlling benefit. What you <em>do</em> need to know is <strong>which formula is winning and why</strong>, because that determines whether the Modified Rule of 75 subsidies apply (CAM/PBM only) and whether a lump sum is available (needs a Cash Balance component or the post-2018 full-lump-sum rule).</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen's NetBenefits statement reports three numbers behind the scenes: her <strong>CAM</strong> result, a frozen <strong>Cash Balance</strong> figure from her legacy SBC years, and no PBM (she was never promoted from a bargained band). The plan pays her the <strong>single greatest</strong> of the three, not the sum, and for Karen that's CAM. Reading her statement as if the CAM benefit and the cash balance stack would overstate her pension. The cash balance still matters, but for a different reason (Section 06): it's what can make her lump-sum eligible.</p>
+  </div>
 </section>
 
 <section class="block" id="cam">
@@ -460,6 +479,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">The advisor's lens</span>
     <p>Because the post-1999 piece keeps adding actual Pension Compensation, CAM <strong>keeps growing every year the client works</strong>, and higher-comp years (bonuses, commissions, promotions) add directly to the base. This is the opposite of the frozen cash-balance formula, and it is why continuing to work is usually accretive for a Nonbargained client's pension, on top of any Modified Rule of 75 milestone.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen's <strong>pre-2000 piece</strong>: her average annual Pension Compensation for the five years ending 12/31/1999 was about $65,000, and she had 12 years of service to 12/31/1999 (1988–1999), so $65,000 &times; 12 = <strong>$780,000</strong>. Her <strong>post-1999 piece</strong>, all Pension Compensation earned since, totals about <strong>$1,620,000</strong>. CAM Income = $780,000 + $1,620,000 = <strong>$2,400,000</strong>.</p>
+    <p style="margin-top:8px">Monthly benefit = 1.6% &times; $2,400,000 &divide; 12 = <strong>$3,200/month</strong> at Normal Retirement Age. Every additional year Karen works adds that year's bonus and base pay straight into the post-1999 piece, so the figure keeps climbing, we'll carry the $3,200 into the payment and death-benefit examples below.</p>
+  </div>
 </section>
 
 <section class="block" id="cash-balance">
@@ -483,6 +507,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">The advisor's lens</span>
     <p>Don't oversell the frozen balance as a growth asset, it isn't. Its planning value is twofold: it can make a client <strong>lump-sum eligible</strong>, and it sets the <em>partial</em> lump-sum amount when CAM is much larger (Section 10). Frame CAM as the pension's engine and the cash balance as an optionality lever on <em>how</em> the benefit can be paid.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen carries a frozen Cash Balance component of about <strong>$95,000</strong> from her legacy SBC service. Its pay credits stopped on Jan 14, 2005, so it hasn't grown from her salary in two decades, it earns interest credits only. It is <strong>not</strong> her benefit (CAM's $3,200/month is far larger). What it does is give her a path to a <strong>lump sum</strong>: her CAM benefit plus a cash-balance component is exactly the setup the CAM Excess Calculation works on (Section 10). Pull the real figure from NetBenefits rather than quoting this illustration.</p>
+  </div>
 </section>
 
 <section class="block" id="pbm">
@@ -505,6 +533,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="lens">
     <span class="tag">The advisor's lens</span>
     <p>PBM mostly surfaces for a client who spent years in a craft/bargained band and then moved into management. When you see a former bargained-then-promoted history, check whether PBM is the winning formula, and note that (like CAM) it carries the <strong>Modified Rule of 75</strong> early-retirement treatment.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Dennis Okafor</span>
+    <p>Dennis was promoted into management from a Midwest bargained band in <strong>June 2003</strong> with an accrued benefit at promotion, so he's a PBM Eligible Participant. Take option (b): the monthly benefit he'd earned under the prior program at promotion (say <strong>$1,100/month</strong>) <strong>plus</strong> 1.2% of the Pension Compensation he's since earned in this Program (about $900,000) &divide; 12 = $10,800 &divide; 12 = <strong>$900/month</strong>. Option (b) = $1,100 + $900 = <strong>$2,000/month</strong>. That only becomes his benefit if it beats his CAM and Cash Balance results, so always compare all three before assuming PBM wins.</p>
   </div>
 </section>
 
@@ -576,6 +608,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <p style="margin-top:6px">The old hire-date rules (hired on/after 1/1/2001 always paid 100%; pre-2001 hires could qualify under Legacy S/T/C/B rules) now matter <strong>only for those who retired by the cutoff dates</strong>, they do not create a subsidy path for anyone retiring today.</p>
     <p style="margin-top:6px">Net: a manager retiring today <strong>buys in at full cost</strong> (enrolled through <strong>Alight</strong>) with no HRA. What Mod 75 still buys on the healthcare side is <strong>guaranteed access to the group plan</strong>, not a discount. Contributions, plan tiers (Bronze/Silver/Gold), and dental/life/LTC live in the separate Medical Program SPD and change over time, confirm the client's actual contribution in their Total Reward statement. A separate legacy <strong>Pension-Based Eligibility</strong> path also exists for certain long-tenured former management whose service pension was granted before old regional cutoff dates (1996–2008); it affects <em>eligibility to enroll</em>, not price.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen is 61 with a 38-year Term of Employment. Because she's well past <strong>30 years</strong>, she satisfies Mod 75 outright, and being over 55, her CAM benefit is <strong>unreduced</strong>. Had she instead considered leaving at 53 with 26 years (the 50/25 combination, under 30 years), commencing at 53 would have cost 24 months &times; 0.5%/month = a <strong>12% reduction</strong> until age 55.</p>
+    <p style="margin-top:8px">On the healthcare side, meeting Mod 75 makes Karen <strong>eligible to enroll</strong> in AT&amp;T retiree medical, a pre-Medicare bridge until she turns 65. But as management retiring today she gets <strong>no Company subsidy</strong>: she'd pay 100% of the Cost of Coverage through Alight. The value is guaranteed <em>access</em> to group coverage, not a discount, still often worth more than the pension subsidy for a pre-65 retiree buying individual coverage at $1,000–$2,000/month.</p>
+  </div>
 </section>
 
 <section class="block" id="elig-calc">
@@ -602,6 +639,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout warn">
     <span class="tag">Read this before relying on the output</span>
     <p>This tool models the <strong>CAM / PBM early-retirement rules</strong> of the Nonbargained Program and is an educational estimate only. It assumes the client's benefit is a CAM or PBM benefit (a <strong>Cash Balance</strong> benefit has no Modified Rule of 75 and no early-reduction, it is simply the account value). It uses completed whole years, a flat age-55 threshold, and the standard Mod 75 combinations. Deferred-vested early-retirement factors (Appendix B) and retiree-healthcare eligibility vary and live in separate documents. <strong>Always confirm a client's actual status in NetBenefits and the controlling SPD.</strong></p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Enter Karen's age 61 and 38 years and the calculator returns <strong>"Satisfies the Modified Rule of 75,"</strong> no early-commencement reduction, and eligibility to enroll in retiree healthcare (unsubsidized). Drop her to age 53 with 26 years and it flips to a subsidized 0.5%/month reduction (about 12% at 53); drop her to age 52 with 22 years and the milestone is missed. Running these live shows a client exactly where the nearest milestone sits and what a few more months of service would unlock.</p>
   </div>
 </section>
 
@@ -697,6 +738,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout gold">
     <span class="tag">Timing the lump sum around interest rates</span>
     <p>When a <strong>CAM or PBM</strong> benefit is taken as a lump sum, it is the annuity converted to a present value using the <strong>IRS minimum present-value segment rates</strong>, so it moves <strong>inversely</strong> to interest rates: rising rates <em>shrink</em> the lump sum, falling rates grow it. AT&amp;T <strong>locks the prior-November rates for the whole commencement calendar year</strong>, so the year a client commences can materially change the payout, this bites hardest on a full-lump-sum election. The frozen <strong>cash-balance</strong> component, by contrast, is simply its account value and isn't rate-converted. Model the client's likely commencement-year rate rather than defaulting the calculator, see <a class="inline" href="https://www.irs.gov/retirement-plans/minimum-present-value-segment-rates" target="_blank" rel="noopener">irs.gov: minimum present-value segment rates</a>.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen's CAM benefit is a $3,200/month Single Life Annuity (Section 05). She's married, so her default is the <strong>50% Joint &amp; Survivor</strong>: $3,200 &times; 90% = <strong>$2,880/month</strong> to Karen, with <strong>$1,440/month</strong> continuing to her husband if she dies first, and because she met Mod 75, the <strong>pop-up</strong> applies (her benefit restores to $3,200 if he predeceases her). Single Life would pay the full $3,200 but leave him nothing, and requires his notarized consent.</p>
+    <p style="margin-top:8px">Because Karen terminated after May 25, 2018, she also qualifies for the <strong>full-lump-sum</strong> election, taking the entire CAM benefit as a lump sum instead of any monthly annuity. That value is her annuity converted at the IRS segment rates, so it moves inversely to interest rates; her frozen $95,000 cash balance, by contrast, is simply its account value and isn't rate-converted. Rolling a lump sum directly to an IRA avoids the mandatory 20% withholding.</p>
   </div>
 </section>
 
@@ -807,6 +853,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">The advisor's lens</span>
     <p>Farther's program is built specifically for AT&amp;T employees, <strong>we manage funds held at Fidelity and consult across the full benefits stack</strong> (pension, 401(k), medical). The 401(k) is where ongoing investment management lives and is the natural complement to the pension's guaranteed income. Make sure contribution rate, match capture, and allocation are all working before optimizing anything fancier.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen was hired in 1988, before the Jan 1, 2015 management cutoff, so her match is <strong>80% of the first 6%</strong> of pay (about 4.8%), not the richer post-2015 formula. On her $150,000 salary, a 6% Basic Contribution is $9,000/year, and her match is 80% &times; $9,000 = <strong>$7,200/year</strong>. As a peak-earner she leans <strong>pre-tax</strong> on the deferral, then, because her deferrals plus match ($9,000 + $7,200 = $16,200) sit well below the $72,000 415(c) ceiling, she has large headroom to add <strong>after-tax</strong> contributions and convert them to Roth (the mega-backdoor Roth). Confirm her match tier and spillover election in NetBenefits before she front-loads.</p>
+  </div>
 </section>
 
 <section class="block" id="irmaa">
@@ -839,6 +889,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout warn">
     <span class="tag">Not advice: a framework</span>
     <p>Conversion and contribution strategy depend on the individual's full tax picture, state taxes, legacy goals, and assumptions about future rates. Use these as factors to evaluate with the client and their tax professional, not as a default recommendation. Farther advisors are not providing tax advice.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Say Karen retires and files single. Between her $2,880/month pension ($34,560/year) and IRA withdrawals, her MAGI lands around <strong>$95,000</strong>, under the $109,000 single-filer IRMAA threshold. In a low-income year before RMDs she considers a Roth conversion. A <strong>$25,000</strong> conversion pushes MAGI to $120,000, $11,000 over the line, and because IRMAA is a cliff that triggers the <strong>full</strong> first-tier Part B and Part D surcharge two years later. Sizing it at about <strong>$12,000</strong> keeps her under the threshold. Because a voluntary conversion isn't a qualifying event for an IRMAA appeal, this has to be planned in advance, not appealed after.</p>
   </div>
 </section>
 
@@ -876,6 +930,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout gold">
     <span class="tag">Two things to flag for clients</span>
     <p><strong>Claims deadline:</strong> all claims must be made <strong>within one year of death</strong>, an easy benefit for a grieving family to miss. Make sure the household knows it exists. <strong>The 10% annual decay</strong> on Option (a) means its value erodes the longer it's been since termination, which can flip which option controls over time.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Assume Karen's <strong>Wages</strong> figure is $150,000 and (as a qualifying long-tenured legacy SBC retiree, confirm her company-specific dates) she's eligible. The benefit is the greater of Option (a) 1&times; Wages, decaying 10% per full year since termination, or Option (b) her monthly pension &times; 12 = $3,200 &times; 12 = <strong>$38,400</strong>.</p>
+    <p style="margin-top:8px">At retirement (0 full years out), Option (a) = <strong>$150,000</strong>, far above $38,400, so it controls. After 6 full years it decays to $150,000 &times; 40% = $60,000, still above the $38,400 floor. But by year 8 it's $150,000 &times; 20% = $30,000, now <em>below</em> $38,400, so Option (b) takes over. Two things to flag for Karen's family: claims must be made <strong>within one year of death</strong>, and the payout order is fixed (spouse first), not her beneficiary form.</p>
   </div>
 </section>
 
@@ -915,6 +974,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">The advisor's lens</span>
     <p>Severance is where the "should I leave now?" conversation gets real. It bundles a taxable cash payment with the Mod 75 pension/healthcare stakes and a hard decision window. Being the advisor who can model all three, package value, pension impact, and healthcare eligibility, is exactly the value-add that wins AT&amp;T households.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen gets a surplus notice. With a 38-year Term of Employment she's past the <strong>13-year cap</strong>, so her Severance Allowance is the maximum <strong>50% of Annual Basic Pay</strong>: 50% &times; $150,000 = <strong>$75,000</strong>, taxable as ordinary income in the year received and not rollable. Because Karen already satisfies Mod 75 (Section 08), taking the package costs her no pension subsidy or healthcare eligibility, it's clean upside to coordinate with her pension election and any 401(k) rollover.</p>
+    <p style="margin-top:8px">The decision looks very different for a manager <strong>a few months short of Mod 75</strong>: for them, finding another internal role to reach the milestone can be worth far more than the severance check, because it unlocks an unreduced pension <em>and</em> retiree-medical eligibility. Map exact age and service before advising on any package.</p>
+  </div>
 </section>
 
 <section class="block" id="strategy">
@@ -942,6 +1006,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout good">
     <span class="tag">Test yourself: advisor case studies</span>
     <p>Six interactive client scenarios drill what makes this plan different and where union-trained advisors slip: greatest-of-three (not a sum), CAM math, the frozen cash balance, the 0.25%/month Mod 75 rule, severance-vs-milestone timing, and the healthcare and death-benefit fine print. You have to calculate or choose correctly to advance. <a class="inline" href="case-studies-nb.html"><strong>Start the case studies &rarr;</strong></a></p>
+  </div>
+
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield, the full picture</span>
+    <p>Putting Karen together: legacy SBC management hired 1988 (Section 02), her controlling formula is CAM at <strong>$3,200/month</strong> (Section 05), with a frozen $95,000 cash balance that makes her lump-sum eligible (Section 06). At 61 with 38 years she's past Mod 75, so the benefit is unreduced and she can enroll in retiree medical at full cost (Section 08). At retirement she weighs the 50% J&amp;S at $2,880 with survivor pop-up (Section 10) against a full lump sum rolled to an IRA. While working she captures her 4.8% match ($7,200/year) and fills 415(c) room with after-tax &rarr; Roth (Section 11); in low-income years she sizes conversions under the $109,000 IRMAA line (Section 12); her family should know about the one-year Retiree Death Benefit claim window (Section 13); and any surplus package is upside because she's already past the milestone (Section 14). Every one of those decisions moves the others, which is why they're evaluated together.</p>
   </div>
 </section>
 
@@ -973,6 +1042,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <h4>No double crediting</h4>
       <p>Service or pay can't count twice across plan programs; offsets prevent double counting for clients who moved between AT&amp;T entities or programs. The MPA can port former Bell System service.</p>
     </div>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>If Karen died before commencing, her husband could elect a Single Life Annuity equal to 50% of her would-be CAM benefit (a special unreduced version applies because she has 15+ years and met Mod 75). Her pension is PBGC-insured up to statutory limits, though electing a lump sum would forfeit that guarantee. And because Karen spent her whole career in legacy SBC management with no divorce on record, no QDRO splits her benefit, so absent a court order it can't be assigned, pledged, or garnished by creditors. Confirming her Fidelity beneficiary and survivor elections are current is a quick, high-value housekeeping step.</p>
   </div>
 </section>
 

@@ -19,6 +19,7 @@
   --paper:#FDFCF6;
   --good:#2E7D52;
   --warn:#B5532A;
+  --client:#6E4B9E;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -107,6 +108,8 @@ em{color:var(--ink-soft)}
 .callout .tag.blue{color:var(--blue)}
 .callout.warn .tag{color:var(--warn)}
 .callout.good .tag{color:var(--good)}
+.callout.client{border-left-color:var(--client);background:#f2ecf8}
+.callout.client .tag{color:var(--client)}
 .callout p:last-child{margin-bottom:0}
 .callout p{font-size:15.5px}
 
@@ -336,6 +339,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">Accuracy first</span>
     <p>Figures and tables here are drawn from the Summary Plan Descriptions in your project library. Specific factors, bands, and dollar limits change by contract and by year. <strong>Always verify a client's actual numbers in NetBenefits before giving advice.</strong> This guide builds intuition; it is not a substitute for the controlling plan documents.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example</span>
+    <p>Meet two clients we'll follow through this guide. <strong>Rosa Alvarez</strong>, a CWA District 9 (Pacific Bell) service representative, was hired in 1990, so she has <strong>both</strong> a Pre-99 Pension Band benefit and a post-1998 Cash Balance Account, the blended benefit. <strong>Marcus Bell</strong>, an IBEW-represented technician hired in 2012, started after the Pre-99 cutoff, so he has a <strong>Cash Balance Account only</strong>. Same employer, same era of union membership, two very different pension shapes. We'll see how that difference drives every decision that follows.</p>
+  </div>
 </section>
 
 <section class="block" id="eligibility">
@@ -363,6 +370,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="lens">
     <span class="tag">The advisor's lens</span>
     <p>A client who is <strong>not yet vested</strong> and considering leaving AT&amp;T is making a far bigger decision than they may realize, walking away can mean forfeiting the entire pension. If a client is close to a vesting cliff, that timing belongs in the conversation.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example</span>
+    <p><strong>Rosa Alvarez</strong> has service dating to 1990, so she cleared the 5-year bar for her older-formula benefit decades ago, if she walked away today, the pension is entirely hers. <strong>Marcus Bell</strong>, hired in 2012, is on the 3-year cash-balance schedule; he vested in 2015 and is fully vested now. A colleague who had left at 2 years and 10 months, by contrast, would have forfeited the whole cash-balance benefit. The vesting cliff is unforgiving right up until you clear it, which is exactly why it belongs in any "should I leave?" conversation.</p>
   </div>
 </section>
 
@@ -393,6 +404,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <div class="fbox"><span class="ft">Portion A</span><span class="fv">Cash Balance Account</span></div>
     <div class="fop">+</div>
     <div class="fbox alt"><span class="ft">Portion B</span><span class="fv">Pre-99 Pension Band</span></div>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example</span>
+    <p><strong>Rosa</strong>, hired in 1990, has <strong>both</strong> portions: a Pre-99 Pension Band benefit for her 1990–1998 service, plus a Cash Balance Account for everything from 1999 on. Her total pension adds the two together. <strong>Marcus</strong>, hired in 2012, has no pre-1999 service, so his benefit is <strong>Portion A alone</strong>, the Cash Balance Account. That single difference, when each of them started, decides whether the powerful Modified Rule of 75 features (Section 06) are even in play.</p>
   </div>
 </section>
 
@@ -456,6 +471,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">The advisor's lens</span>
     <p>Because the Age Credit Factor steps up with age and interest compounds, the cash balance grows <strong>faster in later career years</strong>. A client weighing an early exit is giving up the highest-value accrual years.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Marcus Bell</span>
+    <p>Marcus is 40, with monthly Pension Compensation of $4,000. His Age Credit Factor at 40 is 2.78%, so this month's Basic Benefit Credit = $4,000 &times; 2.78% = <strong>$111.20</strong>. His account entered the month at $10,000, which earns the monthly equivalent of 4.5%/year (&approx;0.367%) &approx; <strong>$36.70</strong>. Month-end balance = $10,000 + $111.20 + $36.70 = <strong>$10,147.90</strong>. He's under the Social Security Wage Base, so no Supplemental Pay Credit applies.</p>
+    <p style="margin-top:8px">The lesson for the retire-or-stay talk: when Marcus turns 50, that same $4,000 paycheck will buy a <strong>4.04%</strong> credit ($161.60 instead of $111.20). His account accelerates in exactly the later years an early exit would give up.</p>
+  </div>
 </section>
 
 <section class="block" id="pre99">
@@ -485,6 +505,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="lens">
     <span class="tag">The advisor's lens</span>
     <p>The Pre-99 portion is the part of the benefit that carries the <strong>Modified Rule of 75</strong> and its early-retirement subsidies (next section). It is also where a client may qualify for <strong>retiree health and welfare</strong> eligibility. For long-tenured clients this small-looking annuity can be the deciding factor in <em>when</em> to retire.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez</span>
+    <p>Rosa's job title mapped to Pension Band 111 ($51.81), and she has <strong>9 years</strong> of Pension Calculation Service as of 12/31/1998 (1990–1998). Her Basic Monthly Pension Benefit = $51.81 &times; 9 &times; 1.06 = <strong>$494.27/month</strong>. Add a small Supplemental Monthly Pension Benefit for the shift differentials she earned in her final three pre-retirement years, and this Pre-99 annuity, modest on its own, is the piece that carries her Modified Rule of 75 rights and retiree-healthcare eligibility (Section 06). Marcus, hired in 2012, has none of this.</p>
   </div>
 </section>
 
@@ -589,6 +613,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">Verify: don't assume</span>
     <p>Eligibility, subsidy status, contributions, and plan designs are governed by the <strong>separate Medical Program SPD and the current bargaining agreement</strong>, not the pension SPD, and have changed materially (see the Dec 2020 retiree-benefit changes). Confirm the client's specific situation before promising anything.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez</span>
+    <p>Rosa is 56 with 36 years of service. Because she has <strong>30-plus years</strong>, she satisfies Mod 75 outright and her Pre-99 benefit is <strong>unreduced at any age</strong>, she could have commenced it at 52 with no early-commencement cut.</p>
+    <p style="margin-top:8px">Contrast a counterfactual: had Rosa instead left at 53 with <strong>25 years</strong> (the 50/25 combination, but under 30 years), commencing at 53 under the West rules would be 24 months before the age-55 threshold &times; 0.5%/month = a <strong>12% permanent reduction</strong> on the Pre-99 piece. And a colleague who resigned at 49 with 19 years would miss Mod 75 entirely, forfeiting both the subsidy and retiree-medical eligibility. Rosa's cash-balance portion is unaffected in every case, it's just the account value.</p>
+  </div>
 </section>
 
 <section class="block" id="elig-calc">
@@ -643,6 +672,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout warn">
     <span class="tag">Read this before relying on the output</span>
     <p>This tool models the <strong>Pre-99 Pension Band</strong> service-pension rules from the SPDs and is an educational estimate only. It assumes the client has pre-1999 service (the cash balance portion has no early-reduction rules, it's just the account value), uses completed whole years, and applies the standard Mod 75 thresholds. Deferred-vested early-reduction factors, exact contract terms, disability provisions, and retiree-medical eligibility vary by bargaining agreement and the separate health &amp; welfare SPDs. <strong>Always confirm a client's actual status in NetBenefits and the controlling documents.</strong></p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez</span>
+    <p>Enter Rosa's numbers, West contract (age-55 threshold), age 56, 36 years, and the tool returns <strong>"Satisfies Mod 75"</strong> with no early-commencement reduction and eligibility to enroll in retiree medical. Drop her service to 25 years and age to 53 and it flips to a subsidized 0.5%/month reduction (12% at 53); drop it to 19 years and the milestone is missed entirely. Use it live in the meeting to show a client exactly what one more year of service is worth.</p>
   </div>
 </section>
 
@@ -720,6 +753,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout gold">
     <span class="tag">Timing the lump sum around interest rates</span>
     <p>Whenever a <strong>monthly pension (annuity) is converted to a lump sum</strong>, the amount is a present value calculated with the <strong>IRS minimum present-value segment rates</strong>, so it moves <strong>inversely</strong> to interest rates: when rates rise, the lump sum <em>falls</em>; when rates fall, it grows. AT&amp;T <strong>locks the prior-November rates for the entire commencement calendar year</strong>, so the year a client commences can swing the lump sum materially, in a rapidly rising-rate year, commencing this year vs. next can be a double-digit-percent difference. (This is the defined-benefit annuity conversion; a pure <strong>cash-balance account</strong> is simply its balance and is not rate-converted.) Model the client's likely commencement-year rate rather than guessing, see <a class="inline" href="https://www.irs.gov/retirement-plans/minimum-present-value-segment-rates" target="_blank" rel="noopener">irs.gov: minimum present-value segment rates</a>.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez</span>
+    <p>Rosa's NetBenefits statement shows a combined Single Life Annuity of <strong>$2,300/month</strong> (her Pre-99 band benefit plus the annuitized Cash Balance Account). She's married, so her default is the <strong>50% Joint &amp; Survivor</strong>: $2,300 &times; 90% = <strong>$2,070/month</strong> to Rosa, with <strong>$1,035/month</strong> continuing to her husband if she dies first. Electing Single Life would pay her the full $2,300 but leave him nothing, and choosing it requires his notarized consent. Alternatively, taking the cash-balance portion as a lump sum and rolling it to an IRA would pull that piece out of the annuity and make it investable and inheritable, the trade-off we weigh next.</p>
   </div>
 </section>
 
@@ -855,6 +892,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">The advisor's lens</span>
     <p>Farther's program is built specifically for AT&amp;T employees, <strong>we manage funds held at Fidelity and consult across the full benefits stack</strong> (pension, 401(k), medical). The 401(k) is where ongoing investment management lives, and it's the natural complement to the pension's guaranteed income. Make sure contribution rate, match capture, and allocation are all working before optimizing anything fancier.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez</span>
+    <p>Rosa earns $95,000. To capture her full match she needs to contribute at least the matched cap each pay period, generally the first 6% of pay, or $5,700/year. Assuming her contract matches 80% of that first 6% (confirm the exact formula in NetBenefits), her employer adds 80% &times; $5,700 = <strong>$4,560/year</strong>. If she front-loads and drops to 4% for the back half of the year, and has opted out of spillover, every under-6% paycheck leaves match behind with no year-end true-up. As a peak-earner near the top of the wage scale Rosa also leans <strong>pre-tax</strong> on the deferral itself, while early-career Marcus, in a lower bracket, leans <strong>Roth</strong>.</p>
+  </div>
 </section>
 
 <section class="block" id="irmaa">
@@ -888,6 +929,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <span class="tag">Not advice: a framework</span>
     <p>Conversion and contribution strategy depend on the individual's full tax picture, state taxes, legacy goals, and assumptions about future rates. Use these as factors to evaluate with the client and their tax professional, not as a default recommendation. Farther advisors are not providing tax advice.</p>
   </div>
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez</span>
+    <p>Suppose Rosa retires and files single. Between her pension and modest IRA withdrawals her MAGI lands around <strong>$85,000</strong>, comfortably below the $109,000 single-filer IRMAA threshold. In a low-income year before RMDs begin she considers a Roth conversion. A <strong>$30,000</strong> conversion pushes MAGI to $115,000, $6,000 over the line, and because IRMAA is a cliff that triggers the <strong>full</strong> first-tier Part B and Part D surcharge two years later, for the whole year, not a prorated amount. Sizing the conversion at <strong>$20,000</strong> keeps her under $109,000 and avoids the surcharge entirely. The last few thousand dollars converted are the ones to watch.</p>
+  </div>
 </section>
 
 <section class="block" id="strategy">
@@ -914,6 +959,11 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout good">
     <span class="tag">Test yourself: advisor case studies</span>
     <p>Six interactive client scenarios drill the concepts advisors most often get wrong: Mod 75 combinations, early-commencement reduction math, pension-band calculations, cash-balance credits, interest-rate effects on lump sums, and the retiree-healthcare fine print. You have to calculate or choose correctly to advance. <a class="inline" href="case-studies.html"><strong>Start the case studies &rarr;</strong></a></p>
+  </div>
+
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez, the full picture</span>
+    <p>Putting Rosa together: hired in 1990, she carries <strong>both</strong> pension formulas (Section 03), and with 36 years she meets Mod 75 outright, so her Pre-99 benefit is unreduced at any age (Section 06). At retirement she weighs the combined <strong>$2,300/month</strong> SLA, and a 50% J&amp;S at $2,070 with survivor protection (Section 08), against rolling the cash-balance portion to an IRA. While working she captures her full 6% match every pay period ($4,560/year, Section 09), and in the low-income years before RMDs she sizes Roth conversions to stay just under the $109,000 IRMAA line (Section 10). Those are five linked decisions, when she started, when she leaves, how she takes payment, how she saves, and how she manages MAGI, that only make sense evaluated together. Marcus, 20 years behind her with a cash-balance-only benefit, has a simpler but different set of levers.</p>
   </div>
 </section>
 
@@ -945,6 +995,10 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <h4>No double crediting</h4>
       <p>Service or pay can't count twice across plan programs; an offset prevents double counting for clients who moved between AT&amp;T entities or programs.</p>
     </div>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez</span>
+    <p>If Rosa died before commencing, her husband could receive a survivor benefit, for the Pre-99 portion generally a 50% J&amp;S-equivalent annuity, and for the Cash Balance portion an annuity or a lump sum of the account. Her Fidelity beneficiary designations govern who receives what, so confirming they're current (especially after any marriage, divorce, or death in the family) is a five-minute task that prevents a costly mistake. A QDRO could also assign part of her pension to a former spouse; absent one, the benefit can't be assigned, pledged, or garnished by creditors.</p>
   </div>
 </section>
 
