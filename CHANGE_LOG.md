@@ -1,5 +1,26 @@
 # CHANGE_LOG
 
+## 2026-08-11 — Tool renamed to "Client Milestones"
+
+The "Financial Trigger Finder" is now called **Client Milestones** everywhere on the site.
+
+- **`triggers.html`:** browser tab title, hero `<h1>`, the sidebar "Viewing" selector option
+  ("Tools · Client Milestones"), the footer title line, and two internal JS comments.
+- **Sidebar link on the three plan guides** (`index.html`, `non-bargained.html`, `mobility.html`):
+  "Financial trigger finder" is now "Client Milestones".
+- **Email export:** the pasted table's heading is now "AT&T Retirement Timeline: Your Upcoming
+  Milestones" and its third column header is "Milestone" instead of "Trigger" (both the rich-HTML
+  and plain-text versions). The popup-fallback tab title changed to match.
+- **Not changed:** the `triggers.html` filename and all links to it, so the published URL and any
+  saved bookmarks still work. Ordinary verb uses of "trigger" in the guides (withholding, IRMAA
+  cliffs, 401(k) loan defaults) were left alone, they are correct as written.
+
+**Files:** `index.html`, `non-bargained.html`, `mobility.html`, `triggers.html`, `PLAN_LOG.md`,
+`CHANGE_LOG.md`, `TODO.md`.
+**Validation:** rendered in preview, no console errors; title/heading/footer/selector confirmed;
+calculator still produces result cards; no logic, dates, dollar figures, or disclaimers touched.
+**Status:** complete.
+
 ## 2026-07-23 (3) — Trigger Finder: rewritten in plain, client-facing language
 
 Reworked all copy on `triggers.html` so it speaks directly to the client in simple language,

@@ -17,7 +17,7 @@
       and `non-bargained.html` lines ~425/430/435 (the "greatest of three" card headings: "CAM —
       the usual winner", "Cash Balance — frozen", "PBM — narrow"). Left untouched to keep the
       2026-07-23 Client Examples change focused; fix in a dedicated pass.
-- [ ] **Trigger finder enhancements (triggers.html).** Possible follow-ups: a tax-filing-status
+- [ ] **Client Milestones enhancements (triggers.html).** Possible follow-ups: a tax-filing-status
       input so the IRMAA line shows only the relevant tier ($109k vs $218k); a West/Craft vs
       Southeast sub-select for the union threshold age (55 vs 56); confirm the born-1959 RMD age
       (73) once IRS final regs land; severance-schedule integration from the Severance Pay Plan.

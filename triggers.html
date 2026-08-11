@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financial Trigger Finder · AT&T Advisor Field Guide</title>
+<title>Client Milestones · AT&T Advisor Field Guide</title>
 <style>
 :root{
   --cream:#F7F4E9;
@@ -229,7 +229,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <div class="planpick">
       <div class="pp-k">Viewing</div>
       <select id="planSel" aria-label="Choose page" onchange="if(this.value)window.location.href=this.value;">
-        <option value="triggers.html" selected>Tools · Trigger Finder</option>
+        <option value="triggers.html" selected>Tools · Client Milestones</option>
         <option value="index.html">Union / Bargained</option>
         <option value="non-bargained.html">Legacy Non-Bargained</option>
         <option value="mobility.html">Mobility Program</option>
@@ -253,7 +253,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 <div class="hero" id="start">
   <div class="gear"></div>
   <div class="eyebrow">Your Retirement Timeline · Interactive</div>
-  <h1>Financial Trigger Finder</h1>
+  <h1>Client Milestones</h1>
   <p class="lead">Tell us your date of birth, your hire date, when you plan to leave AT&amp;T, and which group you're in. You'll get a simple, dated list of the money milestones to plan around: when you can put extra into your 401(k), when you can take money out without a penalty, when to claim Social Security and sign up for Medicare, and the AT&amp;T milestones that affect your pension and retiree health coverage.</p>
   <div class="meta">
     <div><span class="k">Covers</span><span class="v">Union / Bargained · Legacy Non-Bargained · Mobility</span></div>
@@ -377,7 +377,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <div class="foot">
-  <div class="ftitle">Farther · AT&amp;T Retirement Benefits, Financial Trigger Finder</div>
+  <div class="ftitle">Farther · AT&amp;T Retirement Benefits, Client Milestones</div>
   <div>Use this alongside your Fidelity NetBenefits statement, your official AT&amp;T plan documents, and the current figures at ssa.gov, medicare.gov, and irs.gov. Use the <strong>Viewing</strong> selector at the top of the sidebar to open the full plan guides.</div>
   <div class="disc">
     This tool is for general education only. It is a simplified summary of complex rules and is not legal, tax, or investment advice, and it does not guarantee any benefit. Your official plan documents (the Summary Plan Descriptions) always control if there is any conflict. Tax thresholds, dollar limits, and plan rules change over time. Always check your real figures in Fidelity NetBenefits, your current plan documents, and the government sources listed, and talk with your advisor, before making a decision. The dates and amounts shown here are estimates only.
@@ -401,7 +401,7 @@ const obs=new IntersectionObserver(es=>{
 },{rootMargin:'-45% 0px -50% 0px'});
 secs.forEach(s=>s&&obs.observe(s));
 
-// ---- Financial trigger engine ----
+// ---- Client milestone engine ----
 (function(){
   const $=id=>document.getElementById(id);
   const dobEl=$('dob'), ageEl=$('ageNum'), hireEl=$('hire'), yosEl=$('yosNum'), sepEl=$('sep'), grpEl=$('grp');
@@ -719,7 +719,7 @@ secs.forEach(s=>s&&obs.observe(s));
       +'2026 figures: extra 401(k) $8,000 · bigger catch-up at 60–63 $11,250 · Medicare surcharge starts at $109,000 single / $218,000 married. Check the current-year amounts before you act.';
   }
 
-  // ---- export the future triggers as an email-ready table ----
+  // ---- export the future milestones as an email-ready table ----
   const exportBtn=$('tlExport'), exportMsg=$('tlExportMsg');
   function stripHtml(s){ const t=document.createElement('div'); t.innerHTML=s; return (t.textContent||t.innerText||'').replace(/\s+/g,' ').trim(); }
   function ageStrAt(d){ const a=yrs(lastDob,d); return (Math.round(a*10)/10).toFixed(1).replace(/\.0$/,''); }
@@ -743,18 +743,18 @@ secs.forEach(s=>s&&obs.observe(s));
         +'</tr>';
     });
     const html='<div style="font-family:Arial,Helvetica,sans-serif;color:#10243F;">'
-      +'<p style="font-size:15px;font-weight:bold;margin:0 0 4px;">AT&amp;T Retirement Trigger Timeline: Upcoming Milestones</p>'
+      +'<p style="font-size:15px;font-weight:bold;margin:0 0 4px;">AT&amp;T Retirement Timeline: Your Upcoming Milestones</p>'
       +'<p style="font-size:12px;color:#33486A;margin:0 0 10px;">'+grpName+' &middot; your upcoming financial milestones. Dates are approximate; dollar figures are 2026 amounts.</p>'
       +'<table style="border-collapse:collapse;width:100%;max-width:820px;">'
       +'<thead><tr>'
       +'<th style="'+th+'width:56px;">Age</th>'
       +'<th style="'+th+'width:104px;">Approx. Date</th>'
-      +'<th style="'+th+'width:230px;">Trigger</th>'
+      +'<th style="'+th+'width:230px;">Milestone</th>'
       +'<th style="'+th+'">Description</th>'
       +'</tr></thead><tbody>'+rows+'</tbody></table>'
       +'<p style="font-size:11px;color:#777777;margin:10px 0 0;">A planning aid, not tax, legal, or investment advice. Check your details in Fidelity NetBenefits and at ssa.gov, medicare.gov, and irs.gov, and talk with your advisor, before acting.</p>'
       +'</div>';
-    let text='AT&T Retirement Trigger Timeline: Upcoming Milestones\n'+grpName+' - your upcoming financial milestones.\n\nAge\tApprox. Date\tTrigger\tDescription\n';
+    let text='AT&T Retirement Timeline: Your Upcoming Milestones\n'+grpName+' - your upcoming financial milestones.\n\nAge\tApprox. Date\tMilestone\tDescription\n';
     future.forEach(x=>{ text+=ageStrAt(x.d)+'\t'+fmt(x.d)+'\t'+stripHtml(x.title)+'\t'+stripHtml(x.desc)+'\n'; });
     text+='\nA planning aid, not tax, legal, or investment advice. Check your details in Fidelity NetBenefits and at ssa.gov, medicare.gov, and irs.gov, and talk with your advisor, before acting.';
     return {count:future.length, html:html, text:text};
@@ -780,7 +780,7 @@ secs.forEach(s=>s&&obs.observe(s));
   function openFallback(html){
     const w=window.open('','_blank');
     if(!w) return false;
-    w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Trigger timeline table</title></head>'
+    w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Milestone timeline table</title></head>'
       +'<body style="margin:24px;"><p style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#333;">Select the table below and copy it into an email or document.</p>'+html+'</body></html>');
     w.document.close();
     return true;

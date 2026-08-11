@@ -1,5 +1,26 @@
 # PLAN_LOG
 
+## 2026-08-11 — Rename the tool: "Financial Trigger Finder" -> "Client Milestones"
+
+**Task.** Update every reference to the tool's name across the site.
+
+**Scope.** `triggers.html`: `<title>`, hero `<h1>`, the sidebar "Viewing" selector option, the footer
+title line, and two internal JS comments. Sidebar "Plan Guides" link label on `index.html`,
+`non-bargained.html`, and `mobility.html` ("Financial trigger finder" -> "Client Milestones"). The
+email export also carried the old naming: heading "AT&T Retirement Trigger Timeline: Upcoming
+Milestones" -> "AT&T Retirement Timeline: Your Upcoming Milestones", the "Trigger" column header ->
+"Milestone" (HTML and plain-text variants), and the popup-fallback tab title.
+
+**Left unchanged.** The filename `triggers.html` and all four `href="triggers.html"` links, so the
+published URL and any existing bookmarks keep working. Every remaining occurrence of "trigger" in
+the guides is the ordinary verb (a lump sum *triggers* 20% withholding, crossing an IRMAA threshold
+*triggers* the full surcharge, a rollover can *trigger* a loan default) and is correct as written.
+
+**Validated in preview:** page renders with no console errors; title, `<h1>`, footer line, and the
+sidebar selector all read "Client Milestones"; the calculator still computes (result cards render
+for the default union/active case); export handler runs (clipboard/popup are blocked in the
+automated file:// context, which is an environment limit, not a code error).
+
 ## 2026-07-23 (3) — Trigger Finder: rewrite all copy to plain, client-facing language
 
 **Task.** Review the Financial Trigger tool (`triggers.html`) so the language is very basic and
