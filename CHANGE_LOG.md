@@ -1,5 +1,57 @@
 # CHANGE_LOG
 
+## 2026-08-12 (2) — Union guide §09: documented match formulas and a match calculator
+
+Replaced the union guide's generic company-match copy with the actual formulas from
+`Bargained SPDs/ATT-Retirement-Savings-Plan_78-63233.pdf`, and added an interactive calculator
+built on the same pattern as the Section 07 Mod 75 calculator. `index.html` only.
+
+**Match formulas by contract family** (new 13-row table). The SPD's baseline is 80% of the first
+6%, with special rules for Mobility Orange / Purple / Black / Blue, National Internet Tier 1,
+Technical Services, AT&T Corp. Core CWA, AT&T National Contract IBEW, Teamsters Local 959, and
+BellSouth Utility Operations. Max match ranges from **1.5% to 7.0% of pay**, a four-fold spread
+between groups contributing the identical 6%, which the page calls out explicitly.
+
+**Two corrections to what the guide previously said:**
+
+- **Match eligibility is not generally upon hire.** Only Management, Mobility Orange, Purple,
+  Black, and National Internet Tier 1 are eligible upon hire. Every other group waits **one Year
+  of Service**, so a newly hired union client's first year of contributions earns no company
+  money. Added as a warn callout.
+- **The match lands in the AT&T Shares Fund by default** for most groups (exceptions: Technical
+  Services, Legacy T-IBEW hired on or before 8/8/2009, Cricket/AIO). Diversification is immediate
+  and unlimited, so a long-tenured client can be carrying a large concentrated position nobody
+  chose. Added as a gold callout with an NUA-before-rollover pointer.
+
+**Company match calculator** (`#match-calc`): contract-family select, Compensation, contribution
+rate slider, and years of service. Returns a status banner (full match / leaving $X on the table /
+not yet eligible / contributing nothing), three result cards (annual match, match left on the
+table, vesting), and a note line that switches on where the match is invested and warns when the
+contribution rate crosses the 402(g) limit. Reuses the Mod 75 calculator's `.calc`,
+`.status-banner`, `.results`, and `.rcard` markup so the two tools look and behave the same.
+
+**Also updated:** the section's "verify the specifics" callout now names the SPD and states its two
+limits (2022 edition, tiers set by bargaining); the "Company match" confirm-card now lists formula,
+eligibility, and vesting as three separate checks; and Rosa Alvarez's example is tied to the
+baseline 80% tier with the calculator walkthrough, the BellSouth contrast, and the AT&T Shares
+concentration point.
+
+**Supporting CSS:** new `.tscroll` wrapper so the 4-column table scrolls inside its own container
+instead of the page body, and `min-width:0; max-width:100%` on `.calc select` so long option
+labels cannot force horizontal overflow. The second fix also removed a pre-existing overflow: the
+guide now measures zero horizontal page overflow at 375px, where it previously had some.
+
+Also tightened one sentence in the spillover callout ("generally the first 6% of pay" is now "the
+first 6% of Compensation") and removed the em-dash in it, clearing one item from the TODO list.
+
+**Files:** `index.html`, `PLAN_LOG.md`, `CHANGE_LOG.md`, `TODO.md`.
+**Validation:** every one of the 13 contract options was driven programmatically and its output
+checked against the SPD, including the SPD's own worked example for the tiered formula (3% → 4% of
+pay, 6% → 7% of pay). Banner and card logic exercised at 0%, 4%, and 6% contribution rates and at
+0.5, 2, and 22 years of service. No console errors. No horizontal page overflow at 1280x900 or
+375x812.
+**Status:** complete.
+
 ## 2026-08-12 — ARSP Roth / non-Roth investing split and BrokerageLink blackout
 
 Added the September 2026 AT&T Retirement Savings Plan change to the site, sourced from

@@ -132,6 +132,9 @@ td.num{font-variant-numeric:tabular-nums;text-align:right}
 table.v-lines th:not(:last-child), table.v-lines td:not(:last-child) { border-right: 1px solid var(--line); }
 table.v-lines th:not(:last-child) { border-right-color: rgba(255, 255, 255, 0.2); }
 .text-center { text-align: center !important; }
+/* wide tables scroll inside their own container, never the page body */
+.tscroll{overflow-x:auto;margin:20px 0}
+.tscroll table{margin:0;min-width:540px}
 
 /* ---------- Two col ---------- */
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0}
@@ -169,7 +172,7 @@ table.v-lines th:not(:last-child) { border-right-color: rgba(255, 255, 255, 0.2)
 .calc label{flex:0 0 200px;font-size:13.5px;color:var(--ink-soft)}
 .calc input[type=range]{flex:1;min-width:160px;accent-color:var(--blue)}
 .calc .val{flex:0 0 110px;text-align:right;font-size:16px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
-.calc select{flex:1;padding:7px;border:1px solid var(--line);border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:#fff}
+.calc select{flex:1;min-width:0;max-width:100%;padding:7px;border:1px solid var(--line);border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:#fff}
 .calc .out{margin-top:18px;padding-top:20px;border-top:2px solid var(--cream-deep);display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:600px){.calc .out{grid-template-columns:1fr}.calc label{flex:0 0 100%}}
 .calc .out .o{background:var(--cream);border-radius:8px;padding:14px 16px}
@@ -767,7 +770,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <div class="callout warn">
     <span class="tag">Verify the specifics</span>
-    <p>The detailed 401(k) provisions (exact match formula, contribution caps, vesting of the match, Roth availability, and the investment lineup) are governed by the <strong>savings plan SPD and the current collective bargaining agreement</strong>, which aren't fully contained in this library. The items below are the standard features to confirm for each client in NetBenefits.</p>
+    <p>The match formulas, match-eligibility timing, and vesting below are taken from the <strong>AT&amp;T Retirement Savings Plan SPD (NIN 78-63233)</strong>, now in the project library. Two limits on that source: it is a <strong>2022 edition</strong> (its stated elective-deferral limit is the 2022 figure), and match tiers are ultimately set by the <strong>collective bargaining agreement</strong>, so a newer contract can change them. Treat the tiers below as the documented baseline and confirm each client's actual formula, rate, and service in NetBenefits.</p>
   </div>
 
   <h3 id="roth-split">Plan change: Roth and non-Roth invested separately (September 2026)</h3>
@@ -895,12 +898,107 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   </div>
 
   <h3>Employer Contributions</h3>
-  <p>Employer money is a major driver of account growth. Rather than a flat profit-sharing allocation, AT&amp;T's contribution is a match tied to what the employee defers, set by collective bargaining.</p>
+  <p>Employer money is a major driver of account growth. Rather than a flat profit-sharing allocation, AT&amp;T's contribution is a <strong>match</strong> tied to what the employee defers, and the exact formula is set by the bargaining agreement. Only <strong>Basic Contributions up to 6% of Compensation</strong> are ever matched, no matter how much more the client defers (the plan allows Basic Contributions up to 50% of Compensation).</p>
   <div class="callout good">
     <span class="tag">The Matching Formula</span>
-    <p>Under most contracts, AT&amp;T matches a set percentage of the employee's weekly contributions, up to a capped percentage of weekly base pay (generally the first 6%). The Savings Plan SPD defines the matched Basic Contributions as pre-tax, Roth, after-tax, or any combination, so the match follows the <em>percentage of pay contributed</em>, not the tax type. Up to that cap the match is effectively a guaranteed 100% return, so capturing it in full is the first priority for any client.</p>
+    <p>The SPD defines matched Basic Contributions as <strong>before-tax, Roth, after-tax, or any combination</strong>, so the match follows the <em>percentage of pay contributed</em>, not the tax type. Up to the 6% cap the match is a large guaranteed return on the client's own money, so capturing it in full is the first priority for any client. <strong>Catch-up contributions are never matched.</strong></p>
   </div>
-  <p>Match dollars always land in the pre-tax portion of the account, even when the employee's own contributions were Roth. They don't count toward the employee's elective-deferral limit, but they do count toward the 415(c) total.</p>
+
+  <h4>Match formulas by contract family</h4>
+  <p>The SPD's baseline is 80% of the first 6%, then lists special rules that override it. The bargained groups it names:</p>
+  <div class="tscroll">
+  <table class="v-lines">
+    <thead><tr><th>Group</th><th>Company Match</th><th class="text-center">Max % of pay</th><th>Match starts</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Baseline</strong>, any group with no special rule</td><td>80% of the first 6%</td><td class="num text-center">4.8%</td><td>After 1 Year of Service</td></tr>
+      <tr><td>Mobility <strong>Orange</strong> Contract, CWA Districts 1, 2-13, 4, 7, 9</td><td>80% of the first 6%</td><td class="num text-center">4.8%</td><td>Upon hire</td></tr>
+      <tr><td>Mobility <strong>Purple</strong> Contract, CWA District 6</td><td>80% of the first 6%</td><td class="num text-center">4.8%</td><td>Upon hire</td></tr>
+      <tr><td>Mobility <strong>Black</strong> Contract, CWA District 3, hired/rehired/transferred <strong>before</strong> 1/1/2015</td><td>80% of the first 6%</td><td class="num text-center">4.8%</td><td>Upon hire</td></tr>
+      <tr><td>Mobility <strong>Black</strong> Contract, CWA District 3, hired/rehired/transferred <strong>on or after</strong> 1/1/2015 (former DIRECTV employees regardless of hire date)</td><td>100% of the first 6%</td><td class="num text-center">6.0%</td><td>Upon hire</td></tr>
+      <tr><td>Mobility <strong>Blue</strong> Contract, IBEW Local 1547, hired/rehired/transferred on or after 1/1/2012</td><td>100% of the first 6%</td><td class="num text-center">6.0%</td><td>After 1 Year of Service</td></tr>
+      <tr><td><strong>National Internet</strong> Contract, Tier 1, CWA</td><td>80% of the first 6%</td><td class="num text-center">4.8%</td><td>Upon hire</td></tr>
+      <tr><td><strong>Technical Services</strong> Employees</td><td>133⅓% of the first 3%, then 100% of the next 3%</td><td class="num text-center">7.0%</td><td>After 1 Year of Service</td></tr>
+      <tr><td>Nonmanagement nonunion employees who follow CWA (AT&amp;T Core), hired/rehired on or after 1/1/2015</td><td>133⅓% of the first 3%, then 100% of the next 3%</td><td class="num text-center">7.0%</td><td>After 1 Year of Service</td></tr>
+      <tr><td>AT&amp;T Corp. <strong>Core Contract</strong>, CWA, hired before 8/9/2009</td><td>75% of the first 6%</td><td class="num text-center">4.5%</td><td>After 1 Year of Service</td></tr>
+      <tr><td>AT&amp;T <strong>National Contract</strong>, IBEW System Council T-3, hired before 8/9/2009</td><td>66⅔% of the first 6%</td><td class="num text-center">4.0%</td><td>After 1 Year of Service</td></tr>
+      <tr><td><strong>Teamsters Local Union No. 959</strong> (Alascom)</td><td>66⅔% of the first 6%</td><td class="num text-center">4.0%</td><td>After 1 Year of Service</td></tr>
+      <tr><td><strong>BellSouth Utility Operations</strong> bargaining unit, hired/rehired after 8/8/2009</td><td>25% of the first 6%</td><td class="num text-center">1.5%</td><td>After 1 Year of Service</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">Two things to carry out of this table. First, the spread is enormous: a BellSouth Utility Operations employee and a post-2015 Mobility Black employee contributing the identical 6% receive <strong>1.5%</strong> and <strong>6.0%</strong> of pay respectively, a four-fold difference in company money. Never quote a match rate from memory. Second, in the SPD's detailed section the Purple Contract is described as CWA District 3 while the summary table says District 6; the summary table's District 6 is used here and matches the pension guide's contract mapping. Confirm the client's actual bargaining unit either way.</p>
+
+  <div class="callout warn">
+    <span class="tag">Match eligibility is not always upon hire</span>
+    <p>This is the point most likely to be gotten wrong for a bargained client. Management employees are eligible for match <strong>upon hire</strong>, and so are the Mobility Orange, Purple, and Black contracts and National Internet Tier 1. <strong>Every other group in the plan waits one Year of Service.</strong> For a newly hired union client that means the first year of contributions earns no company money at all, which changes the advice: the match-capture argument for contributing exactly 6% doesn't apply yet, and the Roth-versus-pre-tax decision (Section 09 above) carries the whole weight in year one.</p>
+  </div>
+
+  <div class="callout gold">
+    <span class="tag">Where the match lands: AT&amp;T Shares by default</span>
+    <p>For most groups the Company Match is allocated to the <strong>AT&amp;T Shares Fund</strong>, single-stock exposure to the client's own employer, on the same day the Basic Contributions post. Three groups are exceptions and have the match invested in the same funds as the employee's own contributions: <strong>Technical Services</strong> employees, <strong>AT&amp;T National Contract IBEW</strong> (hired on or before 8/8/2009), and Cricket/AIO Wireless.</p>
+    <p style="margin-top:8px">Critically, <strong>diversification is immediate and unlimited</strong>: every participant may exchange or transfer up to 100% of the match, vested or not. Nothing locks it in AT&amp;T stock. A long-tenured client who has never touched it can be carrying a concentrated position built from a decade or more of match dollars, sitting alongside a pension from the same employer. Check the AT&amp;T Shares Fund balance early in every relationship. If the client is separating and holds appreciated AT&amp;T shares, evaluate <strong>net unrealized appreciation (NUA)</strong> before any rollover, since a rollover to an IRA gives up that treatment.</p>
+  </div>
+
+  <p>Match dollars land in the employer portion of the account and are always pre-tax, even when the employee's own contributions were Roth. They don't count toward the employee's elective-deferral limit, but they do count toward the 415(c) total. The match vests <strong>100% after 3 Years of Service</strong>, and automatically at death, disability, or age 65.</p>
+
+  <h3 id="match-calc">Company match calculator</h3>
+  <p>Choose the client's contract family, then enter Compensation, contribution rate, and years of service. The tool returns the annual match under that contract's formula, how much match is being left behind at the current rate, and where those dollars are invested. Formulas, eligibility timing, and vesting come from the ARSP SPD (NIN 78-63233).</p>
+
+  <div class="calc">
+    <div class="row">
+      <label for="mContract">Contract family / union (sets the formula)</label>
+      <select id="mContract">
+        <optgroup label="80% of the first 6%">
+          <option value="flat80|1|shares" selected>Baseline: any group with no special rule</option>
+          <option value="flat80|0|shares">Mobility Orange Contract, CWA Districts 1, 2-13, 4, 7, 9</option>
+          <option value="flat80|0|shares">Mobility Purple Contract, CWA District 6</option>
+          <option value="flat80|0|shares">Mobility Black Contract, CWA District 3, before 1/1/2015</option>
+          <option value="flat80|0|shares">National Internet Contract, Tier 1, CWA</option>
+        </optgroup>
+        <optgroup label="100% of the first 6%">
+          <option value="flat100|0|shares">Mobility Black Contract, CWA District 3, on or after 1/1/2015</option>
+          <option value="flat100|1|shares">Mobility Blue Contract, IBEW Local 1547, on or after 1/1/2012</option>
+        </optgroup>
+        <optgroup label="133⅓% of the first 3%, then 100% of the next 3%">
+          <option value="tiered|1|same">Technical Services Employees</option>
+          <option value="tiered|1|shares">Nonmanagement nonunion following CWA (AT&amp;T Core), on or after 1/1/2015</option>
+        </optgroup>
+        <optgroup label="75% of the first 6%">
+          <option value="flat75|1|shares">AT&amp;T Corp. Core Contract, CWA, hired before 8/9/2009</option>
+        </optgroup>
+        <optgroup label="66⅔% of the first 6%">
+          <option value="flat66|1|same">AT&amp;T National Contract, IBEW System Council T-3, before 8/9/2009</option>
+          <option value="flat66|1|shares">Teamsters Local Union No. 959 (Alascom)</option>
+        </optgroup>
+        <optgroup label="25% of the first 6%">
+          <option value="flat25|1|shares">BellSouth Utility Operations, hired/rehired after 8/8/2009</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="row">
+      <label for="mComp">Annual eligible Compensation</label>
+      <span class="num-input"><input type="number" id="mComp" min="0" max="1000000" step="1000" value="95000"></span>
+    </div>
+    <div class="row">
+      <label for="mRate">Basic Contribution rate (% of pay)</label>
+      <input type="range" id="mRate" min="0" max="20" step="1" value="6">
+      <span class="val" id="mRateVal">6%</span>
+    </div>
+    <div class="row">
+      <label for="mSvc">Years of service</label>
+      <span class="num-input"><input type="number" id="mSvc" min="0" max="50" value="22"></span>
+    </div>
+
+    <div id="mBanner"></div>
+    <div class="results" id="mCards"></div>
+
+    <div class="note" id="mNote"></div>
+  </div>
+
+  <div class="callout warn">
+    <span class="tag">Read this before relying on the output</span>
+    <p>The formulas come from a <strong>2022 edition</strong> of the ARSP SPD and are set by collective bargaining, so a newer contract can change them. The tool assumes a <strong>level contribution rate across every pay period</strong> and annualizes it; because the real match is computed per pay period with no true-up, an uneven contribution pattern produces less match than shown. It applies match eligibility (upon hire or one Year of Service) and 3-year vesting as documented, but not IRS testing limits for highly compensated employees or the annual compensation limit. <strong>Confirm the client's tier, rate, and service in NetBenefits.</strong></p>
+  </div>
 
   <h3>Pre-tax vs. Roth: a career-stage decision</h3>
   <p>Whether a client should direct 401(k) contributions to pre-tax or Roth turns largely on <strong>their tax rate now versus their expected tax rate when the money comes out</strong>. Career stage is usually the best proxy.</p>
@@ -927,7 +1025,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout warn">
     <span class="tag">Front-loading can forfeit match</span>
     <p>AT&amp;T's employer match is calculated <strong>each pay period</strong>, not annually, and the SPD describes no "true-up" that retroactively makes up missed match. Any pay period where the client contributes less than the matched cap (generally 6% of that paycheck's pay) leaves match behind for good. The plan's default <strong>spillover election</strong> softens the classic front-loading trap: once a client hits the annual deferral limit, contributions automatically continue as after-tax and keep earning the per-paycheck match. But if the client has <strong>opted out of spillover</strong>, or suspends contributions after front-loading, the match stops with them, <strong>leaving employer money on the table</strong>. Confirm the spillover election in NetBenefits before a client front-loads.</p>
-    <p style="margin-top:8px">Also note: <strong>the match is not limited to pre-tax and Roth deferrals.</strong> The SPD defines the matched Basic Contributions as pre-tax, Roth, after-tax, or any combination, so after-tax (bucket ③) dollars within the matched cap earn the same match — that's exactly why spillover keeps the match alive after the deferral limit. The only employee contributions that never earn match are <strong>catch-up contributions (age 50+)</strong> and anything <strong>above the matched cap</strong> (generally the first 6% of pay).</p>
+    <p style="margin-top:8px">Also note: <strong>the match is not limited to pre-tax and Roth deferrals.</strong> The SPD defines the matched Basic Contributions as pre-tax, Roth, after-tax, or any combination, so after-tax (bucket ③) dollars within the matched cap earn the same match, and that's exactly why spillover keeps the match alive after the deferral limit. The only employee contributions that never earn match are <strong>catch-up contributions (age 50+)</strong> and anything <strong>above the matched cap</strong> (the first 6% of Compensation).</p>
   </div>
 
   <h3>What to confirm for every 401(k) client</h3>
@@ -938,7 +1036,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     </div>
     <div class="card">
       <h4>Company match</h4>
-      <p>AT&amp;T matches a percentage of pay up to a bargained cap. Confirm the formula and the match's own vesting schedule.</p>
+      <p>Confirm three things, not one: the <strong>formula</strong> (it ranges from 25% to 133⅓% of the first tier across bargained groups), whether match eligibility has <strong>started</strong> (upon hire for some contracts, one Year of Service for the rest), and progress toward <strong>3-year vesting</strong>.</p>
     </div>
     <div class="card">
       <h4>Investment lineup</h4>
@@ -966,7 +1064,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   </div>
   <div class="callout client">
     <span class="tag">Client example: Rosa Alvarez</span>
-    <p>Rosa earns $95,000. To capture her full match she needs to contribute at least the matched cap each pay period, generally the first 6% of pay, or $5,700/year. Assuming her contract matches 80% of that first 6% (confirm the exact formula in NetBenefits), her employer adds 80% &times; $5,700 = <strong>$4,560/year</strong>. If she front-loads and drops to 4% for the back half of the year, and has opted out of spillover, every under-6% paycheck leaves match behind with no year-end true-up. As a peak-earner near the top of the wage scale Rosa also leans <strong>pre-tax</strong> on the deferral itself, while early-career Marcus, in a lower bracket, leans <strong>Roth</strong>.</p>
+    <p>Rosa earns $95,000 on a West Core CWA contract, which the SPD gives no special rule, so she is on the <strong>baseline 80% of the first 6%</strong>. Contributing 6% each pay period, $5,700/year, her employer adds 80% &times; $5,700 = <strong>$4,560/year</strong>, and at 36 years of service she is long vested. Run her through the calculator above, then drag the rate to 4%: the match falls to $3,040 and the card shows <strong>$1,520 a year left on the table</strong>, unrecoverable because the match is computed per pay period with no true-up. The same $95,000 and 6% under a BellSouth Utility Operations contract would return just $1,425. Two more things to check on Rosa specifically: 36 years of matching into the <strong>AT&amp;T Shares Fund</strong> is very likely a concentrated position worth reviewing (and worth an NUA look before any rollover), and as a peak-earner near the top of the wage scale she leans <strong>pre-tax</strong> on the deferral itself, while early-career Marcus, in a lower bracket, leans <strong>Roth</strong>.</p>
   </div>
 </section>
 
@@ -1286,6 +1384,127 @@ secs.forEach(s=>s&&obs.observe(s));
   }
 
   [aEl,sEl,cEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
+  render();
+})();
+
+// ---- Company match calculator (Section 09) ----
+// Formulas, match-eligibility timing, and vesting are from the AT&T Retirement Savings Plan
+// SPD (NIN 78-63233). Option values encode formulaKey|eligibilityYears|matchInvestment.
+(function(){
+  const cEl=document.getElementById('mContract');
+  if(!cEl) return;
+  const compEl=document.getElementById('mComp');
+  const rateEl=document.getElementById('mRate');
+  const rateVal=document.getElementById('mRateVal');
+  const svcEl=document.getElementById('mSvc');
+  const banner=document.getElementById('mBanner');
+  const cards=document.getElementById('mCards');
+  const note=document.getElementById('mNote');
+
+  const DEFERRAL_LIMIT=24500;   // 402(g), 2026
+  const VEST_YEARS=3;           // Company Match vests 100% after 3 Years of Service
+  const MATCH_CAP=6;            // only Basic Contributions up to 6% of Compensation are matched
+
+  // fn(rate) returns the Company Match as a percentage of Compensation
+  const F={
+    flat80 :{label:'80% of the first 6%',        fn:r=>0.80*Math.min(r,6),  max:4.8},
+    flat100:{label:'100% of the first 6%',       fn:r=>1.00*Math.min(r,6),  max:6},
+    flat75 :{label:'75% of the first 6%',        fn:r=>0.75*Math.min(r,6),  max:4.5},
+    flat66 :{label:'66⅔% of the first 6%',  fn:r=>(2/3)*Math.min(r,6), max:4},
+    flat25 :{label:'25% of the first 6%',        fn:r=>0.25*Math.min(r,6),  max:1.5},
+    tiered :{label:'133⅓% of the first 3%, then 100% of the next 3%',
+             fn:r=>(4/3)*Math.min(r,3)+1.00*Math.min(Math.max(r-3,0),3),    max:7}
+  };
+
+  const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+  const pct=n=>n.toFixed(2).replace(/\.?0+$/,'');
+
+  function render(){
+    const parts=cEl.value.split('|');
+    const f=F[parts[0]]||F.flat80;
+    const eligYears=parseInt(parts[1],10)||0;
+    const inv=parts[2];
+
+    let comp=parseFloat(compEl.value); if(isNaN(comp)||comp<0) comp=0;
+    let rate=parseInt(rateEl.value,10); if(isNaN(rate)||rate<0) rate=0;
+    let svc=parseFloat(svcEl.value);  if(isNaN(svc)||svc<0) svc=0;
+    rateVal.textContent=rate+'%';
+
+    const matchPct=f.fn(rate);
+    const eligible=svc>=eligYears;
+    const earned=comp*matchPct/100;          // what the formula produces at this rate
+    const match=eligible?earned:0;           // what actually lands, given eligibility
+    const maxMatch=comp*f.max/100;           // what a 6% contributor would receive
+    const missed=Math.max(0,maxMatch-earned);
+    const own=comp*rate/100;
+    const vested=svc>=VEST_YEARS;
+
+    // ----- status banner -----
+    if(!eligible){
+      banner.className='status-banner notmet';
+      banner.innerHTML='&times; No Company Match yet'+
+        '<span class="sb-sub">This group\'s match begins after '+eligYears+' Year of Service, and the client has '+pct(svc)+'. '+
+        'At '+rate+'% of pay the match would be '+money(earned)+'/yr once eligibility starts.</span>';
+    } else if(rate>=MATCH_CAP){
+      banner.className='status-banner met';
+      banner.innerHTML='&check; Capturing the full match'+
+        '<span class="sb-sub">'+money(match)+'/yr of company money, '+pct(matchPct)+'% of pay, on top of the '+money(own)+' the client contributes.</span>';
+    } else if(rate===0){
+      banner.className='status-banner notmet';
+      banner.innerHTML='&times; Contributing nothing, so no match at all'+
+        '<span class="sb-sub">Contributing '+MATCH_CAP+'% ('+money(comp*MATCH_CAP/100)+') would earn '+money(maxMatch)+' of company money a year.</span>';
+    } else {
+      banner.className='status-banner notmet';
+      banner.innerHTML='&times; Leaving '+money(missed)+'/yr of match on the table'+
+        '<span class="sb-sub">Going from '+rate+'% to '+MATCH_CAP+'% costs the client '+money(comp*(MATCH_CAP-rate)/100)+' more a year and gains '+money(missed)+' of company money.</span>';
+    }
+
+    // ----- result cards -----
+    cards.innerHTML='';
+    const mk=(cls,label,val,desc)=>{
+      const d=document.createElement('div'); d.className='rcard '+cls;
+      d.innerHTML='<div class="rlabel">'+label+'</div><div class="rval">'+val+'</div><div class="rdesc">'+desc+'</div>';
+      cards.appendChild(d);
+    };
+
+    mk(eligible&&matchPct>0?'good':'warn','Annual company match',
+       money(match),
+       f.label+'. At '+rate+'% of pay that is '+pct(matchPct)+'% of Compensation'+
+       (eligible?'.':', but nothing is paid until match eligibility begins.'));
+
+    if(!eligible){
+      mk('neutral','Match left on the table','Not yet',
+         'Match eligibility for this group starts after '+eligYears+' Year of Service. Until then no contribution rate earns company money.');
+    } else if(missed<1){
+      mk('good','Match left on the table','None',
+         'The client is at or above the '+MATCH_CAP+'% matched cap. Contributing more is still useful, but it earns no additional match.');
+    } else {
+      mk('warn','Match left on the table',money(missed),
+         'The gap between the current rate and the '+MATCH_CAP+'% matched cap, per year. It is calculated each pay period and there is no year-end true-up, so it cannot be recovered later.');
+    }
+
+    if(vested){
+      mk('good','Match vesting','Vested',
+         'Past 3 Years of Service, so the Company Match is the client\'s to keep on separation.');
+    } else {
+      const left=Math.max(0,VEST_YEARS-svc);
+      mk('warn','Match vesting',pct(left)+' yr to go',
+         'Company Match vests 100% at 3 Years of Service, and automatically at death, disability, or age 65. Leaving before then forfeits the match, though the client\'s own contributions are always theirs.');
+    }
+
+    // ----- note -----
+    const invTxt = inv==='same'
+      ? 'For this group the Company Match is invested in the <strong>same funds as the employee\'s own contributions</strong>, not the AT&amp;T Shares Fund.'
+      : 'For this group the Company Match is allocated to the <strong>AT&amp;T Shares Fund</strong> by default, so it builds single-stock exposure to the employer unless the client diversifies. Diversification is immediate and unlimited.';
+    const deferTxt = own>DEFERRAL_LIMIT
+      ? ' At '+rate+'% of '+money(comp)+' the client crosses the '+money(DEFERRAL_LIMIT)+' elective-deferral limit partway through the year; the default spillover election continues contributions as after-tax, which keeps the per-paycheck match running.'
+      : '';
+    note.innerHTML=invTxt+' The match is calculated <strong>each pay period</strong>, so any paycheck under '+MATCH_CAP+
+      '% loses that period\'s match for good. Catch-up contributions are never matched.'+deferTxt+
+      ' Annual estimates assuming a level contribution rate; verify the client\'s tier and service in NetBenefits.';
+  }
+
+  [cEl,compEl,rateEl,svcEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
   render();
 })();
 </script>

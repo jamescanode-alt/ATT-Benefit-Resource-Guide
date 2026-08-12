@@ -27,11 +27,19 @@
 - [ ] **Roth catch-up (SECURE 2.0) adoption date.** The Savings Plan SPD in the library is a 2022
       edition and predates the SECURE 2.0 Roth-catch-up specifics. Section 11 states management gets
       the standard (non-delayed) timing; confirm the plan's actual adoption when a current SPD lands.
-- [ ] **Strip 5 pre-existing em-dashes.** Non-client-example copy still uses em-dashes against the
-      project style rule: `index.html:858` and `non-bargained.html:839` (401(k) match paragraphs),
-      and `non-bargained.html` lines ~425/430/435 (the "greatest of three" card headings: "CAM —
-      the usual winner", "Cash Balance — frozen", "PBM — narrow"). Left untouched to keep the
-      2026-07-23 Client Examples change focused; fix in a dedicated pass.
+- [ ] **Strip 4 remaining pre-existing em-dashes.** All in `non-bargained.html`: the 401(k) match
+      paragraph (~line 839) and the "greatest of three" card headings (~425/430/435: "CAM — the
+      usual winner", "Cash Balance — frozen", "PBM — narrow"). The `index.html` one was cleared on
+      2026-08-12 while the match copy was being rewritten. `index.html` is now em-dash free.
+- [ ] **Apply the same match treatment to the other two guides.** `index.html` §09 now carries the
+      SPD's real match tiers, the one-Year-of-Service eligibility rule, the AT&T Shares default,
+      and a contract-aware calculator. `non-bargained.html` §11 and `mobility.html` §06 still have
+      prose-only match sections. Their tiers are correct but they lack the eligibility and
+      AT&T-Shares-concentration points and have no calculator. Consider porting.
+- [ ] **Recheck match tiers when a newer ARSP SPD lands.** The SPD in the library is a 2022 edition
+      and match tiers are set by the collective bargaining agreement, so a newer contract can move
+      them. The `#match-calc` option values and the formulas table in `index.html` are the two
+      places to update.
 - [ ] **Client Milestones enhancements (triggers.html).** Possible follow-ups: a tax-filing-status
       input so the IRMAA line shows only the relevant tier ($109k vs $218k); a West/Craft vs
       Southeast sub-select for the union threshold age (55 vs 56); confirm the born-1959 RMD age

@@ -1,5 +1,48 @@
 # PLAN_LOG
 
+## 2026-08-12 (2) — Union guide §09: real match formulas + company match calculator
+
+**Task.** Replace the union guide's generic company-match copy with the documented formulas from
+`Bargained SPDs/ATT-Retirement-Savings-Plan_78-63233.pdf`, and add a match calculator modeled on
+the Section 07 Mod 75 calculator with a contract-family selector.
+
+**Source facts (pdftotext of the ARSP SPD, Benefits at a Glance p.13–14 and the Amount of Employer
+Contributions section p.25–27):**
+- Baseline match is **80% of the first 6%** of Compensation elected as Basic Contributions.
+- Special rules: 100% of first 6% (Mobility Black CWA D3 on/after 1/1/15, Mobility Blue IBEW 1547
+  on/after 1/1/12); 133⅓% of first 3% + 100% of next 3%, max 7% (Technical Services, nonmanagement
+  nonunion following CWA/AT&T Core on/after 1/1/15); 75% of first 6% (AT&T Corp. Core CWA hired
+  before 8/9/09); 66⅔% of first 6% (AT&T National Contract IBEW SC T-3 hired before 8/9/09,
+  Teamsters Local 959 Alascom); 25% of first 6% (BellSouth Utility Operations hired/rehired after
+  8/8/09).
+- **Match eligibility is one Year of Service unless noted.** Upon hire applies only to Management,
+  Mobility Orange (CWA D1, 2-13, 4, 7, 9), Mobility Purple (CWA D6), Mobility Black (CWA D3), and
+  National Internet Tier 1 CWA. This corrects the guide, which implied upon-hire generally.
+- Match is allocated to the **AT&T Shares Fund** except for Technical Services, Legacy T-IBEW
+  (hired on/before 8/8/09), and Cricket/AIO, whose match follows the employee's own funds.
+  Diversification is **immediate and unlimited**, up to 100%, vested or not.
+- Vesting 100% after 3 Years of Service; automatic at death, disability, or age 65. Catch-up
+  contributions are never matched. Basic Contributions allowed up to 50% of Compensation.
+- SPD's own worked example for the tiered formula: 3% contribution → 4% of pay; ≥6% → 7% of pay.
+  Used to validate the calculator.
+
+**Known source limits to state on the page.** The SPD in the library is a **2022 edition** (its
+deferral limit is the 2022 figure) and match tiers come from the bargaining agreement, so a newer
+contract can change them. The detailed section calls the Purple Contract "CWA District 3" while
+the at-a-glance table says District 6; District 6 is used (it matches the pension guide's contract
+mapping) and the discrepancy is flagged on the page.
+
+**Files.** `index.html` only (the union guide). The management and Mobility guides already carry
+their own correct match tiers and are out of scope for this request.
+
+**Risks.** The match spread is 1.5% to 7.0% of pay across groups, so a wrong tier is a materially
+wrong number in a client meeting: every tier must be traceable to the SPD, and the page must push
+the advisor to verify in NetBenefits. The calculator annualizes a level rate while the real match
+is per pay period with no true-up, so that assumption has to be stated, not buried.
+
+**Next steps.** Build table + calculator → validate every formula against the SPD, including the
+tiered worked example → responsive check → push → CHANGE_LOG.
+
 ## 2026-08-12 — ARSP Roth / non-Roth investment enhancements + BrokerageLink blackout
 
 **Task.** Add the September 2026 AT&T Retirement Savings Plan (ARSP) change to the three plan
