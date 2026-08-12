@@ -31,11 +31,16 @@
       paragraph (~line 839) and the "greatest of three" card headings (~425/430/435: "CAM — the
       usual winner", "Cash Balance — frozen", "PBM — narrow"). The `index.html` one was cleared on
       2026-08-12 while the match copy was being rewritten. `index.html` is now em-dash free.
-- [ ] **Apply the same match treatment to the other two guides.** `index.html` §09 now carries the
-      SPD's real match tiers, the one-Year-of-Service eligibility rule, the AT&T Shares default,
-      and a contract-aware calculator. `non-bargained.html` §11 and `mobility.html` §06 still have
-      prose-only match sections. Their tiers are correct but they lack the eligibility and
-      AT&T-Shares-concentration points and have no calculator. Consider porting.
+- [ ] **Apply the same match treatment to the other two guides.** `index.html` now has a dedicated
+      Section 10 (`#match`) with the SPD's real match tiers, the one-Year-of-Service eligibility
+      rule, the AT&T Shares default, and a contract-aware calculator. `non-bargained.html` §11 and
+      `mobility.html` §06 still have prose-only match content inside their 401(k) sections. Their
+      tiers are correct but they lack the eligibility and AT&T-Shares-concentration points and have
+      no calculator. Porting means renumbering those guides too (nb: 12–18 shift to 13–19;
+      mobility: 07–12 shift to 08–13), so treat it as a deliberate pass, not a quick copy.
+- [ ] **Currency formatting is only on the union guide's match calculator.** If any other dollar
+      input is added, reuse the `formatComp`/`readComp` pair and the `.sr-only` hint from
+      `index.html` rather than writing a second implementation.
 - [ ] **Recheck match tiers when a newer ARSP SPD lands.** The SPD in the library is a 2022 edition
       and match tiers are set by the collective bargaining agreement, so a newer contract can move
       them. The `#match-calc` option values and the formulas table in `index.html` are the two

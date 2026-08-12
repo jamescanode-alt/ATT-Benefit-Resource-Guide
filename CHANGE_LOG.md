@@ -1,5 +1,58 @@
 # CHANGE_LOG
 
+## 2026-08-12 (3) — The company match becomes Section 10; Compensation input formats as currency
+
+**The match is now its own section.** All employer-match material moved out of §09 into a new
+`#match` section, "The company match", with its own sidebar entry. This is the first change in the
+project that renumbers sections, so everything downstream shifted by one:
+
+| Section | Before | After |
+|---|---|---|
+| The 401(k) plan (`#savings`) | 09 | 09 |
+| **The company match (`#match`)** | — | **10 (new)** |
+| IRMAA planning | 10 | 11 |
+| Strategy playbook | 11 | 12 |
+| Protections & rules | 12 | 13 |
+| Glossary | 13 | 14 |
+| Contacts & sources | 14 | 15 |
+
+The new section carries, in order: the match intro and Matching Formula callout, the
+formulas-by-contract table, the match-eligibility warning, the AT&T Shares default, the
+per-pay-period match trap, the calculator and its disclaimer, an advisor's lens, and Rosa's match
+example. Two headings promoted from `<h4>` to `<h3>` now that they sit at section top level.
+
+**Consequences handled with the move:**
+
+- Body cross-references updated: Rosa's full-picture summary now cites Section 10 for the match and
+  Section 11 for IRMAA, and the match-eligibility callout's "(Section 09 above)" became a working
+  link back to `#savings`.
+- `#savings` lost its client example when Rosa's match example moved, so it gained a new one
+  covering what that section still owns: unused 415(c) headroom for after-tax contributions, the
+  Rule of 55, and handling a 401(k) loan before a rollover. The match example dropped its trailing
+  pre-tax/Roth clause so the two don't duplicate each other.
+- `case-studies.html` links only to guide sections 04–08, all upstream of the insertion point, so
+  it needed no changes.
+
+**Compensation input now formats as currency.** The field displays `$95,000` instead of `95000`.
+It changed from `type="number"` to `type="text"` with `inputmode="numeric"` (a number input cannot
+render a currency mask), reformatting on every keystroke and restoring the caret by counting the
+digits before it, so editing mid-number doesn't jump the cursor to the end. Non-digits are
+stripped, leading zeros collapse, and input is capped at 9 digits. A `readComp()` helper is the
+single place the value is parsed back to a number. Added a guard for empty or zero Compensation,
+which previously showed a misleading "capturing the full match" banner with $0 in every card; it
+now reads "Enter an annual Compensation amount". A visually hidden `.sr-only` hint describes the
+formatting behavior for screen readers.
+
+**Files:** `index.html`, `PLAN_LOG.md`, `CHANGE_LOG.md`, `TODO.md`.
+**Validation:** all 15 sections and all 15 nav items verified in order with zero broken anchors.
+Currency field tested for typing, retyping, letters, leading zeros, over-length input, empty state,
+and caret position on a mid-string edit that forces regrouping. Calculator re-checked end to end
+after the move (tiered formula at $140,000 and 3% returns $5,600, the SPD's 4%-of-pay result). No
+console errors; zero horizontal overflow at 1280x900 and 375x812. Screenshots were unavailable this
+session (the preview pane stopped compositing), so verification was structural and by measurement
+rather than visual.
+**Status:** complete.
+
 ## 2026-08-12 (2) — Union guide §09: documented match formulas and a match calculator
 
 Replaced the union guide's generic company-match copy with the actual formulas from

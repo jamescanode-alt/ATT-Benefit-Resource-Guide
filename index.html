@@ -132,6 +132,7 @@ td.num{font-variant-numeric:tabular-nums;text-align:right}
 table.v-lines th:not(:last-child), table.v-lines td:not(:last-child) { border-right: 1px solid var(--line); }
 table.v-lines th:not(:last-child) { border-right-color: rgba(255, 255, 255, 0.2); }
 .text-center { text-align: center !important; }
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 /* wide tables scroll inside their own container, never the page body */
 .tscroll{overflow-x:auto;margin:20px 0}
 .tscroll table{margin:0;min-width:540px}
@@ -286,12 +287,13 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <a href="#payment" class="navitem"><span class="num">08</span>Payment options</a>
   <div class="navlabel">The Savings Plan</div>
   <a href="#savings" class="navitem"><span class="num">09</span>The 401(k) plan</a>
-  <a href="#irmaa" class="navitem"><span class="num">10</span>IRMAA planning</a>
+  <a href="#match" class="navitem"><span class="num">10</span>The company match</a>
+  <a href="#irmaa" class="navitem"><span class="num">11</span>IRMAA planning</a>
   <div class="navlabel">Advisor Toolkit</div>
-  <a href="#strategy" class="navitem"><span class="num">11</span>Strategy playbook</a>
-  <a href="#protections" class="navitem"><span class="num">12</span>Protections &amp; rules</a>
-  <a href="#glossary" class="navitem"><span class="num">13</span>Glossary</a>
-  <a href="#contacts" class="navitem"><span class="num">14</span>Contacts &amp; sources</a>
+  <a href="#strategy" class="navitem"><span class="num">12</span>Strategy playbook</a>
+  <a href="#protections" class="navitem"><span class="num">13</span>Protections &amp; rules</a>
+  <a href="#glossary" class="navitem"><span class="num">14</span>Glossary</a>
+  <a href="#contacts" class="navitem"><span class="num">15</span>Contacts &amp; sources</a>
   <div class="navlabel">Tools</div>
   <a href="triggers.html"><span class="num">▸</span>Client Milestones</a>
   <div class="navlabel">Training</div>
@@ -897,14 +899,79 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     </div>
   </div>
 
-  <h3>Employer Contributions</h3>
+  <h3>Pre-tax vs. Roth: a career-stage decision</h3>
+  <p>Whether a client should direct 401(k) contributions to pre-tax or Roth turns largely on <strong>their tax rate now versus their expected tax rate when the money comes out</strong>. Career stage is usually the best proxy.</p>
+  <div class="cols">
+    <div class="card" style="border-top:4px solid var(--good)">
+      <h4>Early career / lower-earning years &rarr; lean Roth</h4>
+      <p>A younger or lower-paid union employee is often in a <strong>low marginal bracket</strong>, so the deduction from a pre-tax contribution is worth little. Paying tax now at a low rate and letting decades of growth come out tax-free is frequently the stronger trade. Roth dollars also don't add to MAGI in retirement, which helps with future IRMAA and Social Security taxation.</p>
+    </div>
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h4>Peak-earning years &rarr; lean pre-tax</h4>
+      <p>A senior employee at the top of the wage scale (plus heavy overtime) may be in a <strong>high bracket</strong> where the pre-tax deduction is genuinely valuable. Deferring now and drawing later (potentially in lower-income early-retirement years before pension/Social Security/RMDs stack up) can lower the lifetime tax bill.</p>
+    </div>
+  </div>
+  <p class="small">It's rarely all-or-nothing. Tax diversification (holding both pre-tax and Roth buckets) gives the client levers to manage MAGI year by year in retirement (e.g., drawing from Roth in a year they'd otherwise cross an IRMAA tier).</p>
+
+  <h4>After-tax contributions &rarr; the "mega backdoor Roth"</h4>
+  <p>The after-tax bucket is powerful because of what you do next: if the plan allows, the client can <strong>immediately convert after-tax dollars to Roth</strong> (in-plan, or via in-service rollover to a Roth IRA). Converting right away means little or no growth has accrued yet, so there's <strong>little or no tax on the conversion</strong>, and from that point the money grows tax-free. The longer after-tax dollars sit unconverted, the more taxable growth builds up, so the move is to convert promptly and regularly.</p>
+  <div class="callout">
+    <span class="tag blue">Prerequisites to confirm</span>
+    <p>This only works if the AT&amp;T plan permits both (a) after-tax contributions and (b) in-plan Roth conversions or in-service withdrawals. Confirm both in NetBenefits before building a strategy around it.</p>
+  </div>
+
+  <h3>What to confirm for every 401(k) client</h3>
+  <div class="cols">
+    <div class="card">
+      <h4>Employee contributions</h4>
+      <p>Pre-tax and (often) Roth elections, subject to the annual IRS deferral limit. Confirm the client is at least capturing the full match, leaving match on the table is free money lost.</p>
+    </div>
+    <div class="card">
+      <h4>Company match</h4>
+      <p>Confirm three things, not one: the <strong>formula</strong> (it ranges from 25% to 133⅓% of the first tier across bargained groups), whether match eligibility has <strong>started</strong> (upon hire for some contracts, one Year of Service for the rest), and progress toward <strong>3-year vesting</strong>.</p>
+    </div>
+    <div class="card">
+      <h4>Investment lineup</h4>
+      <p>Target-date funds, index and active options, and possibly a self-directed brokerage window. Farther can manage these Fidelity-held funds and advise on allocation.</p>
+    </div>
+    <div class="card">
+      <h4>At separation</h4>
+      <p>Options: leave it, roll to IRA, or roll to a new plan. Coordinate with any pension lump sum so the household's rollovers are planned together.</p>
+    </div>
+  </div>
+
+  <h3>At separation: two traps to handle</h3>
+  <div class="callout warn">
+    <span class="tag">The Rule of 55, and how a rollover forfeits it</span>
+    <p>If a client <strong>separates from AT&amp;T in the year they turn 55 or older</strong>, they can take withdrawals from the AT&amp;T 401(k) <strong>penalty-free</strong> (no 10% early-withdrawal penalty) while the money stays in the plan, a valuable bridge for an early retiree before age 59½. <strong>Rolling the 401(k) to an IRA forfeits this</strong>: an IRA has no Rule of 55, so the client is back to the 59½ threshold. Before recommending a full rollover for a 55–59 client, check whether they'll need penalty-free access first, it can be worth leaving some or all in the plan. Note the plan may also limit <em>how</em> those withdrawals can be taken (e.g., not flexible monthly payments), confirm with Fidelity.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Handle an outstanding 401(k) loan before rolling over</span>
+    <p>If the client has a 401(k) loan when they leave, address it deliberately, three paths: <strong>(1) Pay it off</strong> before the rollover (allow ~72 hours for the $0 balance to post, or the rollover can inadvertently trigger a default); <strong>(2) Let it default</strong>, the outstanding balance is issued on a <strong>1099-R as a taxable distribution</strong> (plus the 10% penalty if under 59½ with no exemption); or <strong>(3) Keep it</strong> by leaving enough balance in the plan and continuing payments. Flag this early, an overlooked loan is a common, avoidable tax surprise at rollover.</p>
+  </div>
+
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>Farther's program is built specifically for AT&amp;T employees, <strong>we manage funds held at Fidelity and consult across the full benefits stack</strong> (pension, 401(k), medical). The 401(k) is where ongoing investment management lives, and it's the natural complement to the pension's guaranteed income. Make sure contribution rate, match capture (Section 10), and allocation are all working before optimizing anything fancier.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez</span>
+    <p>Rosa earns $95,000 and contributes 6%, $5,700/year. Add her company match and the total going into the plan is roughly $10,300, well under the <strong>$72,000</strong> 415(c) ceiling, so she has large unused headroom for <strong>after-tax</strong> contributions converted promptly to Roth. Two separation items to raise before she picks a last day: she is past 55, so leaving now keeps <strong>penalty-free</strong> access to the AT&amp;T 401(k) as long as the money stays in the plan, and a full rollover to an IRA would give that up; and any outstanding loan has to be handled deliberately first, or the rollover can trigger a taxable default. As a peak-earner she leans <strong>pre-tax</strong> on the deferral itself, while early-career Marcus, in a lower bracket, leans <strong>Roth</strong>.</p>
+  </div>
+</section>
+
+<section class="block" id="match">
+  <div class="pn">Section 10 · The Savings Plan</div>
+  <h2>The company match</h2>
+  <p>Match capture is the highest-return move available inside the 401(k), and it is the piece most often gotten wrong for a bargained client, because the formula, the date it starts, and where the dollars land all vary by contract. This section is the reference for all three, and the calculator at the end runs a client's actual numbers.</p>
+
   <p>Employer money is a major driver of account growth. Rather than a flat profit-sharing allocation, AT&amp;T's contribution is a <strong>match</strong> tied to what the employee defers, and the exact formula is set by the bargaining agreement. Only <strong>Basic Contributions up to 6% of Compensation</strong> are ever matched, no matter how much more the client defers (the plan allows Basic Contributions up to 50% of Compensation).</p>
   <div class="callout good">
     <span class="tag">The Matching Formula</span>
     <p>The SPD defines matched Basic Contributions as <strong>before-tax, Roth, after-tax, or any combination</strong>, so the match follows the <em>percentage of pay contributed</em>, not the tax type. Up to the 6% cap the match is a large guaranteed return on the client's own money, so capturing it in full is the first priority for any client. <strong>Catch-up contributions are never matched.</strong></p>
   </div>
 
-  <h4>Match formulas by contract family</h4>
+  <h3>Match formulas by contract family</h3>
   <p>The SPD's baseline is 80% of the first 6%, then lists special rules that override it. The bargained groups it names:</p>
   <div class="tscroll">
   <table class="v-lines">
@@ -930,7 +997,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <div class="callout warn">
     <span class="tag">Match eligibility is not always upon hire</span>
-    <p>This is the point most likely to be gotten wrong for a bargained client. Management employees are eligible for match <strong>upon hire</strong>, and so are the Mobility Orange, Purple, and Black contracts and National Internet Tier 1. <strong>Every other group in the plan waits one Year of Service.</strong> For a newly hired union client that means the first year of contributions earns no company money at all, which changes the advice: the match-capture argument for contributing exactly 6% doesn't apply yet, and the Roth-versus-pre-tax decision (Section 09 above) carries the whole weight in year one.</p>
+    <p>This is the point most likely to be gotten wrong for a bargained client. Management employees are eligible for match <strong>upon hire</strong>, and so are the Mobility Orange, Purple, and Black contracts and National Internet Tier 1. <strong>Every other group in the plan waits one Year of Service.</strong> For a newly hired union client that means the first year of contributions earns no company money at all, which changes the advice: the match-capture argument for contributing exactly 6% doesn't apply yet, and the Roth-versus-pre-tax decision (<a class="inline" href="#savings">Section 09</a>) carries the whole weight in year one.</p>
   </div>
 
   <div class="callout gold">
@@ -940,6 +1007,13 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   </div>
 
   <p>Match dollars land in the employer portion of the account and are always pre-tax, even when the employee's own contributions were Roth. They don't count toward the employee's elective-deferral limit, but they do count toward the 415(c) total. The match vests <strong>100% after 3 Years of Service</strong>, and automatically at death, disability, or age 65.</p>
+
+  <h3>Watch the per-pay-period match trap</h3>
+  <div class="callout warn">
+    <span class="tag">Front-loading can forfeit match</span>
+    <p>AT&amp;T's employer match is calculated <strong>each pay period</strong>, not annually, and the SPD describes no "true-up" that retroactively makes up missed match. Any pay period where the client contributes less than the matched cap (generally 6% of that paycheck's pay) leaves match behind for good. The plan's default <strong>spillover election</strong> softens the classic front-loading trap: once a client hits the annual deferral limit, contributions automatically continue as after-tax and keep earning the per-paycheck match. But if the client has <strong>opted out of spillover</strong>, or suspends contributions after front-loading, the match stops with them, <strong>leaving employer money on the table</strong>. Confirm the spillover election in NetBenefits before a client front-loads.</p>
+    <p style="margin-top:8px">Also note: <strong>the match is not limited to pre-tax and Roth deferrals.</strong> The SPD defines the matched Basic Contributions as pre-tax, Roth, after-tax, or any combination, so after-tax (bucket ③) dollars within the matched cap earn the same match, and that's exactly why spillover keeps the match alive after the deferral limit. The only employee contributions that never earn match are <strong>catch-up contributions (age 50+)</strong> and anything <strong>above the matched cap</strong> (the first 6% of Compensation).</p>
+  </div>
 
   <h3 id="match-calc">Company match calculator</h3>
   <p>Choose the client's contract family, then enter Compensation, contribution rate, and years of service. The tool returns the annual match under that contract's formula, how much match is being left behind at the current rate, and where those dollars are invested. Formulas, eligibility timing, and vesting come from the ARSP SPD (NIN 78-63233).</p>
@@ -977,7 +1051,8 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     </div>
     <div class="row">
       <label for="mComp">Annual eligible Compensation</label>
-      <span class="num-input"><input type="number" id="mComp" min="0" max="1000000" step="1000" value="95000"></span>
+      <span class="num-input"><input type="text" id="mComp" inputmode="numeric" autocomplete="off" value="$95,000" aria-describedby="mCompHint"></span>
+      <span class="sr-only" id="mCompHint">Enter whole dollars. The field formats itself as currency.</span>
     </div>
     <div class="row">
       <label for="mRate">Basic Contribution rate (% of pay)</label>
@@ -1000,76 +1075,17 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <p>The formulas come from a <strong>2022 edition</strong> of the ARSP SPD and are set by collective bargaining, so a newer contract can change them. The tool assumes a <strong>level contribution rate across every pay period</strong> and annualizes it; because the real match is computed per pay period with no true-up, an uneven contribution pattern produces less match than shown. It applies match eligibility (upon hire or one Year of Service) and 3-year vesting as documented, but not IRS testing limits for highly compensated employees or the annual compensation limit. <strong>Confirm the client's tier, rate, and service in NetBenefits.</strong></p>
   </div>
 
-  <h3>Pre-tax vs. Roth: a career-stage decision</h3>
-  <p>Whether a client should direct 401(k) contributions to pre-tax or Roth turns largely on <strong>their tax rate now versus their expected tax rate when the money comes out</strong>. Career stage is usually the best proxy.</p>
-  <div class="cols">
-    <div class="card" style="border-top:4px solid var(--good)">
-      <h4>Early career / lower-earning years &rarr; lean Roth</h4>
-      <p>A younger or lower-paid union employee is often in a <strong>low marginal bracket</strong>, so the deduction from a pre-tax contribution is worth little. Paying tax now at a low rate and letting decades of growth come out tax-free is frequently the stronger trade. Roth dollars also don't add to MAGI in retirement, which helps with future IRMAA and Social Security taxation.</p>
-    </div>
-    <div class="card" style="border-top:4px solid var(--blue)">
-      <h4>Peak-earning years &rarr; lean pre-tax</h4>
-      <p>A senior employee at the top of the wage scale (plus heavy overtime) may be in a <strong>high bracket</strong> where the pre-tax deduction is genuinely valuable. Deferring now and drawing later (potentially in lower-income early-retirement years before pension/Social Security/RMDs stack up) can lower the lifetime tax bill.</p>
-    </div>
-  </div>
-  <p class="small">It's rarely all-or-nothing. Tax diversification (holding both pre-tax and Roth buckets) gives the client levers to manage MAGI year by year in retirement (e.g., drawing from Roth in a year they'd otherwise cross an IRMAA tier).</p>
-
-  <h4>After-tax contributions &rarr; the "mega backdoor Roth"</h4>
-  <p>The after-tax bucket is powerful because of what you do next: if the plan allows, the client can <strong>immediately convert after-tax dollars to Roth</strong> (in-plan, or via in-service rollover to a Roth IRA). Converting right away means little or no growth has accrued yet, so there's <strong>little or no tax on the conversion</strong>, and from that point the money grows tax-free. The longer after-tax dollars sit unconverted, the more taxable growth builds up, so the move is to convert promptly and regularly.</p>
-  <div class="callout">
-    <span class="tag blue">Prerequisites to confirm</span>
-    <p>This only works if the AT&amp;T plan permits both (a) after-tax contributions and (b) in-plan Roth conversions or in-service withdrawals. Confirm both in NetBenefits before building a strategy around it.</p>
-  </div>
-
-  <h4>Watch the per-pay-period match trap</h4>
-  <div class="callout warn">
-    <span class="tag">Front-loading can forfeit match</span>
-    <p>AT&amp;T's employer match is calculated <strong>each pay period</strong>, not annually, and the SPD describes no "true-up" that retroactively makes up missed match. Any pay period where the client contributes less than the matched cap (generally 6% of that paycheck's pay) leaves match behind for good. The plan's default <strong>spillover election</strong> softens the classic front-loading trap: once a client hits the annual deferral limit, contributions automatically continue as after-tax and keep earning the per-paycheck match. But if the client has <strong>opted out of spillover</strong>, or suspends contributions after front-loading, the match stops with them, <strong>leaving employer money on the table</strong>. Confirm the spillover election in NetBenefits before a client front-loads.</p>
-    <p style="margin-top:8px">Also note: <strong>the match is not limited to pre-tax and Roth deferrals.</strong> The SPD defines the matched Basic Contributions as pre-tax, Roth, after-tax, or any combination, so after-tax (bucket ③) dollars within the matched cap earn the same match, and that's exactly why spillover keeps the match alive after the deferral limit. The only employee contributions that never earn match are <strong>catch-up contributions (age 50+)</strong> and anything <strong>above the matched cap</strong> (the first 6% of Compensation).</p>
-  </div>
-
-  <h3>What to confirm for every 401(k) client</h3>
-  <div class="cols">
-    <div class="card">
-      <h4>Employee contributions</h4>
-      <p>Pre-tax and (often) Roth elections, subject to the annual IRS deferral limit. Confirm the client is at least capturing the full match, leaving match on the table is free money lost.</p>
-    </div>
-    <div class="card">
-      <h4>Company match</h4>
-      <p>Confirm three things, not one: the <strong>formula</strong> (it ranges from 25% to 133⅓% of the first tier across bargained groups), whether match eligibility has <strong>started</strong> (upon hire for some contracts, one Year of Service for the rest), and progress toward <strong>3-year vesting</strong>.</p>
-    </div>
-    <div class="card">
-      <h4>Investment lineup</h4>
-      <p>Target-date funds, index and active options, and possibly a self-directed brokerage window. Farther can manage these Fidelity-held funds and advise on allocation.</p>
-    </div>
-    <div class="card">
-      <h4>At separation</h4>
-      <p>Options: leave it, roll to IRA, or roll to a new plan. Coordinate with any pension lump sum so the household's rollovers are planned together.</p>
-    </div>
-  </div>
-
-  <h3>At separation: two traps to handle</h3>
-  <div class="callout warn">
-    <span class="tag">The Rule of 55, and how a rollover forfeits it</span>
-    <p>If a client <strong>separates from AT&amp;T in the year they turn 55 or older</strong>, they can take withdrawals from the AT&amp;T 401(k) <strong>penalty-free</strong> (no 10% early-withdrawal penalty) while the money stays in the plan, a valuable bridge for an early retiree before age 59½. <strong>Rolling the 401(k) to an IRA forfeits this</strong>: an IRA has no Rule of 55, so the client is back to the 59½ threshold. Before recommending a full rollover for a 55–59 client, check whether they'll need penalty-free access first, it can be worth leaving some or all in the plan. Note the plan may also limit <em>how</em> those withdrawals can be taken (e.g., not flexible monthly payments), confirm with Fidelity.</p>
-  </div>
-  <div class="callout warn">
-    <span class="tag">Handle an outstanding 401(k) loan before rolling over</span>
-    <p>If the client has a 401(k) loan when they leave, address it deliberately, three paths: <strong>(1) Pay it off</strong> before the rollover (allow ~72 hours for the $0 balance to post, or the rollover can inadvertently trigger a default); <strong>(2) Let it default</strong>, the outstanding balance is issued on a <strong>1099-R as a taxable distribution</strong> (plus the 10% penalty if under 59½ with no exemption); or <strong>(3) Keep it</strong> by leaving enough balance in the plan and continuing payments. Flag this early, an overlooked loan is a common, avoidable tax surprise at rollover.</p>
-  </div>
-
   <div class="lens">
     <span class="tag">The advisor's lens</span>
-    <p>Farther's program is built specifically for AT&amp;T employees, <strong>we manage funds held at Fidelity and consult across the full benefits stack</strong> (pension, 401(k), medical). The 401(k) is where ongoing investment management lives, and it's the natural complement to the pension's guaranteed income. Make sure contribution rate, match capture, and allocation are all working before optimizing anything fancier.</p>
+    <p>Three questions, in this order, before any 401(k) advice for a bargained client. <strong>Which tier are they on?</strong> The answer swings company money from 1.5% to 7.0% of pay, so never quote a rate from memory. <strong>Has the match even started?</strong> Most bargained groups wait a Year of Service, which changes what you tell a new hire entirely. <strong>What has the match been buying?</strong> For most groups it has been buying AT&amp;T stock by default, year after year, so the concentration question is usually already on the table by the time you meet a long-tenured client. Only after those three does the contribution-rate conversation mean anything.</p>
   </div>
   <div class="callout client">
     <span class="tag">Client example: Rosa Alvarez</span>
-    <p>Rosa earns $95,000 on a West Core CWA contract, which the SPD gives no special rule, so she is on the <strong>baseline 80% of the first 6%</strong>. Contributing 6% each pay period, $5,700/year, her employer adds 80% &times; $5,700 = <strong>$4,560/year</strong>, and at 36 years of service she is long vested. Run her through the calculator above, then drag the rate to 4%: the match falls to $3,040 and the card shows <strong>$1,520 a year left on the table</strong>, unrecoverable because the match is computed per pay period with no true-up. The same $95,000 and 6% under a BellSouth Utility Operations contract would return just $1,425. Two more things to check on Rosa specifically: 36 years of matching into the <strong>AT&amp;T Shares Fund</strong> is very likely a concentrated position worth reviewing (and worth an NUA look before any rollover), and as a peak-earner near the top of the wage scale she leans <strong>pre-tax</strong> on the deferral itself, while early-career Marcus, in a lower bracket, leans <strong>Roth</strong>.</p>
+    <p>Rosa earns $95,000 on a West Core CWA contract, which the SPD gives no special rule, so she is on the <strong>baseline 80% of the first 6%</strong>. Contributing 6% each pay period, $5,700/year, her employer adds 80% &times; $5,700 = <strong>$4,560/year</strong>, and at 36 years of service she is long vested. Run her through the calculator above, then drag the rate to 4%: the match falls to $3,040 and the card shows <strong>$1,520 a year left on the table</strong>, unrecoverable because the match is computed per pay period with no true-up. The same $95,000 and 6% under a BellSouth Utility Operations contract would return just $1,425. One more thing to check on Rosa specifically: 36 years of matching into the <strong>AT&amp;T Shares Fund</strong> is very likely a concentrated position worth reviewing, and worth an NUA look before any rollover.</p>
   </div>
 </section>
-
 <section class="block" id="irmaa">
-  <div class="pn">Section 10</div>
+  <div class="pn">Section 11</div>
   <h2>IRMAA planning</h2>
   
   <h3>Coordinating pension &amp; 401(k) income with IRMAA in mind</h3>
@@ -1106,7 +1122,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="strategy">
-  <div class="pn">Section 11 · Advisor Toolkit</div>
+  <div class="pn">Section 12 · Advisor Toolkit</div>
   <h2>Strategy playbook</h2>
   <p>The recurring, high-value decisions where an AT&amp;T client benefits most from advice.</p>
 
@@ -1133,12 +1149,12 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <div class="callout client">
     <span class="tag">Client example: Rosa Alvarez, the full picture</span>
-    <p>Putting Rosa together: hired in 1990, she carries <strong>both</strong> pension formulas (Section 03), and with 36 years she meets Mod 75 outright, so her Pre-99 benefit is unreduced at any age (Section 06). At retirement she weighs the combined <strong>$2,300/month</strong> SLA, and a 50% J&amp;S at $2,070 with survivor protection (Section 08), against rolling the cash-balance portion to an IRA. While working she captures her full 6% match every pay period ($4,560/year, Section 09), and in the low-income years before RMDs she sizes Roth conversions to stay just under the $109,000 IRMAA line (Section 10). Those are five linked decisions, when she started, when she leaves, how she takes payment, how she saves, and how she manages MAGI, that only make sense evaluated together. Marcus, 20 years behind her with a cash-balance-only benefit, has a simpler but different set of levers.</p>
+    <p>Putting Rosa together: hired in 1990, she carries <strong>both</strong> pension formulas (Section 03), and with 36 years she meets Mod 75 outright, so her Pre-99 benefit is unreduced at any age (Section 06). At retirement she weighs the combined <strong>$2,300/month</strong> SLA, and a 50% J&amp;S at $2,070 with survivor protection (Section 08), against rolling the cash-balance portion to an IRA. While working she captures her full 6% match every pay period ($4,560/year, Section 10), and in the low-income years before RMDs she sizes Roth conversions to stay just under the $109,000 IRMAA line (Section 11). Those are five linked decisions, when she started, when she leaves, how she takes payment, how she saves, and how she manages MAGI, that only make sense evaluated together. Marcus, 20 years behind her with a cash-balance-only benefit, has a simpler but different set of levers.</p>
   </div>
 </section>
 
 <section class="block" id="protections">
-  <div class="pn">Section 12</div>
+  <div class="pn">Section 13</div>
   <h2>Protections &amp; rules to know</h2>
   <div class="cols">
     <div class="card">
@@ -1173,7 +1189,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="glossary">
-  <div class="pn">Section 13</div>
+  <div class="pn">Section 14</div>
   <h2>Glossary</h2>
   <dl class="gloss">
     <dt>Cash Balance Account</dt><dd>The hypothetical, account-style portion of the pension for service from 1999 on; grows via Basic Benefit, Interest, and Supplemental Pay Credits.</dd>
@@ -1210,7 +1226,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="contacts">
-  <div class="pn">Section 14</div>
+  <div class="pn">Section 15</div>
   <h2>Contacts &amp; sources</h2>
   <h4>For clients: administrators</h4>
   <div class="contacts">
@@ -1387,7 +1403,7 @@ secs.forEach(s=>s&&obs.observe(s));
   render();
 })();
 
-// ---- Company match calculator (Section 09) ----
+// ---- Company match calculator (Section 10) ----
 // Formulas, match-eligibility timing, and vesting are from the AT&T Retirement Savings Plan
 // SPD (NIN 78-63233). Option values encode formulaKey|eligibilityYears|matchInvestment.
 (function(){
@@ -1419,13 +1435,43 @@ secs.forEach(s=>s&&obs.observe(s));
   const money=n=>'$'+Math.round(n).toLocaleString('en-US');
   const pct=n=>n.toFixed(2).replace(/\.?0+$/,'');
 
+  // Compensation is a text field so it can display as currency ("$95,000").
+  // readComp() is the single place the numeric value is parsed back out.
+  const readComp=()=>{
+    const n=parseInt(compEl.value.replace(/\D/g,''),10);
+    return isNaN(n)?0:n;
+  };
+
+  // Reformat as the user types, keeping the caret after the same digit it was on.
+  function formatComp(){
+    const before=compEl.value;
+    const caret=compEl.selectionStart;
+    const digitsBefore=(before.slice(0,caret).match(/\d/g)||[]).length;
+
+    let digits=before.replace(/\D/g,'').replace(/^0+(?=\d)/,'').slice(0,9);
+    const out=digits?('$'+parseInt(digits,10).toLocaleString('en-US')):'';
+    if(out===before) return;
+    compEl.value=out;
+
+    let seen=0,pos=out.length;
+    if(digitsBefore>0){
+      for(let i=0;i<out.length;i++){
+        if(out.charCodeAt(i)>=48 && out.charCodeAt(i)<=57){
+          seen++;
+          if(seen===digitsBefore){pos=i+1;break;}
+        }
+      }
+    }
+    try{compEl.setSelectionRange(pos,pos);}catch(e){/* not all inputs support it */}
+  }
+
   function render(){
     const parts=cEl.value.split('|');
     const f=F[parts[0]]||F.flat80;
     const eligYears=parseInt(parts[1],10)||0;
     const inv=parts[2];
 
-    let comp=parseFloat(compEl.value); if(isNaN(comp)||comp<0) comp=0;
+    const comp=readComp();
     let rate=parseInt(rateEl.value,10); if(isNaN(rate)||rate<0) rate=0;
     let svc=parseFloat(svcEl.value);  if(isNaN(svc)||svc<0) svc=0;
     rateVal.textContent=rate+'%';
@@ -1440,7 +1486,11 @@ secs.forEach(s=>s&&obs.observe(s));
     const vested=svc>=VEST_YEARS;
 
     // ----- status banner -----
-    if(!eligible){
+    if(comp<=0){
+      banner.className='status-banner notmet';
+      banner.innerHTML='&times; Enter an annual Compensation amount'+
+        '<span class="sb-sub">The match is a percentage of Compensation, so there is nothing to calculate until that field has a value.</span>';
+    } else if(!eligible){
       banner.className='status-banner notmet';
       banner.innerHTML='&times; No Company Match yet'+
         '<span class="sb-sub">This group\'s match begins after '+eligYears+' Year of Service, and the client has '+pct(svc)+'. '+
@@ -1504,7 +1554,9 @@ secs.forEach(s=>s&&obs.observe(s));
       ' Annual estimates assuming a level contribution rate; verify the client\'s tier and service in NetBenefits.';
   }
 
-  [cEl,compEl,rateEl,svcEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
+  compEl.addEventListener('input',()=>{formatComp();render();});
+  compEl.addEventListener('blur',()=>{if(!compEl.value){compEl.value='$0';}render();});
+  [cEl,rateEl,svcEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
   render();
 })();
 </script>

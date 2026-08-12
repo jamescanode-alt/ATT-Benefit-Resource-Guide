@@ -1,5 +1,50 @@
 # PLAN_LOG
 
+## 2026-08-12 (3) — Promote the match to its own section; currency-format the Compensation input
+
+**Task.** Two requests. (1) Move the employer-match material out of §09 into its own numbered,
+nav-linked section so it is easier to find. (2) Format the calculator's "Annual eligible
+Compensation" field as currency.
+
+**Approach for the split.** New `#match` section between `#savings` and `#irmaa`, so this is the
+first change in the project that actually renumbers sections. Everything downstream shifts by one:
+irmaa 10→11, strategy 11→12, protections 12→13, glossary 13→14, contacts 14→15. Nav gains a
+"10 The company match" item under the existing "The Savings Plan" label.
+
+Content moved into the new section: the Employer Contributions intro and Matching Formula callout,
+the formulas-by-contract table, the match-eligibility and AT&T-Shares callouts, the per-pay-period
+match trap, and the whole calculator with its disclaimer. Two `<h4>` headings promote to `<h3>`
+now that they sit at section top level. The "Employer Contributions" `<h3>` is dropped, the section
+`<h2>` replaces it.
+
+**Things the split breaks that must be fixed with it:**
+- Cross-references in body copy: "$4,560/year, Section 09" → Section 10; "IRMAA line (Section 10)"
+  → Section 11; the JS section comment; and "(Section 09 above)" inside the moved eligibility
+  callout, which becomes a real link back to `#savings`.
+- `#savings` loses its client example when Rosa's match example moves. Project convention is one
+  Client Example per teaching section, so `#savings` needs a new one covering what it still owns
+  (415(c) headroom, Rule of 55, loan-before-rollover), and the match example loses its trailing
+  pre-tax/Roth clause so the two do not overlap.
+- Ordering: the per-pay-period trap has to land *before* the calculator, not after it, so the
+  calculator and its disclaimer close the section.
+
+**Approach for the currency input.** `type="number"` cannot display "$95,000", so the field becomes
+`type="text"` with `inputmode="numeric"`. A `formatComp()` reformats on every input event and
+restores the caret by counting digits before it (so mid-string edits do not jump to the end), and a
+single `readComp()` is the only place the numeric value is parsed back out. Guard added for an
+empty/zero Compensation, which previously produced a misleading "capturing the full match" banner
+showing $0.
+
+**Files.** `index.html` only.
+
+**Risks.** Renumbering is the failure mode here: a missed `pn` div, nav number, or body
+cross-reference leaves the guide internally inconsistent. Every renumber and cross-reference edit
+is asserted in the migration script rather than done by hand. `case-studies.html` links to guide
+sections 04–08 only, all upstream of the insertion point, so it is unaffected.
+
+**Next steps.** Script the move with assertions → verify numbering, nav, and anchors → test the
+currency field (typing, paste, letters, leading zeros, empty, caret) → responsive check → push.
+
 ## 2026-08-12 (2) — Union guide §09: real match formulas + company match calculator
 
 **Task.** Replace the union guide's generic company-match copy with the documented formulas from
