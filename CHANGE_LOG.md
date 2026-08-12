@@ -1,5 +1,61 @@
 # CHANGE_LOG
 
+## 2026-08-12 — ARSP Roth / non-Roth investing split and BrokerageLink blackout
+
+Added the September 2026 AT&T Retirement Savings Plan change to the site, sourced from
+`Roth-Investing-Account-Notice_Pages_1-21.pdf` (Fidelity SMM/Prospectus Supplement and ERISA
+blackout notice, issued against the July 2026 SPD).
+
+**New subsection `#roth-split`** inside the existing Savings Plan section of all three guides
+(`index.html` §09, `non-bargained.html` §11, `mobility.html` §06). No section or nav renumbering:
+the block sits inside `#savings` rather than becoming a new numbered section. It covers:
+
+- What changes on **Sept 21, 2026**: separate Roth and non-Roth investment elections in the
+  Standard Plan Options, and BrokerageLink splitting into **BrokerageLink** (non-Roth) and
+  **BrokerageLink Roth**.
+- The **blackout**, ~4 p.m. ET Sept 14 to ~9:30 a.m. ET Sept 22, 2026: no purchases and no
+  exchanges into or out of BrokerageLink, sell orders still allowed into Fidelity Government Cash
+  Reserves, open orders canceled Sept 14 and not re-established, and the knock-on risk to a
+  distribution funded from BrokerageLink. Standard Plan Options unaffected.
+- A four-row **key dates table** (online/paper account-opening restriction, the 4 p.m. Sept 14
+  cutoff, implementation Sept 21, blackout lift Sept 22).
+- **Three client situations** as pillars (core lineup only / BrokerageLink without Roth /
+  BrokerageLink with Roth), plus the NetBenefits Sources-chart method for telling them apart.
+- **What does not carry over**: third-party authorization including advisor access, automatic
+  investment of payroll contributions, dividend reinvestment elections, and cost basis.
+- **The split methodology**: Roth percentage proration, excluded security types, rounding rules,
+  the $100 true-up in core cash, the second proration above $100, odd lots, trailing dividends,
+  and sub-one-share liquidation.
+- **The forced-liquidation deadline**: if the client has not acted by Sept 14, 2026, AT&T has
+  directed Fidelity to sell BrokerageLink assets on their behalf, in the stated order.
+- The two **NetBenefits paths** for setting Roth elections (future contributions vs current
+  balance), and an advisor's-lens framing that separates the asset-location opportunity from the
+  operational deadline. The notice's own "this is not a recommendation" position is stated rather
+  than an allocation being suggested.
+
+**Also on all three guides:** four glossary terms (Standard Plan Options, BrokerageLink /
+BrokerageLink Roth, blackout period, SMM), a Fidelity BrokerageLink contact line (800-890-4015,
+Mon–Fri 8:30 a.m.–8 p.m. ET), and the SMM added to the source-documents line.
+
+**`triggers.html`:** a plain-language, second-person version of the same notice in the timeline
+section, matching the page's client-facing voice.
+
+**Population-specific wording.** The union guide adds a caveat that the notice names the ARSP
+specifically, so the advisor must confirm which savings plan a bargained client participates in
+before applying the dates. The management guide ties the change to clients running the
+mega-backdoor Roth through the plan's Roth In-Plan Rollover. The Mobility guide notes the
+younger-skewing Roth runway.
+
+**Files:** `index.html`, `non-bargained.html`, `mobility.html`, `triggers.html`, `PLAN_LOG.md`,
+`CHANGE_LOG.md`, `TODO.md`.
+**Validation:** all four pages rendered in preview at 1280x900 and 375x812. No console errors. No
+new horizontal overflow (the only elements exceeding the viewport at 375px are the pre-existing
+hero `.gear` decoration and the nav `select`). Date cells given `white-space:nowrap` so the
+key-dates table does not break a date across lines at narrow widths; step-body `<strong>` replaced
+with `<em>` because `.step .sc strong` is `display:block` and was orphaning the following
+sentence. Nav, section numbering, and all calculators untouched.
+**Status:** complete. Source PDF left untracked, consistent with the other SPDs in the library.
+
 ## 2026-08-11 — Tool renamed to "Client Milestones"
 
 The "Financial Trigger Finder" is now called **Client Milestones** everywhere on the site.

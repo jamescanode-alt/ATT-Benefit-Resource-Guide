@@ -1,5 +1,56 @@
 # PLAN_LOG
 
+## 2026-08-12 — ARSP Roth / non-Roth investment enhancements + BrokerageLink blackout
+
+**Task.** Add the September 2026 AT&T Retirement Savings Plan (ARSP) change to the three plan
+guides, sourced from `Roth-Investing-Account-Notice_Pages_1-21.pdf` (Fidelity SMM / Prospectus
+Supplement and ERISA blackout notice, issued against the July 2026 SPD).
+
+**Source facts (read directly from the PDF, pages 1–21):**
+1. Effective **Sept 21, 2026**: Roth and non-Roth balances can carry separate investment elections
+   in the Standard Plan Options; every BrokerageLink account splits into **BrokerageLink**
+   (non-Roth) and **BrokerageLink Roth**.
+2. **Blackout**: ~4 p.m. ET Sept 14, 2026 through ~9:30 a.m. ET Sept 22, 2026. No purchases and no
+   exchanges into/out of BrokerageLink; sell orders allowed, settling to Fidelity Government Cash
+   Reserves. Open orders canceled on/about Sept 14 after 4 p.m. ET, not re-established. Standard
+   Plan Options unaffected.
+3. Online BrokerageLink account opening restricted Sept 14–21; paper applications held until after
+   Sept 21.
+4. Features that do **not** carry to the Roth account: third-party authorization (explicitly
+   including advisor access), automatic investment of payroll contributions, dividend reinvestment
+   elections. Cost basis does not carry over (no effect on distribution tax treatment).
+5. Split methodology: Roth balance (cost basis of Roth contributions + earnings, priced two
+   business days prior) ÷ balance of eligible divisible securities = **Roth percentage**, prorated
+   across holdings. Excluded: rights/warrants, fractional shares outside the dividend reinvestment
+   program, unpriced/worthless securities, restricted securities. Rounding: equities and mutual
+   funds 3 decimals, core cash 2, fixed income down to the nearest 1,000 units (under 1,000 units
+   excluded). Overage/shortage up to $100 trued up in core cash; over $100 triggers a second
+   proration. A 100% Roth account transfers entirely in kind.
+6. Forced liquidation: if a holding cannot be split, Fidelity attempts contact; **if the client has
+   not acted by Sept 14, 2026, AT&T has directed Fidelity to sell on their behalf**. Order: mutual
+   funds (highest balance, then highest share price), equities (same rule), then fixed income
+   (lowest market value first; bonds before CDs). Usually ≤ $3.00; larger amounts limited to the
+   amount needed plus a 10% buffer. Trade costs and realized gain/loss borne by the existing
+   BrokerageLink account; commissions waived while administratively feasible.
+7. Side effects: round lots can become odd lots; trailing dividends stay in the existing account; a
+   resulting position under one total share is liquidated unless the client opted into fractional
+   share trading.
+8. Fidelity BrokerageLink line: **(800) 890-4015**, Mon–Fri 8:30 a.m.–8 p.m. ET.
+
+**Files.** `index.html`, `non-bargained.html`, `mobility.html` (new subsection inside the existing
+Savings Plan section, glossary terms, contacts/sources line). `triggers.html` gets a short
+plain-language client-facing version of the same notice. Tracking files updated.
+
+**Risks.** Do not renumber sections or nav (the change is a subsection inside `#savings`, not a new
+numbered section). Do not state which savings plan a bargained client is in: the notice names the
+ARSP, so the union guide must tell the advisor to confirm the client's plan first. Keep all dates
+and dollar thresholds exactly as printed. No investment advice: the notice itself carries an
+explicit "not a recommendation" statement about how to invest Roth vs non-Roth balances, so the
+guide describes mechanics and flags the decision rather than recommending an allocation.
+
+**Next steps.** Write subsections → validate in preview (desktop + mobile, no overflow, nav intact)
+→ push → CHANGE_LOG.
+
 ## 2026-08-11 — Rename the tool: "Financial Trigger Finder" -> "Client Milestones"
 
 **Task.** Update every reference to the tool's name across the site.

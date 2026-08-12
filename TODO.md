@@ -2,6 +2,21 @@
 
 ## Open
 
+- [ ] **Rewrite the Sept 2026 Roth-split subsection after the event.** The `#roth-split` block on
+      `index.html`, `non-bargained.html`, `mobility.html` and the client-facing callout in
+      `triggers.html` are written in future tense against a Sept 14–22, 2026 blackout. After
+      Sept 22, 2026: confirm the dates held, switch to past tense, drop the countdown framing, and
+      keep only the durable mechanics (two BrokerageLink accounts, separate Roth elections, what
+      had to be re-established).
+- [ ] **Confirm which savings plan bargained clients are in.** The Roth-enhancement notice names
+      the AT&T Retirement Savings Plan (ARSP). `index.html` currently tells the advisor to verify
+      the client's plan in NetBenefits before applying the dates. Resolve the caveat once a
+      bargained savings-plan SPD lands in the library.
+- [ ] **Advisor authorization is an ops task, not just a page.** Third-party (advisor) access does
+      not carry to the new BrokerageLink Roth account. Pulling the list of AT&T clients with
+      BrokerageLink authorization and re-papering it lives outside this repo; the guides flag it,
+      but someone has to own the list.
+
 - [ ] **Add the Management Cash Balance Program SPD to the library.** Most management employees
       hired after the mid-2000s cutoffs fall under this program, which is not yet documented in
       `Management SPDs/`. Until then, `non-bargained.html` Section 02 flags the gap and the
