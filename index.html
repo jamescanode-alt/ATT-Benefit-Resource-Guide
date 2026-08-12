@@ -172,6 +172,8 @@ table.v-lines th:not(:last-child) { border-right-color: rgba(255, 255, 255, 0.2)
 .calc .row{display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap;font-family:'Helvetica Neue',Arial,sans-serif}
 .calc label{flex:0 0 200px;font-size:13.5px;color:var(--ink-soft)}
 .calc input[type=range]{flex:1;min-width:160px;accent-color:var(--blue)}
+.calc input[type=date]{flex:1;min-width:0;max-width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:#fff;color:var(--ink)}
+.calc .out .o.hl .note{color:#9fb4d4;margin-top:8px}
 .calc .val{flex:0 0 110px;text-align:right;font-size:16px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
 .calc select{flex:1;min-width:0;max-width:100%;padding:7px;border:1px solid var(--line);border-radius:6px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;background:#fff}
 .calc .out{margin-top:18px;padding-top:20px;border-top:2px solid var(--cream-deep);display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -288,12 +290,13 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="navlabel">The Savings Plan</div>
   <a href="#savings" class="navitem"><span class="num">09</span>The 401(k) plan</a>
   <a href="#match" class="navitem"><span class="num">10</span>The company match</a>
-  <a href="#irmaa" class="navitem"><span class="num">11</span>IRMAA planning</a>
+  <a href="#match-calc" class="navitem"><span class="num">11</span>Contribution calculator</a>
+  <a href="#irmaa" class="navitem"><span class="num">12</span>IRMAA planning</a>
   <div class="navlabel">Advisor Toolkit</div>
-  <a href="#strategy" class="navitem"><span class="num">12</span>Strategy playbook</a>
-  <a href="#protections" class="navitem"><span class="num">13</span>Protections &amp; rules</a>
-  <a href="#glossary" class="navitem"><span class="num">14</span>Glossary</a>
-  <a href="#contacts" class="navitem"><span class="num">15</span>Contacts &amp; sources</a>
+  <a href="#strategy" class="navitem"><span class="num">13</span>Strategy playbook</a>
+  <a href="#protections" class="navitem"><span class="num">14</span>Protections &amp; rules</a>
+  <a href="#glossary" class="navitem"><span class="num">15</span>Glossary</a>
+  <a href="#contacts" class="navitem"><span class="num">16</span>Contacts &amp; sources</a>
   <div class="navlabel">Tools</div>
   <a href="triggers.html"><span class="num">▸</span>Client Milestones</a>
   <div class="navlabel">Training</div>
@@ -1015,8 +1018,23 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <p style="margin-top:8px">Also note: <strong>the match is not limited to pre-tax and Roth deferrals.</strong> The SPD defines the matched Basic Contributions as pre-tax, Roth, after-tax, or any combination, so after-tax (bucket ③) dollars within the matched cap earn the same match, and that's exactly why spillover keeps the match alive after the deferral limit. The only employee contributions that never earn match are <strong>catch-up contributions (age 50+)</strong> and anything <strong>above the matched cap</strong> (the first 6% of Compensation).</p>
   </div>
 
-  <h3 id="match-calc">Company match calculator</h3>
-  <p>Choose the client's contract family, then enter Compensation, contribution rate, and years of service. The tool returns the annual match under that contract's formula, how much match is being left behind at the current rate, and where those dollars are invested. Formulas, eligibility timing, and vesting come from the ARSP SPD (NIN 78-63233).</p>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>Three questions, in this order, before any 401(k) advice for a bargained client. <strong>Which tier are they on?</strong> The answer swings company money from 1.5% to 7.0% of pay, so never quote a rate from memory. <strong>Has the match even started?</strong> Most bargained groups wait a Year of Service, which changes what you tell a new hire entirely. <strong>What has the match been buying?</strong> For most groups it has been buying AT&amp;T stock by default, year after year, so the concentration question is usually already on the table by the time you meet a long-tenured client. Only after those three does the contribution-rate conversation mean anything.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Rosa Alvarez</span>
+    <p>Rosa earns $95,000 on a West Core CWA contract, which the SPD gives no special rule, so she is on the <strong>baseline 80% of the first 6%</strong>. Contributing 6% each pay period, $5,700/year, her employer adds 80% &times; $5,700 = <strong>$4,560/year</strong>, and at 36 years of service she is long vested. Run her through the calculator in Section 11, then drag the rate to 4%: the match falls to $3,040 and the card shows <strong>$1,520 a year left on the table</strong>, unrecoverable because the match is computed per pay period with no true-up. The same $95,000 and 6% under a BellSouth Utility Operations contract would return just $1,425. One more thing to check on Rosa specifically: 36 years of matching into the <strong>AT&amp;T Shares Fund</strong> is very likely a concentrated position worth reviewing, and worth an NUA look before any rollover.</p>
+  </div>
+</section>
+<section class="block" id="match-calc">
+  <div class="pn">Section 11 · Interactive</div>
+  <h2>Contribution &amp; limits calculator</h2>
+  <p>One tool for the three numbers that drive every 401(k) conversation: what the company match is worth under this client's contract, whether their contribution rate is actually reaching the IRS limits, and what rate would get them there. Enter the client's details and read the cards below.</p>
+
+  <h3>What the calculator does</h3>
+  <p>Match formulas, eligibility timing, and vesting come from the ARSP SPD (NIN 78-63233), covered in <a class="inline" href="#match">Section 10</a>. The contribution limits are the <strong>2026</strong> IRS figures. Date of birth drives one thing only: catch-up eligibility, which the SPD ties to the client's age <em>at the end of the calendar year</em>, not their birthday.</p>
+  <p class="small">A note on how the three limits interact, because the tool reports them separately. The <strong>402(g)</strong> limit caps the client's own elective deferrals at $24,500. The <strong>415(c)</strong> limit caps everything combined, their contributions plus the company match, at $72,000. <strong>Catch-up</strong> contributions sit outside both: they are a separate election, they are never matched, and they do not count toward 415(c). That is why a client can be maxed on 402(g) and still have tens of thousands of unused 415(c) room, which is the whole basis of the mega-backdoor Roth.</p>
 
   <div class="calc">
     <div class="row">
@@ -1050,13 +1068,17 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       </select>
     </div>
     <div class="row">
+      <label for="mDob">Date of birth</label>
+      <input type="date" id="mDob" value="1970-04-18">
+    </div>
+    <div class="row">
       <label for="mComp">Annual eligible Compensation</label>
       <span class="num-input"><input type="text" id="mComp" inputmode="numeric" autocomplete="off" value="$95,000" aria-describedby="mCompHint"></span>
       <span class="sr-only" id="mCompHint">Enter whole dollars. The field formats itself as currency.</span>
     </div>
     <div class="row">
       <label for="mRate">Basic Contribution rate (% of pay)</label>
-      <input type="range" id="mRate" min="0" max="20" step="1" value="6">
+      <input type="range" id="mRate" min="0" max="50" step="1" value="6">
       <span class="val" id="mRateVal">6%</span>
     </div>
     <div class="row">
@@ -1066,26 +1088,40 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
     <div id="mBanner"></div>
     <div class="results" id="mCards"></div>
+    <div class="results" id="mLimitCards" style="margin-top:14px"></div>
+
+    <div class="out">
+      <div class="o hl">
+        <div class="ol">Rate to max the 402(g) limit</div>
+        <div class="ov" id="mRate402">&mdash;</div>
+        <div class="note" id="mRate402Note" style="margin-top:8px"></div>
+      </div>
+      <div class="o hl">
+        <div class="ol">Rate to fill the 415(c) limit</div>
+        <div class="ov" id="mRate415">&mdash;</div>
+        <div class="note" id="mRate415Note" style="margin-top:8px"></div>
+      </div>
+    </div>
 
     <div class="note" id="mNote"></div>
   </div>
 
   <div class="callout warn">
     <span class="tag">Read this before relying on the output</span>
-    <p>The formulas come from a <strong>2022 edition</strong> of the ARSP SPD and are set by collective bargaining, so a newer contract can change them. The tool assumes a <strong>level contribution rate across every pay period</strong> and annualizes it; because the real match is computed per pay period with no true-up, an uneven contribution pattern produces less match than shown. It applies match eligibility (upon hire or one Year of Service) and 3-year vesting as documented, but not IRS testing limits for highly compensated employees or the annual compensation limit. <strong>Confirm the client's tier, rate, and service in NetBenefits.</strong></p>
+    <p>The match formulas come from a <strong>2022 edition</strong> of the ARSP SPD and are set by collective bargaining, so a newer contract can change them. The tool assumes a <strong>level contribution rate across every pay period</strong> and annualizes it; because the real match is computed per pay period with no true-up, an uneven contribution pattern produces less match than shown. It applies match eligibility, 3-year vesting, the 50% cap on Basic Contributions, and the 2026 IRS limits as documented, but <strong>not</strong> the IRS annual compensation limit, ADP/ACP testing limits for highly compensated employees, or any mid-year change in pay or contribution rate. Catch-up is reported as available capacity, not as money assumed to be contributed. <strong>Confirm the client's tier, rate, service, and elections in NetBenefits.</strong></p>
   </div>
 
   <div class="lens">
     <span class="tag">The advisor's lens</span>
-    <p>Three questions, in this order, before any 401(k) advice for a bargained client. <strong>Which tier are they on?</strong> The answer swings company money from 1.5% to 7.0% of pay, so never quote a rate from memory. <strong>Has the match even started?</strong> Most bargained groups wait a Year of Service, which changes what you tell a new hire entirely. <strong>What has the match been buying?</strong> For most groups it has been buying AT&amp;T stock by default, year after year, so the concentration question is usually already on the table by the time you meet a long-tenured client. Only after those three does the contribution-rate conversation mean anything.</p>
+    <p>The two target rates are the point of this tool. Most clients think of "maxing out the 401(k)" as hitting the <strong>402(g)</strong> number and stopping there, which for a typical bargained salary lands somewhere in the twenties as a percentage of pay. The <strong>415(c)</strong> rate is the one almost nobody has been shown, and the gap between the two is the after-tax contribution room that feeds the mega-backdoor Roth. Two cautions when you put the higher number in front of a client. It is arithmetic against an IRS ceiling, not a statement about what they can afford. And a rate that high runs straight into the per-pay-period match trap, so before anyone raises their rate, confirm the <strong>spillover election is on</strong> in NetBenefits, or deferrals stop mid-year and every remaining paycheck forfeits its match.</p>
   </div>
   <div class="callout client">
     <span class="tag">Client example: Rosa Alvarez</span>
-    <p>Rosa earns $95,000 on a West Core CWA contract, which the SPD gives no special rule, so she is on the <strong>baseline 80% of the first 6%</strong>. Contributing 6% each pay period, $5,700/year, her employer adds 80% &times; $5,700 = <strong>$4,560/year</strong>, and at 36 years of service she is long vested. Run her through the calculator above, then drag the rate to 4%: the match falls to $3,040 and the card shows <strong>$1,520 a year left on the table</strong>, unrecoverable because the match is computed per pay period with no true-up. The same $95,000 and 6% under a BellSouth Utility Operations contract would return just $1,425. One more thing to check on Rosa specifically: 36 years of matching into the <strong>AT&amp;T Shares Fund</strong> is very likely a concentrated position worth reviewing, and worth an NUA look before any rollover.</p>
+    <p>Rosa, born in 1970, earns $95,000 on the baseline 80% tier and contributes 6%. The tool shows the shape of her year at once: $5,700 of her own money, $4,560 of match, total additions of <strong>$10,260</strong> against the $72,000 ceiling, leaving roughly <strong>$61,700 of unused 415(c) room</strong>. Her 402(g) card reads $5,700 of $24,500, and because she turns 56 this year the catch-up card shows <strong>$8,000</strong> of additional capacity sitting outside both limits. The target rates price the moves: about <strong>25.8%</strong> of pay to max the deferral limit, and roughly 71% to fill 415(c), which is past the plan's 50% cap on Basic Contributions, so the tool reports that ceiling as out of range at her Compensation. The real conversation is how far above 6% she can go, not whether she can reach $72,000.</p>
   </div>
 </section>
 <section class="block" id="irmaa">
-  <div class="pn">Section 11</div>
+  <div class="pn">Section 12</div>
   <h2>IRMAA planning</h2>
   
   <h3>Coordinating pension &amp; 401(k) income with IRMAA in mind</h3>
@@ -1122,7 +1158,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="strategy">
-  <div class="pn">Section 12 · Advisor Toolkit</div>
+  <div class="pn">Section 13 · Advisor Toolkit</div>
   <h2>Strategy playbook</h2>
   <p>The recurring, high-value decisions where an AT&amp;T client benefits most from advice.</p>
 
@@ -1149,12 +1185,12 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <div class="callout client">
     <span class="tag">Client example: Rosa Alvarez, the full picture</span>
-    <p>Putting Rosa together: hired in 1990, she carries <strong>both</strong> pension formulas (Section 03), and with 36 years she meets Mod 75 outright, so her Pre-99 benefit is unreduced at any age (Section 06). At retirement she weighs the combined <strong>$2,300/month</strong> SLA, and a 50% J&amp;S at $2,070 with survivor protection (Section 08), against rolling the cash-balance portion to an IRA. While working she captures her full 6% match every pay period ($4,560/year, Section 10), and in the low-income years before RMDs she sizes Roth conversions to stay just under the $109,000 IRMAA line (Section 11). Those are five linked decisions, when she started, when she leaves, how she takes payment, how she saves, and how she manages MAGI, that only make sense evaluated together. Marcus, 20 years behind her with a cash-balance-only benefit, has a simpler but different set of levers.</p>
+    <p>Putting Rosa together: hired in 1990, she carries <strong>both</strong> pension formulas (Section 03), and with 36 years she meets Mod 75 outright, so her Pre-99 benefit is unreduced at any age (Section 06). At retirement she weighs the combined <strong>$2,300/month</strong> SLA, and a 50% J&amp;S at $2,070 with survivor protection (Section 08), against rolling the cash-balance portion to an IRA. While working she captures her full 6% match every pay period ($4,560/year, Section 10), and in the low-income years before RMDs she sizes Roth conversions to stay just under the $109,000 IRMAA line (Section 12). Those are five linked decisions, when she started, when she leaves, how she takes payment, how she saves, and how she manages MAGI, that only make sense evaluated together. Marcus, 20 years behind her with a cash-balance-only benefit, has a simpler but different set of levers.</p>
   </div>
 </section>
 
 <section class="block" id="protections">
-  <div class="pn">Section 13</div>
+  <div class="pn">Section 14</div>
   <h2>Protections &amp; rules to know</h2>
   <div class="cols">
     <div class="card">
@@ -1189,7 +1225,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="glossary">
-  <div class="pn">Section 14</div>
+  <div class="pn">Section 15</div>
   <h2>Glossary</h2>
   <dl class="gloss">
     <dt>Cash Balance Account</dt><dd>The hypothetical, account-style portion of the pension for service from 1999 on; grows via Basic Benefit, Interest, and Supplemental Pay Credits.</dd>
@@ -1226,7 +1262,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="contacts">
-  <div class="pn">Section 15</div>
+  <div class="pn">Section 16</div>
   <h2>Contacts &amp; sources</h2>
   <h4>For clients: administrators</h4>
   <div class="contacts">
@@ -1403,7 +1439,7 @@ secs.forEach(s=>s&&obs.observe(s));
   render();
 })();
 
-// ---- Company match calculator (Section 10) ----
+// ---- Contribution & limits calculator (Section 11) ----
 // Formulas, match-eligibility timing, and vesting are from the AT&T Retirement Savings Plan
 // SPD (NIN 78-63233). Option values encode formulaKey|eligibilityYears|matchInvestment.
 (function(){
@@ -1413,13 +1449,26 @@ secs.forEach(s=>s&&obs.observe(s));
   const rateEl=document.getElementById('mRate');
   const rateVal=document.getElementById('mRateVal');
   const svcEl=document.getElementById('mSvc');
+  const dobEl=document.getElementById('mDob');
   const banner=document.getElementById('mBanner');
   const cards=document.getElementById('mCards');
+  const limitCards=document.getElementById('mLimitCards');
+  const r402El=document.getElementById('mRate402');
+  const r402Note=document.getElementById('mRate402Note');
+  const r415El=document.getElementById('mRate415');
+  const r415Note=document.getElementById('mRate415Note');
   const note=document.getElementById('mNote');
 
-  const DEFERRAL_LIMIT=24500;   // 402(g), 2026
+  // ---- Tax-year figures. Update all five together each year; see ANNUAL-TAX-FIGURES.md ----
+  const PLAN_YEAR=2026;
+  const DEFERRAL_LIMIT=24500;   // 402(g) elective deferral limit
+  const ADDITIONS_LIMIT=72000;  // 415(c) total additions limit (catch-up is exempt)
+  const CATCHUP=8000;           // ages 50-59 and 64+
+  const CATCHUP_SUPER=11250;    // ages 60-63 only
+
   const VEST_YEARS=3;           // Company Match vests 100% after 3 Years of Service
   const MATCH_CAP=6;            // only Basic Contributions up to 6% of Compensation are matched
+  const BASIC_MAX=50;           // the plan caps Basic Contributions at 50% of Compensation
 
   // fn(rate) returns the Company Match as a percentage of Compensation
   const F={
@@ -1434,6 +1483,21 @@ secs.forEach(s=>s&&obs.observe(s));
 
   const money=n=>'$'+Math.round(n).toLocaleString('en-US');
   const pct=n=>n.toFixed(2).replace(/\.?0+$/,'');
+
+  // Catch-up eligibility is age at the END of the calendar year, per the SPD, not the birthday.
+  // Returns null when no valid DOB has been entered.
+  function ageAtYearEnd(){
+    const v=dobEl.value;
+    if(!v) return null;
+    const y=parseInt(v.slice(0,4),10);
+    if(isNaN(y) || y<1900 || y>PLAN_YEAR) return null;
+    return PLAN_YEAR-y;
+  }
+  function catchUpFor(age){
+    if(age===null || age<50) return 0;
+    if(age>=60 && age<=63) return CATCHUP_SUPER;
+    return CATCHUP;
+  }
 
   // Compensation is a text field so it can display as currency ("$95,000").
   // readComp() is the single place the numeric value is parsed back out.
@@ -1484,6 +1548,24 @@ secs.forEach(s=>s&&obs.observe(s));
     const missed=Math.max(0,maxMatch-earned);
     const own=comp*rate/100;
     const vested=svc>=VEST_YEARS;
+
+    // ----- IRS limits -----
+    // Basic Contributions fund 402(g) first; with spillover on, anything past the elective
+    // limit continues as after-tax, which still counts toward 415(c). Catch-up sits outside
+    // both: separate election, never matched, exempt from 415(c).
+    const age=ageAtYearEnd();
+    const catchUp=catchUpFor(age);
+    const deferrals=Math.min(own,DEFERRAL_LIMIT);
+    const afterTax=Math.max(0,own-DEFERRAL_LIMIT);
+    const additions=own+match;                       // 415(c) total additions
+    const room415=Math.max(0,ADDITIONS_LIMIT-additions);
+    const maxed402=deferrals>=DEFERRAL_LIMIT;
+    const maxed415=additions>=ADDITIONS_LIMIT;
+
+    // Rates that would reach each limit. Match is fixed at its cap for any rate >= 6%, so
+    // solving for 415(c) with maxMatch is exact at any realistic Compensation.
+    const rateFor402 = comp>0 ? DEFERRAL_LIMIT/comp*100 : null;
+    const rateFor415 = comp>0 ? (ADDITIONS_LIMIT-maxMatch)/comp*100 : null;
 
     // ----- status banner -----
     if(comp<=0){
@@ -1542,21 +1624,89 @@ secs.forEach(s=>s&&obs.observe(s));
          'Company Match vests 100% at 3 Years of Service, and automatically at death, disability, or age 65. Leaving before then forfeits the match, though the client\'s own contributions are always theirs.');
     }
 
+    // ----- IRS limit cards -----
+    limitCards.innerHTML='';
+    const lk=(cls,label,val,desc)=>{
+      const d=document.createElement('div'); d.className='rcard '+cls;
+      d.innerHTML='<div class="rlabel">'+label+'</div><div class="rval">'+val+'</div><div class="rdesc">'+desc+'</div>';
+      limitCards.appendChild(d);
+    };
+
+    if(maxed402){
+      lk('good','402(g) elective deferrals','Maxed',
+         money(DEFERRAL_LIMIT)+' of '+money(DEFERRAL_LIMIT)+'.'+
+         (afterTax>0
+           ? ' The remaining '+money(afterTax)+' of Basic Contributions continues as <strong>after-tax</strong> if the spillover election is on, which keeps the per-paycheck match running.'
+           : ' Exactly at the limit.'));
+    } else {
+      lk('warn','402(g) elective deferrals',money(deferrals),
+         'of the '+money(DEFERRAL_LIMIT)+' limit, '+money(DEFERRAL_LIMIT-deferrals)+' short. Elective deferrals are before-tax and Roth only; the employer match does not count toward this limit.');
+    }
+
+    if(maxed415){
+      lk('good','415(c) total additions','Maxed',
+         money(additions)+' of '+money(ADDITIONS_LIMIT)+' counting contributions plus '+money(match)+' of match. No room left for after-tax contributions this year.');
+    } else {
+      lk(room415>0&&maxed402?'warn':'neutral','415(c) total additions',money(additions),
+         'of the '+money(ADDITIONS_LIMIT)+' ceiling ('+money(own)+' contributed plus '+money(match)+' of match). <strong>'+money(room415)+'</strong> of headroom remains, and that headroom is the room for after-tax contributions converted promptly to Roth.');
+    }
+
+    if(age===null){
+      lk('neutral','Catch-up available','Enter a DOB',
+         'Catch-up eligibility depends on the client\'s age at the end of '+PLAN_YEAR+', so the date-of-birth field has to be filled in.');
+    } else if(catchUp===0){
+      lk('neutral','Catch-up available','Not yet',
+         'Age '+age+' at the end of '+PLAN_YEAR+'. Catch-up contributions open in the calendar year the client turns 50, not on the birthday itself.');
+    } else {
+      lk('good','Catch-up available',money(catchUp),
+         'Age '+age+' at the end of '+PLAN_YEAR+
+         (catchUp===CATCHUP_SUPER
+           ? ', inside the ages 60&ndash;63 window, so the enhanced catch-up applies. It drops back to '+money(CATCHUP)+' at 64.'
+           : '.')+
+         ' This sits <strong>on top of</strong> the '+money(DEFERRAL_LIMIT)+' limit as a separate election. It is never matched and is exempt from 415(c). Higher earners must make it as Roth under SECURE 2.0, subject to the bargained-plan timing above.');
+    }
+
+    // ----- rates needed to reach each limit -----
+    if(comp<=0){
+      r402El.innerHTML='&mdash;'; r402Note.textContent='';
+      r415El.innerHTML='&mdash;'; r415Note.textContent='';
+    } else {
+      if(rateFor402>BASIC_MAX){
+        r402El.textContent='Not reachable';
+        r402Note.innerHTML='At the plan\'s '+BASIC_MAX+'% cap on Basic Contributions, deferrals top out at '+money(comp*BASIC_MAX/100)+', short of the '+money(DEFERRAL_LIMIT)+' limit.';
+      } else {
+        r402El.textContent=rateFor402.toFixed(1)+'% of pay';
+        r402Note.innerHTML=money(DEFERRAL_LIMIT)+' &divide; '+money(comp)+'. '+
+          (maxed402?'Already there at the current '+rate+'%.':'Currently at '+rate+'%.');
+      }
+
+      if(rateFor415<=0){
+        r415El.textContent='Match alone fills it';
+        r415Note.innerHTML='The company match of '+money(maxMatch)+' already meets the '+money(ADDITIONS_LIMIT)+' ceiling, so there is no room for employee contributions. Check the IRS annual compensation limit for a client at this pay level.';
+      } else if(rateFor415>BASIC_MAX){
+        r415El.textContent='Not reachable';
+        r415Note.innerHTML='Even at the plan\'s '+BASIC_MAX+'% cap, contributions plus match reach '+money(comp*BASIC_MAX/100+maxMatch)+', short of '+money(ADDITIONS_LIMIT)+'. At this Compensation the 415(c) ceiling is out of range.';
+      } else {
+        r415El.textContent=rateFor415.toFixed(1)+'% of pay';
+        r415Note.innerHTML='('+money(ADDITIONS_LIMIT)+' &minus; '+money(maxMatch)+' of match) &divide; '+money(comp)+'. The portion above '+money(DEFERRAL_LIMIT)+' lands as after-tax, the fuel for a Roth conversion.';
+      }
+    }
+
     // ----- note -----
     const invTxt = inv==='same'
       ? 'For this group the Company Match is invested in the <strong>same funds as the employee\'s own contributions</strong>, not the AT&amp;T Shares Fund.'
       : 'For this group the Company Match is allocated to the <strong>AT&amp;T Shares Fund</strong> by default, so it builds single-stock exposure to the employer unless the client diversifies. Diversification is immediate and unlimited.';
     const deferTxt = own>DEFERRAL_LIMIT
-      ? ' At '+rate+'% of '+money(comp)+' the client crosses the '+money(DEFERRAL_LIMIT)+' elective-deferral limit partway through the year; the default spillover election continues contributions as after-tax, which keeps the per-paycheck match running.'
+      ? ' At '+rate+'% of '+money(comp)+' the client crosses the '+money(DEFERRAL_LIMIT)+' elective-deferral limit partway through the year, so <strong>the spillover election has to be on</strong>: it continues contributions as after-tax and keeps the per-paycheck match running. With spillover off, contributions stop at the limit and every remaining paycheck forfeits its match.'
       : '';
     note.innerHTML=invTxt+' The match is calculated <strong>each pay period</strong>, so any paycheck under '+MATCH_CAP+
       '% loses that period\'s match for good. Catch-up contributions are never matched.'+deferTxt+
-      ' Annual estimates assuming a level contribution rate; verify the client\'s tier and service in NetBenefits.';
+      ' Limits are '+PLAN_YEAR+' figures. Annual estimates assuming a level contribution rate; verify the client\'s tier, rate, and service in NetBenefits.';
   }
 
   compEl.addEventListener('input',()=>{formatComp();render();});
   compEl.addEventListener('blur',()=>{if(!compEl.value){compEl.value='$0';}render();});
-  [cEl,rateEl,svcEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
+  [cEl,rateEl,svcEl,dobEl].forEach(el=>{el.addEventListener('input',render);el.addEventListener('change',render);});
   render();
 })();
 </script>

@@ -21,9 +21,12 @@
 3. Re-check the **derived totals** (e.g., 402(g) + catch-up), they are hard-coded, not computed.
 4. Update the **"Last verified"** date above and the year in each page's IRMAA sentence
    ("For reference, 20XX IRMAA begins above…").
-5. Re-run the local preview and spot-check the 401(k) limits table and IRMAA paragraph on all
+5. Update the **JavaScript constants block** in `index.html` Section 11 (see the warning under the
+   401(k) limits table below). Prose search-and-replace will not catch it.
+6. Re-run the local preview and spot-check the 401(k) limits table and IRMAA paragraph on all
    three pages, plus `triggers.html` (timeline copy, the summary line under the inputs, and the
-   Section 04 reference table carry the catch-up, 402(g), and IRMAA figures).
+   Section 04 reference table carry the catch-up, 402(g), and IRMAA figures), plus the
+   `index.html` contribution calculator's limit cards and target-rate boxes.
 
 ---
 
@@ -48,6 +51,23 @@ Authoritative sources:
 | 415(c) + catch-up total (50–59/64+) | **$80,000** | limits table | `$80,000` |
 | 415(c) + super catch-up total (60–63) | **$83,250** | limits table | `$83,250` |
 | SECURE 2.0 Roth-catch-up FICA wage threshold | **~$150,000** (indexed) | catch-up callout | `$150,000` |
+
+> **⚠ These four figures are also hard-coded in JavaScript**, not just in prose. `index.html`
+> Section 11 (the contribution calculator) carries a constants block that must be updated in the
+> same pass, or the calculator will silently report last year's limits while the tables above show
+> the new ones. Search `index.html` for `Tax-year figures` to find it:
+>
+> ```js
+> const PLAN_YEAR=2026;
+> const DEFERRAL_LIMIT=24500;   // 402(g) elective deferral limit
+> const ADDITIONS_LIMIT=72000;  // 415(c) total additions limit (catch-up is exempt)
+> const CATCHUP=8000;           // ages 50-59 and 64+
+> const CATCHUP_SUPER=11250;    // ages 60-63 only
+> ```
+>
+> `PLAN_YEAR` drives catch-up eligibility (age at the end of that calendar year) and is printed in
+> the calculator's output, so it must move with the dollar figures. After updating, load the page
+> and check the calculator's three limit cards and both target-rate boxes against the new numbers.
 
 > **Note on the super catch-up:** it is **not** simply 150% of the regular catch-up. Under SECURE
 > 2.0 it is the greater of $10,000 or 150% of the 2024 base, indexed; for 2026 the IRS set it at

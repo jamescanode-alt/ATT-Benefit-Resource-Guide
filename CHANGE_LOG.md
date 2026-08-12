@@ -1,5 +1,61 @@
 # CHANGE_LOG
 
+## 2026-08-12 (4) — Calculator becomes Section 11, gains DOB and 402(g)/415(c) limit tracking
+
+**The calculator is now its own section**, "Contribution & limits calculator", directly after the
+match section. It reuses the existing `#match-calc` id (previously on its `<h3>`) as the section id
+so any saved links still resolve. Sections after it shift by one again: IRMAA 11→12, strategy
+12→13, protections 13→14, glossary 14→15, contacts 15→16. Nav now carries 16 items.
+
+**New: date of birth.** Drives catch-up eligibility only. The SPD ties catch-up to age at the
+**end of the calendar year**, not the birthday, so the tool computes `2026 − birth year`: under 50
+none, 50–59 $8,000, 60–63 $11,250, 64+ back to $8,000.
+
+**New: three IRS limit cards** in a second results row.
+
+- **402(g) elective deferrals** — reads "Maxed" or the dollar amount with the shortfall. When the
+  contribution rate pushes past $24,500 the card explains that the remainder continues as
+  after-tax under the spillover election.
+- **415(c) total additions** — contributions plus match against $72,000, with the remaining
+  headroom called out as the after-tax room that feeds the mega-backdoor Roth.
+- **Catch-up available** — the dollar capacity, the client's year-end age, and a reminder that
+  catch-up sits outside both limits, is never matched, and is exempt from 415(c).
+
+**New: two target-rate boxes** using the existing `.calc .out` component:
+
+- **Rate to max the 402(g) limit** = $24,500 ÷ Compensation.
+- **Rate to fill the 415(c) limit** = ($72,000 − match) ÷ Compensation. The match is fixed at its
+  cap for any rate at or above 6%, so this is exact rather than circular. Both clamp to the plan's
+  **50% cap on Basic Contributions**, and when 415(c) needs more than 50% the box reports "Not
+  reachable" with the actual ceiling instead of printing an impossible rate. A third case covers
+  Compensation so high the match alone fills 415(c).
+
+The contribution-rate slider went from 0–20% to **0–50%** to match the plan's Basic Contribution
+cap, otherwise the suggested rates were unreachable in the UI.
+
+**Guardrail on the target rates.** A rate high enough to fill 415(c) collides with the
+per-pay-period match trap, so the calculator's note now states that the spillover election must be
+on, or deferrals stop mid-year and every remaining paycheck forfeits its match. The section's
+advisor's lens repeats it and frames the output as arithmetic against an IRS ceiling rather than a
+recommendation about what a client can afford.
+
+**`ANNUAL-TAX-FIGURES.md` updated.** The four indexed limits are now hard-coded in JavaScript as
+well as prose, which prose search-and-replace would miss. The checklist gained a step for the JS
+constants block and a warning under the 401(k) limits table showing the exact code to edit.
+`PLAN_YEAR` must move with the dollar figures because it drives catch-up eligibility.
+
+**Files:** `index.html`, `ANNUAL-TAX-FIGURES.md`, `PLAN_LOG.md`, `CHANGE_LOG.md`, `TODO.md`.
+**Validation:** limit math hand-checked at $95,000 and $200,000 across 6%, 26%, 36%, and 50%
+contribution rates, including the exact-fill case ($200,000 at 31.2% reaches $72,000) and the
+unreachable case ($95,000, where 415(c) would need 71% against a 50% cap). Catch-up verified at
+birth years 1990 (none), 1970 (age 56, $8,000), 1964 (age 62, $11,250), 1962 (age 64, back to
+$8,000), and with the field cleared. All 16 sections and nav items in order, no broken anchors, no
+duplicate ids. No console errors; zero horizontal overflow at 867px and 375px, with both results
+grids and the target-rate panel collapsing to one column on mobile. Screenshots were again
+unavailable (the preview pane is not compositing), so verification was structural and by
+measurement.
+**Status:** complete.
+
 ## 2026-08-12 (3) — The company match becomes Section 10; Compensation input formats as currency
 
 **The match is now its own section.** All employer-match material moved out of §09 into a new

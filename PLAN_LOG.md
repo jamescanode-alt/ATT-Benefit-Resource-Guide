@@ -1,5 +1,48 @@
 # PLAN_LOG
 
+## 2026-08-12 (4) — Calculator becomes Section 11; adds DOB, 402(g)/415(c) status, and target rates
+
+**Task.** (1) Move the calculator out of the match section into its own section, immediately after
+it. (2) Add date of birth. (3) Report whether the client is maxing the 402(g) and 415(c) limits.
+(4) Compute the deferral rate that would max each limit, given the employer contribution.
+
+**Renumbering.** New `#match-calc` section at 11, so irmaa 11→12, strategy 12→13, protections
+13→14, glossary 14→15, contacts 15→16. Reusing the existing `#match-calc` id (currently on the
+calculator's `<h3>`) as the section id keeps any saved links working; the `<h3>` loses its id so
+there is no duplicate.
+
+**What DOB buys.** Catch-up eligibility is age at the *end of the calendar year*, per the SPD
+("You must be age 50 by the end of the calendar year"). So ageAtYearEnd = PLAN_YEAR − birthYear:
+under 50 → none; 50–59 → $8,000; 60–63 → $11,250; 64+ → back to $8,000. Catch-up is a separate
+election, is never matched, and is exempt from 415(c), so it must be reported as its own number,
+not folded into the contribution-rate math.
+
+**The limit math.**
+- employeeTotal = comp × rate/100, plan-capped at 50% of Compensation (Basic Contribution limit).
+- 402(g) counts the first $24,500 of that; with spillover on, the remainder continues as after-tax.
+- 415(c) total additions = employeeTotal + match. Catch-up is excluded.
+- Rate to max 402(g) = 24,500 / comp × 100.
+- Rate to fill 415(c) = (72,000 − match) / comp × 100. Match is fixed at its cap for any rate at or
+  above 6%, so it is not circular at any realistic Compensation. Both rates clamp to the plan's 50%
+  ceiling, and when 415(c) needs more than 50% the tool must say it is unreachable rather than
+  print an impossible rate.
+- The rate slider must extend from 0–20 to 0–50 or the suggested rates are unreachable in the UI.
+
+**2026 figures used** (all four already catalogued in `ANNUAL-TAX-FIGURES.md`): 402(g) $24,500;
+415(c) $72,000; catch-up $8,000; super catch-up $11,250. These are now *hard-coded in JavaScript*
+as well as in prose, which is a new maintenance surface, so `ANNUAL-TAX-FIGURES.md` has to be
+updated to point at the JS constants block.
+
+**Risks.** Suggesting a rate that fills 415(c) implies a very high deferral percentage, which
+collides with the per-pay-period match trap: front-loading to that rate without the spillover
+election on can stop contributions early and forfeit match. The output has to carry that warning
+next to the number, not leave it two sections away. Also: this is arithmetic against published IRS
+limits, not a contribution recommendation, and the copy should read that way.
+
+**Next steps.** Script the section split with assertions → rebuild the calculator inputs and
+outputs → verify limit math at several ages and compensations, including the unreachable-415(c)
+case → responsive check → push.
+
 ## 2026-08-12 (3) — Promote the match to its own section; currency-format the Compensation input
 
 **Task.** Two requests. (1) Move the employer-match material out of §09 into its own numbered,

@@ -41,6 +41,11 @@
 - [ ] **Currency formatting is only on the union guide's match calculator.** If any other dollar
       input is added, reuse the `formatComp`/`readComp` pair and the `.sr-only` hint from
       `index.html` rather than writing a second implementation.
+- [ ] **The contribution calculator hard-codes the 2026 IRS limits in JavaScript.** `PLAN_YEAR`,
+      `DEFERRAL_LIMIT`, `ADDITIONS_LIMIT`, `CATCHUP`, and `CATCHUP_SUPER` live in a constants block
+      in `index.html` Section 11 and must be updated with the annual pass.
+      `ANNUAL-TAX-FIGURES.md` now carries the step and the exact code, so this is a pointer, not a
+      second checklist.
 - [ ] **Recheck match tiers when a newer ARSP SPD lands.** The SPD in the library is a 2022 edition
       and match tiers are set by the collective bargaining agreement, so a newer contract can move
       them. The `#match-calc` option values and the formulas table in `index.html` are the two
