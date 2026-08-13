@@ -41,6 +41,14 @@
 - [ ] **Currency formatting is only on the union guide's match calculator.** If any other dollar
       input is added, reuse the `formatComp`/`readComp` pair and the `.sr-only` hint from
       `index.html` rather than writing a second implementation.
+- [ ] **415(c) target rate is wrong above roughly $1M of Compensation.** Section 11 solves the
+      "rate to fill 415(c)" with the closed form `(72000 - maxMatch) / comp`, which assumes the
+      match is already at its cap. Above about $1M the numerator goes negative and the box reports
+      "Match alone fills it", which is false. Unreachable for this population, and the disclaimer
+      already says the IRS annual compensation limit is not applied, so it is cosmetic here. The
+      exact fix is the piecewise-linear segment solver written up in
+      `../CONTRIBUTION-CALCULATOR-SPEC.md` §3, which is verified to return 1.54% at $2M against a
+      133⅓%/100% ladder (exactly $72,000 of additions). Port it if this section is ever revisited.
 - [ ] **The contribution calculator hard-codes the 2026 IRS limits in JavaScript.** `PLAN_YEAR`,
       `DEFERRAL_LIMIT`, `ADDITIONS_LIMIT`, `CATCHUP`, and `CATCHUP_SUPER` live in a constants block
       in `index.html` Section 11 and must be updated with the annual pass.

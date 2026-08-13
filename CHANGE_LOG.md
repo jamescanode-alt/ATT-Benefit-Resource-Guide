@@ -1,5 +1,30 @@
 # CHANGE_LOG
 
+## 2026-08-13 — Portable build spec for the contribution calculator (written outside this repo)
+
+Wrote `C:\Users\james\Projects\CONTRIBUTION-CALCULATOR-SPEC.md`, a standalone spec for rebuilding
+the Section 11 calculator in other employers' resource guides. It lives outside this repo at the
+user's request; no page in this project changed.
+
+The spec generalizes the AT&T implementation in one significant way: match formulas are expressed
+as a **tier ladder** (`[{upTo, rate}]`) rather than the named-formula enum used here, which covers
+flat and multi-tier formulas with the same code path, and the "rate to fill 415(c)" is solved with
+a **piecewise-linear segment solver** instead of this repo's closed-form shortcut.
+
+Verified rather than asserted: a standalone page was assembled purely from the spec's CSS, HTML,
+and JS blocks and driven through the documented test vectors. All five formula cases reproduce this
+project's live output exactly ($95k and $200k across flat 80%, flat 25%, and the 133⅓%/100%
+ladder), along with catch-up across six birth years, the empty-compensation, zero-rate,
+not-yet-eligible, and unvested states, and the exact-fill boundary at $200,000. The generalized
+solver also returns 1.54% at $2,000,000 of compensation, which checks out to exactly $72,000 of
+additions, where this project's shortcut fails.
+
+**Only change inside this repo:** a TODO entry recording that 415(c) limitation, with a pointer to
+the corrected approach.
+
+**Files:** `TODO.md`, `CHANGE_LOG.md` (this repo); `CONTRIBUTION-CALCULATOR-SPEC.md` (outside).
+**Status:** complete.
+
 ## 2026-08-12 (4) — Calculator becomes Section 11, gains DOB and 402(g)/415(c) limit tracking
 
 **The calculator is now its own section**, "Contribution & limits calculator", directly after the
