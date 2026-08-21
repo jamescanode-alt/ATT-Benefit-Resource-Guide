@@ -1,5 +1,74 @@
 # PLAN_LOG
 
+## 2026-08-21 (3) — The missing SPD arrives: Bargained Cash Balance Program #2
+
+**Task.** User supplied two PDFs and asked whether either fills the gap flagged this morning.
+
+**Answer: one does, completely.**
+
+- `AT&T_Bargained Cash Balance_2_20250711.pdf` = **Bargained Cash Balance Program #2 SPD,
+  NIN 78-74506, July 2025.** This is exactly the document named as missing. It **confirms every
+  figure** the guide had been carrying and that I had flagged as unsourced.
+- `Southeast_SPD (1).pdf` = **Southeast Program SPD, NIN 78-30077, July 2014.** An older edition,
+  superseded by the Jan. 2025 SPD already in the library. Adds nothing authoritative; filed for
+  edition history only.
+
+**What the BCB#2 SPD confirms, verbatim.**
+- Age Credit Factor ladder **1.77 / 2.27 / 2.78 / 3.28 / 4.04%** at ages <30 / 30-36 / 37-43 /
+  44-49 / 50+, measured at the **end of the month** the credit is applied.
+- The guide's worked example is the **SPD's own**: age 40, $4,000 Pension Compensation, 2.78%
+  → **$111.20**.
+- Interest is a monthly rate compounding to a flat **4.5%** annual, applied to the **prior
+  month-end balance before** the current credit is added. SPD example: $10,000 × 0.367% =
+  **$36.70**, new balance **$10,236.70**. Again the guide's exact numbers.
+- Supplemental Pay Credit = **2%** on Pension Compensation above the Social Security Wage Base.
+
+So the guide was **right all along**; the material simply had no supporting document in the folder.
+My "unsourced" flag was accurate as a statement about the library and wrong as an implication about
+the content. Correcting that is the bulk of this pass.
+
+**What the SPD adds that the guide did not have.**
+- **The alternate ladder is real and I now have its scope**: 1.75 / 2.25 / 2.75 / 3.25 / 4.00%,
+  applying (a) always, to the Mobility Orange/Purple/Black/Blue contracts and IBEW Local 1547
+  (Alascom), and (b) to *earlier service* under a dozen named contracts with changeover dates of
+  Jan. 1, 2013, Jan. 1, 2014, or Jan. 1, 2015. A long-tenured client can carry **both** ladders.
+  The guide's old parenthetical ("some bargaining units use a slightly different schedule") was
+  directionally right but gave no scope.
+- **A frozen group**: Mobility Blue (IBEW 1547), all titles except Cell Site Technician and Cell
+  Site Tech Foreman, accruals **frozen Jan. 1, 2020**, interest only after.
+- **Coverage**: bargained employees hired **after Aug. 8, 2009** across essentially every core
+  contract, plus several groups eligible regardless of hire date. This is the program the
+  post-2009 population lands in, which is what made the gap material.
+- **NRA = 65 or the 3rd anniversary of participation** (lowest service threshold of the seven).
+  Vesting 3 years, participation after 1 year, 5 years to file suit, $7,000 mandatory cash-out.
+- **Lump sum is contract-gated**: available to 14 named contracts, not to all.
+- Pension Compensation includes **target incentive payments for leveraged job titles** in the major
+  core contracts.
+
+**Approach.** Reverse this morning's caution rather than merely soften it, and upgrade the content
+in the process: the guide can now state the mechanic *and* its scope, which it never could before.
+Keep the three-way program distinction (BCB#2 age-graded / Southeast band-driven / Mobility flat
+5%), because that was a genuine finding and remains correct and useful.
+
+**Decisions.**
+- Replace the "sourcing caution" callout with a **three-engine comparison table** keyed on the
+  Aug 8, 2009 hire-date line, which is the actual decision the advisor has to make.
+- Restore the Marcus Bell example to a real calculation, now correctly placed in BCB#2, and add the
+  IBEW-specific check that his early service may fall under the 1.75% ladder (changeover
+  Jan. 1, 2014 for IBEW contracts).
+- Keep the rebuilt Southeast Sam case study as-is. It is correct, sourced, and teaches the
+  band-driven mechanics that genuinely differ. No reason to revert it.
+- Add **§4.7** to the union consolidated MD as a full program subsection, and leave BCB#2 **out of
+  the Part 2 matrix** deliberately, since it has no Pension Band component and no Mod 75 subsidy so
+  most rows would read n/a. A pointer note explains the omission.
+
+**Risks.** (1) Re-reversing published copy twice in one day is confusing if the reasoning is not
+recorded; hence the detail here and in CHANGE_LOG. (2) The alternate-ladder scope is intricate
+(two populations, three changeover dates) and is the most likely thing to be misread, so it gets its
+own callout rather than a footnote.
+
+**Next steps.** Restore §04 → add §4.7 to the union MD → refresh source tables → re-verify → push.
+
 ## 2026-08-21 (2) — Case-study consistency pass, and an unsourced schedule found
 
 **Task.** Check the three case-study decks against the same-day SPD updates.

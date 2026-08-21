@@ -8,7 +8,7 @@ This document states the language that is **common to all six bargained pension 
 
 > **Plan-name note:** The 2020 SPDs were issued under the **AT&T/WarnerMedia Pension Benefit Plan** name (a temporary name used while WarnerMedia was part of AT&T). The name was restored to **AT&T Pension Benefit Plan** effective **Jan. 1, 2021**, and the Plan Sponsor is **AT&T Inc.** The July 2024 SMMs and the 2025 Southeast SPD use the restored name. They refer to the same Plan; the WarnerMedia reference is historical.
 
-> **Edition warning — the six programs are not all on the same vintage.** Five of the six program subsections in Part 4 still rest on **2020** SPDs. The **Southeast Program has been restated** by a **Jan. 1, 2025** SPD (NIN 78-74516), which is the authoritative source for §4.2 and which corrected or added several provisions (Age Incentive Factor table, the 60 × Pension Band Amount credit formula, the $75,000 Partial Lump Sum, the $25,000 retiree-death-benefit cap, updated Pension Band Tables). Where Part 2 or Part 3 generalizes across all six, **§4.2 governs for Southeast.**
+> **Edition warning — the programs are not all on the same vintage.** Five of the six legacy program subsections in Part 4 still rest on **2020** SPDs. Two have been restated: the **Southeast Program** by a **Jan. 1, 2025** SPD (NIN 78-74516), the authoritative source for §4.2, which corrected or added several provisions (Age Incentive Factor table, the 60 × Pension Band Amount credit formula, the $75,000 Partial Lump Sum, the $25,000 retiree-death-benefit cap, updated Pension Band Tables); and **Bargained Cash Balance Program #2** by a **July 2025** SPD (NIN 78-74506), covered in §4.7. Where Part 2 or Part 3 generalizes across the legacy six, **§4.2 governs for Southeast** and **§4.7 governs for anyone hired after Aug. 8, 2009.**
 
 ---
 
@@ -17,7 +17,7 @@ This document states the language that is **common to all six bargained pension 
 | Part | Contents |
 |------|----------|
 | **Part 1** | Program ↔ union map (who each program covers) |
-| **Part 2** | At-a-glance comparison matrix (all six programs, side by side) |
+| **Part 2** | At-a-glance comparison matrix (the six legacy programs, side by side) |
 | **Part 3** | Shared provisions — common to all six programs, stated once |
 | **Part 4** | Program-specific provisions — unique language, by program/union |
 | **Part 5** | Plan-wide modifications (2024 SMMs) |
@@ -25,7 +25,7 @@ This document states the language that is **common to all six bargained pension 
 | **Part 7** | Supplementary documents |
 | **Appendix** | Source-file inventory |
 
-The six pension programs covered: **West, Southeast, Mobility (Bargained), Midwest, East, and Legacy Bargained.**
+The pension programs covered: **West, Southeast, Mobility (Bargained), Midwest, East, and Legacy Bargained** (the six legacy programs, all closed to hires after Aug. 8, 2009), plus **Bargained Cash Balance Program #2**, which is the catch-all for bargained employees hired *after* that date and is therefore the program most currently-hired bargained clients are in.
 
 ---
 
@@ -41,6 +41,7 @@ Each program of the AT&T Component Part of the Plan covers a defined set of barg
 | **Midwest Program** | Certain AT&T Midwest region bargained employees | • AT&T Midwest Core Contract – **CWA District 4** (incl. Appendix G / CPE)<br>• AT&T Midwest Contract – **IBEW System Council T-3**<br>• **IBEW Local 21** (Appendix D)<br>• **IBEW Local 58** (Appendix E)<br>• **IBEW Local 134** (Appendix F) |
 | **East Program** | Certain AT&T East region bargained employees | • AT&T East Core Contract – **CWA District 1** (before Dec. 27, 2020)<br>• AT&T Corp. Core Contract – **CWA** (on and after Dec. 27, 2020) |
 | **Legacy Bargained Program** | Legacy AT&T Corp. bargained employees | • AT&T Corp. Core Contract – **CWA**<br>• AT&T Corp. National Contract – **IBEW System Council T-3** |
+| **Bargained Cash Balance Program #2** | Bargained employees hired **after Aug. 8, 2009** across essentially all core contracts, plus several groups eligible regardless of hire date | • Substantially every CWA and IBEW core contract in the table above, on a post-Aug-2009 hire basis<br>• Plus National Internet Tier 1, IBEW SC T-3 Midwest (Sales Consultants), BellSouth Utility Operations – CWA D3, and several named appendices, regardless of hire date |
 
 > For the precise, controlling eligibility definition for any individual, see the "Eligibility and Participation" section of that program's SPD and contact the Recordkeeper (Fidelity Service Center). Special rules apply to transfers, reclassifications, surpluses, and (for East) Converted East Employees.
 
@@ -66,9 +67,16 @@ The table below consolidates each program's "Benefits at a Glance" so the differ
 | **Deadline to file death-benefit claim** | Within 1 year of death | Within 1 year of death | Within 1 year of death | Within 1 year of death | Within 1 year of death | Within 1 year of death |
 | **Time to file suit (after final determination)** | 5 years | Applicable statute of limitations | 5 years | 5 years | 120 days | 5 years |
 
+> **The seventh program.** The matrix above covers the six **legacy** programs. **Bargained Cash
+> Balance Program #2** is deliberately not a column in it, because it differs on the axis the matrix
+> is organized around: it has **no Pension Band component and no Modified Rule of 75 subsidy**, so
+> most of the rows would read "n/a." Its terms are in [§4.7](#47-bargained-cash-balance-program-2--the-post-aug-2009-catch-all).
+> In one line: participation after 1 year, **vesting at 3 years**, **NRA = 65 or the 3rd anniversary
+> of participation**, benefit = the Cash Balance Account, **5 years** to file suit.
+
 ---
 
-# Part 3 — Shared Provisions (common to all six programs)
+# Part 3 — Shared Provisions (common to all six legacy programs)
 
 The following provisions appear, in materially identical language, in all six bargained SPDs. They are stated once here. Where a program modifies one of these, the difference is called out in **Part 4**.
 
@@ -317,6 +325,92 @@ Note that Southeast offers **no 100% J&S option**, unlike West, Midwest, and (po
 - **Program SMM:** A program-specific July 2024 SMM also applies (identical $7,000 cash-out change — see Part 5).
 - **Time to file suit:** No later than **five (5) years** from the date of final determination by the Benefit Plan Committee.
 
+## 4.7 Bargained Cash Balance Program #2 — *the post-Aug-2009 catch-all*
+
+> **Source:** Bargained Cash Balance Program #2 of the AT&T Component Part of the AT&T Pension Benefit Plan SPD, **NIN 78-74506, July 2025** (restates the 2020 edition). This is the program that covers bargained employees **hired after Aug. 8, 2009**, the date at which all six legacy programs in §§4.1–4.6 close. It is therefore the program for most currently-hired bargained clients, and the only one of the seven whose credit is **age-graded**.
+
+### Who it covers
+
+**Always eligible, regardless of hire date:**
+- CWA — AT&T Services, Inc. **National Internet Contract Tier 1**
+- IBEW System Council T-3 **Midwest Contract (Sales Consultants)**
+- **BellSouth Telecommunications, LLC (Utility Operations) — CWA District 3**
+- Appendix F to the East Core CWA, Appendix F to the Midwest Core CWA, Appendix J to the Southwest Core CWA, Appendix E to the West Core CWA, and Appendix C to the IBEW SC T-3 Midwest Contract
+
+**Eligible if hired after Aug. 8, 2009**, in: AT&T Corp. Core CWA · IBEW SC T-3 AT&T Corp. National · AT&T East Core CWA · AT&T Midwest Core CWA · IBEW SC T-3 Midwest · AT&T Southeast Core CWA · AT&T Billing Southeast CWA · COS CWA D4 · AT&T Southwest Core CWA · AT&T West Core CWA · Pacific Bell IBEW Local 1269 · IBEW Locals 21, 58, 134 · and NMNUs hired/rehired after Aug. 8, 2009 who follow the Midwest, Southwest, or West Core CWA, IBEW SC T-3 Midwest, or AT&T Corp. Core CWA (hired before Jan. 1, 2015) agreements.
+
+**Eligible by contract-specific date:**
+
+| Group | Eligible if hired/rehired |
+|---|---|
+| Mobility **Purple** (CWA D6) | on or after Jan. 1, 2009 |
+| Mobility **Orange** (CWA D1, 2-13, 4, 7, 9) | on or after Jan. 1, 2010 |
+| National Internet Contract **Tier 2** | on or after Jan. 1, 2011 |
+| Mobility **Black** (CWA D3) | on or after Jan. 1, 2011 but **before Jan. 1, 2015** |
+| Mobility **Blue** (IBEW 1547), except Cell Site Technicians/Foremen | on or after June 1, 2011 but **before Jan. 1, 2016** — **accruals frozen Jan. 1, 2020** |
+| **Alascom** IBEW Local 1547 | on or after Jan. 1, 2012 |
+| **Southeast Wire Technicians** | effective Apr. 1, 2013 |
+| IBEW SC T-3 (**Yellow Contract**) | — |
+
+Also covers former **DIRECTV** bargained employees in the Southeast, Midwest, Southwest, West, and AT&T Corp. Core CWA contracts, Mobility Orange and Purple, and National Internet Tier 2.
+
+### Core terms
+
+- **Participation:** after **1 Year of Participation Service**. **Vesting:** 100% after **3 years** of service.
+- **Normal Retirement Age:** age 65, or if later the **3rd anniversary** of the date participation began — the **lowest** NRA service threshold among the bargained programs (West/Mobility Bargained use 5 years, Midwest/East 4).
+- **Formula:** the **Cash Balance Account** is the entire benefit. There is no Pension Band component and no Modified Rule of 75 subsidy attached to it.
+- **Time to file suit:** **5 years** from final determination.
+- **Survivor benefits:** Spouse, Legally Recognized Partner, or — **only if lump-sum eligible** — another Designated Beneficiary.
+- **Plan identifiers:** AT&T Pension Benefit Plan; Plan Number **017**; Sponsor **AT&T Inc.** (EIN 43-1301883); Administrator AT&T Services, Inc.
+- **Mandatory cash-out:** present value ≤ **$7,000** is distributed or rolled over as soon as practicable after Termination of Employment.
+
+### The three credit types
+
+**① Basic Benefit Credit** — credited **monthly on the last day of the month** (or at termination/transfer, if earlier), equal to **Pension Compensation × the Age Credit Factor**.
+
+*Pension Compensation* = monthly wages including actual base pay, group incentive compensation, individual nondiscretionary incentive (e.g. commissions), group incentive adjustments, short-term disability payments received while an employee, and Success Sharing Plan payments not contributed to an HRA. For **leveraged job titles** in the major core contracts (AT&T Corp. CWA, IBEW SC T-3 AT&T Corp. and Midwest, Midwest Core CWA D4 incl. Appendix G, Southeast Core CWA D3, Southwest Core CWA D6, West Core CWA D9, IBEW Locals 21/58/134), **target incentive payments** are also included.
+
+**Primary Age Credit Factor ladder:**
+
+| Age at end of the month | Factor |
+|---|---|
+| Less than 30 | **1.77%** |
+| 30 – 36 | **2.27%** |
+| 37 – 43 | **2.78%** |
+| 44 – 49 | **3.28%** |
+| 50 and older | **4.04%** |
+
+Age is measured **at the end of the month** the credit is applied, or at the date of termination for the termination month. Someone born Feb. 29 is treated as born Feb. 28.
+
+*SPD example:* age 40, Pension Compensation $4,000, factor 2.78% → Basic Benefit Credit = **$111.20**.
+
+**Alternate ladder — 1.75% / 2.25% / 2.75% / 3.25% / 4.00%** at the same age bands. It applies to two distinct populations, and a long-tenured participant can have **both** ladders in their history:
+
+- **By contract, always:** Mobility **Orange, Purple, Black, Blue** Contracts, and **IBEW Local 1547 (AT&T Alascom)**.
+- **By service date, for earlier service:** before **Jan. 1, 2013** — AT&T Corp. Core CWA, Midwest Core CWA D4, COS CWA D4, Southeast CWA D3 (incl. Billing Southeast and Utility Operations), West Core CWA D9 and IBEW Local 1269. Before **Jan. 1, 2014** — Southwest Core CWA D6, IBEW Locals 21/58/134, IBEW SC T-3 Midwest and AT&T Corp. National, West Core Appendix D and "Moved Employees." National Internet Tier 1 and Tier 2 effective **Jan. 1, 2015**.
+
+> **Frozen group.** Employees of **AT&T Mobility Services LLC — IBEW Local 1547 (Blue Contract)** in all job titles **except Cell Site Technician and Cell Site Tech Foreman** had accruals **frozen Jan. 1, 2020**. No further Basic Benefit Credits or Supplemental Pay Credits; **Interest Credits only** after that date.
+
+**② Interest Credit** — credited **monthly**, at a monthly rate that compounds to a flat **4.5% annual rate**, applied to the balance as of the **last day of the prior month** (that is, *before* the current month's Basic Benefit Credit is added). Begins the month after the account first receives a Basic Benefit Credit and continues to the last day of the month before payments begin, **even after Termination of Employment**.
+
+This is a **fixed 4.5%**, not a Treasury-linked rate — the only one of the cash-balance programs with a fixed rate, which makes it the most predictable to project.
+
+*SPD example:* prior month-end balance $10,000, this month's credit $200 → interest = $10,000 × 0.367% = **$36.70**; new balance **$10,236.70**.
+
+**③ Supplemental Pay Credit** — for participants whose **year-to-date Pension Compensation exceeds the Social Security Wage Base**, credited monthly on the last day of the month.
+
+- In the **first month** the wage base is exceeded: (year-to-date Pension Compensation − Wage Base) × **2%**.
+- In **each later month** of that year: monthly Pension Compensation × **2%**.
+- Pay received from a Participating Company **before** becoming a Participant counts toward determining whether the wage base is exceeded.
+
+*SPD example:* year-to-date Pension Compensation $173,600 at Nov. 30 against a $168,600 wage base → ($173,600 − $168,600) × 2% = **$100** for that month.
+
+### Forms of payment
+
+Single Life Annuity · 50% J&S · 75% J&S. A **lump sum** is available only to the following contracts: AT&T Corp. CWA · AT&T Billing Southeast · Southeast Core CWA · BellSouth Telecommunications (Utility Ops) · Midwest Core CWA · COS CWA · Southwest Core CWA · West Core CWA · IBEW SC T-3 AT&T Corp. National · IBEW SC T-3 Midwest · IBEW Locals 21/58/134 · IBEW Local 1269 (Pacific Bell) · CWA D6 Mobility Purple · IBEW SC T-3 Yellow Contract.
+
+If no payment election is made by the later of Normal Retirement Age or the day after Termination of Employment, the Program defaults to a **Joint and 50% Survivor Annuity** (with a Spouse) or a **Single Life Annuity** (without).
+
 ---
 
 # Part 5 — Plan-Wide Modifications (2024 SMMs)
@@ -471,6 +565,7 @@ Current, authoritative editions (these supersede the older files below for their
 | 20250711---SPD---Southeast-Program-of-the-ATT-Component-Part-of-the-ATT-Pension-Benefit-Plan | SPD (Southeast) | 78-74516 | Jan. 1, 2025 |
 | 20260710---SPD---BellSouth-Savings-and-Security-Plan | SPD/Prospectus (BSSP) | 78-74971 | July 2026 |
 | 20260710---SPD---ATT-Retirement-Savings-Plan | SPD/Prospectus (ARSP) | 78-74968 | July 2026 |
+| 20250711---SPD---Bargained-Cash-Balance-Program-2 | SPD (Bargained Cash Balance #2) | 78-74506 | July 2025 |
 
 Earlier files in `Bargained SPDs\`:
 
@@ -487,9 +582,12 @@ Earlier files in `Bargained SPDs\`:
 | 9 | 202011---SPD---ATT-Legacy-Bargained-Program…-49745.pdf | SPD (Legacy Bargained) | 107 |
 | 10 | 20240711---SMM---ATT-Pension-Benefit-Plan…-72720 (4).pdf | SMM (plan-wide) | 24 |
 | 11 | ATT-Retirement-Savings-Plan_78-63233.pdf | SPD (ARSP, 2022) — **superseded by NIN 78-74968** | — |
+| 12 | 201407---SPD---Southeast-Program---NIN-78-30077-SUPERSEDED.pdf | SPD (Southeast, July 2014) — **superseded by NIN 78-74516** | 80 |
 
 SMMs incorporated into the Jan. 2025 Southeast SPD: NIN 78-54413 (Feb. 2021, NMNU special rule) · NIN 78-58130 (Sept. 2021, plan rename to AT&T Pension Benefit Plan, new sponsor and plan number) · NIN 78-63911 (July 2022, **$25,000 retiree death benefit cap**) · NIN 78-68461 (Dec. 2022, rehire within 5 years on/after Aug. 9, 2015 is not a break in service) · NIN 78-72689 (Mar. 2024, Workday contact-update instructions) · NIN 78-72720 (July 2024, **mandatory cash-out $5,000 → $7,000**) · NIN 78-74266 (Nov. 2024, phone number). The 2025 edition also updated the **Pension Band Tables** per bargaining and the Participating Company list.
 
+SMMs incorporated into the July 2025 Bargained Cash Balance #2 SPD: NIN 78-58130 (Sept. 2021, plan rename to AT&T Pension Benefit Plan, new sponsor and plan number) · NIN 78-63767 (Feb. 2022, new DIRECTV vesting special rule; IBEW Local 1547 (AT&T Alascom) added to the basic-benefit special rule).
+
 SMMs incorporated into the July 2026 ARSP SPD: NIN 78-74856 (Nov. 2025, AT&T International Stock Fund manager changes) · NIN 78-74837 (Sept. 2025, **ASSP → ARSP balance consolidation and blackout**, effective Jan. 1, 2026). Into the July 2026 BSSP SPD: NIN 78-74856 (Sept. 2025, fund manager changes) · NIN 78-74876 (Feb. 2026, **71% match rate effective Apr. 1, 2026**).
 
-*Compiled June 29, 2026; revised Aug. 21, 2026 to incorporate the Jan. 2025 Southeast Program SPD and the July 2026 ARSP and BSSP SPDs. This reference summarizes and reorganizes the source SPDs/SMMs for navigation; it is not itself a plan document. For any individual's benefits, the official Plan documents and the applicable Program SPD/SMM govern. Confirm details with the Recordkeeper (Fidelity Service Center, 800-416-2363).*
+*Compiled June 29, 2026; revised Aug. 21, 2026 to incorporate the Jan. 2025 Southeast Program SPD, the July 2026 ARSP and BSSP SPDs, and the July 2025 Bargained Cash Balance Program #2 SPD. This reference summarizes and reorganizes the source SPDs/SMMs for navigation; it is not itself a plan document. For any individual's benefits, the official Plan documents and the applicable Program SPD/SMM govern. Confirm details with the Recordkeeper (Fidelity Service Center, 800-416-2363).*

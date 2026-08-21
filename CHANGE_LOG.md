@@ -1,5 +1,119 @@
 # CHANGE_LOG
 
+## 2026-08-21 (3) — Bargained Cash Balance Program #2 SPD acquired; the flagged gap is closed
+
+**Summary.** The document flagged this morning as missing has been supplied. It **confirms every
+figure** the guide had been carrying and that the previous commit had flagged as unsourced, so this
+pass reverses that caution and upgrades the content with scope detail the guide never had.
+
+### What the two supplied PDFs are
+
+| File | Identity | Verdict |
+|---|---|---|
+| `AT&T_Bargained Cash Balance_2_20250711.pdf` | **Bargained Cash Balance Program #2 SPD, NIN 78-74506, July 2025** | **Fills the gap completely.** Added to the library. |
+| `Southeast_SPD (1).pdf` | **Southeast Program SPD, NIN 78-30077, July 2014** | Superseded by the Jan 2025 SPD already in the library. Filed for edition history, marked SUPERSEDED. |
+
+### The guide was right; the library was incomplete
+
+The BCB#2 SPD confirms, verbatim, every figure the previous commit had demoted to "illustration":
+
+- Age Credit Factor **1.77 / 2.27 / 2.78 / 3.28 / 4.04%** at ages <30 / 30–36 / 37–43 / 44–49 / 50+.
+- The guide's worked example **is the SPD's own**: age 40, $4,000 Pension Compensation, 2.78%
+  → **$111.20**.
+- Interest: a monthly rate compounding to a flat **4.5%** annual, applied to the **prior month-end
+  balance before** the current credit is added. SPD example $10,000 × 0.367% = **$36.70**,
+  new balance **$10,236.70** — again the guide's exact numbers.
+- Supplemental Pay Credit **2%** on Pension Compensation above the Social Security Wage Base, with
+  the SPD's example ($173,600 YTD vs a $168,600 wage base → **$100**).
+
+The previous commit's caution was accurate about the *library* and wrong in what it implied about
+the *content*. It has been removed rather than softened.
+
+### What the SPD adds that the guide never had
+
+- **The alternate ladder now has scope.** 1.75 / 2.25 / 2.75 / 3.25 / 4.00% applies to two distinct
+  populations: **always** to Mobility Orange/Purple/Black/Blue and IBEW Local 1547 (Alascom); and to
+  **earlier service** under a dozen named contracts with changeover dates of **Jan 1, 2013**
+  (AT&T Corp. Core, Midwest Core, COS, Southeast D3, West D9, IBEW 1269), **Jan 1, 2014** (Southwest
+  D6, IBEW Locals 21/58/134, IBEW SC T-3 Midwest and Corp. National, West Appendix D), and
+  **Jan 1, 2015** (National Internet Tiers 1 and 2). A long-tenured client can carry **both**
+  ladders across their history. The guide previously had this as an unscoped parenthetical.
+- **A frozen group:** Mobility Blue (IBEW 1547), all titles except Cell Site Technician and Cell Site
+  Tech Foreman, **accruals frozen Jan 1, 2020**, interest only thereafter.
+- **Coverage:** bargained employees hired **after Aug 8, 2009** across essentially every core
+  contract, plus groups eligible regardless of hire date (National Internet Tier 1, IBEW SC T-3
+  Midwest Sales Consultants, BellSouth Utility Operations CWA D3, named appendices).
+- **NRA = 65 or the 3rd anniversary of participation**, the lowest service threshold of the seven
+  programs. Vesting 3 years; participation after 1 year; **5 years** to file suit; $7,000 cash-out.
+- **Lump sum is contract-gated** to 14 named contracts, not universal.
+- Pension Compensation includes **target incentive payments for leveraged job titles** in the major
+  core contracts.
+
+### index.html
+
+- The sourcing caution is replaced by a **three-engine comparison table** (BCB#2 age-graded /
+  Southeast band-driven / Mobility flat 5%, plus East, Legacy Bargained, Nonbargained), keyed on the
+  **Aug 8, 2009** hire-date line, which is the decision the advisor actually has to make.
+- The age-graded subsection is restored as sourced BCB#2 content, with the full Pension Compensation
+  definition and the leveraged-job-title rule.
+- New callouts for the **alternate ladder and its two-population scope** and for the **frozen Blue
+  Contract group**.
+- Interest section now states BCB#2's **fixed 4.5%** (noting it is the only cash-balance program
+  without a Treasury-linked rate, so the most predictable to project) alongside Mobility's
+  quarterly-reset rate.
+- The **Marcus Bell** example is restored to a real calculation, correctly placed in BCB#2, with the
+  step-up arithmetic ($111.20 → $161.60) and an IBEW-specific check that his pre-2014 service may
+  fall under the 1.75% ladder.
+- The "Don't confuse these two" callout is re-framed: the Supplemental Pay Credit and the
+  Supplemental Monthly Pension Benefit belong to **different programs** and cannot appear on the same
+  statement. The hire date is the tell.
+- Glossary entries for `Age Credit Factor`, `Basic Benefit Credit`, and `Cash Balance Account`
+  restored with per-program bases and both ladders.
+- Source table gains BCB#2 (NIN 78-74506); the superseded list gains the 2014 Southeast SPD.
+
+### Union consolidated Markdown
+
+- New **§4.7 Bargained Cash Balance Program #2**: full coverage map (including the contract-specific
+  eligibility dates for Mobility Purple/Orange/Black/Blue, National Internet Tier 2, Alascom,
+  Southeast Wire Technicians, and former DIRECTV groups), core terms, all three credit types with
+  both ladders, the freeze, forms of payment with the 14-contract lump-sum gate, and plan identifiers.
+- Scope line, organization table, and edition warning updated from "six programs" to the six legacy
+  programs **plus** BCB#2.
+- **Deliberately left out of the Part 2 matrix**, with a note explaining why: BCB#2 has no Pension
+  Band component and no Modified Rule of 75 subsidy, so most rows would read "n/a." A one-line
+  summary and a link to §4.7 sit under the table instead.
+- Appendix updated with both new documents and the BCB#2 SMM chain (NIN 78-58130, NIN 78-63767).
+
+### Unchanged, deliberately
+
+The rebuilt **Southeast Sam case study** stays as written. It is correct, sourced, and teaches the
+band-driven mechanics that genuinely differ from BCB#2. The three-way engine distinction found
+yesterday was a real finding and survives intact — only the "unsourced" framing was wrong.
+
+### Files changed
+
+`index.html` · `AT&T Union-Bargained Pension - Consolidated SPD & SMM Reference.md` · `PLAN_LOG.md` ·
+`TODO.md` · `CHANGE_LOG.md`, plus two PDFs added to `Bargained SPDs/`.
+
+### Validation
+
+- HTML tag-balance across all **7** pages — pass.
+- Internal anchors on all 7 pages — **0 broken**. Markdown internal links — **0 broken**
+  (46 headings).
+- Confirmed no "unsourced / source unverified / not in this library" language survives anywhere.
+- Confirmed the restored §04 renders: three-engine table, both ladders, the frozen-group callout,
+  and the BCB#2-labelled worked examples all present in the DOM.
+- Mobile (375px): **no horizontal page overflow**; the new three-engine table sits in a `.tscroll`
+  container.
+- **0 console errors.**
+
+### Status
+
+Complete, and the **highest-priority open item from this morning is closed**. Every bargained
+population now has verified pension mechanics in the library: pre-Aug-2009 hires through the six
+legacy program SPDs, post-Aug-2009 hires through BCB#2. The remaining documented gap is the
+**Management Cash Balance Program** SPD on the management side.
+
 ## 2026-08-21 (2) — Case-study consistency pass; unsourced cash-balance schedule scoped
 
 **Summary.** Checked the three case-study decks against the morning's SPD updates. The decks were

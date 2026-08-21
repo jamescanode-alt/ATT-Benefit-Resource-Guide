@@ -82,21 +82,19 @@
       consistent with the open question rather than resolving it, so the hedge in `triggers.html`
       (and its `by<=1959` branch) stays as written. Revisit when IRS final regulations land.
 
-- [ ] **PRIORITY: get the Bargained Cash Balance Program SPD.** A full-text search of every PDF in
-      the library finds **no occurrence of "Age Credit Factor"**, and none of the age-graded
-      schedule (1.77%-4.04%), the flat 4.5% interest assumption, or the 2% Supplemental Pay Credit
-      that the guide has been teaching. Every apparent hit on `4.04`/`1.77` is a substring inside a
-      pension band dollar table. The guide's own source list cites a *Bargained Cash Balance Program
-      #2 SPD* that is **not in either SPD folder**, and that is the most likely origin. Consequence:
-      **bargained employees hired after Aug 9, 2009 have no verified pension mechanics anywhere in
-      this project** (every other bargained program closes at that date). `index.html` §04 now
-      carries a sourcing caution and the material is labelled illustrative, but the real fix is the
-      document. Highest-value acquisition on this list.
+- [ ] **Bargained Cash Balance #2 detail worth adding to the guide.** The SPD (NIN 78-74506,
+      July 2025) is now in the library and §04 covers its three credit types. Not yet reflected
+      anywhere: the **contract-gated lump sum** (available to 14 named contracts only, so a BCB#2
+      client is not automatically lump-sum eligible), the **NRA of 65 or the 3rd anniversary of
+      participation**, and the **default to a 50% J&S / Single Life Annuity** if no election is made
+      by the later of NRA or the day after termination. §4.7 of the union consolidated MD has all
+      three; the HTML guide does not.
 
-- [ ] **Re-verify the age-graded illustration once that SPD lands.** If it confirms the schedule,
-      remove the sourcing caution in `index.html` §04, restore the Marcus Bell example to a real
-      calculation, and re-point the glossary entries. If it shows something different, the
-      illustration should be replaced outright rather than re-labelled.
+- [ ] **Consider a BCB#2 case study.** The union deck now teaches Southeast band-driven mechanics
+      (Sam) but has no case on the age-graded design, which is the one most currently-hired
+      bargained clients are actually under. Good checkpoints: which ladder applies given a hire date
+      and contract, the step-up at 44 and 50, and that interest is figured on the prior month-end
+      balance before the credit is added.
 
 - [ ] **Verify Pension Band Amounts against Attachment 3 of the current SPD.** The Jan 2025
       Southeast SPD updated the Pension Band Tables per bargaining, and the guide's examples now use
