@@ -1,5 +1,115 @@
 # CHANGE_LOG
 
+## 2026-08-21 (2) — Case-study consistency pass; unsourced cash-balance schedule scoped
+
+**Summary.** Checked the three case-study decks against the morning's SPD updates. The decks were
+inconsistent, but the cause sat upstream: the union guide has been teaching a cash-balance engine
+that **cannot be sourced to any SPD in the project library**. Scoped it honestly, rebuilt the one
+case study built entirely on it, and corrected the distractor rationales that were teaching it as
+fact in a second deck.
+
+### The finding
+
+Full-text extraction of every PDF in `Bargained SPDs/` and `Management SPDs/` (`pdftotext -layout`,
+then grep across the corpus) shows the phrase **"Age Credit Factor" occurs zero times**. Every hit
+on `4.04` or `1.77` is a coincidental substring inside a pension **band dollar table** (`54.04`,
+`21.77`, `51.77`), not a percentage. The same applies to the flat **4.5%** interest assumption and
+the **2% Supplemental Pay Credit** on pay above the Social Security Wage Base.
+
+What the library does document:
+
+| Program | Basic Benefit Credit | Interest Credit |
+|---|---|---|
+| Southeast | 60 × Pension Band Amount, annual | prior-Nov 30-yr Treasury, annual, on the Jan 1 balance |
+| Mobility | flat 5% of Pension Compensation, monthly | monthly rate compounding to the 30-yr Treasury from the second month of the prior quarter |
+| East | Service Category table by compensation | prior-Nov 30-yr Treasury, min 4.00% |
+| Legacy Bargained | Pension Band Credits, annual | prior-Nov 30-yr Treasury, min 3.75% |
+| Nonbargained | frozen since Jan 14, 2005 | 30-yr Treasury, middle month of prior quarter |
+
+The likely origin is the **Bargained Cash Balance Program**, whose SPD the guide's source list cites
+but which **is not in the library**. That program covers bargained employees hired after
+Aug 9, 2009, so the schedule may be correct for it. The defect was presenting it as the general
+union design and applying it to programs that use something else.
+
+**Self-correction:** this morning's §04 rewrite attributed the age-graded design to "the Mobility
+Bargained and other cash-balance programs." Mobility Bargained is a Pension Band program and the
+Mobility Program uses a flat 5%. That attribution was wrong and is fixed here.
+
+### index.html
+
+- New **sourcing caution** in §04 with the per-program table above, naming the missing SPD as the
+  probable origin and stating plainly: do not quote these percentages, do not apply them to any
+  program in the table.
+- The age-graded subsection is retained but relabelled **"Illustration only"**; the Supplemental Pay
+  Credit subsection relabelled **"source unverified"**.
+- The pay-driven half of the two-designs callout now describes the **real Mobility design** (flat
+  5%, quarterly-reset Treasury rate, SPD example of $32.70 on $10,000 at 4%).
+- The §04 advisor's lens no longer asserts that cash balance "grows faster in later career years" as
+  a general truth. It now distinguishes: true twice over in an age-graded design, true **only
+  through compounding** under Southeast (the credit does not rise with age), and likewise under
+  Mobility's flat 5%. Using the age-graded argument on those clients overstates the cost of leaving.
+- The Marcus Bell example is re-scoped: hired 2012, so he is in the **Bargained Cash Balance
+  Program** whose SPD is missing. Arithmetic kept but explicitly marked illustrative, with getting
+  that SPD named as the action item.
+- Glossary: `Age Credit Factor` flagged as not documented in the library; `Basic Benefit Credit` and
+  `Cash Balance Account` rewritten to give the program-specific bases.
+
+### case-studies.html (union deck)
+
+- **Sam** rebuilt on sourced Southeast mechanics. His premise was already consistent (hired 2004 →
+  Southeast-eligible, no pre-99 service → cash-balance only), so only the engine changed. New
+  checkpoints: 60 × $57.23 = **$3,433.80** credited Dec 31; interest **$3,600** on the **Jan 1
+  balance of $80,000** (with $3,754.52 called out as the classic error of applying the rate after
+  the credit); a raise and heavy overtime move the credit **not at all**, only a higher band does;
+  and credits stop at termination while **interest keeps accruing**. Distractors now name the
+  Mobility flat-5% and age-graded designs as the wrong answers rather than teaching them as true.
+- **Gloria** named as Southeast; band amount refreshed $51.81 → **$57.23** (the 2025 SPD's own
+  worked-example figure), so her Basic Monthly Pension Benefit moves $933.62 → **$1,031.28** and the
+  Pre-99 total to **$1,041.48**; added the reminder that band amounts are renegotiated and vary by
+  termination year. Her Age Incentive Factor of 1.06 was verified **correct** as written (age 65
+  falls in the 62-or-older tier) and left alone. The dangling Supplemental Pay Credit cross-reference
+  is replaced with the sum-not-greater-of point.
+
+### case-studies-mobility.html
+
+The deck's Mobility content is accurate and well sourced and was left intact. Four **distractor
+rationales** asserted the age-graded schedule and the wage-base credit were "the union cash balance"
+— teaching a false fact about the union plan as the reason a wrong answer is wrong. Reworded to
+describe those mechanics generically without attributing them to the union plan.
+
+### case-studies-nb.html
+
+Checked; **no changes needed**. Greatest-of-three, the Jan 14 2005 cash-balance freeze, and the
+CAM-still-accruing contrast are all correct and unaffected by the new SPDs.
+
+### Files changed
+
+`index.html` · `case-studies.html` · `case-studies-mobility.html` · `PLAN_LOG.md` · `TODO.md` ·
+`CHANGE_LOG.md`
+
+### Validation
+
+- HTML tag-balance across all **7** pages — pass.
+- Internal anchors on all 7 pages — **0 broken**.
+- The decks are **JavaScript data**, so tag-balance is not sufficient; executed them in the browser:
+  `CASES.length` = 6, question total **30** (matches the deck's own "30 checkpoints" header), every
+  question carries a guide `ref`, every multiple-choice has exactly one `correct` option.
+- Drove the rebuilt Sam case through the real UI: correct multiple-choice registers and renders its
+  explanation plus the guide link; advanced to checkpoint 2; numeric entry of `3433.80` validates
+  and shows the right explanation.
+- Verified the new arithmetic: 60 × 57.23 = 3,433.80 · 80,000 × 4.5% = 3,600 ·
+  57.23 × 17 × 1.06 = 1,031.28 · (600 × 0.001) × 17 = 10.20 · 1,031.28 + 10.20 = 1,041.48.
+- Mobile (375px) and desktop: no horizontal page overflow; the new caution table sits in a
+  `.tscroll` container with `overflow-x: auto`.
+- **0 console errors** on the union guide and the case-study deck.
+
+### Status
+
+Complete. The remaining gap is external to the repo and now explicit in the guide, the TODO, and
+here: **the Bargained Cash Balance Program SPD is not in the library**, so bargained employees hired
+after Aug 9, 2009 have no verified pension mechanics in this project. Obtaining it is the highest-
+value next acquisition.
+
 ## 2026-08-21 — Three new authoritative SPDs folded in (ARSP Jul 2026, BSSP Jul 2026, Southeast pension Jan 2025)
 
 **Summary.** Three newly-supplied SPDs were treated as authoritative and reconciled against the whole

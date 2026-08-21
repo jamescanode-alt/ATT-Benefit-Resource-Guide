@@ -1,5 +1,72 @@
 # PLAN_LOG
 
+## 2026-08-21 (2) — Case-study consistency pass, and an unsourced schedule found
+
+**Task.** Check the three case-study decks against the same-day SPD updates.
+
+**What the check turned up.** The decks were inconsistent, but the root cause was not in the decks.
+The union guide has been teaching a cash-balance engine that **cannot be sourced to any SPD in the
+project library**: an age-graded *Age Credit Factor* schedule (1.77% / 2.27% / 2.78% / 3.28% /
+4.04%), a flat **4.5%** annual interest assumption (0.367%/month), and a **2% Supplemental Pay
+Credit** on pay above the Social Security Wage Base.
+
+Verification method: extracted all 20+ PDFs in `Bargained SPDs/` and `Management SPDs/` with
+`pdftotext -layout` and grepped the full corpus. **"Age Credit Factor" occurs zero times.** Every
+hit on `4.04` / `1.77` is a coincidental substring inside a pension *band dollar table*
+(`54.04`, `21.77`, `51.77`). What the library actually documents:
+
+| Program | Basic Benefit Credit | Interest Credit |
+|---|---|---|
+| Southeast | **60 × Pension Band Amount**, annual | prior-Nov 30-yr Treasury, annual, on the Jan 1 balance |
+| Mobility | **flat 5% of Pension Compensation**, monthly | monthly rate compounding to the 30-yr Treasury from the second month of the prior quarter |
+| East | Service Category table by compensation | prior-Nov 30-yr Treasury, min **4.00%** |
+| Legacy Bargained | Pension Band Credits, annual | prior-Nov 30-yr Treasury, min **3.75%** |
+| Nonbargained | **frozen** since Jan 14, 2005 | 30-yr Treasury, middle month of prior quarter |
+
+**Most likely origin.** The guide's own source list cites a *Bargained Cash Balance Program #2 SPD*
+that **is not present in the library** (`find -iname '*.pdf' | grep -i cash.balance` → nothing).
+That program is real and is where post-Aug-2009 bargained hires land, so the schedule may well be
+correct *for it*. The defect is that it was presented as the general union design and applied to
+programs that demonstrably use something else.
+
+**I propagated part of this earlier today.** In the morning's §04 rewrite I attributed the
+age-graded design to "the Mobility Bargained and other cash-balance programs." Mobility Bargained is
+a **Pension Band** program, and the Mobility Program uses a **flat 5%**. That attribution was wrong
+and is corrected in this pass.
+
+**Approach.** Do not delete the age-graded material (it may be right for the missing program, and
+the mechanic is worth teaching). Instead: demote it to a clearly labelled illustration, add a
+sourcing caution with the table above, and rebuild anything that presented it as a client's actual
+benefit.
+
+**Decisions.**
+- `case-studies.html` Sam: rebuilt on **sourced Southeast** mechanics rather than deleted. Hired
+  2004 → Southeast-eligible with no pre-99 service → genuinely cash-balance-only, so the case works
+  unchanged in premise. New checkpoints teach the real counterintuitive points: the credit is
+  band-driven so a raise/overtime moves nothing, interest is figured on the **Jan 1 balance before**
+  the year's credit is added, and interest keeps accruing after termination.
+- `case-studies.html` Gloria: named as Southeast, band amount refreshed $51.81 → **$57.23** (the
+  2025 SPD's own worked-example figure), and the dangling cross-reference to the Supplemental Pay
+  Credit replaced with the sum-not-greater-of point. Her Age Incentive Factor of **1.06 is correct**
+  as written (age 65 → the 62-or-older tier), so it stays.
+- `case-studies-mobility.html`: the deck's own Mobility content is **accurate and well sourced**
+  (flat 5%, 0.327%, correct Pension Compensation definition). But four distractor rationales
+  asserted the age-graded schedule and the wage-base credit were "the union cash balance," teaching
+  a false fact about the union plan as the *reason a wrong answer is wrong*. Reworded to describe
+  the mechanics generically without attributing them to the union plan.
+- `case-studies-nb.html`: checked, **no changes needed**. Its greatest-of-three framing, the
+  Jan 14 2005 cash-balance freeze, and the CAM-still-accruing contrast are all correct.
+
+**Risks.** (1) Softening the age-graded content could read as making the guide less useful; the
+mitigation is that the mechanic is retained and the *replacement* Southeast content is stronger
+because it is sourced. (2) The real gap is now visible and unfixable from inside the repo: the
+Bargained Cash Balance Program SPD has to be obtained, and until it is, clients hired after
+Aug 9, 2009 have no verified pension mechanics anywhere in this library.
+
+**Next steps.** Scope §04 and the glossary → rebuild Sam → fix Gloria → fix the Mobility distractors
+→ re-verify the decks actually execute (they are JS data, so tag-balance alone is insufficient) →
+push.
+
 ## 2026-08-21 — Three new authoritative SPDs: ARSP (Jul 2026), BSSP (Jul 2026), Southeast pension (Jan 2025)
 
 **Task.** Fold three newly-added SPDs into the guide set and both consolidated Markdown references.

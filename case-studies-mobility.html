@@ -297,7 +297,7 @@ const CASES = [
     '<strong>Owen, age 44</strong>, Mobility Program, monthly <strong>Pension Compensation $6,000</strong>',
     'Prior month-end <strong>Cash Balance: $120,000</strong>',
     'Illustrative interest crediting rate this quarter: <strong>0.327% per month</strong> (monthly equivalent of a ~4% 30-Year Treasury rate)',
-    'His union cousin retires next year and has been telling Owen about her &ldquo;age credit factor going up at 50&rdquo;',
+    'His cousin in another AT&T pension program has been telling Owen about her &ldquo;credit going up at 50&rdquo;',
   ],
   questions:[
   { type:'num',
@@ -311,9 +311,9 @@ const CASES = [
     options:[
       {t:'Base pay only.', why:'The Mobility definition is broader than base pay.'},
       {t:'W-2 wages PLUS before-tax elective deferrals under IRC sections 125, 457, and 132(f), plus before-tax salary deferrals to a nonqualified deferred-comp plan.', correct:true},
-      {t:'Only pay above the Social Security Wage Base.', why:'That describes the union plan&rsquo;s Supplemental Pay Credit trigger, which does not exist in the Mobility Program.'},
+      {t:'Only pay above the Social Security Wage Base.', why:'That describes a wage-base credit found in some cash-balance designs. There is no such credit in the Mobility Program.'},
     ],
-    explain:'Mobility&rsquo;s Pension Compensation is <strong>broad</strong>: W-2 wages plus the listed before-tax deferrals. A client reducing W-2 pay through cafeteria-plan or deferred-comp elections is not shrinking their pension credit. And there is no separate above-the-wage-base credit here; that is a union-plan feature.',
+    explain:'Mobility&rsquo;s Pension Compensation is <strong>broad</strong>: W-2 wages plus the listed before-tax deferrals. A client reducing W-2 pay through cafeteria-plan or deferred-comp elections is not shrinking their pension credit. And there is no separate above-the-wage-base credit here.',
     ref:REF.mech },
   { type:'num',
     q:'Now the Interest Credit: apply the illustrative 0.327% monthly rate to his prior $120,000 balance.',
@@ -322,9 +322,9 @@ const CASES = [
     explain:'$120,000 &times; 0.327% &asymp; <strong>$392.40</strong> this month, credited before the $300 pay credit is added. At his balance, compounding already outpaces his own accrual. One caution: the crediting rate tracks the <strong>30-Year Treasury and resets each quarter</strong>, so never quote a fixed rate; pull the current one from the Recordkeeper.',
     ref:REF.mech },
   { type:'mc',
-    q:'Owen&rsquo;s union cousin says her pay credit jumps at 50 and warns him not to &ldquo;leave before your factor steps up.&rdquo; Does that apply to Owen?',
+    q:'Owen&rsquo;s cousin says her pay credit jumps at 50 and warns him not to &ldquo;leave before your factor steps up.&rdquo; Does that apply to Owen?',
     options:[
-      {t:'Yes; the Mobility credit also steps up with age.', why:'The age-stepped schedule (1.77% up to 4.04%) is the union cash balance. Mobility&rsquo;s credit is a flat 5% at every age.'},
+      {t:'Yes; the Mobility credit also steps up with age.', why:'Age-stepped credits exist in some cash-balance designs, but not this one. The Mobility SPD sets the credit at a flat 5% at every age.'},
       {t:'No. The Mobility pay credit is a flat 5% at every age, so the account grows steadily rather than accelerating late-career. There is no &ldquo;highest-value accrual years&rdquo; cliff to protect.', correct:true},
       {t:'No, because Mobility accruals are frozen.', why:'The frozen account is the Nonbargained cash balance (pay credits stopped in 2005). Mobility&rsquo;s 5% credit is alive and accruing.'},
     ],

@@ -8,12 +8,12 @@
       Sept 22, 2026: confirm the dates held, switch to past tense, drop the countdown framing, and
       keep only the durable mechanics (two BrokerageLink accounts, separate Roth elections, what
       had to be re-established).
-- [ ] **Southeast/BellSouth savings-plan coverage needs a second pass beyond `index.html`.**
-      The BSSP is now documented in `index.html` §09 and Part 6 of the union consolidated MD, but
-      `case-studies.html` still assumes every bargained client is in the ARSP. Rosa Alvarez is a
-      West CWA client so she is correctly in the ARSP, but any Southeast-flavored case study needs
-      the plan gate applied. Also worth adding: a BSSP-specific client example, since the
-      band-capped match and the $0 catch-up are the two most counterintuitive facts in the set.
+- [ ] **Add a BSSP case study to the union deck.** The deck now has two explicitly Southeast
+      clients (Gloria and Sam), and neither touches the savings plan. Since a Southeast client hired
+      before Aug 9, 2009 is in the **BSSP**, not the ARSP, a checkpoint on the band-capped match and
+      the $0 catch-up for high earners would land well. Checked and confirmed **not** currently a
+      defect: none of the six existing cases makes an ARSP-specific savings-plan claim about a
+      Southeast client, so there is nothing wrong to fix, only something worth adding.
 - [ ] **Advisor authorization is an ops task, not just a page.** Third-party (advisor) access does
       not carry to the new BrokerageLink Roth account. Pulling the list of AT&T clients with
       BrokerageLink authorization and re-papering it lives outside this repo; the guides flag it,
@@ -82,12 +82,21 @@
       consistent with the open question rather than resolving it, so the hedge in `triggers.html`
       (and its `by<=1959` branch) stays as written. Revisit when IRS final regulations land.
 
-- [ ] **Cash-balance mechanics are program-specific and the guide now says so, but only in §04.**
-      The Jan 2025 Southeast SPD confirms Southeast uses a **band-driven** credit (60 x Pension Band
-      Amount, credited annually) with **no Age Credit Factor and no Supplemental Pay Credit**, while
-      the pay-driven age-graded design belongs to other programs. `index.html` §04 was corrected to
-      present both and label which is which. Still to check: `case-studies.html`, whose worked
-      examples may assume the pay-driven design for a Southeast-shaped client.
+- [ ] **PRIORITY: get the Bargained Cash Balance Program SPD.** A full-text search of every PDF in
+      the library finds **no occurrence of "Age Credit Factor"**, and none of the age-graded
+      schedule (1.77%-4.04%), the flat 4.5% interest assumption, or the 2% Supplemental Pay Credit
+      that the guide has been teaching. Every apparent hit on `4.04`/`1.77` is a substring inside a
+      pension band dollar table. The guide's own source list cites a *Bargained Cash Balance Program
+      #2 SPD* that is **not in either SPD folder**, and that is the most likely origin. Consequence:
+      **bargained employees hired after Aug 9, 2009 have no verified pension mechanics anywhere in
+      this project** (every other bargained program closes at that date). `index.html` §04 now
+      carries a sourcing caution and the material is labelled illustrative, but the real fix is the
+      document. Highest-value acquisition on this list.
+
+- [ ] **Re-verify the age-graded illustration once that SPD lands.** If it confirms the schedule,
+      remove the sourcing caution in `index.html` §04, restore the Marcus Bell example to a real
+      calculation, and re-point the glossary entries. If it shows something different, the
+      illustration should be replaced outright rather than re-labelled.
 
 - [ ] **Verify Pension Band Amounts against Attachment 3 of the current SPD.** The Jan 2025
       Southeast SPD updated the Pension Band Tables per bargaining, and the guide's examples now use
