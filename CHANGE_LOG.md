@@ -1,5 +1,160 @@
 # CHANGE_LOG
 
+## 2026-08-21 — Three new authoritative SPDs folded in (ARSP Jul 2026, BSSP Jul 2026, Southeast pension Jan 2025)
+
+**Summary.** Three newly-supplied SPDs were treated as authoritative and reconciled against the whole
+guide set and both consolidated Markdown references. The largest finding was not a changed figure but
+a **missing plan**: legacy Southeast bargained employees are in the **BellSouth Savings and Security
+Plan**, not the ARSP, and the union guide's savings sections had been describing the wrong plan for a
+substantial share of their own audience.
+
+### Sources treated as authoritative
+
+| Document | NIN | Effective | Supersedes |
+|---|---|---|---|
+| AT&T Retirement Savings Plan (ARSP) SPD/Prospectus | 78-74968 | July 2026 | `ATT-Retirement-Savings-Plan_78-63233.pdf` (2022) |
+| BellSouth Savings and Security Plan (BSSP) SPD/Prospectus | 78-74971 | July 2026 | *nothing — new to the library* |
+| Southeast Program of the AT&T Component Part, AT&T Pension Benefit Plan SPD | 78-74516 | Jan 1, 2025 | `202011---SPD---Southeast-Program...-49755.pdf` (2020) |
+
+The ARSP PDF is filed in both `Management SPDs/` and `Bargained SPDs/` and was confirmed
+**byte-identical** (md5 `3cf9a323…`), so it is one document, not two.
+
+### New: the BSSP, and a plan-selection gate
+
+- `index.html` §09 opens with a new **"First: which savings plan is this client in?"** block. The two
+  plans are mutually exclusive by their own terms (each SPD disqualifies anyone eligible for the
+  other). ARSP covers Southeast CWA D3 hired **on or after** Aug 9, 2009; BSSP covers the legacy
+  Southeast/BellSouth units hired **before** that date.
+- New `#bssp` subsection with a 13-row ARSP-vs-BSSP comparison and the full **weekly Basic
+  Contribution band table** ($15 at ≤$299/wk up to **$67** at $1,300+/wk), annualized and costed at
+  the April 2026 match rate.
+- The BSSP differs in ways that void much of the standard playbook: **no Roth, no BrokerageLink, no
+  Roth In-Plan Rollover** (so no mega-backdoor), contributions in whole dollars capped by pay band,
+  match of **71% of Basic Contributions** (reset annually on corporate performance; 25% flat for
+  Utility Operations), two general-purpose loans only, one General Withdrawal per 6 months, LifePath
+  as QDIA, **120 days** to file suit.
+- Highest-impact consequence, now flagged in three places: because the BSSP has no Roth and the law
+  requires high earners' catch-up to be Roth, a BSSP participant age 50+ with 2025 FICA wages over
+  $150,000 has a **catch-up limit of $0** — locked out entirely.
+- **ASSP consolidation** documented: Southwest CWA participants hired/rehired before Aug 9, 2009 have
+  been in the ARSP since **Jan 1, 2026** (SMM NIN 78-74837).
+
+### Corrected: Roth catch-up is live, not pending
+
+The guide previously hedged that bargained plans have until 2029 and that adoption was unconfirmed.
+Both July 2026 SPDs state the rule as **currently in force** with no deferral. Removed the hedge
+rather than softening it (leaving it would understate a rule now in effect) across `index.html` §09,
+its calculator card and glossary, `non-bargained.html`, and `mobility.html`; added a plain-language
+row to the `triggers.html` age table.
+
+### Corrected: cash-balance mechanics were the wrong program's
+
+`index.html` is Southeast-shaped, but §04 described a **pay-driven, age-graded** credit
+(Pension Compensation × Age Credit Factor, monthly, plus a Supplemental Pay Credit on pay above the
+Social Security Wage Base). The Jan 2025 Southeast SPD contains **no Age Credit Factor, no
+Supplemental Pay Credit, and no wage-base credit** anywhere. Southeast is **band-driven**:
+
+- **Basic Benefit Credit = 60 × the Pension Band Amount** for the highest band held that year,
+  credited **annually** on Dec 31.
+- **Interest Credit** = prior-November 30-year Treasury rate, applied to the **Jan 1 balance before**
+  that year's credit is added, credited annually and **continuing after termination**.
+- Opening balance for pre-1999 participants = greater of existing accruals or **$3,000**.
+
+§04 now presents both designs, labels which programs each belongs to, and carries the SPD's own
+worked example ($10,000 + $3,000 credit at 4.5% → **$13,450**). The pay-driven content was retained
+and scoped rather than deleted, since it remains correct for other programs.
+
+### Corrected: the Age Incentive Factor is not a constant
+
+The guide treated it as a flat 1.06. It is age-graded (1.01 at 57 → 1.06 at 62+) and inverts on
+Mod 75 status: **1.06 regardless of age if Mod 75 is *not* satisfied**, **1.00 if it *is* satisfied at
+age 56 or younger**. Added the table plus an explanation of why it runs backwards (it offsets the far
+larger 0.5%/month early-retirement subsidy), and a caution against comparing clients on it. The Rosa
+Alvarez example was recomputed: at 56 with Mod 75 satisfied her factor is **1.00**, not 1.06, giving
+$57.23 × 9 × 1.00 = **$515.07/mo**, with a sensitivity line showing **$545.97** at 62.
+
+### Added: Southeast forms of payment, including the $75,000 Partial Lump Sum
+
+New table in §08 mapping form availability to source and Mod 75 status. Two items newly surfaced:
+every Southeast J&S carries a **pop-up**, and a Mod 75 satisfier may take a **fixed $75,000 Partial
+Lump Sum** with the remainder as a residual annuity (not available to Special Represented Employees).
+Also flagged that a Pension Band benefit **without** Mod 75 has **no lump-sum option at all**.
+
+### Added: the 2015 management cliff
+
+The Southeast SPD's program roster is the most current description of the **Management Cash Balance
+Program** in the library, and it states the program **closed to hires/rehires after Dec 31, 2014**.
+`non-bargained.html` §02 gained a hire-date routing table and a callout: management hired on or after
+Jan 1, 2015 has **no pension at all**, which is precisely why that group receives the enhanced
+133⅓%/100% match. The match is the pension's replacement, not a supplement.
+
+### Other verified updates
+
+- **Mobility Blue (IBEW 1547)** match eligibility moved from 1 Year of Service to **upon hire**
+  effective Jan 1, 2024. Updated in the §10 table, the eligibility callout, `mobility.html`, and the
+  calculator's option value (`flat100|1|shares` → `flat100|0|shares`).
+- **Match tiers otherwise unchanged** from the 2022 edition — verified row by row, not assumed.
+- **$360,000 annual compensation limit** and **$160,000 HCE threshold** added to all three guides,
+  including the SPD's operational detail that contributions are **automatically suspended** on
+  reaching the compensation cap (a second route into the per-pay-period match trap).
+- **Mandatory cash-out $1,000 → $7,000** in both savings plans; new **Domestic Abuse Withdrawal**
+  (lesser of $10,500 or 50% of vested account); loan and withdrawal rules for both plans; the 15-day
+  hold on distributions after an address change.
+- **Match investment exceptions** corrected to four groups — **AT&T Investment Operations I, LLC** was
+  missing.
+- **Plan identity** corrected throughout: the plan reverted to **AT&T Pension Benefit Plan** effective
+  Jan 1, 2021 with **AT&T Inc.** as sponsor; Southeast is Plan Number **017**; savings-plan trustee is
+  **The Bank of New York Mellon**.
+- Two **internal inconsistencies in the ARSP SPD** are documented rather than silently resolved:
+  Purple Contract shown as District 3 in one rule and District 6 in the summary; District 5 present in
+  the eligibility list but absent from the immediate-match list.
+- Source tables in all three guides rebuilt with NIN/effective/governs columns and an explicit
+  **"superseded, do not cite"** note for the 2022 ARSP and 2020 Southeast SPDs.
+
+### Consolidated Markdown references
+
+- **`AT&T Union-Bargained Pension - Consolidated SPD & SMM Reference.md`** — §4.2 Southeast fully
+  rewritten from the 2025 SPD (sum-not-greater-of structure, band-driven cash balance, Age Incentive
+  Factor, forms of payment, disability eligibility difference, $25,000 retiree death benefit cap,
+  break-in-service change, plan identifiers). Comparison matrix corrected in three rows. Edition
+  warning added at the top, since five of six programs still rest on 2020 SPDs. **New Part 6** covers
+  both bargained savings plans (coverage map, difference table, ARSP match ladder, BSSP band table,
+  2026 limits, the Roth-catch-up consequence); old Part 6 renumbered to Part 7. Appendix rebuilt with
+  the current-editions table and the incorporated-SMM chains.
+- **`Management SPDs/_CONSOLIDATED-Management-Pension-SPDs.md`** — retitled to **AT&T Pension Benefit
+  Plan**; sponsor/administrator/plan-number corrected with the historical names retained as such;
+  program roster updated to the 15 current programs; **new Part 2 subsection** on the Management Cash
+  Balance Program and the 2015 cliff with a hire-date routing table; Part 4 gained the $7,000
+  mandatory cash-out and the $25,000 retiree death benefit cap; **new Part 5** documents the ARSP as
+  the management 401(k) (identifiers, auto-enrollment, match tiers, 2026 limits, Roth catch-up,
+  BrokerageLink/loans/withdrawals/distributions, RMDs, the Sept 2026 Roth split).
+
+### Files changed
+
+`index.html` · `non-bargained.html` · `mobility.html` · `triggers.html` ·
+`AT&T Union-Bargained Pension - Consolidated SPD & SMM Reference.md` ·
+`Management SPDs/_CONSOLIDATED-Management-Pension-SPDs.md` · `PLAN_LOG.md` · `TODO.md` ·
+`CHANGE_LOG.md`
+
+### Validation
+
+- HTML tag-balance check across all **7** pages — all pass.
+- Internal anchor check on all four guide pages — **0 broken anchors**.
+- Local server render at desktop (1265px) and mobile (375px): **no horizontal page overflow**; all
+  five wide new tables confirmed inside `.tscroll` containers with `overflow-x: auto`.
+- **0 console errors** on `index.html` and `triggers.html`.
+- Section 11 calculator re-tested after the option-value change: Mobility Blue at **0 years of
+  service** now correctly returns match ($5,700 on $95,000 at 6%) instead of zero.
+- No stale `78-63233` citations remain outside the deliberate "superseded" notes.
+
+### Status
+
+Complete. Three open TODO items closed (Roth catch-up adoption date; bargained savings-plan
+identification; Management Cash Balance coverage), one downgraded from latent bug to cosmetic (the
+415(c) target rate above $1M, now provably unreachable given the $360,000 compensation cap), and six
+new items opened, most notably that `case-studies.html` has not yet been checked against either the
+BSSP plan gate or the corrected Southeast cash-balance mechanics.
+
 ## 2026-08-13 — Portable build spec for the contribution calculator (written outside this repo)
 
 Wrote `C:\Users\james\Projects\CONTRIBUTION-CALCULATOR-SPEC.md`, a standalone spec for rebuilding

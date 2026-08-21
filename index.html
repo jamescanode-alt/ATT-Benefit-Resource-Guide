@@ -425,17 +425,41 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <p>The Cash Balance Account is a <strong>hypothetical</strong> account, there's no segregated pot of money, but the recordkeeper tracks a running balance that determines the benefit. It starts at $0 and grows from three kinds of credits.</p>
 
   <div class="formula">
-    <div class="fbox"><span class="ft">Monthly</span><span class="fv">Basic Benefit Credit</span></div>
+    <div class="fbox"><span class="ft">Annually (SE) / monthly</span><span class="fv">Basic Benefit Credit</span></div>
     <div class="fop">+</div>
-    <div class="fbox alt"><span class="ft">Monthly</span><span class="fv">Interest Credit</span></div>
+    <div class="fbox alt"><span class="ft">Annually (SE) / monthly</span><span class="fv">Interest Credit</span></div>
     <div class="fop">+</div>
-    <div class="fbox ghost"><span class="ft">If applicable</span><span class="fv">Supplemental Pay Credit</span></div>
+    <div class="fbox ghost"><span class="ft">Not in Southeast</span><span class="fv">Supplemental Pay Credit</span></div>
     <div class="fop">=</div>
     <div class="fbox" style="background:var(--ink)"><span class="ft">Result</span><span class="fv">Cash Balance Account</span></div>
   </div>
 
+  <div class="callout warn">
+    <span class="tag">Two different cash-balance designs, and they are not interchangeable</span>
+    <p>"Cash balance" names a <em>shape</em>, not one formula. Across the bargained programs there are two genuinely different engines, and reading the wrong one onto a client produces a badly wrong number:</p>
+    <p style="margin-top:8px"><strong>Band-driven (Southeast Program).</strong> The credit is derived from the client's <strong>job title band</strong>, credited <strong>annually</strong>, with interest at the prior-November 30-year Treasury rate. Pay level is irrelevant except insofar as it reflects the band. This is what the current <strong>Southeast Program SPD (NIN 78-74516, eff. Jan. 1, 2025)</strong> documents, and it governs the Southeast clients this guide is shaped around.</p>
+    <p style="margin-top:6px"><strong>Pay-driven and age-graded (other programs).</strong> The credit is a percentage of <strong>Pension Compensation</strong> that steps up with age, credited monthly, often with a supplemental credit on pay above the Social Security Wage Base. This is the design in the Mobility Bargained and other cash-balance programs.</p>
+    <p style="margin-top:8px">Both are described below. <strong>Confirm which program the client is in before using either.</strong></p>
+  </div>
+
   <h3>① Basic Benefit Credit: the main engine</h3>
-  <p>Each month, the account is credited with the employee's <strong>Pension Compensation &times; an Age Credit Factor</strong>. Pension Compensation includes base pay, commissions, group/individual incentive pay, and certain other amounts. The Age Credit Factor rises with age, so the same paycheck buys a bigger credit as the employee gets older:</p>
+  <h4>Southeast Program: 60 &times; the Pension Band Amount</h4>
+  <p>The Southeast SPD states the formula directly: the Basic Benefit Credit (formerly called the pension band credit) equals <strong>60 times the Pension Band Amount</strong> for the client's Pension Band Number, using the <strong>highest band that applied during the calendar year</strong>. Credits are added <strong>annually on the last day of the calendar year</strong>, or the last day of the month of termination or transfer if earlier, and are pro-rated for a partial year, part-time hours, or a leave of absence.</p>
+  <div class="formula">
+    <div class="fbox"><span class="ft">Constant</span><span class="fv">60</span></div>
+    <div class="fop">&times;</div>
+    <div class="fbox"><span class="ft">Highest band that year</span><span class="fv">Pension Band Amount</span></div>
+    <div class="fop">=</div>
+    <div class="fbox alt"><span class="ft">Credited each Dec 31</span><span class="fv">Basic Benefit Credit</span></div>
+  </div>
+  <div class="callout">
+    <span class="tag blue">Worked example</span>
+    <p>A client whose highest band during the year was Pension Band 111, with a Pension Band Amount of $57.23, receives a Basic Benefit Credit of 60 &times; $57.23 = <strong>$3,433.80</strong> for that year.</p>
+  </div>
+  <p class="small">Notice what this means for advice: under the Southeast design, a raise or a heavy overtime year does <strong>not</strong> increase the pension credit. Only a <strong>promotion into a higher band</strong> does. Band amounts themselves are renegotiated in bargaining and are published in "Attachment 3" of the SPD. A client with pension service before 1999 who was still employed on or after Jan. 1, 1999 gets an opening Cash Balance Account equal to the <strong>greater of their existing accruals or $3,000</strong>.</p>
+
+  <h4>Other programs: Pension Compensation &times; an Age Credit Factor</h4>
+  <p>In the pay-driven programs, the account is credited each month with <strong>Pension Compensation &times; an Age Credit Factor</strong>. Pension Compensation includes base pay, commissions, group/individual incentive pay, and certain other amounts. The factor rises with age, so the same paycheck buys a bigger credit as the employee gets older:</p>
   <table>
     <thead><tr><th>Age</th><th>Age Credit Factor (representative)</th></tr></thead>
     <tbody>
@@ -446,20 +470,30 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <tr><td>50 and older</td><td class="num">4.04%</td></tr>
     </tbody>
   </table>
-  <p class="small">Some bargaining units use a slightly different schedule (e.g., 1.75% / 2.25% / 2.75% / 3.25% / 4.00%). Always confirm the client's contract.</p>
+  <p class="small">Some bargaining units use a slightly different schedule (e.g., 1.75% / 2.25% / 2.75% / 3.25% / 4.00%). Always confirm the client's contract. <strong>This schedule does not apply to the Southeast Program</strong>, whose SPD contains no Age Credit Factor at all.</p>
   <div class="callout">
     <span class="tag blue">Worked example</span>
     <p>Age 40, monthly Pension Compensation $4,000, Age Credit Factor 2.78%. Basic Benefit Credit = $4,000 &times; 2.78% = <strong>$111.20</strong> added that month.</p>
   </div>
 
   <h3>② Interest Credit: steady compounding</h3>
-  <p>Each month the prior balance earns interest at a monthly rate that compounds to <strong>4.5% annually</strong> (some older program variants instead use the prior-November 30-year Treasury rate, verify per SPD).</p>
+  <p>Under the <strong>Southeast Program</strong>, interest is credited <strong>annually</strong>, on the last day of each calendar year before payments begin (and pro-rated in the year they do), and it continues to accrue <strong>even after termination of employment</strong>. The rate is the annual rate on <strong>30-year U.S. Treasury securities published as of November of the prior calendar year</strong>, and it is applied to the balance as of the <em>first</em> day of the year, before that year's Basic Benefit Credit is added. Interest begins the calendar year after the account is first credited.</p>
   <div class="callout">
-    <span class="tag blue">Worked example</span>
+    <span class="tag blue">Worked example (Southeast, from the SPD)</span>
+    <p>Opening balance $10,000; Basic Benefit Credit for the year $3,000; applicable 30-year Treasury rate 4.5%. Interest = $10,000 &times; 4.5% = <strong>$450</strong> (not $13,000 &times; 4.5%, because the credit is added after interest is figured). Year-end balance = $10,000 + $3,000 + $450 = <strong>$13,450</strong>.</p>
+  </div>
+  <p>In the pay-driven programs, interest is instead credited <strong>monthly</strong>, at a monthly rate compounding to roughly <strong>4.5% annually</strong>.</p>
+  <div class="callout">
+    <span class="tag blue">Worked example (monthly variant)</span>
     <p>Balance $10,000, this month's Basic Benefit Credit $200. Interest = $10,000 &times; 0.367% &approx; $36.70. New balance = $10,000 + $200 + $36.70 = <strong>$10,236.70</strong>.</p>
   </div>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>The "interest keeps accruing after you leave" point is worth making explicitly to a Southeast client weighing a deferred pension against a lump sum. The account does not freeze at termination, it keeps earning the Treasury-linked rate until payments begin. Whether that beats taking the lump sum and investing it is exactly the comparison to run, and the answer moves with the rate environment rather than being settled once.</p>
+  </div>
 
-  <h3>③ Supplemental Pay Credit: higher earners only</h3>
+  <h3>③ Supplemental Pay Credit: higher earners only (not Southeast)</h3>
+  <p class="small"><strong>Scope:</strong> this credit belongs to the pay-driven programs. The Southeast Program SPD contains no Supplemental Pay Credit and no wage-base credit of any kind, which follows from its credit being band-driven rather than pay-driven. Skip this subsection for a Southeast client.</p>
   <p>Social Security only taxes and replaces income up to an annual ceiling, the <strong>Social Security Wage Base</strong> (<strong>$184,500 in 2026</strong>, indexed up each year, current figure at <a class="inline" href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener">ssa.gov: contribution &amp; benefit base</a>). The Supplemental Pay Credit adds extra pension credit on the slice of pay <em>above</em> that ceiling, the compensation Social Security won't be replacing in retirement. In any year where year-to-date Pension Compensation crosses the wage base, the excess earns an extra <strong>2%</strong> credit, added monthly alongside the Basic Benefit and Interest Credits.</p>
   <p class="small">First month over the threshold: 2% &times; all year-to-date pay above the wage base. Each later month that year: 2% &times; that month's full Pension Compensation.</p>
   <div class="callout">
@@ -497,11 +531,32 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <div class="fop">&times;</div>
     <div class="fbox"><span class="ft">As of 12/31/1998</span><span class="fv">Pension Calc. Service</span></div>
     <div class="fop">&times;</div>
-    <div class="fbox alt"><span class="ft">At 65</span><span class="fv">Age Incentive Factor (1.06)</span></div>
+    <div class="fbox alt"><span class="ft">Age at commencement</span><span class="fv">Age Incentive Factor</span></div>
   </div>
   <div class="callout">
-    <span class="tag blue">Worked example</span>
-    <p>Pension Band 111 amount = $51.81; 15 years of pre-99 calculation service; Age Incentive Factor 1.06.<br>$51.81 &times; 15 &times; 1.06 = <strong>$823.78/month</strong>.</p>
+    <span class="tag blue">Worked example (from the current SPD)</span>
+    <p>A Southeast Core Contract employee terminating in 2024 with 15 years of pre-99 Pension Calculation Service, in Pension Band 111 (a Pension Band Amount of $57.23 for a 2024 termination), with an Age Incentive Factor of 1.06:<br>$57.23 &times; 15 &times; 1.06 = <strong>$909.96/month</strong> at age 65.</p>
+  </div>
+
+  <h4>The Age Incentive Factor is not always 1.06</h4>
+  <p>This factor is easy to treat as a constant and it is not one. It is set by the client's <strong>age in completed years on the Benefit Commencement Date</strong>, and it interacts with the Modified Rule of 75 in a way that is genuinely counterintuitive:</p>
+  <table>
+    <thead><tr><th>Age at commencement</th><th class="text-center">Age Incentive Factor</th></tr></thead>
+    <tbody>
+      <tr><td>56 or younger, <em>if</em> Mod 75 is satisfied</td><td class="num text-center">1.00</td></tr>
+      <tr><td>57</td><td class="num text-center">1.01</td></tr>
+      <tr><td>58</td><td class="num text-center">1.02</td></tr>
+      <tr><td>59</td><td class="num text-center">1.03</td></tr>
+      <tr><td>60</td><td class="num text-center">1.04</td></tr>
+      <tr><td>61</td><td class="num text-center">1.05</td></tr>
+      <tr><td>62 or older</td><td class="num text-center">1.06</td></tr>
+      <tr><td><strong>Any age, if Mod 75 is <em>not</em> satisfied</strong></td><td class="num text-center"><strong>1.06</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn">
+    <span class="tag">Read that last row again</span>
+    <p>A client who <strong>fails</strong> Mod 75 gets the <strong>highest</strong> Age Incentive Factor, 1.06, regardless of age, while a client who <strong>satisfies</strong> Mod 75 at 56 or younger gets the <strong>lowest</strong>, 1.00. That looks backwards until you see what it is doing: the Mod 75 satisfier is being handed the far more valuable benefit elsewhere, the subsidized early-retirement reduction of only 0.5% per month before age 56, so the factor is the small offset against a large subsidy. The non-satisfier gets a slightly richer factor and then has the full, unsubsidized Program reduction factors applied on top.</p>
+    <p style="margin-top:8px">The practical point: <strong>never compare two clients' pension outcomes on the Age Incentive Factor alone.</strong> It moves in the opposite direction from the thing that actually drives the answer. And for a Mod 75 satisfier, the factor climbs one point per year from 57 to 62, so waiting has a second, smaller tailwind on top of the reduction that is unwinding.</p>
   </div>
 
   <h4>Supplemental Monthly Pension Benefit</h4>
@@ -516,7 +571,8 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   </div>
   <div class="callout client">
     <span class="tag">Client example: Rosa Alvarez</span>
-    <p>Rosa's job title mapped to Pension Band 111 ($51.81), and she has <strong>9 years</strong> of Pension Calculation Service as of 12/31/1998 (1990–1998). Her Basic Monthly Pension Benefit = $51.81 &times; 9 &times; 1.06 = <strong>$494.27/month</strong>. Add a small Supplemental Monthly Pension Benefit for the shift differentials she earned in her final three pre-retirement years, and this Pre-99 annuity, modest on its own, is the piece that carries her Modified Rule of 75 rights and retiree-healthcare eligibility (Section 06). Marcus, hired in 2012, has none of this.</p>
+    <p>Rosa's job title mapped to Pension Band 111, whose Pension Band Amount is <strong>$57.23</strong> under the current SPD's tables, and she has <strong>9 years</strong> of Pension Calculation Service as of 12/31/1998 (1990–1998). She has 36 years of service, so she satisfies Mod 75, and at <strong>age 56</strong> that puts her Age Incentive Factor at <strong>1.00</strong>, not 1.06. Her Basic Monthly Pension Benefit = $57.23 &times; 9 &times; 1.00 = <strong>$515.07/month</strong>. Add a small Supplemental Monthly Pension Benefit for the shift differentials she earned in her final three pre-retirement years, and this Pre-99 annuity, modest on its own, is the piece that carries her Modified Rule of 75 rights and retiree-healthcare eligibility (Section 06). Marcus, hired in 2012, has none of this.</p>
+    <p style="margin-top:8px">Worth showing her the sensitivity: if she waits to commence at <strong>62</strong>, the same 9 years and band produce $57.23 &times; 9 &times; 1.06 = <strong>$545.97</strong>, about 6% more on this slice, entirely from the Age Incentive Factor. Small in isolation, but it runs in the same direction as everything else about waiting, and it is a number she has almost certainly never been shown. Note also that band amounts are <strong>renegotiated in bargaining</strong> and the current SPD updated them, so re-derive from "Attachment 3" rather than reusing a figure from an older edition.</p>
   </div>
 </section>
 
@@ -745,6 +801,26 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   </table>
   <p class="small">Cash balance &rarr; annuity conversion uses an age-based factor (the SPD illustrates ~141.5 at age 65 &rarr; $100,000 &approx; $706.57/month). Reduction percentages for J&amp;S vary by contract.</p>
 
+  <h4>Southeast Program: which forms are actually available</h4>
+  <p>Form availability is not uniform. Under the current Southeast SPD the menu depends on <strong>which formula the money came from</strong> and, for the Pension Band piece, on <strong>whether Mod 75 is satisfied</strong>:</p>
+  <div class="tscroll">
+  <table class="v-lines">
+    <thead><tr><th>Source</th><th>Available forms</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Cash Balance Account</strong></td><td>Single Life Annuity · 50% J&amp;S with pop-up · 75% J&amp;S with pop-up · <strong>Lump sum</strong></td></tr>
+      <tr><td><strong>Pension Band</strong>, Mod 75 satisfied</td><td>Single Life Annuity · 50% J&amp;S with pop-up · 75% J&amp;S with pop-up · Lump sum · <strong>$75,000 Partial Lump Sum</strong> with the remainder as a residual annuity <span class="small">(the last two are not available to Special Represented Employees)</span></td></tr>
+      <tr><td><strong>Pension Band</strong>, Mod 75 <em>not</em> satisfied</td><td>Single Life Annuity · 50% J&amp;S with pop-up · 75% J&amp;S with pop-up. <strong>No lump sum.</strong></td></tr>
+      <tr><td><strong>Disability Pension</strong></td><td>Single Life Annuity · 50% J&amp;S with pop-up · 75% J&amp;S with pop-up</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout gold">
+    <span class="tag">Two features worth naming to the client</span>
+    <p><strong>The pop-up.</strong> Every Southeast J&amp;S option carries a pop-up: if the survivor dies first, the retiree's benefit <em>reverts</em> to the unreduced Single Life amount. That materially changes the J&amp;S calculus, because the usual objection ("I take a permanent haircut and might outlive them anyway") is answered by the plan itself. Confirm it applies before leaning on it, but for Southeast it is standard.</p>
+    <p style="margin-top:8px"><strong>The $75,000 Partial Lump Sum.</strong> A Mod 75 satisfier can take exactly <strong>$75,000</strong> in cash and keep the rest as a residual annuity. This is the middle path clients most often want and least often know exists: enough liquidity to clear a mortgage, fund a bridge to Social Security, or seed an emergency reserve, without surrendering the longevity hedge. It is not available to Special Represented Employees, and it is not a variable amount. Raise it explicitly during the annuity-versus-lump-sum conversation rather than framing that decision as binary.</p>
+  </div>
+  <p class="small">Note that a Pension Band benefit for a client who does <strong>not</strong> satisfy Mod 75 has <strong>no lump-sum option at all</strong>, only annuities. For a client whose retirement math assumed a lump sum, whether they clear Mod 75 is therefore not just a question of how much, it can be a question of whether the option exists.</p>
+
   <div class="callout warn">
     <span class="tag">Small-benefit cash-out</span>
     <p>If the present value of the pension is <strong>&le; $7,000</strong>, the plan will automatically cash out or roll over the benefit (≤ $1,000 as a single lump sum; over $1,000 to $7,000 as an automatic IRA rollover unless the client elects otherwise). This threshold rose from $5,000 to <strong>$7,000 effective Jan 1, 2024</strong> (2024 SMM, applies across all programs). The normal election rules don't apply. Flag this so a client isn't surprised by an automatic distribution.</p>
@@ -773,9 +849,29 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <h2>The AT&amp;T 401(k)</h2>
   <p>The defined-contribution side, administered by <strong>Fidelity</strong> through NetBenefits. Unlike the pension, the employee funds this and directs the investments, and AT&amp;T adds a match negotiated in the bargaining agreement.</p>
 
+  <h3 id="which-savings-plan">First: which savings plan is this client in?</h3>
+  <p class="lead">A bargained AT&amp;T employee is in <strong>one of two different 401(k) plans</strong>, and the plans are mutually exclusive by their own terms. Getting this wrong is not a detail, it changes whether the client can use Roth at all, whether BrokerageLink exists for them, and whether the mega-backdoor Roth is even available. Settle it before anything else in this section.</p>
+  <div class="cols">
+    <div class="card" style="border-top:4px solid var(--blue)">
+      <h4>AT&amp;T Retirement Savings Plan (ARSP)</h4>
+      <p class="small" style="margin-bottom:10px">Plan 009 · SPD NIN 78-74968, July 2026</p>
+      <p>The large plan, and the one the rest of this section describes. Covers management employees and most bargained units: Mobility (all contracts), National Internet, AT&amp;T Corp. Core, West CWA D9, Midwest, the IBEW locals, Alascom, and <strong>Southeast CWA District 3 employees hired or rehired on or after Aug. 9, 2009</strong>.</p>
+    </div>
+    <div class="card" style="border-top:4px solid var(--gold)">
+      <h4>BellSouth Savings and Security Plan (BSSP)</h4>
+      <p class="small" style="margin-bottom:10px">Plan 004 · SPD NIN 78-74971, July 2026</p>
+      <p>The legacy BellSouth plan, closed to new entrants. Covers AT&amp;T Southeast Core Contract CWA D3, AT&amp;T Billing Southeast CWA D3, BellSouth Utility Operations CWA D3, and BellSouth ND/CA CWA D3, in each case <strong>hired or rehired before Aug. 9, 2009</strong>. A long-tenured Southeast client is very likely here.</p>
+    </div>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Why this matters more than it looks</span>
+    <p>Both SPDs disqualify an employee who is "eligible to contribute to any other AT&amp;T sponsored savings or profit-sharing plan," naming each other. So it is genuinely one or the other, never both. And the BSSP is the more restrictive plan on every axis that drives planning: <strong>no Roth contributions, no BrokerageLink, no in-plan Roth conversion, and contributions capped in whole dollars per week by a pay-band table</strong> rather than as a percent of pay. See the <a class="inline" href="#bssp">BSSP subsection</a> below before advising a legacy Southeast client. Confirm the plan name on the client's NetBenefits statement, not from their job title.</p>
+  </div>
+  <p class="small">One related consolidation to know: the separate <strong>AT&amp;T Savings and Security Plan (ASSP)</strong>, which covered Southwest CWA employees hired or rehired before Aug. 9, 2009, was folded into the ARSP. Those balances transferred and the participants have been in the ARSP since <strong>Jan. 1, 2026</strong> (ARSP SMM NIN 78-74837). If a Southwest client still refers to "the ASSP," they are describing an account that now lives in the ARSP.</p>
+
   <div class="callout warn">
     <span class="tag">Verify the specifics</span>
-    <p>The match formulas, match-eligibility timing, and vesting below are taken from the <strong>AT&amp;T Retirement Savings Plan SPD (NIN 78-63233)</strong>, now in the project library. Two limits on that source: it is a <strong>2022 edition</strong> (its stated elective-deferral limit is the 2022 figure), and match tiers are ultimately set by the <strong>collective bargaining agreement</strong>, so a newer contract can change them. Treat the tiers below as the documented baseline and confirm each client's actual formula, rate, and service in NetBenefits.</p>
+    <p>The match formulas, match-eligibility timing, contribution limits, and vesting below are taken from the <strong>AT&amp;T Retirement Savings Plan SPD (NIN 78-74968, July 2026)</strong>, the current edition in the project library, and the <strong>BellSouth Savings and Security Plan SPD (NIN 78-74971, July 2026)</strong>. One standing limit on both: match tiers are ultimately set by the <strong>collective bargaining agreement</strong>, so a newer contract can change them, and the BSSP match rate is <strong>reset every year on corporate performance</strong>. Treat the tiers below as the documented baseline and confirm each client's actual plan, formula, rate, and service in NetBenefits.</p>
   </div>
 
   <h3 id="roth-split">Plan change: Roth and non-Roth invested separately (September 2026)</h3>
@@ -865,11 +961,24 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   </table>
   <p class="small">*Age-based catch-up contributions ($8,000 for ages 50–59/64+; $11,250 for ages 60–63) sit on top of the standard elective limit and are exempt from the 415(c) total additions limit. The headroom between an employee's regular deferrals + match and the 415(c) standard ceiling is exactly the room available for after-tax (bucket ③) contributions, the fuel for the mega-backdoor Roth. Limits are indexed and change annually; the figures above are for <strong>2026</strong>. Confirm current-year figures at the IRS: <a class="inline" href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits" target="_blank" rel="noopener">irs.gov: 401(k) contribution limits</a> · <a class="inline" href="https://www.irs.gov/retirement-plans/cola-increases-for-dollar-limitations-on-benefits-and-contributions" target="_blank" rel="noopener">IRS COLA limits table</a>.</p>
 
-  <h4>Catch-up contributions: now Roth for higher earners</h4>
-  <p>Clients <strong>age 50+</strong> can make additional elective deferrals above the standard limit, with an enhanced "super catch-up" for those <strong>ages 60–63</strong>. A SECURE 2.0 change requires catch-up contributions to be made as <strong>Roth</strong> for participants whose prior-year FICA wages exceeded $150,000 (indexed).</p>
-  <div class="callout gold">
-    <span class="tag">Union-plan timing nuance</span>
-    <p>The Roth-catch-up mandate generally takes effect in 2026, but <strong>collectively bargained plans have a later compliance deadline</strong> (plan years beginning on or after Jan 1, 2029), and plans may exclude union employees from the enhanced age 60–63 catch-up. So for AT&amp;T's bargained population, exactly when and how these rules bite depends on the plan's adoption. Verify the plan's current provisions rather than assuming the general effective date applies.</p>
+  <h4>Two more limits that bite before 415(c) does</h4>
+  <div class="cols">
+    <div class="card">
+      <h4>The $360,000 compensation cap</h4>
+      <p>The plan counts only the first <strong>$360,000</strong> of Compensation in 2026. The consequence is operational, not just theoretical: the SPD states that <strong>on reaching the cap, the client's contributions are automatically suspended for the rest of the year</strong>. For a very high earner contributing a level percentage, that means deferrals, and therefore the per-pay-period match, can stop before December. This is the same trap as front-loading, arriving by a different route, and it is a reason to check the spillover election and the contribution rate together for anyone approaching $360,000.</p>
+    </div>
+    <div class="card">
+      <h4>Highly compensated employee testing</h4>
+      <p>A client is a <strong>highly compensated employee</strong> for the 2026 plan year if their 2025 Compensation exceeded <strong>$160,000</strong>. HCEs can have their before-tax, after-tax, or match contributions reduced, recharacterized, or partially returned as a result of nondiscrimination testing. Practically, this means an aggressive after-tax strategy for an HCE can be trimmed after the fact, so set expectations that the mega-backdoor number is a target, not a guarantee, and watch for a corrective distribution early in the following year.</p>
+    </div>
+  </div>
+
+  <h4>Catch-up contributions: Roth is now mandatory for higher earners</h4>
+  <p>Clients <strong>age 50+</strong> can make additional elective deferrals above the standard limit, with an enhanced "super catch-up" for those <strong>ages 60–63</strong>. The SECURE 2.0 Roth-catch-up rule is <strong>in force in the ARSP now</strong>: a participant who is age 50 or older by the end of the year and earned <strong>more than $150,000 in FICA wages in 2025</strong> must make catch-up contributions <strong>on a Roth basis only</strong>. This is stated flatly in the July 2026 SPD, with no bargained-plan deferral attached, so treat it as live for AT&amp;T's union population, not pending.</p>
+  <p class="small">Two mechanics that trip clients up. Catch-up requires a <strong>separate election</strong> in 1% increments ("Employee Pre-tax Catch-Up" and/or "Employee Roth Catch-Up"), and the plan will not accept it unless the client's Basic Contribution election is above 0%. And catch-up is <strong>excluded from spillover</strong>: it simply stops when the annual catch-up limit is reached rather than continuing as after-tax. Clients ages 60–63 are defaulted toward the higher $11,250 limit and must log in to NetBenefits to <em>reduce</em> it if they don't want it.</p>
+  <div class="callout warn">
+    <span class="tag">The BSSP trap: high earners lose catch-up entirely</span>
+    <p>The same federal rule lands very differently in the <a class="inline" href="#bssp">BellSouth Savings and Security Plan</a>. Because the BSSP <strong>does not permit Roth contributions at all</strong>, and the law requires these clients' catch-up to be Roth, the BSSP SPD states the consequence directly: for a BSSP participant age 50+ with more than $150,000 of 2025 FICA wages, the <strong>catch-up contribution limit is $0</strong>. Not reduced, not redirected, unavailable. A senior legacy-Southeast technician with heavy overtime can cross $150,000 and lose access to catch-up without ever being told why. Flag it before the client budgets around a contribution they cannot make.</p>
   </div>
 
   <div class="lens">
@@ -943,6 +1052,25 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     </div>
   </div>
 
+  <h3>Getting money out: loans, withdrawals, and the cash-out floor</h3>
+  <div class="cols">
+    <div class="card">
+      <h4>Loans</h4>
+      <p>ARSP: up to <strong>three outstanding loans</strong>, of which one may be a principal-residence loan (1–10 years); general-purpose loans run 1–5 years. Minimum $1,000; maximum is the lesser of $50,000 less the highest balance in the prior 12 months, or 50% of the vested balance. Interest is <strong>prime + 1%</strong>. BSSP allows only <strong>two general-purpose loans</strong> and no residence loan. Note the count is <strong>across all AT&amp;T plans</strong>, so a frozen account holding two loans leaves room for only one more.</p>
+      <p class="small" style="margin-top:8px">DFA and BrokerageLink balances are excluded from the loan calculation and cannot be borrowed against. Default happens if a missed payment is not cured by the end of the following calendar quarter, and the balance is then reported as taxable income.</p>
+    </div>
+    <div class="card">
+      <h4>Withdrawals while employed</h4>
+      <p>ARSP types: <strong>General, Before-tax Hardship, SOP, Roth, Rollover, Military, and Domestic Abuse</strong>. Before-tax money is reachable through a General Withdrawal only if the client is <strong>age 59½ or Disabled</strong>; after-tax money and vested match are available at any age. The <strong>Domestic Abuse Withdrawal</strong> is newly documented: up to the lesser of <strong>$10,500 or 50% of the vested account</strong>, within one year of the incident, and repayable within three years. BSSP offers a narrower set (no SOP, no Roth) and limits General Withdrawals to <strong>one per 6-month period</strong>.</p>
+    </div>
+    <div class="card">
+      <h4>The mandatory cash-out floor rose to $7,000</h4>
+      <p>Both savings plans raised the threshold from $1,000 to <strong>$7,000</strong>. Accounts of <strong>$1,000 or less</strong> are still paid out as a lump sum on separation. Accounts <strong>above $1,000 but not more than $7,000</strong> are now <strong>automatically direct-rolled to an IRA</strong> unless the client elects otherwise. Above $7,000, nothing happens without an election. The pension plan moved on the same axis, from $5,000 to $7,000.</p>
+      <p class="small" style="margin-top:8px">The practical risk is a small balance from a short stint being swept into a default IRA the client never monitors. Catch it at separation, not years later.</p>
+    </div>
+  </div>
+  <p class="small">One security detail worth knowing before a client updates their profile: regardless of account size, a distribution <strong>cannot be paid for at least 15 days after an address change</strong>. If a client is moving and retiring in the same window, sequence the address change well ahead of the distribution request.</p>
+
   <h3>At separation: two traps to handle</h3>
   <div class="callout warn">
     <span class="tag">The Rule of 55, and how a rollover forfeits it</span>
@@ -960,6 +1088,63 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout client">
     <span class="tag">Client example: Rosa Alvarez</span>
     <p>Rosa earns $95,000 and contributes 6%, $5,700/year. Add her company match and the total going into the plan is roughly $10,300, well under the <strong>$72,000</strong> 415(c) ceiling, so she has large unused headroom for <strong>after-tax</strong> contributions converted promptly to Roth. Two separation items to raise before she picks a last day: she is past 55, so leaving now keeps <strong>penalty-free</strong> access to the AT&amp;T 401(k) as long as the money stays in the plan, and a full rollover to an IRA would give that up; and any outstanding loan has to be handled deliberately first, or the rollover can trigger a taxable default. As a peak-earner she leans <strong>pre-tax</strong> on the deferral itself, while early-career Marcus, in a lower bracket, leans <strong>Roth</strong>.</p>
+  </div>
+
+  <h3 id="bssp">The BellSouth Savings and Security Plan (BSSP)</h3>
+  <p>Everything above this point describes the ARSP. For a legacy Southeast client in the <strong>BSSP</strong>, a different set of rules applies, and most of the standard 401(k) playbook does not survive the switch. The BSSP is a closed plan: only employees of AT&amp;T Southeast Core Contract CWA D3, AT&amp;T Billing Southeast CWA D3, BellSouth Utility Operations CWA D3, and BellSouth ND/CA CWA D3 who were <strong>hired or rehired before Aug. 9, 2009</strong> are in it, and unlike the ARSP it requires <strong>one Year of Service</strong> before an employee can participate at all.</p>
+
+  <div class="tscroll">
+  <table class="v-lines">
+    <thead><tr><th>Feature</th><th>ARSP</th><th>BSSP</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Roth contributions</strong></td><td>Yes</td><td class="num"><strong>No</strong>, not permitted</td></tr>
+      <tr><td><strong>Catch-up if 2025 FICA wages &gt; $150,000</strong></td><td>Permitted, must be Roth</td><td class="num"><strong>$0</strong>, unavailable</td></tr>
+      <tr><td><strong>Roth In-Plan Rollover</strong> (mega backdoor)</td><td>Yes</td><td class="num"><strong>No</strong></td></tr>
+      <tr><td><strong>Fidelity BrokerageLink</strong></td><td>Yes, up to 90% of the account</td><td class="num"><strong>Not offered</strong></td></tr>
+      <tr><td><strong>How contributions are elected</strong></td><td>% of Compensation, 1% increments, up to 50%</td><td>Whole dollars, up to 70% of Compensation; Basic capped by weekly pay band</td></tr>
+      <tr><td><strong>Company match</strong></td><td>25%–133⅓% by contract, on the first 6%</td><td><strong>71% of Basic Contributions</strong> eff. Apr. 1, 2026, reset annually on corporate performance. Utility Operations: flat <strong>25%</strong>, not performance-linked</td></tr>
+      <tr><td><strong>Where the match is invested</strong></td><td>AT&amp;T Shares Fund for most groups</td><td>Same funds as the employee's own contributions</td></tr>
+      <tr><td><strong>Default investment (QDIA)</strong></td><td>AT&amp;T Age-Based Asset Allocation Fund</td><td>BlackRock <strong>LifePath</strong> Fund</td></tr>
+      <tr><td><strong>Loans</strong></td><td>3 outstanding, one may be a residence loan (10-yr)</td><td><strong>2 general-purpose only</strong>, 5-yr, no residence loan</td></tr>
+      <tr><td><strong>General Withdrawal frequency</strong></td><td>Not limited by interval</td><td><strong>One per 6-month period</strong></td></tr>
+      <tr><td><strong>Partial distributions per year</strong></td><td>Up to 8</td><td>Up to 4</td></tr>
+      <tr><td><strong>Installments</strong></td><td>Monthly, quarterly, or annual; revocable without forced payout</td><td>Annual or quarterly over 10 yrs / life expectancy / joint life; revoking forces a lump sum of the remainder</td></tr>
+      <tr><td><strong>Time to file suit</strong></td><td>1 year from denial</td><td><strong>120 days</strong> from denial</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">Shared by both plans: 3-year match vesting with automatic vesting at death, disability, or age 65; the $24,500 / $72,000 / $8,000 / $11,250 IRS limits; the $360,000 compensation cap; spillover of before-tax contributions into after-tax at the deferral limit; the $7,000 mandatory cash-out; and the new Domestic Abuse Withdrawal. Both are trusteed by The Bank of New York Mellon and recordkept by Fidelity.</p>
+
+  <h4>The BSSP contribution band table</h4>
+  <p>The BSSP's defining quirk is that <strong>matched Basic Contributions are a fixed weekly dollar amount set by the client's weekly rate of pay</strong>, not a percentage. Everything the client contributes beyond that band amount is a <strong>Supplementary Contribution</strong>, which earns <strong>no match at all</strong>. Basic Contributions also do not rise automatically when pay rises, so a client who set an election years ago may be under-contributing to the matched amount without knowing it.</p>
+  <div class="tscroll">
+  <table class="v-lines">
+    <thead><tr><th>Weekly Compensation</th><th class="text-center">Max weekly Basic Contribution</th><th class="text-center">Annualized Basic</th><th class="text-center">Match at 71%</th></tr></thead>
+    <tbody>
+      <tr><td>Up to $299</td><td class="num text-center">$15</td><td class="num text-center">$780</td><td class="num text-center">$554</td></tr>
+      <tr><td>$300 – $399</td><td class="num text-center">$20</td><td class="num text-center">$1,040</td><td class="num text-center">$738</td></tr>
+      <tr><td>$400 – $499</td><td class="num text-center">$25</td><td class="num text-center">$1,300</td><td class="num text-center">$923</td></tr>
+      <tr><td>$500 – $599</td><td class="num text-center">$30</td><td class="num text-center">$1,560</td><td class="num text-center">$1,108</td></tr>
+      <tr><td>$600 – $699</td><td class="num text-center">$35</td><td class="num text-center">$1,820</td><td class="num text-center">$1,292</td></tr>
+      <tr><td>$700 – $799</td><td class="num text-center">$40</td><td class="num text-center">$2,080</td><td class="num text-center">$1,477</td></tr>
+      <tr><td>$800 – $899</td><td class="num text-center">$45</td><td class="num text-center">$2,340</td><td class="num text-center">$1,661</td></tr>
+      <tr><td>$900 – $999</td><td class="num text-center">$50</td><td class="num text-center">$2,600</td><td class="num text-center">$1,846</td></tr>
+      <tr><td>$1,000 – $1,099</td><td class="num text-center">$55</td><td class="num text-center">$2,860</td><td class="num text-center">$2,031</td></tr>
+      <tr><td>$1,100 – $1,199</td><td class="num text-center">$60</td><td class="num text-center">$3,120</td><td class="num text-center">$2,215</td></tr>
+      <tr><td>$1,200 – $1,299</td><td class="num text-center">$65</td><td class="num text-center">$3,380</td><td class="num text-center">$2,400</td></tr>
+      <tr><td><strong>$1,300 and over</strong></td><td class="num text-center"><strong>$67</strong></td><td class="num text-center"><strong>$3,484</strong></td><td class="num text-center"><strong>$2,474</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">Annualized and match columns are computed from the SPD's weekly band table at 52 weeks and the April 2026 rate of 71%; the SPD publishes the weekly figures only. Regular part-time employees get a pro-rated band (a 20-hour employee on a 40-hour schedule gets half). The match rate is recalculated annually, so re-derive these before quoting them in a later year.</p>
+
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>The BSSP match is <strong>capped in absolute dollars, and the cap is low</strong>. A legacy Southeast technician earning $90,000 tops out at $67/week of matched Basic Contributions, about <strong>$2,474</strong> of company money at the 2026 rate, roughly 2.7% of pay, against the 4.8% a comparable ARSP participant on the baseline tier would receive. Two consequences follow. First, the single highest-value BSSP action is confirming the client is contributing <strong>at least the full band amount</strong>, because every dollar below it forfeits a 71% return and every dollar above it earns nothing extra. Second, because the plan has <strong>no Roth and no in-plan conversion</strong>, the tax-diversification and mega-backdoor strategies elsewhere in this guide are simply off the table inside the plan; Roth building for these clients has to happen <strong>outside</strong> it, through a Roth IRA or backdoor Roth IRA, and that shifts the conversation to household cash flow rather than payroll elections.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Do not promise the mega-backdoor to a BSSP client</span>
+    <p>The BSSP permits after-tax contributions, so the first half of the mega-backdoor Roth exists. The second half does not: there is <strong>no Roth account in the plan to convert into and no Roth In-Plan Rollover feature</strong>. After-tax dollars can still be rolled to a Roth IRA at distribution, but that is a separation-event strategy, not the contribute-and-convert-quarterly move described in Section 09. Check the plan before the strategy.</p>
   </div>
 </section>
 
@@ -985,7 +1170,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <tr><td>Mobility <strong>Purple</strong> Contract, CWA District 6</td><td>80% of the first 6%</td><td class="num text-center">4.8%</td><td>Upon hire</td></tr>
       <tr><td>Mobility <strong>Black</strong> Contract, CWA District 3, hired/rehired/transferred <strong>before</strong> 1/1/2015</td><td>80% of the first 6%</td><td class="num text-center">4.8%</td><td>Upon hire</td></tr>
       <tr><td>Mobility <strong>Black</strong> Contract, CWA District 3, hired/rehired/transferred <strong>on or after</strong> 1/1/2015 (former DIRECTV employees regardless of hire date)</td><td>100% of the first 6%</td><td class="num text-center">6.0%</td><td>Upon hire</td></tr>
-      <tr><td>Mobility <strong>Blue</strong> Contract, IBEW Local 1547, hired/rehired/transferred on or after 1/1/2012</td><td>100% of the first 6%</td><td class="num text-center">6.0%</td><td>After 1 Year of Service</td></tr>
+      <tr><td>Mobility <strong>Blue</strong> Contract, IBEW Local 1547, hired/rehired/transferred on or after 1/1/2012</td><td>100% of the first 6%</td><td class="num text-center">6.0%</td><td>Upon hire <span class="small">(changed from 1 Year of Service effective 1/1/2024)</span></td></tr>
       <tr><td><strong>National Internet</strong> Contract, Tier 1, CWA</td><td>80% of the first 6%</td><td class="num text-center">4.8%</td><td>Upon hire</td></tr>
       <tr><td><strong>Technical Services</strong> Employees</td><td>133⅓% of the first 3%, then 100% of the next 3%</td><td class="num text-center">7.0%</td><td>After 1 Year of Service</td></tr>
       <tr><td>Nonmanagement nonunion employees who follow CWA (AT&amp;T Core), hired/rehired on or after 1/1/2015</td><td>133⅓% of the first 3%, then 100% of the next 3%</td><td class="num text-center">7.0%</td><td>After 1 Year of Service</td></tr>
@@ -993,19 +1178,20 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
       <tr><td>AT&amp;T <strong>National Contract</strong>, IBEW System Council T-3, hired before 8/9/2009</td><td>66⅔% of the first 6%</td><td class="num text-center">4.0%</td><td>After 1 Year of Service</td></tr>
       <tr><td><strong>Teamsters Local Union No. 959</strong> (Alascom)</td><td>66⅔% of the first 6%</td><td class="num text-center">4.0%</td><td>After 1 Year of Service</td></tr>
       <tr><td><strong>BellSouth Utility Operations</strong> bargaining unit, hired/rehired after 8/8/2009</td><td>25% of the first 6%</td><td class="num text-center">1.5%</td><td>After 1 Year of Service</td></tr>
+      <tr><td>Southeast CWA District 3 groups hired/rehired <strong>before</strong> 8/9/2009</td><td colspan="3">Not in this plan. See <a class="inline" href="#bssp">the BSSP</a>, where the match is a percentage of a capped weekly dollar amount rather than of pay.</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="small">Two things to carry out of this table. First, the spread is enormous: a BellSouth Utility Operations employee and a post-2015 Mobility Black employee contributing the identical 6% receive <strong>1.5%</strong> and <strong>6.0%</strong> of pay respectively, a four-fold difference in company money. Never quote a match rate from memory. Second, in the SPD's detailed section the Purple Contract is described as CWA District 3 while the summary table says District 6; the summary table's District 6 is used here and matches the pension guide's contract mapping. Confirm the client's actual bargaining unit either way.</p>
+  <p class="small">Three things to carry out of this table. First, the spread is enormous: a BellSouth Utility Operations employee and a post-2015 Mobility Black employee contributing the identical 6% receive <strong>1.5%</strong> and <strong>6.0%</strong> of pay respectively, a four-fold difference in company money. Never quote a match rate from memory. Second, the whole table is the <em>ARSP's</em> match ladder, so confirm the client is in the ARSP at all before reading a row off it. Third, the July 2026 SPD contains two internal inconsistencies worth knowing rather than resolving: its detailed special rule describes the Purple Contract as CWA District 3 while its summary table says District 6 (District 6 is used here, matching the pension guide's contract mapping), and its eligibility list includes <strong>CWA District 5</strong> among the Mobility Orange districts while its immediate-match list omits District 5. Confirm the client's actual bargaining unit either way.</p>
 
   <div class="callout warn">
     <span class="tag">Match eligibility is not always upon hire</span>
-    <p>This is the point most likely to be gotten wrong for a bargained client. Management employees are eligible for match <strong>upon hire</strong>, and so are the Mobility Orange, Purple, and Black contracts and National Internet Tier 1. <strong>Every other group in the plan waits one Year of Service.</strong> For a newly hired union client that means the first year of contributions earns no company money at all, which changes the advice: the match-capture argument for contributing exactly 6% doesn't apply yet, and the Roth-versus-pre-tax decision (<a class="inline" href="#savings">Section 09</a>) carries the whole weight in year one.</p>
+    <p>This is the point most likely to be gotten wrong for a bargained client. Management employees are eligible for match <strong>upon hire</strong>, and so are the Mobility Orange, Purple, and Black contracts, National Internet Tier 1, and, since Jan. 1, 2024, <strong>Mobility Blue (IBEW Local 1547)</strong>. <strong>Every other group in the plan waits one Year of Service.</strong> For a newly hired union client that means the first year of contributions earns no company money at all, which changes the advice: the match-capture argument for contributing exactly 6% doesn't apply yet, and the Roth-versus-pre-tax decision (<a class="inline" href="#savings">Section 09</a>) carries the whole weight in year one. The BSSP is stricter still: there, one Year of Service is required before the client can <em>participate</em>, not merely before the match starts.</p>
   </div>
 
   <div class="callout gold">
     <span class="tag">Where the match lands: AT&amp;T Shares by default</span>
-    <p>For most groups the Company Match is allocated to the <strong>AT&amp;T Shares Fund</strong>, single-stock exposure to the client's own employer, on the same day the Basic Contributions post. Three groups are exceptions and have the match invested in the same funds as the employee's own contributions: <strong>Technical Services</strong> employees, <strong>AT&amp;T National Contract IBEW</strong> (hired on or before 8/8/2009), and Cricket/AIO Wireless.</p>
+    <p>For most groups the Company Match is allocated to the <strong>AT&amp;T Shares Fund</strong>, single-stock exposure to the client's own employer, on the same day the Basic Contributions post. Four groups are exceptions and have the match invested in the same funds as the employee's own contributions: <strong>Technical Services</strong> employees, <strong>AT&amp;T National Contract IBEW</strong> (hired on or before 8/8/2009), <strong>Cricket/AIO Wireless, LLC</strong>, and <strong>AT&amp;T Investment Operations I, LLC</strong>. The entire <a class="inline" href="#bssp">BSSP</a> is also an exception: its match always follows the employee's own investment elections, so a legacy Southeast client will not have the accidental AT&amp;T-stock concentration described below.</p>
     <p style="margin-top:8px">Critically, <strong>diversification is immediate and unlimited</strong>: every participant may exchange or transfer up to 100% of the match, vested or not. Nothing locks it in AT&amp;T stock. A long-tenured client who has never touched it can be carrying a concentrated position built from a decade or more of match dollars, sitting alongside a pension from the same employer. Check the AT&amp;T Shares Fund balance early in every relationship. If the client is separating and holds appreciated AT&amp;T shares, evaluate <strong>net unrealized appreciation (NUA)</strong> before any rollover, since a rollover to an IRA gives up that treatment.</p>
   </div>
 
@@ -1033,7 +1219,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <p>One tool for the three numbers that drive every 401(k) conversation: what the company match is worth under this client's contract, whether their contribution rate is actually reaching the IRS limits, and what rate would get them there. Enter the client's details and read the cards below.</p>
 
   <h3>What the calculator does</h3>
-  <p>Match formulas, eligibility timing, and vesting come from the ARSP SPD (NIN 78-63233), covered in <a class="inline" href="#match">Section 10</a>. The contribution limits are the <strong>2026</strong> IRS figures. Date of birth drives one thing only: catch-up eligibility, which the SPD ties to the client's age <em>at the end of the calendar year</em>, not their birthday.</p>
+  <p>Match formulas, eligibility timing, and vesting come from the ARSP SPD (NIN 78-74968, July 2026), covered in <a class="inline" href="#match">Section 10</a>. The contribution limits are the <strong>2026</strong> IRS figures. Date of birth drives one thing only: catch-up eligibility, which the SPD ties to the client's age <em>at the end of the calendar year</em>, not their birthday.</p>
   <p class="small">A note on how the three limits interact, because the tool reports them separately. The <strong>402(g)</strong> limit caps the client's own elective deferrals at $24,500. The <strong>415(c)</strong> limit caps everything combined, their contributions plus the company match, at $72,000. <strong>Catch-up</strong> contributions sit outside both: they are a separate election, they are never matched, and they do not count toward 415(c). That is why a client can be maxed on 402(g) and still have tens of thousands of unused 415(c) room, which is the whole basis of the mega-backdoor Roth.</p>
 
   <div class="calc">
@@ -1049,7 +1235,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
         </optgroup>
         <optgroup label="100% of the first 6%">
           <option value="flat100|0|shares">Mobility Black Contract, CWA District 3, on or after 1/1/2015</option>
-          <option value="flat100|1|shares">Mobility Blue Contract, IBEW Local 1547, on or after 1/1/2012</option>
+          <option value="flat100|0|shares">Mobility Blue Contract, IBEW Local 1547, on or after 1/1/2012</option>
         </optgroup>
         <optgroup label="133⅓% of the first 3%, then 100% of the next 3%">
           <option value="tiered|1|same">Technical Services Employees</option>
@@ -1108,7 +1294,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <div class="callout warn">
     <span class="tag">Read this before relying on the output</span>
-    <p>The match formulas come from a <strong>2022 edition</strong> of the ARSP SPD and are set by collective bargaining, so a newer contract can change them. The tool assumes a <strong>level contribution rate across every pay period</strong> and annualizes it; because the real match is computed per pay period with no true-up, an uneven contribution pattern produces less match than shown. It applies match eligibility, 3-year vesting, the 50% cap on Basic Contributions, and the 2026 IRS limits as documented, but <strong>not</strong> the IRS annual compensation limit, ADP/ACP testing limits for highly compensated employees, or any mid-year change in pay or contribution rate. Catch-up is reported as available capacity, not as money assumed to be contributed. <strong>Confirm the client's tier, rate, service, and elections in NetBenefits.</strong></p>
+    <p>The match formulas come from the <strong>July 2026 ARSP SPD (NIN 78-74968)</strong>, verified against it row by row, but they are set by collective bargaining, so a newer contract can still change them. <strong>This tool models the ARSP only</strong>, its math does not describe a <a class="inline" href="#bssp">BSSP</a> client, whose matched contribution is a capped weekly dollar amount rather than a percentage of pay. The tool assumes a <strong>level contribution rate across every pay period</strong> and annualizes it; because the real match is computed per pay period with no true-up, an uneven contribution pattern produces less match than shown. It applies match eligibility, 3-year vesting, the 50% cap on Basic Contributions, and the 2026 IRS limits as documented, but <strong>not</strong> the plan's <strong>$360,000 annual compensation limit</strong> (above which the SPD says contributions are suspended for the rest of the year), ADP/ACP testing limits for highly compensated employees, or any mid-year change in pay or contribution rate. Catch-up is reported as available capacity, not as money assumed to be contributed. <strong>Confirm the client's plan, tier, rate, service, and elections in NetBenefits.</strong></p>
   </div>
 
   <div class="lens">
@@ -1249,7 +1435,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
     <dt>415(c) limit</dt><dd>The annual cap on all additions to the plan combined, deferrals, employer match, and after-tax contributions. $72,000 in 2026.</dd>
     <dt>After-tax (non-Roth) contributions</dt><dd>A third 401(k) bucket above the deferral limit; only the growth is taxable, which is why it's converted to Roth promptly.</dd>
     <dt>Mega-backdoor Roth</dt><dd>Making after-tax contributions and converting them to Roth (in-plan or to a Roth IRA), turning 415(c) headroom into tax-free Roth money.</dd>
-    <dt>Catch-up contribution</dt><dd>Extra deferrals allowed at age 50+ (with an enhanced amount at ages 60–63); must be Roth for higher earners under SECURE 2.0, subject to special timing for bargained plans.</dd>
+    <dt>Catch-up contribution</dt><dd>Extra deferrals allowed at age 50+ (with an enhanced amount at ages 60–63). Under SECURE 2.0 it must be made as Roth if the client's prior-year FICA wages exceeded $150,000, a rule the ARSP applies now. In the BSSP, which has no Roth, that makes the catch-up limit $0 for those clients.</dd>
     <dt>True-up</dt><dd>An optional plan feature that retroactively pays any match missed because deferrals stopped early in the year. Not all plans offer it.</dd>
     <dt>IRMAA</dt><dd>Income-Related Monthly Adjustment Amount, an income-based surcharge on Medicare Part B and D premiums, set by MAGI from two years prior.</dd>
     <dt>MAGI</dt><dd>Modified adjusted gross income, the income measure that drives IRMAA tiers; fed by pension income, 401(k) withdrawals, and Roth conversions.</dd>
@@ -1281,7 +1467,25 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   </div>
 
   <h4>Source documents (project library)</h4>
-  <p class="small">AT&amp;T Pension Benefit Plan, Bargained Cash Balance Program #2 SPD · Southeast SPD · Craft Pension West SPD · <em>AT&amp;T Retirement Savings Plan, Roth and non-Roth Investment Enhancements</em> (SMM/Prospectus Supplement and blackout notice, effective Sept 21, 2026) · related plan materials. These SPDs are the controlling references; this guide summarizes them for training. Specific factors, bands, and limits vary by collective bargaining agreement and plan year.</p>
+  <p class="small">Current, authoritative editions used throughout this guide:</p>
+  <div class="tscroll">
+  <table class="v-lines">
+    <thead><tr><th>Document</th><th>NIN</th><th>Effective</th><th>Governs</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Southeast Program</strong> of the AT&amp;T Component Part of the AT&amp;T Pension Benefit Plan SPD</td><td class="num">78-74516</td><td>Jan 1, 2025</td><td>Sections 02–08, the pension</td></tr>
+      <tr><td><strong>AT&amp;T Retirement Savings Plan</strong> (ARSP) SPD / Prospectus</td><td class="num">78-74968</td><td>July 2026</td><td>Sections 09–11, the 401(k)</td></tr>
+      <tr><td><strong>BellSouth Savings and Security Plan</strong> (BSSP) SPD / Prospectus</td><td class="num">78-74971</td><td>July 2026</td><td>Section 09, legacy Southeast clients</td></tr>
+      <tr><td>ARSP, <em>Roth and non-Roth Investment Enhancements</em> SMM &amp; blackout notice</td><td class="num">—</td><td>Sept 21, 2026</td><td>Section 09, the Roth split</td></tr>
+      <tr><td>ARSP, <em>ASSP-ARSP Balance Consolidation &amp; Blackout</em> SMM</td><td class="num">78-74837</td><td>Jan 1, 2026</td><td>Southwest CWA plan mapping</td></tr>
+      <tr><td>BSSP <em>Annual Match Rate Postcard</em></td><td class="num">78-74876</td><td>Apr 1, 2026</td><td>The 71% BSSP match rate</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">Also in the library and used for cross-program comparison: AT&amp;T Pension Benefit Plan Bargained Cash Balance Program #2 SPD · Craft Pension West SPD · the 2020 program SPDs (East, Midwest, West, Mobility Bargained, Legacy Bargained) · the July 2024 plan-wide SMM (NIN 78-72720) · Medical SPD 2021. These SPDs are the controlling references; this guide summarizes them for training. Specific factors, bands, and limits vary by collective bargaining agreement and plan year.</p>
+  <div class="callout warn">
+    <span class="tag">Superseded, do not cite</span>
+    <p>Two documents in the library have been replaced and should no longer be used for figures: the <strong>2022 ARSP SPD (NIN 78-63233)</strong>, superseded by the July 2026 edition above, and the <strong>2020 Southeast Program SPD (NIN 78-49755)</strong>, superseded by the January 2025 edition. Both are retained only for edition history. The 2020-era SPDs also carry the interim <em>AT&amp;T/WarnerMedia Pension Benefit Plan</em> name; the plan's name reverted to the <strong>AT&amp;T Pension Benefit Plan</strong> effective Jan. 1, 2021, and the sponsor is AT&amp;T Inc.</p>
+  </div>
 </section>
 
 <div class="foot">
@@ -1441,7 +1645,7 @@ secs.forEach(s=>s&&obs.observe(s));
 
 // ---- Contribution & limits calculator (Section 11) ----
 // Formulas, match-eligibility timing, and vesting are from the AT&T Retirement Savings Plan
-// SPD (NIN 78-63233). Option values encode formulaKey|eligibilityYears|matchInvestment.
+// SPD (NIN 78-74968, July 2026). Option values encode formulaKey|eligibilityYears|matchInvestment.
 (function(){
   const cEl=document.getElementById('mContract');
   if(!cEl) return;
@@ -1663,7 +1867,7 @@ secs.forEach(s=>s&&obs.observe(s));
          (catchUp===CATCHUP_SUPER
            ? ', inside the ages 60&ndash;63 window, so the enhanced catch-up applies. It drops back to '+money(CATCHUP)+' at 64.'
            : '.')+
-         ' This sits <strong>on top of</strong> the '+money(DEFERRAL_LIMIT)+' limit as a separate election. It is never matched and is exempt from 415(c). Higher earners must make it as Roth under SECURE 2.0, subject to the bargained-plan timing above.');
+         ' This sits <strong>on top of</strong> the '+money(DEFERRAL_LIMIT)+' limit as a separate election. It is never matched and is exempt from 415(c). If the client earned more than $150,000 in FICA wages in 2025, it <strong>must</strong> be made as Roth.');
     }
 
     // ----- rates needed to reach each limit -----

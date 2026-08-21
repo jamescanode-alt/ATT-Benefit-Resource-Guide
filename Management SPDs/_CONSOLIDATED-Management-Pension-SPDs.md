@@ -1,4 +1,4 @@
-# AT&T/WarnerMedia Pension Benefit Plan — Consolidated Management SPD Reference
+# AT&T Pension Benefit Plan — Consolidated Management SPD Reference
 
 > **Purpose:** A single de-duplicated reference distilled from the three SPD PDFs in this
 > folder. Shared "boilerplate" (claims, ERISA, administration, beneficiary rules, definitions,
@@ -9,6 +9,12 @@
 > **Authority:** This is a study aid, not a plan document. In any conflict, the **official Plan
 > documents govern**. AT&T reserves the right to amend or terminate the plan at any time.
 > Figures and dates below are transcribed from the SPDs as of their stated effective dates.
+>
+> **Plan name.** The two program SPDs below were issued under the interim
+> **AT&T/WarnerMedia Pension Benefit Plan** name. The name was restored to the
+> **AT&T Pension Benefit Plan** effective **Jan. 1, 2021**, and the Plan Sponsor is now
+> **AT&T Inc.**, not Warner Media, LLC. Where those 2020 SPDs name Warner Media as sponsor or
+> administrator, read the current names in Part 1.
 
 ## Source documents
 
@@ -17,6 +23,12 @@
 | 1 | `202010---SPD---Nonbargained-Program...-78-49754 (1).pdf` | Nonbargained | 78-49754 | Jan 1, 2020 | **Current** |
 | 2 | `ATT Non Bargained Pension SPD (1).pdf` | Nonbargained | 78-40288 | Jan 1, 2017 | Superseded by #1 |
 | 3 | `Mobility-Program-of-the-ATTWarnerMedia...(1).pdf` | Mobility | 78-49752 | Jan 1, 2020 | **Current** |
+| 4 | `20260710---SPD---ATT-Retirement-Savings-Plan...pdf` | ARSP (401(k)) | 78-74968 | July 2026 | **Current** — see [Part 5](#part-5--the-att-retirement-savings-plan-arsp-the-management-401k) |
+| 5 | `ATT-Retirement-Savings-Plan_78-63233.pdf` | ARSP (401(k)) | 78-63233 | 2022 | Superseded by #4 |
+
+Cross-referenced but filed under `Bargained SPDs/`: the **Southeast Program SPD (NIN 78-74516,
+eff. Jan. 1, 2025)**, whose program roster is the most current description of the
+**Management Cash Balance Program** available in this library (see Part 2).
 
 Files #1 and #2 are two editions of the **same** Nonbargained Program; the 2020 edition (#1)
 restates and supersedes the 2017 edition (#2). The Nonbargained content below follows the 2020
@@ -26,9 +38,13 @@ edition; notable 2017→2020 changes are summarized in [Appendix: Edition change
 
 ## Part 1 — Plan-level overview (applies to all programs)
 
-- **Plan:** AT&T/WarnerMedia Pension Benefit Plan — a defined benefit pension plan sponsored by
-  **Warner Media, LLC** (EIN 82-2449954). Plan Number **001** (pension benefits). Plan Year =
-  calendar year (Jan 1–Dec 31).
+- **Plan:** **AT&T Pension Benefit Plan** — a defined benefit pension plan sponsored by
+  **AT&T Inc.**; Plan Administrator **AT&T Services, Inc.** (EIN 43-1301883). Plan Year =
+  calendar year (Jan 1–Dec 31). *The 2020 SPDs in this folder still show the interim name*
+  *AT&T/WarnerMedia Pension Benefit Plan, sponsor Warner Media, LLC (EIN 82-2449954), and Plan*
+  *Number 001; the name reverted effective **Jan. 1, 2021** and the plan number was restated at the*
+  *same time (the Southeast Program, for example, is now Plan Number **017**). Confirm the current*
+  *number for the specific program rather than reusing 001.*
 - **2019 merger:** Effective **Dec 31, 2019, 11:59:59 p.m.**, the former *AT&T Pension Benefit
   Plan* merged into the *AT&T/WarnerMedia Pension Benefit Plan* (the surviving plan). The former
   AT&T plan became the **AT&T Component Part**; the former Warner Media, LLC Pension Plan became
@@ -39,17 +55,19 @@ edition; notable 2017→2020 changes are summarized in [Appendix: Edition change
 - **Recordkeeper / Beneficiary Designation Administrator:** Fidelity Service Center —
   **800-416-2363** (hearing-impaired 888-343-0860), web **netbenefits.com/att**. Hours: every
   NYSE business day 7:30 a.m.–11 p.m. Central; IVR 24/7.
-- **Plan Administrator:** Warner Media, LLC, 30 Hudson Yards, New York, NY 10019.
+- **Plan Administrator:** AT&T Services, Inc., P.O. Box 132160, Dallas, TX 75313-2160, 210-886-5920. *(The 2020 SPDs name Warner Media, LLC, 30 Hudson Yards, New York, NY 10019 — historical.)*
 - **Agent for service of legal process:** CT Corporation System, 1999 Bryan St., Suite 900,
   Dallas, TX 75201 (or AT&T Services, Inc., P.O. Box 132160, Dallas, TX 75313; 210-351-3333).
 - **Trustee:** JPMorgan Chase Bank, N.A., Brooklyn, NY.
 - **Insurance:** Benefits are federally insured by the **PBGC** within statutory limits.
 
 ### Programs of the Plan (for orientation)
-AT&T Legacy Bargained · AT&T Legacy Management · Bargained Cash Balance (#1 and #2) · DIRECTV ·
-East · **Management Cash Balance** (the program most post-2006/2007 management hires fall into) ·
-Midwest · Mobility Bargained · **Mobility** · **Nonbargained** · Southeast Management · Southeast ·
-Southwest · West · (WarnerMedia, under the WM Component Part).
+Per the Jan. 2025 Southeast SPD, the AT&T Component Part comprises **15 Programs**:
+AT&T Legacy Bargained · AT&T Legacy Management · Bargained Cash Balance · Bargained Cash Balance #2 ·
+DIRECTV · East · **Management Cash Balance** · Midwest · Mobility Bargained · **Mobility** ·
+**Nonbargained** · Southeast · Southeast Management · Southwest · West. The **WarnerMedia Component
+Part** sits alongside the AT&T Component Part and covers certain employees hired or rehired by Time
+Warner Inc. before June 30, 2009 who became participants by June 30, 2010.
 
 ---
 
@@ -72,6 +90,32 @@ Southwest · West · (WarnerMedia, under the WM Component Part).
 | Retiree Death Benefit | **Yes** | **No** |
 | Time to file suit | 1 year after appeal denied | 90 days from final determination; or 2 years (eligibility/benefit denials) from payment/triggering event |
 | Collectively bargained | No | **Yes** (in part) |
+
+### The third program most management clients are actually in
+
+Neither program above covers management hired after the mid-2000s cutoffs. That population is in the
+**Management Cash Balance Program**, whose own SPD is **not** in this library. The most current
+description available is the program roster in the **Southeast Program SPD (NIN 78-74516, eff.
+Jan. 1, 2025)**:
+
+> Management Employees of Legacy AT&T Corp., AT&T East, AT&T Midwest, AT&T Southeast, AT&T Southwest,
+> and AT&T West hired or rehired **on or after Jan. 1, 2007**, who are U.S. residents. Also covers
+> management Employees of **AT&T Mobility** hired or rehired **on or after Jan. 1, 2006**.
+> **The Program generally closed to participants who were hired or rehired after Dec. 31, 2014.**
+> Certain participants who **transferred** into the Program after Dec. 31, 2014 remain eligible,
+> including certain **DIRECTV** Employees who transferred between **June 24, 2015 and Dec. 31, 2016**.
+
+| Hire / rehire date (management) | Pension program | Pension basis |
+|---|---|---|
+| On or before Dec 31, 2005 (Mobility) / Dec 31, 2006 (legacy SBC) | Mobility or Nonbargained | See Part 2 above |
+| Jan 1, 2006 (Mobility) / Jan 1, 2007 – **Dec 31, 2014** | **Management Cash Balance** | Cash Balance Account only |
+| **On or after Jan 1, 2015** | **None** | **No pension at all — 401(k) only** |
+
+**The 2015 cliff is the single most consequential date in the management landscape**, and nothing in
+the client's benefits portal announces the absence of a plan. A manager hired Dec. 31, 2014 accrues a
+cash-balance pension; one hired Jan. 1, 2015 does not, and never will. This is also why the **enhanced
+133⅓% / 100% 401(k) match** applies to exactly the group hired on or after Jan. 1, 2015 — the richer
+match is the *replacement* for the pension, not a bonus on top of it (see [Part 5](#53-company-match-for-management)).
 
 ---
 
@@ -332,6 +376,22 @@ prior-program benefit. You can receive distributions from each applicable progra
   **2 years** from (a) a lump-sum payment, (b) a first periodic payment, or (c) the date of the act
   complained of.
 
+**Mandatory cash-out (as amended).** Effective **Jan. 1, 2024** (plan-wide SMM NIN 78-72720, July
+2024), the small-benefit threshold rose from **$5,000 to $7,000** and now works in two tiers: if the
+present value is **$1,000 or less** it is paid as a single lump sum as soon as administratively
+practicable (a direct-rollover election may be made); if it is **more than $1,000 but not more than
+$7,000** it is paid as an **automatic direct rollover to an IRA** unless the participant elects a
+single lump sum or a different rollover. Distributions to a surviving spouse, other beneficiary, or
+alternate payee are paid as a single lump sum. The same $7,000 figure is referenced in the
+**Restrictions Based on Funding Level** provisions.
+
+**Retiree Death Benefit cap.** Effective per SMM **NIN 78-63911** (July 2022), a **$25,000 cap**
+applies to the death benefit payable to a surviving beneficiary of eligible retirees who terminated
+**on or after Jan. 1, 1992**. This applies across the AT&T Programs of the AT&T Component Part and the
+AT&T Retiree Death Benefit Program under AT&T Umbrella Benefit Plans No. 1 and No. 3. Where the
+Nonbargained material in Part 3A describes an uncapped Retiree Death Benefit, read it subject to this
+cap.
+
 **Administration.** The **Plan Administrator** determines eligibility, benefit rights/amounts, and
 interprets the Plan (full discretion). Appeals/interpretation are delegated to the **Benefit Plan
 Committee**; investing the Pension Fund is delegated to the **Benefit Plan Investment Committee**.
@@ -396,6 +456,167 @@ Claims: Fidelity Service Center, Claims and Appeals, P.O. Box 770003, Cincinnati
 `workplaceservices.fidelity.com/mybenefits/pensionservices/estimatepayment`. Active-employee
 resources: HROneStop (`hronestop.web.att.com`). Address changes for those without a pending pension:
 AT&T Benefits Center, 877-722-0020.
+
+---
+
+## Part 5 — The AT&T Retirement Savings Plan (ARSP), the management 401(k)
+
+> **Scope note.** Parts 1–4 cover the **pension**. This Part is a deliberate extension, added because
+> the **ARSP SPD (NIN 78-74968, July 2026)** is now in this library and because, for management hired
+> on or after Jan. 1, 2015, the ARSP is the *only* AT&T retirement plan they have (see the note on the
+> Management Cash Balance Program's closure in Part 2). Source: ARSP SPD/Prospectus, July 2026.
+
+### 5.1 Plan identifiers
+
+| | |
+|---|---|
+| Plan name | AT&T Retirement Savings Plan |
+| Plan number | **009** |
+| Plan Sponsor / Employer | AT&T Inc., P.O. Box 132160, Dallas, TX 75313-2160 |
+| Plan Administrator | AT&T Services, Inc. (**EIN 43-1301883**) |
+| Type of plan | Defined contribution (savings); §401(a) profit-sharing plan with a cash-or-deferred arrangement |
+| Trustee | **The Bank of New York Mellon**, 135 Santilli Highway, Everett, MA 02149 |
+| Recordkeeper | Fidelity Service Center — netbenefits.com, 800-416-2363 |
+| Plan Year | Jan. 1 – Dec. 31 |
+| Time to file suit | **1 year** from the date the claim is denied |
+
+Management employees are Eligible Employees with **immediate** plan eligibility. A management
+employee is one whose job title and classification are **not** covered by a collective bargaining
+agreement; the definition also sweeps in nonmanagement nonunion employees except those following
+certain bargaining units. **Not eligible:** anyone eligible to contribute to another AT&T savings or
+profit-sharing plan (the BellSouth Savings and Security Plan, or the former AT&T Savings and Security
+Plan); leased employees and independent contractors; employees of a service provider; non-U.S.
+residents with no U.S.-sourced income; and **AT&T Enterprises, LLC management employees classified as
+"on-call"** (formerly AT&T Support Services, Inc.).
+
+### 5.2 Enrollment and employee contributions
+
+- **Automatic enrollment** at a **3% before-tax Basic Contribution**, beginning with the first full
+  payroll period **60 days** after becoming eligible, escalating **1% per year up to 6%**. Any
+  affirmative change to the contribution percentage **stops the escalation immediately and
+  permanently** — worth checking for a client who once adjusted their rate and has been flat since.
+- **Default investment (QDIA):** the **AT&T Age-Based Asset Allocation Fund** matching the
+  participant's age, assuming retirement at 65.
+- **Basic Contributions** up to **50% of Compensation** in 1% increments, as before-tax, after-tax,
+  Roth, or any combination. Only the **first 6%** is ever matched.
+- **Voluntary Annual Increase Program:** whole percentages up to **10%** per year, until Basic
+  Contributions reach 50%.
+- **Spillover** is the default: on hitting the statutory deferral limit, contributions automatically
+  continue as **After-tax Contributions**, which keeps the per-pay-period match alive. Turning
+  spillover off stops contributions at the limit — and stops the match with them.
+- **Catch-up** requires a **separate election** in 1% increments and is rejected unless the Basic
+  Contribution election is above 0%. It is **never matched**, is **exempt from 415(c)**, and is
+  **excluded from spillover** (it simply stops at the limit).
+
+### 5.3 Company Match for management
+
+| Group | Match | Max % of pay |
+|---|---|---|
+| Management Employees (general) | **80%** of the first 6% of Compensation | 4.8% |
+| AT&T Management **and** NMNU following CWA (AT&T Core), hired/rehired/transferred **on or after Jan. 1, 2015** | **133⅓%** of the first 3% **+ 100%** of the next 3% | **7.0%** |
+| Former DIRECTV, DIRECTV hire date **on or after Jan. 1, 2016**, transferred to AT&T Management with no intervening termination | 133⅓% / 100% | 7.0% |
+| Former DIRECTV, DIRECTV hire date **before Jan. 1, 2016**, transferred on/after July 24, 2015 | 80% of the first 6% | 4.8% |
+
+Management employees are eligible for the match **upon hire** — no service wait, unlike the one Year
+of Service most bargained groups serve. Under the tiered formula the match is **4% of Compensation at
+a 3% contribution** and **7% at 6%**, and it never exceeds 7%.
+
+> **The 2015 date is not a coincidence.** The Management Cash Balance Program closed to hires and
+> rehires after **Dec. 31, 2014**, and the enhanced 133⅓%/100% match applies to management hired on or
+> after **Jan. 1, 2015**. The richer match is the **replacement** for the pension, not a supplement to
+> it. Two managers with adjacent hire dates and identical titles have structurally different
+> retirement plans, and for the post-2015 manager the 401(k) is the entire plan.
+
+**Where the match lands.** For most management groups the Company Match is invested in the **AT&T
+Shares Fund** on the same day the Basic Contributions post, building single-stock exposure to the
+employer by default. Exceptions whose match follows the employee's own elections: **Technical
+Services** employees, **AT&T National Contract IBEW** (hired on or before Aug. 8, 2009),
+**Cricket/AIO Wireless, LLC**, and **AT&T Investment Operations I, LLC**. Diversification is
+**immediate and unlimited** — any participant may exchange or transfer up to 100% of the match,
+vested or not.
+
+**Vesting.** Employee contributions are always 100% vested. The Company Match vests **100% after 3
+Years of Service**, and immediately on **death, Disability, or age 65**. Unvested match is forfeited
+at Termination of Employment, held for five years or until the account is fully distributed. It can
+be **restored** on rehire within five years if the participant repays the distribution (from a
+qualified plan or IRA — cash that was not rolled over is nonqualified and cannot be restored).
+
+### 5.4 2026 limits
+
+| Limit | 2026 figure |
+|---|---|
+| 402(g) elective deferrals (before-tax + Roth combined) | **$24,500** |
+| 415(c) total annual additions | **$72,000** |
+| Catch-up, age 50+ | **$8,000** |
+| Catch-up, ages 60–63 | **$11,250** |
+| Highly compensated employee threshold (2025 Compensation) | **$160,000** |
+| Annual compensation limit | **$360,000** |
+| Mandatory cash-out ceiling | **$7,000** |
+
+Two operational points sit behind these. On reaching the **$360,000 compensation limit, contributions
+are automatically suspended for the remainder of the year** — which for a senior manager on a level
+contribution percentage can silently stop the per-pay-period match before December. And **highly
+compensated employees** (2025 Compensation above $160,000, which covers much of this population) can
+have before-tax, after-tax, or match contributions **reduced, recharacterized, or partially returned**
+through nondiscrimination testing, so an aggressive after-tax target is a target, not a guarantee.
+
+### 5.5 Roth catch-up is now mandatory for higher earners
+
+The July 2026 SPD states the SECURE 2.0 rule as **currently in force**: a participant who is age 50 or
+older by the end of the calendar year and earned **more than $150,000 in FICA wages in 2025** must
+make catch-up contributions **on a Roth basis only**. For a management population this is the common
+case rather than the exception, and for anyone who has been making **pre-tax** catch-up contributions
+it is a real current-year tax increase that should be anticipated rather than discovered on a
+paycheck.
+
+Participants who turn **60, 61, 62, or 63** during the year are defaulted toward the higher **$11,250**
+limit and must log in to NetBenefits to *reduce* it.
+
+### 5.6 Investments, loans, withdrawals, distributions
+
+- **Fidelity BrokerageLink:** minimum **$1,000** to open, **$500** on subsequent contributions,
+  capped at **90%** of payroll contributions and of the total vested balance. Individual **AT&T**
+  stock and AT&T corporate bonds are excluded from what may be bought inside it. The Plan may
+  restrict direct trading from the **AT&T Stable Value Fund** into BrokerageLink, which it may deem
+  a "competing" option. BrokerageLink and Dividend Fund Account balances are **not available for
+  loans**.
+- **Loans:** up to **three outstanding**, of which **one** may be a principal-residence loan (1–10
+  years); general purpose runs 1–5 years. Minimum **$1,000**; maximum the lesser of **$50,000 less
+  the highest outstanding balance in the prior 12 months** or **50% of the vested balance**, counted
+  **across all AT&T Controlled Group plans**. Interest is **prime + 1%**. Executive officers subject
+  to Section 16 of the Exchange Act **may not** take a loan. Default occurs if a missed payment is not
+  cured by the end of the following calendar quarter; the balance is then reported as taxable income,
+  and the default clears only on repayment or at age 59½.
+- **Withdrawals while employed:** General, Before-tax Hardship, SOP, Roth, Rollover, Military, and
+  **Domestic Abuse**. Before-tax money is reachable through a General Withdrawal only if **Disabled or
+  age 59½**; after-tax money and vested match are available at any age. The **Domestic Abuse
+  Withdrawal** is the lesser of **$10,500 or 50%** of the vested account, taken within one year of the
+  incident and repayable within three years.
+- **Distributions:** full lump sum; up to **eight partial distributions per year**; monthly,
+  quarterly, or annual installments (revocable at any time, with no forced payout of the remainder).
+  **Mandatory cash-out:** **≤ $1,000** paid as a lump sum; **more than $1,000 but not more than
+  $7,000** automatically **direct-rolled to an IRA** unless the participant elects otherwise; above
+  **$7,000** nothing happens without an election. A distribution **cannot be paid for 15 days after an
+  address change**.
+- **Roth In-Plan Rollover:** eligible before-tax and after-tax money may be converted to Roth within
+  the plan. The election is **irrevocable** and cannot be undone even if the Roth account then falls
+  in value. This is the second half of the mega-backdoor Roth, and its presence is what makes the
+  strategy work in the ARSP.
+- **RMDs:** the SPD's stated ages are 70½ (born on or before June 30, 1949), 72 (born July 1,
+  1949 – Dec. 31, 1950), and **73** (born Jan. 1, 1951 – Dec. 31, 1958). The SPD **does not state an
+  age for participants born in 1959 or later**, so confirm that group's applicable age separately
+  rather than inferring it. **RMD rules do not apply to Roth Contributions.**
+
+### 5.7 Related plan changes on file
+
+- **Roth / non-Roth investing split**, effective **Sept. 21, 2026**: investment elections in the core
+  lineup can be set separately for Roth and non-Roth money, and every BrokerageLink account is split
+  into **BrokerageLink** (non-Roth) and **BrokerageLink Roth**. A blackout runs from approximately
+  4 p.m. ET **Sept. 14, 2026** to approximately 9:30 a.m. ET **Sept. 22, 2026**. Third-party (advisor)
+  authorization does **not** carry over to the new Roth account and must be re-papered.
+- **ASSP consolidation:** the former AT&T Savings and Security Plan was merged into the ARSP;
+  affected participants have been in the ARSP since **Jan. 1, 2026** (SMM NIN 78-74837).
+- **Mandatory cash-out** raised from **$1,000 to $7,000** (July 2026 SPD).
 
 ---
 

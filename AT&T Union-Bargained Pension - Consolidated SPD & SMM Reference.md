@@ -6,7 +6,9 @@ This document states the language that is **common to all six bargained pension 
 
 > **Governing-document notice (carried from every source SPD):** In all cases, the official Plan documents govern and are the final authority on the terms of the Plan. If there are any discrepancies between this reference (or any SPD/SMM) and the Plan, the Plan documents control. AT&T Inc. reserves the right to terminate or amend any of its employee benefit plans or programs at any time for any reason. Participation in the Plan is neither a contract nor a guarantee of future employment.
 
-> **Plan-name note:** The 2020 SPDs were issued under the **AT&T/WarnerMedia Pension Benefit Plan** name (a temporary name used while WarnerMedia was part of AT&T). The July 2024 SMMs were issued under the restored name **AT&T Pension Benefit Plan**. They refer to the same Plan; the WarnerMedia reference is historical.
+> **Plan-name note:** The 2020 SPDs were issued under the **AT&T/WarnerMedia Pension Benefit Plan** name (a temporary name used while WarnerMedia was part of AT&T). The name was restored to **AT&T Pension Benefit Plan** effective **Jan. 1, 2021**, and the Plan Sponsor is **AT&T Inc.** The July 2024 SMMs and the 2025 Southeast SPD use the restored name. They refer to the same Plan; the WarnerMedia reference is historical.
+
+> **Edition warning — the six programs are not all on the same vintage.** Five of the six program subsections in Part 4 still rest on **2020** SPDs. The **Southeast Program has been restated** by a **Jan. 1, 2025** SPD (NIN 78-74516), which is the authoritative source for §4.2 and which corrected or added several provisions (Age Incentive Factor table, the 60 × Pension Band Amount credit formula, the $75,000 Partial Lump Sum, the $25,000 retiree-death-benefit cap, updated Pension Band Tables). Where Part 2 or Part 3 generalizes across all six, **§4.2 governs for Southeast.**
 
 ---
 
@@ -19,7 +21,8 @@ This document states the language that is **common to all six bargained pension 
 | **Part 3** | Shared provisions — common to all six programs, stated once |
 | **Part 4** | Program-specific provisions — unique language, by program/union |
 | **Part 5** | Plan-wide modifications (2024 SMMs) |
-| **Part 6** | Supplementary documents |
+| **Part 6** | **The bargained savings plans (401(k)) — ARSP and BSSP** |
+| **Part 7** | Supplementary documents |
 | **Appendix** | Source-file inventory |
 
 The six pension programs covered: **West, Southeast, Mobility (Bargained), Midwest, East, and Legacy Bargained.**
@@ -53,11 +56,11 @@ The table below consolidates each program's "Benefits at a Glance" so the differ
 | **Eligibility cutoff** | Hired/rehired before Aug. 9, 2009 | Hired/rehired before Jan. 1, 2009 | Hired/rehired before Aug. 9, 2009 | Hired/rehired before Aug. 9, 2009 | Hired/rehired before Aug. 9, 2009 (ND/CA separately) | Hired/rehired before Aug. 9, 2009 |
 | **Participation** | After 1 year of service | After 1 year of service | After 1 year of service **and at least age 21** | After 1 year of service | **Immediate** | **Immediate, if at least age 21** |
 | **Vesting** | 100% after **5 years** | 100% after **5 years** | 100% after **5 years** | 100% after **3 years** | 100% after **3 years** (Special Represented: 5 years of participation) | 100% after **3 years** |
-| **Pension formula** | Pension Band | Pension Band | Pension Band | **Cash Balance** | **Cash Balance + Pension Band combination** (Special Represented: Pension Band) | **Greater of** Cash Balance **and** Pension Band |
-| **Normal Retirement Age** | Later of age 65 / 5 yrs participation | Later of age 65 / 5 yrs participation | Later of age 65 / 4 yrs participation | Later of age 65 / 4 yrs participation | Later of age 65 / 5 yrs of service | Later of age 65 / 3 yrs of service |
+| **Pension formula** | Pension Band | Pension Band | Pension Band | **Cash Balance** | **Pre-99 Pension Band *plus* Cash Balance** — a sum, not a greater-of (Special Represented: Pension Band only) | **Greater of** Cash Balance **and** Pension Band |
+| **Normal Retirement Age** | Later of age 65 / 5 yrs participation | Later of age 65 / 5 yrs participation | Later of age 65 / 4 yrs participation | Later of age 65 / 4 yrs participation | Age 65, or if later the 5th anniversary of participation | Later of age 65 / 3 yrs of service |
 | **Early-retirement reduction (Pension Band)** | 30 yrs svc → unreduced; satisfies Modified Rule of 75 (<30 yrs) → −0.5%/month before **age 55**; otherwise Program factors | Same as West, plus special commencement (see below) | Same as West | Cash Balance account projected to NRA → annuity; **Enhanced Annuity** if 30 yrs svc, or age 55 + 20 yrs svc | Pension Band: satisfies Modified Rule of 75 (<30 yrs) → −0.5%/month before **age 56**; Cash Balance: your account | Cash Balance: account ÷ Program factors; Pension Band: 30 yrs → unreduced, else −0.5%/month before age 55 |
 | **Special early commencement** | — | If **≥25 yrs svc** → may commence at age 50; if **≥20 yrs svc** → may commence at age 55 (when Modified Rule of 75 not satisfied) | — | — | Pension Band, if Modified Rule of 75 not satisfied: ≥25 yrs → age 50; ≥20 yrs → age 55 | — |
-| **Lump sum availability** | Yes, if elected within **90 days** of termination | Yes, if Modified Rule of 75 satisfied | Yes | Yes; Partial Lump Sum / Lump Sum Certain if elected within **180 days** (Temporary Employees excluded) | Cash Balance: lump sum; Pension Band: per Modified Rule of 75 | Lump sum **only if paid under Cash Balance Formula** |
+| **Lump sum availability** | Yes, if elected within **90 days** of termination | Yes, if Modified Rule of 75 satisfied | Yes | Yes; Partial Lump Sum / Lump Sum Certain if elected within **180 days** (Temporary Employees excluded) | Cash Balance: lump sum. Pension Band: lump sum **or a $75,000 Partial Lump Sum** only if Mod 75 satisfied, and neither for Special Represented | Lump sum **only if paid under Cash Balance Formula** |
 | **Survivor benefit recipients** | Spouse, Legally Recognized Partner, or other Designated Beneficiary | Spouse, Legally Recognized Partner, or other Designated Beneficiary | Spouse or other Designated Beneficiary | Spouse, Legally Recognized Partner, or other Designated Beneficiary | Spouse, Legally Recognized Partner, others (ND/CA employees treated separately) | Spouse, Legally Recognized Partner, or estate |
 | **Death benefits** | Accident, Sickness, Retiree | Accident, Sickness, Retiree | Accident, Sickness, Retiree | Active Employee Death Benefit; Retiree Death Benefit | Other death benefits for Death Benefit Eligible Participants | Retiree Death Benefit (certain terminations before Jan. 1, 2008) |
 | **Deadline to file death-benefit claim** | Within 1 year of death | Within 1 year of death | Within 1 year of death | Within 1 year of death | Within 1 year of death | Within 1 year of death |
@@ -85,7 +88,7 @@ Eligibility, participation, benefit provisions, and forms of payment depend on f
 > - If your Termination of Employment date is on or after your Normal Retirement Age, you are entitled to receive a **Normal Retirement Pension**.
 > - If your Termination of Employment date is before your Normal Retirement Age and you have a Vested Interest, you are entitled [to an **Early Retirement Pension** or deferred vested pension]."
 
-A **Disability Pension** is available to participants who are Totally Disabled, have at least 15 years of service, and have **not** satisfied the Modified Rule of 75 (program variations in Part 4).
+A **Disability Pension** is available to participants who are Totally Disabled, have at least 15 years of service, and have **not** satisfied the Modified Rule of 75 (program variations in Part 4). **Southeast states the third condition differently**: Totally Disabled, 15 years of service, and **has not reached Normal Retirement Age** — see §4.2.
 
 ## 3.4 Pension-formula mechanics (general)
 
@@ -121,7 +124,7 @@ Satisfying the Modified Rule of 75 generally provides a more favorable (less-red
 All programs offer monthly annuity options, generally including:
 
 - **Single Life Annuity**
-- **Joint and 50% / 75% / 100% Survivor Annuity** (with a "pop-up" feature in most programs if the Modified Rule of 75 is satisfied or for terminations after specified dates)
+- **Joint and 50% / 75% / 100% Survivor Annuity** (with a "pop-up" feature in most programs if the Modified Rule of 75 is satisfied or for terminations after specified dates). **Southeast offers only 50% and 75% J&S — there is no 100% option — and its pop-up applies to both without a Mod 75 condition.**
 - **Lump Sum Distribution** (availability and election windows differ by program — see Part 2/Part 4)
 
 A **Disability Pension** is generally paid as a Single Life Annuity (Midwest also offers J&S options).
@@ -186,21 +189,80 @@ Each subsection below captures only what is **unique to that program**. Anything
 
 ## 4.2 Southeast Program — *CWA District 3; AT&T Billing Southeast CWA; BellSouth ND/CA*
 
+> **Restated by a newer SPD.** This subsection now follows the **Southeast Program of the AT&T Component Part of the AT&T Pension Benefit Plan SPD, NIN 78-74516, effective Jan. 1, 2025**, which restates and supersedes the 2020 edition (NIN 78-49755). The 2025 edition is the only bargained program SPD in this reference that has been restated since 2020, so where its language differs from Part 3, **the Southeast text below governs for this program.**
+
 - **Applicable CBAs:** AT&T Southeast Core Contract – CWA District 3; AT&T Billing Southeast – CWA; BellSouth Telecommunications National Directory & Customer Assistance (ND/CA).
-- **Eligibility:** Bargained employees of BellSouth Telecommunications (ND/CA); and bargained employees of the AT&T Southeast Core Contract CWA and AT&T Billing Southeast CWA hired/rehired **before Aug. 9, 2009.**
+- **Eligibility:** Bargained employees of BellSouth Telecommunications (ND/CA); and bargained employees of the AT&T Southeast Core Contract CWA and AT&T Billing Southeast CWA hired/rehired **before Aug. 9, 2009.** Special rules apply for certain transfers, reclassifications, and surpluses.
 - **Participation:** **Immediate.**
 - **Vesting:** 100% after **3 years** of service — **except Special Represented Employees**, who vest 100% after **5 years of participation** in the Plan.
-- **Formula (unique two-track structure):**
-  - Eligible Employees (excluding Special Represented) → **combination of the Cash Balance Formula and the Pension Band Formula.** The Pension Band component uses Pension Calculation Service **as of Dec. 31, 1998** and an **Age Incentive Factor.**
-  - **Special Represented Employees** → **Pension Band Formula** (Pension Band amount × Pension Calculation Service × Age Incentive Factor + Supplemental Monthly Pension Benefit).
-  - **Cash Balance Formula:** hypothetical account credited **annually** with Basic Benefit Credits (based on pension band) and Interest Credits (30-Year Treasury rate from prior November).
-- **NRA:** later of age 65 / 5 years of service.
-- **Early Retirement Pension amount:**
-  - Cash Balance component → your Cash Balance Account;
-  - Pension Band component → 30 years → unreduced; satisfies Modified Rule of 75 but < 30 years → **reduced by 0.5% for each month or partial month prior to age 56** (note: **age 56**, not 55); does not satisfy → Program factors.
-  - Pension Band, if Modified Rule of 75 not satisfied: if ≥25 years of service may commence at age 50; if ≥20 years may commence at age 55.
-- **Death benefits:** Other death benefits apply to a **"Death Benefit Eligible Participant."** Note a burial-benefit reference of up to **$500** and benefit amounts determined as of **Dec. 31, 2004** in certain provisions. **ND/CA employees** are treated separately for several survivor/death provisions.
+- **NRA:** The at-a-glance states the later of age 65 / 5 years of service. The **Definitions** section states it more precisely as *"your sixty-fifth (65th) birthday or, if later, the fifth (5th) anniversary of the date you began participating in the Plan."* Use the Definitions formulation.
+
+### Formula — a sum, not a greater-of
+
+This is the point most often gotten wrong about Southeast. A non-Special-Represented participant's benefit is the **Pre-99 Pension Band Benefit *plus* the Cash Balance Account**, not the greater of the two. The two pieces cover different service periods:
+
+| Component | Service period covered | How it is computed |
+|---|---|---|
+| **Pre-99 Pension Band Benefit** | Service **through Dec. 31, 1998** | Pension Band Amount × Pension Calculation Service **as of Dec. 31, 1998** × **Age Incentive Factor**, plus the Supplemental Monthly Pension Benefit |
+| **Cash Balance Account** | Service **from Jan. 1, 1999 forward** | Hypothetical account of Basic Benefit Credits + Interest Credits |
+
+**Special Represented Employees** instead receive the **Pension Band Formula** alone: Pension Band Amount × **total** Pension Calculation Service × Age Incentive Factor, plus the Supplemental Monthly Pension Benefit.
+
+### Cash Balance mechanics (Southeast is band-driven, not pay-driven)
+
+Unlike the East and Legacy Bargained cash-balance designs, the Southeast credit is **derived from the job-title band, not from Pension Compensation**, and there is **no Age Credit Factor, no Supplemental Pay Credit, and no wage-base credit** anywhere in this SPD.
+
+- **Basic Benefit Credit** (formerly "pension band credits") = **60 × the Pension Band Amount** for the participant's Pension Band Number, using the **highest band that applied during the calendar year**. Credited **annually on the last day of the calendar year**, or the last day of the month of Termination of Employment or transfer if earlier. Pro-rated for a partial year, part-time hours, or a Leave of Absence.
+- **Interest Credit** = the annual rate on **30-year U.S. Treasury securities published as of November of the prior calendar year**, applied to the account balance as of the **first day** of the year (i.e., *before* that year's Basic Benefit Credit is added). Credited annually, beginning the calendar year after the account is first credited, and **continuing after Termination of Employment** until payments begin, with a pro-rated credit in the commencement year.
+- **Opening balance:** $0 at first participation. A participant with a Pension Benefit before Jan. 1, 1999 who was an employee on or after Jan. 1, 1999 receives an opening Cash Balance Account equal to the **greater of existing cash-balance accruals or $3,000**.
+- *SPD example:* opening balance $10,000, Basic Benefit Credit $3,000, rate 4.5% → interest = $10,000 × 4.5% = **$450**; year-end balance **$13,450**.
+
+### Age Incentive Factor
+
+A factor based on **age in completed years on the Benefit Commencement Date**. It interacts with the Modified Rule of 75 in a counterintuitive way:
+
+| Age at commencement | Factor |
+|---|---|
+| 56 or younger, **if Mod 75 is satisfied** | **1.00** |
+| 57 | 1.01 |
+| 58 | 1.02 |
+| 59 | 1.03 |
+| 60 | 1.04 |
+| 61 | 1.05 |
+| 62 or older | 1.06 |
+| **Any age, if Mod 75 is *not* satisfied** | **1.06** |
+
+A participant who **fails** Mod 75 receives the **highest** factor (1.06) regardless of age, while one who **satisfies** Mod 75 at 56 or younger receives the **lowest** (1.00). The factor is a small offset against the far more valuable subsidized early-retirement reduction the Mod 75 satisfier receives; the non-satisfier gets the richer factor and then has full Program reduction factors applied on top. **Do not compare outcomes on this factor alone.**
+
+*SPD example:* a Southeast Core Contract employee terminating in 2024 with 15 years of pre-99 Pension Calculation Service in Pension Band 111 (Pension Band Amount $57.23) and an Age Incentive Factor of 1.06: $57.23 × 15 × 1.06 = **$909.96/month** at NRA.
+
+### Early Retirement Pension
+
+- **Cash Balance component** → your Cash Balance Account, available following Termination of Employment.
+- **Pension Band component** → 30 years of service → unreduced; satisfies Modified Rule of 75 but < 30 years → **reduced by 0.5% for each month or partial month prior to age 56** (note: **age 56**, not the age 55 used by West, Midwest, Mobility, and Legacy Bargained); does not satisfy Mod 75 → reduced by Program factors.
+- **Commencement when Mod 75 is not satisfied:** ≥ 25 years of service → may commence on or after **age 50**; ≥ 20 years → may commence on or after **age 55**.
+
+### Forms of payment
+
+| Source | Available forms |
+|---|---|
+| **Cash Balance Account** | Single Life Annuity · 50% J&S **with pop-up** · 75% J&S **with pop-up** · Lump sum |
+| **Pension Band, Mod 75 satisfied** | Single Life Annuity · 50% J&S w/ pop-up · 75% J&S w/ pop-up · Lump sum · **$75,000 Partial Lump Sum** with the remainder paid as a residual annuity — *the lump sum and the $75,000 Partial Lump Sum are **not** available to Special Represented Employees* |
+| **Pension Band, Mod 75 *not* satisfied** | Single Life Annuity · 50% J&S w/ pop-up · 75% J&S w/ pop-up. **No lump sum.** |
+| **Disability Pension** | Single Life Annuity · 50% J&S w/ pop-up · 75% J&S w/ pop-up |
+
+Note that Southeast offers **no 100% J&S option**, unlike West, Midwest, and (post-July 1999) Legacy Bargained. The **$75,000 Partial Lump Sum** is a fixed amount, not a variable election, and is unique to this program among the six.
+
+### Other provisions
+
+- **Disability Pension eligibility:** Totally Disabled **and** 15 years of service **and** **has not reached Normal Retirement Age.** This differs from West and the Part 3 framework, which condition it on *not having satisfied the Modified Rule of 75*.
+- **Survivor benefits:** For Eligible Employees other than ND/CA — **Spouse, Legally Recognized Partner, or estate.** For **ND/CA Employees** — **Spouse or Eligible Beneficiary** (treated separately for several survivor/death provisions).
+- **Death benefits:** Accident Death Benefit, Sickness Death Benefit, and Retiree Death Benefit, each subject to its own eligibility requirements. Claims must be filed **within 1 year of death.** A **$25,000 cap** applies to the Retiree Death Benefit for a surviving beneficiary of eligible retirees who terminated **on or after Jan. 1, 1992** (July 2022 SMM, NIN 78-63911). Note also a burial-benefit reference of up to **$500** and certain benefit amounts determined as of **Dec. 31, 2004**.
+- **Break in service:** On and after **Aug. 9, 2015**, a rehire **within 5 years** does **not** create a break in service (Dec. 2022 SMM, NIN 78-68461).
+- **Pension Band Tables:** updated in the 2025 edition per bargaining. See "Attachment 3" of the SPD; do **not** carry band amounts forward from the 2020 edition.
+- **Claims timeline:** written notice of denial generally within **90 days**; **60 days** to appeal; final determination generally within **60 days**.
 - **Time to file suit:** Any suit based on a denial of eligibility and/or for benefits must be filed **no later than one hundred twenty (120) days** from the date of final determination by the Benefit Plan Committee (shorter than the 5-year limit used by West/Midwest/East/Legacy).
+- **Plan identifiers (2025 edition):** Plan Name **AT&T Pension Benefit Plan**; Plan Sponsor **AT&T Inc.** (EIN 43-1301883); Plan Administrator AT&T Services, Inc.; Plan Number **017** (pension benefits and certain ancillary welfare benefits), 525 (disability and certain other welfare benefits), 600/603 (other uninsured death benefits), 601 (insured death benefits); Trustee **JPMorgan Chase Bank, N.A.**, Brooklyn, NY; Accident Death Benefit insured by ACE-American Insurance Company.
 
 ## 4.3 Mobility Bargained Program — *CWA District 6 (Purple Contract)*
 
@@ -274,7 +336,123 @@ A program-specific SMM for the **Legacy Bargained Program** containing the ident
 
 ---
 
-# Part 6 — Supplementary Documents
+# Part 6 — The Bargained Savings Plans (401(k))
+
+> **Scope note.** Parts 1–5 cover the **pension**. This Part is a deliberate extension: two savings-plan SPDs in the library (both **July 2026**) govern the same bargained population, and the plan a member belongs to changes their planning options more than most pension provisions do. It is summarized here so the union-bargained reference is complete, not because these are pension programs.
+
+## 6.1 Which plan covers whom
+
+A bargained AT&T employee is in **one of two mutually exclusive plans**. Each SPD disqualifies anyone "eligible to contribute to any other AT&T sponsored savings or profit-sharing plan," naming the other by name.
+
+| | **AT&T Retirement Savings Plan (ARSP)** | **BellSouth Savings and Security Plan (BSSP)** |
+|---|---|---|
+| SPD / NIN | 78-74968, July 2026 | 78-74971, July 2026 |
+| Plan number | **009** | **004** |
+| Plan Sponsor | AT&T Inc. | **AT&T DW Holdings, Inc. [NY]** (EIN 58-1533433) |
+| Plan Administrator | AT&T Services, Inc. (EIN 43-1301883) | AT&T Services, Inc. |
+| Trustee | The Bank of New York Mellon | The Bank of New York Mellon |
+| Recordkeeper | Fidelity Service Center | Fidelity Service Center |
+
+**ARSP bargained units** (from the Eligibility section): AT&T Corp. Core Contract – CWA; AT&T Corp. National Contract – IBEW SC T-3; AT&T East Core Contract – CWA D1 (before Dec. 27, 2020); AT&T Midwest Contract – IBEW SC T-3; AT&T Southwest Core Contract – CWA D6 (incl. former DIRECTV); AT&T West Core Contract – CWA D9; Mobility **Orange** (CWA D1, 2-13, 4, **5**, 7, 9), **Black** (D3), **Purple** (D6); National Internet Contract Tier 1 and Tier 2 – CWA; Yellow Contract – IBEW SC T-3 (Call Center); Pacific Bell – IBEW Local 45 (formerly 1269); Teamsters Local 959 (Alascom); AT&T Corp. CWA D4 (COS) and IBEW Locals 21/58/134/494; Blue Contract – IBEW Local 1547 hired/rehired/transferred on/after Jan. 1, 2012. Plus, **hired or rehired on or after Aug. 9, 2009 only**: AT&T Billing Southeast – CWA D3; AT&T Southeast Core Contract – CWA D3; AT&T Midwest Core Contract – CWA D4; AT&T Corp. (CPE) – CWA D4; BellSouth Telecommunications (Utility Operations) – CWA D3. (Former DIRECTV employees are eligible under the Midwest and Southeast Core Contracts regardless of hire date.)
+
+**BSSP bargained units**, in each case hired or rehired **before Aug. 9, 2009**: AT&T Billing Southeast – CWA D3; AT&T Southeast Core Contract – CWA D3; BellSouth Telecommunications (Utility Operations) – CWA D3; BellSouth Telecommunications (National Directory & Customer Assistance) – CWA D3. **The BSSP additionally requires one Year of Service to participate at all.**
+
+> **ASSP consolidation.** The former **AT&T Savings and Security Plan (ASSP)**, covering Southwest CWA employees hired/rehired before Aug. 9, 2009, was merged into the ARSP. Those balances transferred and the participants have been in the **ARSP since Jan. 1, 2026** (ARSP SMM NIN 78-74837, distributed September 2025, with an associated blackout).
+
+## 6.2 Where the two plans differ
+
+| Feature | ARSP | BSSP |
+|---|---|---|
+| Plan eligibility | **Immediate** | **One Year of Service** |
+| Roth contributions | Yes | **Not permitted** |
+| Catch-up if 2025 FICA wages > $150,000 | Permitted, **must be Roth** | **$0 — unavailable** (no Roth account exists to receive it) |
+| Roth In-Plan Rollover (mega backdoor) | Yes | **No** |
+| Fidelity BrokerageLink | Yes (min. $1,000 to open, $500 subsequent, max 90% of contributions/balance) | **Not offered** |
+| Contribution election | % of Compensation, 1% increments, **up to 50%** as Basic | **Whole dollars**, up to **70%** of Compensation; Basic capped by weekly pay band |
+| Auto-enrollment | 3% before-tax after 60 days, +1%/yr to 6% | Not described |
+| Auto-increase (voluntary) | Whole percentages up to 10%/yr, until Basic reaches 50% | Whole dollars, **$1–$50**/yr |
+| Company match | 25%–133⅓% of the first 6% of Compensation, by contract | **71% of Basic Contributions** eff. Apr. 1, 2026, reset annually on corporate performance; **25%** flat for Utility Operations |
+| Match investment | AT&T Shares Fund for most groups | **Same funds as employee contributions** |
+| QDIA | AT&T Age-Based Asset Allocation Fund | BlackRock **LifePath** Fund |
+| Loans | **3** outstanding, one may be principal residence (1–10 yr); general purpose 1–5 yr | **2 general purpose only**, 5 yr, no residence loan |
+| Withdrawal types | General, Before-tax Hardship, **SOP**, **Roth**, Rollover, Military, **Domestic Abuse** | Before-tax Hardship, General, Rollover, Military, **Domestic Abuse** |
+| General Withdrawal frequency | Not limited by interval | **One per 6-month period** |
+| Partial distributions | Up to **8**/yr | Up to **4**/yr |
+| Installments | Monthly, quarterly, or annual; revocable without forced payout | Annual or quarterly over 10 yr / life expectancy / joint life; **revoking forces a lump sum** of the remainder |
+| Time to file suit | **1 year** from denial | **120 days** from denial |
+
+**Common to both:** employee contributions always 100% vested; **Company Match vests 100% after 3 Years of Service**, and immediately on death, Disability, or age 65; match diversification immediate and unlimited; before-tax contributions **spill over** to after-tax at the statutory limit unless turned off; catch-up is **excluded from spillover** and simply stops; loan interest **prime + 1%**, minimum $1,000, maximum the lesser of $50,000 less the highest balance in the prior 12 months or 50% of the vested balance, counted **across all AT&T plans**; **Domestic Abuse Withdrawal** up to the lesser of **$10,500 or 50%** of the vested account; distributions blocked for **15 days after an address change**; Plan Year is the calendar year.
+
+## 6.3 ARSP match ladder (July 2026 SPD)
+
+Baseline is **80% of the first 6%** of Compensation elected as Basic Contributions, after **one Year of Service**, invested in the **AT&T Shares Fund**. Special rules override it:
+
+| Group | Match | Max % of pay | Match starts |
+|---|---|---|---|
+| Baseline (no special rule) | 80% of first 6% | 4.8% | 1 Year of Service |
+| Management Employees | 80% of first 6% | 4.8% | **Upon hire** |
+| AT&T Management **and** NMNU following CWA (AT&T Core), hired/rehired/transferred **on or after 1/1/2015** | **133⅓%** of first 3% + **100%** of next 3% | **7.0%** | Upon hire |
+| Former DIRECTV, DIRECTV hire date **on or after 1/1/2016**, transferred to AT&T Management with no intervening termination | 133⅓% / 100% | 7.0% | Upon hire |
+| Former DIRECTV, DIRECTV hire date **before 1/1/2016**, transferred on/after 7/24/2015 | 80% of first 6% | 4.8% | Upon hire |
+| **Technical Services** Employees | 133⅓% / 100% | 7.0% | 1 Year of Service — *match follows employee elections, not AT&T Shares* |
+| Mobility **Orange** (CWA D1, 2-13, 4, 7, 9), **Black** (D3), **Purple** (D6), **National Internet Tier 1** | 80% of first 6% | 4.8% | **Upon hire** |
+| Mobility **Black** – CWA D3 hired/rehired/transferred **on or after 1/1/2015** (former DIRECTV regardless of hire date) | **100%** of first 6% | 6.0% | Upon hire |
+| Mobility **Blue** – IBEW Local 1547 hired/rehired/transferred **on or after 1/1/2012** | **100%** of first 6% | 6.0% | **Upon hire as of Jan. 1, 2024** (previously 1 Year of Service) |
+| AT&T Corp. **Core Contract** – CWA hired **before 8/9/2009** | 75% of first 6% | 4.5% | 1 Year of Service |
+| AT&T **National Contract** – IBEW SC T-3 hired **before 8/9/2009** | 66⅔% of first 6% | 4.0% | 1 Year of Service — *match follows employee elections* |
+| **Teamsters Local 959** (Alascom) | 66⅔% of first 6% | 4.0% | 1 Year of Service |
+| **BellSouth Utility Operations** – CWA D3 hired/rehired **after 8/8/2009** | **25%** of first 6% | 1.5% | 1 Year of Service |
+
+Match also follows employee elections (rather than defaulting to AT&T Shares) for **Cricket/AIO Wireless, LLC** and **AT&T Investment Operations I, LLC** management employees. **Catch-up contributions are never matched**, and only the first **6%** of Compensation is ever matched.
+
+> **Two internal inconsistencies in the July 2026 ARSP SPD**, carried here as-is rather than resolved: (1) the detailed special rule describes the **Purple Contract as CWA District 3** while the Benefits-at-a-Glance table says **District 6**; (2) the Eligibility section lists **CWA District 5** among the Mobility Orange districts, but the immediate-match list omits District 5. Confirm the member's actual bargaining unit.
+
+## 6.4 BSSP Basic Contribution bands
+
+Matched **Basic Contributions** are a fixed weekly dollar amount set by weekly rate of pay. Anything above the band amount is a **Supplementary Contribution** and receives **no match**. Basic Contributions **do not increase automatically** when pay rises.
+
+| Weekly Compensation | Max weekly Basic | Annualized (×52) | Match at 71% |
+|---|---|---|---|
+| Up to $299 | $15 | $780 | $554 |
+| $300 – $399 | $20 | $1,040 | $738 |
+| $400 – $499 | $25 | $1,300 | $923 |
+| $500 – $599 | $30 | $1,560 | $1,108 |
+| $600 – $699 | $35 | $1,820 | $1,292 |
+| $700 – $799 | $40 | $2,080 | $1,477 |
+| $800 – $899 | $45 | $2,340 | $1,661 |
+| $900 – $999 | $50 | $2,600 | $1,846 |
+| $1,000 – $1,099 | $55 | $2,860 | $2,031 |
+| $1,100 – $1,199 | $60 | $3,120 | $2,215 |
+| $1,200 – $1,299 | $65 | $3,380 | $2,400 |
+| **$1,300 and over** | **$67** | **$3,484** | **$2,474** |
+
+*Annualized and match columns are derived; the SPD publishes only the weekly band amounts. Regular part-time employees receive a pro-rated band (a 20-hour employee on a 40-hour schedule gets half). The 71% rate is effective Apr. 1, 2026 (BSSP Annual Match Rate Postcard, NIN 78-74876) and is recalculated annually.*
+
+**Consequence:** the BSSP match is capped in absolute dollars at roughly **$2,474/year**. A member earning $90,000 receives about **2.7% of pay** in company money, against the 4.8% a baseline ARSP participant would receive. The highest-value action for a BSSP member is confirming they contribute **at least the full band amount** — below it forfeits a 71% return; above it earns nothing more.
+
+## 6.5 2026 IRS limits (identical in both plans)
+
+| Limit | 2026 figure |
+|---|---|
+| 402(g) elective deferrals (before-tax + Roth combined) | **$24,500** |
+| 415(c) total annual additions | **$72,000** |
+| Catch-up, age 50+ | **$8,000** |
+| Catch-up, ages 60–63 | **$11,250** |
+| Highly compensated employee threshold (2025 Compensation) | **$160,000** |
+| Annual compensation limit | **$360,000** |
+| Mandatory cash-out ceiling | **$7,000** |
+
+Two operational points behind these numbers. On reaching the **$360,000** compensation limit, the SPD states that **contributions are automatically suspended for the remainder of the year** — which can silently stop the per-pay-period match before December. And the **mandatory cash-out** now works in two tiers: **≤ $1,000** is paid as a lump sum; **more than $1,000 but not more than $7,000** is **automatically direct-rolled to an IRA** unless the member elects otherwise; above $7,000 nothing happens without an election.
+
+## 6.6 The Roth catch-up rule, and why it lands hardest on BSSP members
+
+Both July 2026 SPDs state the SECURE 2.0 rule as **currently in force**, with no bargained-plan deferral attached: a participant age 50 or older by the end of the year who earned **more than $150,000 in FICA wages in 2025** must make catch-up contributions **on a Roth basis only**.
+
+In the ARSP this is a tax-timing change. In the **BSSP** it is an elimination: because the plan permits **no Roth contributions at all**, the BSSP SPD states the consequence directly — for those members the **catch-up contribution limit is $0**. A senior legacy-Southeast member with heavy overtime can cross the $150,000 FICA threshold and lose access to catch-up entirely, without any notice tied to that fact.
+
+---
+
+# Part 7 — Supplementary Documents
 
 These documents are not bargained pension SPDs but were included in the source set as supporting context.
 
@@ -286,7 +464,15 @@ These documents are not bargained pension SPDs but were included in the source s
 
 # Appendix — Source-File Inventory
 
-Compiled from the following files in `Downloads\ATT Guide\Bargained SPDs\`:
+Current, authoritative editions (these supersede the older files below for their subject matter):
+
+| Source document | Type | NIN | Effective |
+|---|---|---|---|
+| 20250711---SPD---Southeast-Program-of-the-ATT-Component-Part-of-the-ATT-Pension-Benefit-Plan | SPD (Southeast) | 78-74516 | Jan. 1, 2025 |
+| 20260710---SPD---BellSouth-Savings-and-Security-Plan | SPD/Prospectus (BSSP) | 78-74971 | July 2026 |
+| 20260710---SPD---ATT-Retirement-Savings-Plan | SPD/Prospectus (ARSP) | 78-74968 | July 2026 |
+
+Earlier files in `Bargained SPDs\`:
 
 | # | Source document | Type | Pages |
 |---|-----------------|------|-------|
@@ -294,11 +480,16 @@ Compiled from the following files in `Downloads\ATT Guide\Bargained SPDs\`:
 | 2 | ATT Benefit changes 12-2020.pdf | Benefit-change notice | 10 |
 | 3 | SMM_2024_AT_T_Legacy_Bargained_Program.pdf | SMM | 2 |
 | 4 | 202011---SPD---West-Program…-49758.pdf | SPD (West) | 84 |
-| 5 | 202011---SPD---Southeast-Program…-49755.pdf | SPD (Southeast) | 94 |
+| 5 | 202011---SPD---Southeast-Program…-49755.pdf | SPD (Southeast) — **superseded by NIN 78-74516** | 94 |
 | 6 | Mobility-Bargained-Program….pdf | SPD (Mobility Bargained) | 69 |
 | 7 | 20200930---SPD---Midwest-Program…-49753.pdf | SPD (Midwest) | 109 |
 | 8 | 202011---SPD---East-Program…-49749.pdf | SPD (East) | 77 |
 | 9 | 202011---SPD---ATT-Legacy-Bargained-Program…-49745.pdf | SPD (Legacy Bargained) | 107 |
 | 10 | 20240711---SMM---ATT-Pension-Benefit-Plan…-72720 (4).pdf | SMM (plan-wide) | 24 |
+| 11 | ATT-Retirement-Savings-Plan_78-63233.pdf | SPD (ARSP, 2022) — **superseded by NIN 78-74968** | — |
 
-*Compiled June 29, 2026. This reference summarizes and reorganizes the source SPDs/SMMs for navigation; it is not itself a plan document. For any individual's benefits, the official Plan documents and the applicable Program SPD/SMM govern. Confirm details with the Recordkeeper (Fidelity Service Center, 800-416-2363).*
+SMMs incorporated into the Jan. 2025 Southeast SPD: NIN 78-54413 (Feb. 2021, NMNU special rule) · NIN 78-58130 (Sept. 2021, plan rename to AT&T Pension Benefit Plan, new sponsor and plan number) · NIN 78-63911 (July 2022, **$25,000 retiree death benefit cap**) · NIN 78-68461 (Dec. 2022, rehire within 5 years on/after Aug. 9, 2015 is not a break in service) · NIN 78-72689 (Mar. 2024, Workday contact-update instructions) · NIN 78-72720 (July 2024, **mandatory cash-out $5,000 → $7,000**) · NIN 78-74266 (Nov. 2024, phone number). The 2025 edition also updated the **Pension Band Tables** per bargaining and the Participating Company list.
+
+SMMs incorporated into the July 2026 ARSP SPD: NIN 78-74856 (Nov. 2025, AT&T International Stock Fund manager changes) · NIN 78-74837 (Sept. 2025, **ASSP → ARSP balance consolidation and blackout**, effective Jan. 1, 2026). Into the July 2026 BSSP SPD: NIN 78-74856 (Sept. 2025, fund manager changes) · NIN 78-74876 (Feb. 2026, **71% match rate effective Apr. 1, 2026**).
+
+*Compiled June 29, 2026; revised Aug. 21, 2026 to incorporate the Jan. 2025 Southeast Program SPD and the July 2026 ARSP and BSSP SPDs. This reference summarizes and reorganizes the source SPDs/SMMs for navigation; it is not itself a plan document. For any individual's benefits, the official Plan documents and the applicable Program SPD/SMM govern. Confirm details with the Recordkeeper (Fidelity Service Center, 800-416-2363).*
