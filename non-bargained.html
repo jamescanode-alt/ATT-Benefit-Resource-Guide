@@ -125,6 +125,8 @@ table{width:100%;border-collapse:collapse;margin:20px 0;font-family:'Helvetica N
 th{background:var(--ink);color:#fff;text-align:left;padding:11px 14px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600}
 td{padding:11px 14px;border-bottom:1px solid var(--line)}
 tr:last-child td{border-bottom:none}
+.tscroll{overflow-x:auto;margin:20px 0}
+.tscroll table{margin:0;min-width:540px}
 tbody tr:nth-child(even){background:#fbf9f1}
 td.num{font-variant-numeric:tabular-nums;text-align:right}
 
@@ -272,16 +274,17 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <a href="#mod75" class="navitem"><span class="num">08</span>Modified Rule of 75</a>
   <a href="#elig-calc" class="navitem"><span class="num">09</span>Mod 75 calculator</a>
   <a href="#payment" class="navitem"><span class="num">10</span>Payment &amp; lump sum</a>
+  <a href="#bridging" class="navitem"><span class="num">11</span>Management &harr; union</a>
   <div class="navlabel">The Savings Plan</div>
-  <a href="#savings" class="navitem"><span class="num">11</span>The 401(k) plan</a>
-  <a href="#irmaa" class="navitem"><span class="num">12</span>IRMAA planning</a>
+  <a href="#savings" class="navitem"><span class="num">12</span>The 401(k) plan</a>
+  <a href="#irmaa" class="navitem"><span class="num">13</span>IRMAA planning</a>
   <div class="navlabel">Advisor Toolkit</div>
-  <a href="#death-benefit" class="navitem"><span class="num">13</span>Retiree Death Benefit</a>
-  <a href="#severance" class="navitem"><span class="num">14</span>Severance &amp; surplus</a>
-  <a href="#strategy" class="navitem"><span class="num">15</span>Strategy playbook</a>
-  <a href="#protections" class="navitem"><span class="num">16</span>Protections &amp; rules</a>
-  <a href="#glossary" class="navitem"><span class="num">17</span>Glossary</a>
-  <a href="#contacts" class="navitem"><span class="num">18</span>Contacts &amp; sources</a>
+  <a href="#death-benefit" class="navitem"><span class="num">14</span>Retiree Death Benefit</a>
+  <a href="#severance" class="navitem"><span class="num">15</span>Severance &amp; surplus</a>
+  <a href="#strategy" class="navitem"><span class="num">16</span>Strategy playbook</a>
+  <a href="#protections" class="navitem"><span class="num">17</span>Protections &amp; rules</a>
+  <a href="#glossary" class="navitem"><span class="num">18</span>Glossary</a>
+  <a href="#contacts" class="navitem"><span class="num">19</span>Contacts &amp; sources</a>
   <div class="navlabel">Tools</div>
   <a href="triggers.html" class="navitem"><span class="num">▸</span>Client Milestones</a>
   <div class="navlabel">Training</div>
@@ -359,7 +362,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   <div class="callout warn">
     <span class="tag">The 2015 cliff: management hired since then has no pension at all</span>
     <p>This is the single most consequential date in the management landscape and it is easy to miss, because nothing in the client's benefits portal announces the absence of a plan. A manager hired on <strong>Dec 31, 2014</strong> accrues a cash-balance pension. A manager hired on <strong>Jan 1, 2015</strong> does not, and never will.</p>
-    <p style="margin-top:8px">This also explains a pattern that otherwise looks arbitrary: the <strong>richer 133⅓% / 100% match tier</strong> in the 401(k) applies to exactly the group hired on or after Jan 1, 2015 (see Section 11). The enhanced match is the <em>replacement</em> for the pension, not a bonus on top of it. Two clients with adjacent hire dates and identical titles therefore have structurally different retirement plans, and the post-2015 client's entire retirement rests on the 401(k). For them, contribution rate and allocation are not one topic among many, they are the whole plan.</p>
+    <p style="margin-top:8px">This also explains a pattern that otherwise looks arbitrary: the <strong>richer 133⅓% / 100% match tier</strong> in the 401(k) applies to exactly the group hired on or after Jan 1, 2015 (see Section 12). The enhanced match is the <em>replacement</em> for the pension, not a bonus on top of it. Two clients with adjacent hire dates and identical titles therefore have structurally different retirement plans, and the post-2015 client's entire retirement rests on the 401(k). For them, contribution rate and allocation are not one topic among many, they are the whole plan.</p>
   </div>
 
   <div class="callout gold">
@@ -754,8 +757,104 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
   </div>
 </section>
 
+<section class="block" id="bridging">
+  <div class="pn">Section 11</div>
+  <h2>Crossing between management and union</h2>
+  <p class="lead">Management careers at AT&amp;T frequently start in a bargained job, and demotions and step-backs move people the other way. A client who crosses that line does not carry one benefit with them. They accumulate <strong>separate benefits on each side</strong>, and some things bridge while others stop dead.</p>
+
+  <div class="callout good">
+    <span class="tag">Start here: a transfer is not a termination</span>
+    <p><strong>Termination of Employment</strong> means terminating with <strong>all members of the AT&amp;T Controlled Group</strong>. Moving between a bargained job and management keeps the client inside that group, so it is <em>not</em> a termination and <em>not</em> a break in service. <strong>Term of Employment</strong> (seniority, or net credited service) runs straight through.</p>
+    <p style="margin-top:8px">That is the fact clients most often get wrong, and it cuts in their favor: Term of Employment is what drives the <a class="inline" href="#mod75">Modified Rule of 75</a> and the retiree-healthcare eligibility riding on it, so <strong>a promotion out of the union does not reset that clock.</strong></p>
+  </div>
+
+  <h3>Union service into the Nonbargained Program: the three-year bridge</h3>
+  <p>This is the provision that matters most for a management client with union history, and it comes with a carve-out that cancels it for a growing share of people.</p>
+  <div class="callout">
+    <span class="tag blue">The rule</span>
+    <p>The benefit is <strong>the sum of two pieces</strong>. Once the client earns <strong>three years of service</strong> in the Nonbargained Program, their prior bargained service <strong>is included in Pension Calculation Service</strong>, which feeds <a class="inline" href="#cam">CAM</a> and <a class="inline" href="#pbm">PBM</a>. The resulting benefit is then <strong>reduced by the benefit payable from the prior program</strong>, so it is an offset rather than double-counting.</p>
+    <p style="margin-top:8px"><strong>The exception:</strong> prior service does <strong>not</strong> bridge if it was <em>"earned under a cash balance formula."</em></p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Who the exception hits</span>
+    <p>A bargained employee hired <strong>after Aug 8, 2009</strong> is in the Bargained Cash Balance Program #2, which is a cash-balance formula. Their union service <strong>does not bridge at all</strong> into CAM or PBM. It sits in its own account earning 4.5% interest while they accrue separately on the management side.</p>
+    <p style="margin-top:8px">So the bridge is effectively a <strong>legacy</strong> benefit. It helps a client whose union service came from a <em>Pension Band</em> formula (West, Midwest, Southeast's pre-99 piece, Legacy Bargained, Mobility Bargained). Establish which formula produced the union service before promising it will count.</p>
+  </div>
+  <p class="small">Note the shape of the eligibility rule that makes this possible at all: the Nonbargained Program requires the client to have been <strong>employed by a Participating Company on Dec 31, 2006</strong>, not to have been <em>management</em> on that date. A union employee working on that date who was later promoted becomes a Nonbargained Eligible Employee, which is precisely why the SPD carries a special rule for <em>"Employees Who Have Been Promoted From Bargained Positions."</em></p>
+
+  <h3>Where a promoted union employee actually lands</h3>
+  <p>Bridging is moot if there is no program to bridge into. The hire-date gates from <a class="inline" href="#which-program">Section 02</a> apply to a promoted union employee exactly as they do to an outside hire:</p>
+  <div class="tscroll">
+  <table class="v-lines">
+    <thead><tr><th>Union employee promoted to management</th><th>Management pension program</th><th>Does union service bridge?</th></tr></thead>
+    <tbody>
+      <tr><td>Employed by a Participating Company on <strong>Dec 31, 2006</strong> (not rehired after)</td><td><strong>Nonbargained</strong></td><td>Yes after 3 years, <strong>unless</strong> the union service was cash-balance</td></tr>
+      <tr><td>Not employed on Dec 31, 2006; promoted while that program was open, through <strong>Dec 31, 2014</strong></td><td><strong>Management Cash Balance</strong></td><td>SPD not in the library; confirm with the Recordkeeper</td></tr>
+      <tr><td>Promoted on or after <strong>Jan 1, 2015</strong></td><td><strong>None.</strong> No management pension exists</td><td>Nothing to bridge into</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="lens">
+    <span class="tag">The advisor's lens</span>
+    <p>Those two tables together describe a specific and increasingly common client: <strong>a union employee hired after 2009 who is offered a management promotion today.</strong> They stop accruing a union pension, gain no management pension because that program closed in 2014, and none of their union service bridges anywhere. Their cash-balance account keeps earning 4.5% and that is the end of their defined-benefit story.</p>
+    <p style="margin-top:8px">That is not an argument against the promotion. The enhanced <strong>133⅓%/100% match</strong> that comes with a post-2015 management transfer, worth up to <strong>7% of pay</strong> and available immediately with no service wait, usually more than covers it, and the raise typically dwarfs both. But it is a real trade that appears on no statement, and quantifying it at the decision point is exactly where an advisor earns their keep.</p>
+  </div>
+
+  <h3>Management back to union: demotion and the frozen band</h3>
+  <p>Going the other direction, management service does <strong>not</strong> automatically flow into the union formula either. The Southeast Program, for instance, warns that <em>"your Pension Calculation Service may not include service earned under certain management program(s) from which you were demoted."</em></p>
+  <p>Where the client lands in a <strong>Pension Band</strong> program, the band is protected on the way down:</p>
+  <div class="callout good">
+    <span class="tag">The demotion freeze</span>
+    <p>On a <strong>Demotion</strong> (a move to a title with a <em>lower</em> Pension Band Amount), the <strong>higher band amount is frozen</strong> at the demotion date and keeps being used until the new title's band <strong>catches up</strong>. The client is not immediately dropped.</p>
+    <p style="margin-top:8px"><strong>Better still for involuntary cases:</strong> where the demotion follows a <strong>permanent medical restriction</strong> or certain <strong>force surpluses</strong>, and the client had already satisfied Mod 75, the higher band <strong>including contractual increases</strong> applies up to the <strong>fifth anniversary</strong> of the demotion. The outcome turns on <em>why</em> the demotion happened, so establish the reason and get it documented.</p>
+  </div>
+  <p class="small">One transfer absorbs rather than stacks: a move from the <strong>Southeast Management Program</strong> into the <strong>Southeast Program</strong>, where the management cash balance becomes the opening Cash Balance Account and <strong>no separate benefit</strong> is paid from the management side. Every other transfer leaves two benefits payable independently at termination.</p>
+
+  <h3>The 401(k): the account does not follow the client</h3>
+  <div class="callout warn">
+    <span class="tag">Two accounts, not one</span>
+    <p>The savings-plan SPDs are unambiguous in both directions: <em>"If you become eligible to participate in another plan sponsored by AT&amp;T, your account will remain in the Plan, but no further Contributions or Company Match will be made,"</em> and <em>"You do not have the option to transfer the account balance in the other plan to the Plan."</em></p>
+    <p style="margin-top:8px">A legacy Southeast client promoted into management therefore ends up with a <strong>frozen BellSouth Savings and Security Plan (BSSP) account</strong> and a <strong>new ARSP account</strong>. Both sit at Fidelity but are separate plans, with separate investment elections and separate beneficiary designations. The stranded account still permits loans and withdrawals; it just stops receiving money. <strong>Ask every management client with union history whether a second account exists</strong>, because it will not appear alongside their active one.</p>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Loans aggregate across both plans</span>
+    <p>Loan limits apply <strong>across all plans in the AT&amp;T Controlled Group</strong>. The recordkeeper combines vested balances and outstanding loan balances, and the <strong>highest-balance-in-the-prior-12-months</strong> test uses the combined figure. Two outstanding loans in a frozen account leaves room for only <strong>one</strong> in the active plan. Check the stranded account before quoting borrowing capacity.</p>
+  </div>
+
+  <h3>Actual breaks in service, and why the numbers differ</h3>
+  <p>Everything above is about transfers <em>inside</em> the Controlled Group. A real termination followed by rehire is a different analysis, and the management and union thresholds are <strong>not the same</strong>, which matters for a client whose history spans both:</p>
+  <div class="tscroll">
+  <table class="v-lines">
+    <thead><tr><th>Situation</th><th>Nonbargained (management)</th><th>Southeast (union)</th></tr></thead>
+    <tbody>
+      <tr><td>Break <strong>before</strong> vesting, 5 years or more</td><td colspan="2" class="text-center">Prior Years of Vesting Service are <strong>not counted</strong></td></tr>
+      <tr><td>Break <strong>before</strong> vesting, under 5 years</td><td colspan="2" class="text-center">Prior service determined under the applicable <strong>bridging rules</strong></td></tr>
+      <tr><td>Break <strong>after</strong> vesting</td><td colspan="2" class="text-center">Still vested. The break has no effect on vested status</td></tr>
+      <tr><td>Absence of <strong>6 months or less</strong></td><td colspan="2" class="text-center">Not a break. Prior service counts immediately on rehire; the absence itself is excluded</td></tr>
+      <tr><td>Absence over 6 months: service restored after…</td><td class="num text-center"><strong>5 years</strong> of continuous service post-rehire</td><td class="num text-center"><strong>3 years</strong> of continuous service post-rehire</td></tr>
+      <tr><td>Layoff / involuntary reduction: rehire window that avoids a break</td><td class="num text-center"><strong>2 years</strong></td><td class="num text-center"><strong>5 years</strong> <span class="small">(rehired as a Regular Employee on or after Aug 9, 2015)</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">Two cases route to the Recordkeeper rather than the SPD: rehire under a <strong>litigation, arbitration, or grievance</strong> settlement, award, or order; and service recognized under the <strong>Mandatory Portability Agreement</strong> covering moves between former Bell System companies.</p>
+  <div class="callout warn">
+    <span class="tag">The lump-sum repayment trap</span>
+    <p>If a client took a <strong>lump sum</strong> of their entire pension and was later rehired, their prior Pension Calculation Service and Term of Employment are <strong>not counted</strong> toward the new benefit, <strong>including for satisfying Mod 75</strong>, unless they are entitled to and actually <strong>repay the prior distribution</strong>. A client who cashed out years ago and returned often has no idea their Mod 75 clock restarted. Confirm before building a retirement date on their total years at the company.</p>
+  </div>
+
+  <div class="lens">
+    <span class="tag">The advisor's lens: five questions at any crossing</span>
+    <p><strong>1. Which programs hold benefits?</strong> Expect two; get the balance and formula for each. <strong>2. Was the union service band-based or cash-balance?</strong> That one fact decides whether the three-year bridge does anything. <strong>3. What is the unbroken Term of Employment?</strong> It survives the move and is what Mod 75 and retiree medical run on. <strong>4. Is there a stranded 401(k)?</strong> Check balance, investments, beneficiaries, and any loan. <strong>5. Did the match tier change?</strong> A transfer into management on or after Jan 1, 2015 usually means the 7% tier.</p>
+  </div>
+  <div class="callout client">
+    <span class="tag">Client example: Karen Whitfield</span>
+    <p>Karen started as a CWA service representative in <strong>1988</strong> and moved into management in <strong>1996</strong>. Because she was employed on Dec 31, 2006, she is a Nonbargained Eligible Employee, and because her union service predates 1999 it was earned under a <strong>Pension Band</strong> formula rather than a cash-balance one. So her eight years of union service <strong>do</strong> bridge into her Pension Calculation Service, and with 38 years of continuous Term of Employment she cleared Mod 75 long ago.</p>
+    <p style="margin-top:8px">Two things to check that her statement will not volunteer. She may still hold a <strong>separate small bargained pension benefit</strong> payable from her old program, offset against her CAM benefit but distributable on its own; ask the Recordkeeper for both. And if her union job was a legacy Southeast one, there may be a <strong>frozen BSSP account</strong> sitting alongside her ARSP balance, with its own investments and its own decades-old beneficiary designation. Neither appears next to her main account, and both are hers.</p>
+  </div>
+</section>
+
 <section class="block" id="savings">
-  <div class="pn">Section 11 · The Savings Plan</div>
+  <div class="pn">Section 12 · The Savings Plan</div>
   <h2>The AT&amp;T 401(k)</h2>
   <p>The defined-contribution side is the <strong>AT&amp;T Retirement Savings Plan</strong> (ARSP, Plan 009, SPD NIN <strong>78-74968</strong>, effective July 2026), administered by <strong>Fidelity</strong> through NetBenefits. The employee funds it and directs the investments, and AT&amp;T adds a company match. Management employees are Eligible Employees with <strong>immediate</strong> plan eligibility, and match eligibility also begins <strong>upon hire</strong> (no service wait, unlike most bargained groups).</p>
   <p class="small">New hires are <strong>automatically enrolled</strong> at a 3% before-tax Basic Contribution beginning with the first full payroll period 60 days after becoming eligible, escalating 1% per year up to 6%, and invested by default in the age-appropriate <strong>AT&amp;T Age-Based Asset Allocation Fund</strong> assuming retirement at 65. Any affirmative change to the contribution percentage stops the automatic escalation immediately, which is worth knowing: a client who once nudged their rate has silently turned off auto-increase and may have been flat ever since.</p>
@@ -954,7 +1053,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="irmaa">
-  <div class="pn">Section 12</div>
+  <div class="pn">Section 13</div>
   <h2>IRMAA planning</h2>
 
   <h3>Coordinating pension &amp; 401(k) income with IRMAA in mind</h3>
@@ -991,7 +1090,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="death-benefit">
-  <div class="pn">Section 13 · Advisor Toolkit</div>
+  <div class="pn">Section 14 · Advisor Toolkit</div>
   <h2>The Retiree Death Benefit</h2>
   <p class="lead">A feature that exists in the <strong>Nonbargained Program</strong> but not in the Mobility or cash-balance programs, and one clients rarely know they have. It is a separate lump-sum death benefit, over and above any pension survivor annuity.</p>
 
@@ -1033,7 +1132,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="severance">
-  <div class="pn">Section 14 · Advisor Toolkit</div>
+  <div class="pn">Section 15 · Advisor Toolkit</div>
   <h2>Severance &amp; surplus packages</h2>
   <p class="lead">AT&amp;T regularly declares "surplus" and offers severance. For a management client, the severance decision is tightly bound to the <strong>Mod 75 timing</strong> analysis, sometimes the right move is to find another internal role rather than take the package.</p>
 
@@ -1076,7 +1175,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="strategy">
-  <div class="pn">Section 15</div>
+  <div class="pn">Section 16</div>
   <h2>Strategy playbook</h2>
   <p>The recurring, high-value decisions where an AT&amp;T management client benefits most from advice.</p>
 
@@ -1104,12 +1203,12 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 
   <div class="callout client">
     <span class="tag">Client example: Karen Whitfield, the full picture</span>
-    <p>Putting Karen together: legacy SBC management hired 1988 (Section 02), her controlling formula is CAM at <strong>$3,200/month</strong> (Section 05), with a frozen $95,000 cash balance that makes her lump-sum eligible (Section 06). At 61 with 38 years she's past Mod 75, so the benefit is unreduced and she can enroll in retiree medical at full cost (Section 08). At retirement she weighs the 50% J&amp;S at $2,880 with survivor pop-up (Section 10) against a full lump sum rolled to an IRA. While working she captures her 4.8% match ($7,200/year) and fills 415(c) room with after-tax &rarr; Roth (Section 11); in low-income years she sizes conversions under the $109,000 IRMAA line (Section 12); her family should know about the one-year Retiree Death Benefit claim window (Section 13); and any surplus package is upside because she's already past the milestone (Section 14). Every one of those decisions moves the others, which is why they're evaluated together.</p>
+    <p>Putting Karen together: legacy SBC management hired 1988 (Section 02), her controlling formula is CAM at <strong>$3,200/month</strong> (Section 05), with a frozen $95,000 cash balance that makes her lump-sum eligible (Section 06). At 61 with 38 years she's past Mod 75, so the benefit is unreduced and she can enroll in retiree medical at full cost (Section 08). At retirement she weighs the 50% J&amp;S at $2,880 with survivor pop-up (Section 10) against a full lump sum rolled to an IRA. While working she captures her 4.8% match ($7,200/year) and fills 415(c) room with after-tax &rarr; Roth (Section 12); in low-income years she sizes conversions under the $109,000 IRMAA line (Section 13); her family should know about the one-year Retiree Death Benefit claim window (Section 14); and any surplus package is upside because she's already past the milestone (Section 15). Every one of those decisions moves the others, which is why they're evaluated together.</p>
   </div>
 </section>
 
 <section class="block" id="protections">
-  <div class="pn">Section 16</div>
+  <div class="pn">Section 17</div>
   <h2>Protections &amp; rules to know</h2>
   <div class="cols">
     <div class="card">
@@ -1144,7 +1243,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="glossary">
-  <div class="pn">Section 17</div>
+  <div class="pn">Section 18</div>
   <h2>Glossary</h2>
   <dl class="gloss">
     <dt>CAM Formula (Updated Career Average Minimum)</dt><dd>The primary Nonbargained formula: 1.6% of CAM Income &divide; 12. Still accrues with post-1999 Pension Compensation.</dd>
@@ -1180,7 +1279,7 @@ hr.soft{border:none;border-top:1px solid var(--line);margin:30px 0}
 </section>
 
 <section class="block" id="contacts">
-  <div class="pn">Section 18</div>
+  <div class="pn">Section 19</div>
   <h2>Contacts &amp; sources</h2>
   <h4>For clients: administrators</h4>
   <div class="contacts">

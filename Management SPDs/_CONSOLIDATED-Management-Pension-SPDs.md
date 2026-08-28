@@ -358,10 +358,54 @@ are receiving a monthly annuity and are rehired into a **management** position, 
 suspended; rehire into any **other** position **suspends** it. The prior annuity's payment form
 doesn't change.
 
-**Moving between members of the AT&T Controlled Group.** Your benefit = the sum of two pieces. After
-**3 years** of service in the new program, prior-program service is included in Pension Calculation
-Service (unless earned under a cash-balance formula), but your benefit is **offset** by the
-prior-program benefit. You can receive distributions from each applicable program at termination.
+**Moving between members of the AT&T Controlled Group (bridging).** Your benefit = the sum of two
+pieces. After **3 years** of service in the new program, prior-program service is included in Pension
+Calculation Service (**unless earned under a cash-balance formula**), but your benefit is **offset**
+by the prior-program benefit. You can receive distributions from each applicable program at
+termination.
+
+*Why this matters for a management client with union history, and where it fails:*
+
+- **A transfer is not a termination.** Termination of Employment means terminating with **all**
+  members of the AT&T Controlled Group, so moving between a bargained job and management is neither
+  a termination nor a break in service. **Term of Employment (seniority / NCS) runs straight
+  through**, which preserves progress toward the Modified Rule of 75 and the retiree health and
+  welfare eligibility that rides on it.
+- **The cash-balance carve-out is the whole ballgame.** A bargained employee hired **after
+  Aug. 8, 2009** is in Bargained Cash Balance Program #2, a cash-balance formula, so **their union
+  service does not bridge into CAM or PBM at all**. The bridge is effectively a legacy provision for
+  participants whose union service was earned under a **Pension Band** formula (West, Midwest,
+  Southeast's pre-99 piece, Legacy Bargained, Mobility Bargained).
+- **The eligibility mechanic that makes the bridge reachable.** Nonbargained requires the participant
+  to have been **employed by a Participating Company on Dec. 31, 2006**, not to have been *management*
+  on that date. A union employee working then and promoted later becomes a Nonbargained Eligible
+  Employee, which is why the SPD carries a special rule for *"Employees Who Have Been Promoted From
+  Bargained Positions."*
+- **Where a promoted union employee lands today:** employed on Dec. 31, 2006 → Nonbargained (bridge
+  available subject to the carve-out); promoted through **Dec. 31, 2014** → Management Cash Balance
+  (that program's SPD is not in this library); promoted **on or after Jan. 1, 2015** → **no management
+  pension at all**, so there is nothing to bridge into.
+- **Going the other way**, management service does not automatically flow into a union formula either
+  (the Southeast SPD: *"your Pension Calculation Service may not include service earned under certain
+  management program(s) from which you were demoted"*). Where the client lands in a Pension Band
+  program, the **higher pre-demotion band is frozen** and used until the new title's band catches up;
+  if the demotion followed a **permanent medical restriction or force surplus** and Mod 75 was already
+  satisfied, the higher band including contractual increases applies **up to the 5th anniversary**.
+- **Savings plans do not follow the client.** *"Your account will remain in the Plan, but no further
+  Contributions or Company Match will be made,"* and *"You do not have the option to transfer the
+  account balance in the other plan to the Plan."* A legacy Southeast client promoted into management
+  therefore holds a **frozen BSSP account** plus a **new ARSP account**, with separate elections and
+  separate beneficiary designations. **Loan limits aggregate across both.** On the upside, management
+  match eligibility is **immediate**, and the enhanced tier reaches anyone *"hired, rehired, or
+  **transferred** on or after Jan. 1, 2015"* — so a promotion today generally means **133⅓% / 100%**,
+  up to **7% of Compensation**.
+- **Break-in-service thresholds are not uniform.** Where an actual termination and rehire occurred:
+  Nonbargained restores prior service after **5 years** of continuous post-rehire service and treats a
+  layoff rehire within **2 years** as not a break; the Southeast (union) program uses **3 years** and
+  **5 years** respectively. A client whose history spans both sides is measured differently on each.
+- **Lump-sum repayment trap.** If the client took a lump sum of their entire benefit and was later
+  rehired, prior Pension Calculation Service and Term of Employment are **not counted** toward the new
+  benefit, **including for satisfying Mod 75**, unless the prior distribution is repaid.
 
 **Claims & appeals.**
 - No claim is needed just to start your pension — but you must **elect** to begin before NRA or to

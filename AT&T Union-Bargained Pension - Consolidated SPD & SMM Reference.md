@@ -141,9 +141,111 @@ A **Disability Pension** is generally paid as a Single Life Annuity (Midwest als
 
 A **Survivor Benefit** is available to a Spouse, Legally Recognized Partner, or other eligible/designated beneficiary (recipient categories vary slightly by program — see Part 2). Programs also provide one or more of: **Accident Death Benefit, Sickness Death Benefit, Retiree Death Benefit**, or (East) an **Active Employee Death Benefit**. **All claims for death benefits must be filed within one (1) year of death.**
 
-## 3.8 Break-in-service, rehire, and movement rules
+## 3.8 Break-in-service, rehire, and movement rules (crossing between programs)
 
-Each SPD contains common "Break in Service Rules" governing how a Year of Service is counted, how breaks affect Vested Interest and Term of Employment, the effect of rehire within the AT&T Controlled Group, and movement between members of the Controlled Group.
+This subsection consolidates the transfer and break-in-service language that appears, with variations, in every program SPD. It is stated here once because the questions it answers ("does my service follow me?", "do I get one pension or two?") cut across all of them.
+
+### 3.8.1 The organizing fact: a transfer is not a termination
+
+**Termination of Employment** is defined as the date employment ends with **all members of the AT&T Controlled Group**. A move from a bargained job into management, or the reverse, keeps the employee inside that group. It is therefore **neither a Termination of Employment nor a break in service**, and **Term of Employment** (also called seniority or net credited service) continues uninterrupted.
+
+Because Term of Employment is what the **Modified Rule of 75** and the retiree health and welfare eligibility riding on it are measured against, **crossing the union/management line does not reset Mod 75 progress.** This is the single most commonly misunderstood point in this area.
+
+### 3.8.2 What travels, and what does not
+
+| Item | Crosses the line? |
+|---|---|
+| Term of Employment (seniority / NCS) | **Yes**, uninterrupted |
+| Vested status | **Yes**. Once vested, always vested |
+| Benefit accrual | **No.** Each program holds its own benefit; the participant ends with **two pensions** |
+| A cash-balance account left behind | **Stays in the old program and keeps earning Interest Credits**, but receives no further Basic Benefit or Supplemental Pay Credits |
+| Pension Calculation Service (for benefit math) | **Sometimes** — see 3.13.3 |
+| 401(k) account balance | **No.** The old account freezes; there is no transfer option |
+
+Every program SPD carries a version of the same sentence: on a move to another Plan program, *"you will be eligible to receive a distribution of your available vested Pension Benefit from **both** this Program and any other applicable Plan program."* The pieces stack; they neither merge nor compete.
+
+### 3.8.3 Union → management: the Nonbargained three-year bridge
+
+Moving **into the Nonbargained Program** triggers the only meaningful service-bridging rule in the set:
+
+> The benefit is determined as **the sum of two pieces**. When the participant earns **three years of service** in the Nonbargained Program, service in the previous Plan program **is included in Pension Calculation Service** — **unless that service was earned under a cash balance formula** — and the resulting Pension Benefit is then **reduced by the amount of the benefit in the other Plan program**.
+
+Two consequences follow:
+
+1. **The offset means this is not double-counting.** The bridge improves the *formula inputs* (CAM and PBM are service-driven), then subtracts what the other program pays.
+2. **The cash-balance carve-out is the whole ballgame.** A bargained employee hired **after Aug. 8, 2009** is in [Bargained Cash Balance Program #2](#47-bargained-cash-balance-program-2--the-post-aug-2009-catch-all), a cash-balance formula, so **their union service does not bridge at all**. The provision is effectively a legacy benefit for participants whose union service was earned under a **Pension Band** formula.
+
+Note the eligibility mechanic that makes the bridge reachable: the Nonbargained Program requires the participant to have been **employed by a Participating Company on Dec. 31, 2006**, not to have been *management* on that date. A union employee working then who is later promoted becomes a Nonbargained Eligible Employee, which is why that SPD carries a special rule for *"Employees Who Have Been Promoted From Bargained Positions."*
+
+**Where a promoted union employee actually lands:**
+
+| Promoted union employee | Management pension program | Union service bridges? |
+|---|---|---|
+| Employed by a Participating Company on **Dec. 31, 2006** (not rehired after) | **Nonbargained** | Yes after 3 years, **unless** cash-balance |
+| Not employed on Dec. 31, 2006; promoted through **Dec. 31, 2014** | **Management Cash Balance** | SPD not in the library; confirm with the Recordkeeper |
+| Promoted on or after **Jan. 1, 2015** | **None** | Nothing to bridge into |
+
+> **The live case.** A union employee hired after 2009 and promoted today stops accruing a union pension, gains no management pension (that program closed after Dec. 31, 2014), and bridges no service. Their BCB#2 account continues at 4.5% interest and their defined-benefit accrual ends. The offsetting gain is on the savings side (see 3.13.6).
+
+### 3.8.4 Management → union: demotion and the frozen band
+
+Management service does not automatically flow into a union formula either. The Southeast SPD, for example, provides that *"your Pension Calculation Service may not include service earned under certain management program(s) from which you were demoted."*
+
+Where the participant lands in a **Pension Band** program, the band is protected on the way down:
+
+- On a **Demotion** (a move to a job title with a lower Pension Band Amount), the **higher band amount is frozen as of the demotion** and continues to be used for the Basic Monthly Pension Benefit **until the new title's band amount equals or exceeds it**.
+- **Special rule for involuntary demotions:** where the demotion results from a **permanent medical restriction** or certain **force surpluses**, and the participant had already satisfied the Modified Rule of 75, the higher band amount **including any contractual increases** is used **up to the fifth anniversary** of the demotion.
+- Multiple promotions and demotions in a history require a Recordkeeper calculation.
+
+**One transfer absorbs rather than stacks:** a move from the **Southeast Management Program** into the **Southeast Program**. There the management cash balance account becomes the opening Cash Balance Account in Southeast and **no separate benefit is paid** from the management program. Every other transfer leaves two benefits.
+
+### 3.8.5 Promotions and the one-year / eighteen-month tests
+
+- **Temporary or acting promotion of one year or less.** The employee **remains in the union savings plan**: both the ARSP and BSSP name as an Eligible Employee someone covered by a bargaining agreement who is *"temporarily promoted to a management position for one year or less."* On the pension side a temporary Promotion **does not take effect for band purposes until one year** in the position; if it ends sooner, the wage differential is instead treated as a **Supplemental Payment** feeding the Supplemental Monthly Pension Benefit.
+- **Permanent promotion, 18-month rule.** A Promotion into a higher band is reflected in the Basic Monthly Pension Benefit only if the participant **retires 18 months or more after it**. Retiring within 18 months of a Promotion means the benefit is computed on the **pre-promotion band**.
+
+### 3.8.6 The savings plans: the account does not follow the participant
+
+Both the ARSP and BSSP state the rule identically and in both directions:
+
+> *"If you become eligible to participate in another plan sponsored by AT&T, your account will remain in the Plan, but no further Contributions or Company Match will be made to your Plan account. However, you will still be able to access your account in accordance with the Plan (for example, to obtain a loan or make a Withdrawal)."*
+>
+> *"You do not have the option to transfer the account balance in the other plan to the Plan."*
+
+So a legacy Southeast participant promoted into management holds a **frozen BSSP account** and a **new ARSP account** — separate plans, separate investment elections, separate beneficiary designations.
+
+**Asymmetry worth knowing.** The two union plans treat an incoming former manager differently:
+
+| Direction | ARSP | BSSP |
+|---|---|---|
+| Management position → covered bargaining unit, on/after Aug. 9, 2009 | **Eligible** to participate while represented by that unit | **Not eligible** if the participant was in a management position on Aug. 8, 2009 |
+
+**Match tier.** Management employees are eligible for the Company Match **upon hire**, with no service wait. The ARSP's enhanced tier applies to AT&T Management Employees *"hired, rehired, or **transferred** on or after Jan. 1, 2015"* — so a union employee promoting into management today generally moves to **133⅓% of the first 3% plus 100% of the next 3%**, a maximum of **7% of Compensation**. Against a BellSouth Utility Operations tier (1.5% of pay) or a BSSP band-capped match of roughly $2,474/year, that is a substantial increase in company money.
+
+**Loans aggregate across plans.** Loan limits apply across **all plans in the AT&T Controlled Group**: the Recordkeeper combines vested balances and outstanding loan balances, and the highest-balance-in-the-prior-12-months test uses the combined figure. Two outstanding loans in a frozen account leaves room for only one in the active plan.
+
+### 3.8.7 Break in service (an actual termination and rehire)
+
+The thresholds are **not uniform** between the union and management programs, which matters for a participant whose history spans both:
+
+| Situation | Southeast (union) | Nonbargained (management) |
+|---|---|---|
+| Break **before** vesting, 5 years or more | Prior Years of Vesting Service **not counted** | Same |
+| Break **before** vesting, under 5 years | Prior service determined under the applicable **bridging rules** (Recordkeeper) | Same |
+| Break **after** vesting | Vested status unaffected | Same |
+| Absence of **6 months or less** | Not a break; prior Period of Service included immediately on rehire, the absence itself excluded | Same |
+| Absence over 6 months: prior service restored after | **3 years** of continuous service post-rehire | **5 years** of continuous service post-rehire |
+| Layoff / involuntary reduction: rehire window that is not a break | **5 years**, if rehired as a Regular Employee **on or after Aug. 9, 2015** | **2 years** |
+
+Additional cases route to the Recordkeeper: rehire under a **litigation, arbitration, or grievance** settlement, award, or order; **Military Leave of Absence**; and service recognized under the **Mandatory Portability Agreement** and other Interchange Agreements (note that an MPA transfer **on or after Jan. 1, 1999** makes a participant ineligible for a Southeast **Pre-99 Pension Band Benefit**).
+
+> **Lump-sum repayment trap.** Where a participant received a **lump sum of their entire Pension Benefit** and is later rehired, prior Pension Calculation Service and Term of Employment are **not included** in determining the post-rehire benefit — **including for purposes of satisfying the Modified Rule of 75** — unless the participant is entitled to and **repays the prior distribution**.
+
+### 3.8.8 Effect of rehire after payment has begun
+
+- Rehired after receiving a **lump sum or an annuity** from a cash-balance program: the opening Cash Balance Account on rehire is **$0**.
+- Rehired **without** having begun payment: the prior Cash Balance Account resumes receiving Basic Benefit Credits and Interest Credits from the rehire date.
+- Rehired while **receiving a monthly annuity**: the annuity is **permanently suspended** on rehire and restarts in the same form of payment after the subsequent Termination of Employment; the post-rehire benefit is reduced to account for payments already received. *Exception:* a participant rehired **after Normal Retirement Age who works fewer than 40 hours per month** does not have the annuity suspended.
 
 ## 3.9 Claims and appeals procedures
 

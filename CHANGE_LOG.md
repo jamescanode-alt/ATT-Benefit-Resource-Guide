@@ -1,5 +1,107 @@
 # CHANGE_LOG
 
+## 2026-08-21 (4) — New section: crossing between union and management (bridging rules)
+
+**Summary.** Added a section on what happens when an employee moves between a bargained job and
+management, to both primary guides plus a cross-reference in the third, and expanded the
+corresponding subsection in both consolidated Markdown references. The material is sourced from the
+*Break in Service Rules*, *Effect of Rehire*, *Moving Between Members of the AT&T Controlled Group*,
+and *Promotions / Demotions* sections of six SPDs.
+
+### The framing fact
+
+**Termination of Employment** means terminating with **all members of the AT&T Controlled Group**. A
+union/management transfer keeps the client inside that group, so it is **neither a termination nor a
+break in service**, and **Term of Employment (seniority / NCS) runs uninterrupted**. Because Mod 75
+and the retiree-healthcare eligibility riding on it are measured against Term of Employment,
+**crossing the line does not reset Mod 75 progress.** Clients frequently believe it does.
+
+### The finding that justifies the section
+
+Three SPD provisions combine into a conclusion none of them states alone:
+
+1. Moving into the **Nonbargained Program** bridges prior bargained service into Pension Calculation
+   Service after **3 years**, offset by the prior benefit — **"unless the service was earned under a
+   cash balance formula."**
+2. Anyone hired into a bargained job **after Aug. 8, 2009** is in **Bargained Cash Balance Program
+   #2**, which is a cash-balance formula. So their union service **bridges nowhere**.
+3. The **Management Cash Balance Program closed** to entrants after **Dec. 31, 2014**.
+
+Therefore: **a union employee hired after 2009 and promoted today stops accruing a union pension,
+gains no management pension, and bridges no service.** Their BCB#2 account keeps earning 4.5% and
+their defined-benefit accrual ends. Both guides state this plainly and immediately balance it — the
+enhanced **133⅓% / 100%** match (up to **7% of pay**, available immediately, reaching anyone
+*"hired, rehired, or **transferred** on or after Jan. 1, 2015"*) usually more than compensates, and
+the raise typically dwarfs both. The point is to quantify the trade at the decision, not to argue
+against promotions.
+
+### What each guide gained
+
+**`index.html` — new Section 09, "Crossing between union and management"** (between Payment options
+and the Savings Plan group; sections 09–16 renumbered to 10–17). Covers: the transfer-is-not-a-
+termination rule; a what-travels table; pensions stacking rather than merging; the three-year bridge
+and its cash-balance carve-out; a hire-date table showing where a promoted union employee actually
+lands; demotion mechanics including the **band freeze** and the **5th-anniversary** protection for
+demotions following permanent medical restriction or force surplus; the **one-year** temporary-
+promotion test and the **18-month** rule for a promotion to reach the band calculation; the savings
+plans' rule that the **account never follows the client**; the **ARSP/BSSP asymmetry** on inbound
+former managers; **loan aggregation** across plans; a union-vs-management break-in-service comparison;
+and the **lump-sum repayment trap** that silently restarts a Mod 75 clock.
+
+**`non-bargained.html` — new Section 11, "Crossing between management and union"** (sections 11–18
+renumbered to 12–19). Same substance written from the management side, leading with the bridge and
+its carve-out since that is the management reader's actual question, and noting the eligibility
+mechanic that makes the bridge reachable at all: Nonbargained requires employment on Dec. 31, 2006,
+**not** management status on that date, which is why its SPD carries a special rule for *"Employees
+Who Have Been Promoted From Bargained Positions."*
+
+**`mobility.html`** — a cross-linking callout rather than a full section, since the Mobility Program
+covers both bargained and legacy management populations within one program.
+
+### Consolidated Markdown
+
+- **Union reference §3.8** was a one-line stub on exactly this topic; expanded in place into eight
+  subsections rather than appended as a new §3.13, which keeps numbering stable and puts the content
+  where a reader already looks. Includes the effect-of-rehire rules (opening balance resets to $0
+  after a prior lump sum or annuity; annuity **permanently suspended** on rehire except for a
+  post-NRA rehire working under 40 hours/month).
+- **Management reference** — the *Moving between members* paragraph expanded in place with the
+  carve-out, the landing table, the demotion freeze, the savings-plan and loan-aggregation rules, and
+  the break-in-service threshold mismatch.
+
+### Bug found and fixed while verifying
+
+`non-bargained.html` **never defined the `.tscroll` CSS rule** — only `index.html` has it. The new
+section's two tables were therefore rendering with `overflow-x: visible` and pushing the page into
+horizontal scroll at 375px. Added the canonical rule
+(`.tscroll{overflow-x:auto;margin:20px 0}` / `.tscroll table{margin:0;min-width:540px}`) to that
+page. Caught only because the responsive check tests the actual computed style rather than trusting
+the markup; a tag-balance or anchor check would have passed it.
+
+### Files changed
+
+`index.html` · `non-bargained.html` · `mobility.html` ·
+`AT&T Union-Bargained Pension - Consolidated SPD & SMM Reference.md` ·
+`Management SPDs/_CONSOLIDATED-Management-Pension-SPDs.md` · `PLAN_LOG.md` · `CHANGE_LOG.md`
+
+### Validation
+
+- HTML tag-balance across all **7** pages — pass.
+- Section numbering verified **sequential 01–N** on every page after renumbering (index 17 sections,
+  non-bargained 19), with before/after cross-reference counts asserted programmatically rather than
+  inspected: refs 1–8 (index) and 1–10 (non-bargained) unchanged, refs above the insertion point
+  shifted by exactly one, the single delta being an intentional new cross-reference.
+- Internal anchors on all 7 pages — **0 broken**. Markdown internal links — **0 broken**.
+- Cross-page links from `mobility.html` to `#bridging` on both guides confirmed to resolve.
+- Responsive at 375px via per-page iframe measurement: **no horizontal overflow on any guide**; all
+  new tables confirmed scrolling inside `.tscroll` with computed `overflow-x: auto`.
+- **0 em-dashes** in the new user-visible copy (two were caught and removed).
+- **0 console errors.**
+
+### Status
+
+Complete across all three guides and both consolidated references.
+
 ## 2026-08-21 (3) — Bargained Cash Balance Program #2 SPD acquired; the flagged gap is closed
 
 **Summary.** The document flagged this morning as missing has been supplied. It **confirms every

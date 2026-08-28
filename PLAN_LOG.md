@@ -1,5 +1,71 @@
 # PLAN_LOG
 
+## 2026-08-21 (4) — New section: crossing between union and management (bridging)
+
+**Task.** User asked for a section explaining the bridging rules for an employee moving from union to
+management or the reverse.
+
+**Research first.** The term "bridging" appears in the SPDs only in the narrow vesting sense ("prior
+Years of Vesting Service will be determined under the applicable bridging rules"). The substance the
+user is asking about is spread across four differently-named sections in every SPD: *Break in Service
+Rules*, *Effect of Rehire Within the AT&T Controlled Group*, *Moving Between Members of the AT&T
+Controlled Group*, and the *Promotions / Demotions* subsections. I read all four in the Southeast
+(78-74516), Bargained Cash Balance #2 (78-74506), Nonbargained (78-49754), Mobility (78-49752), ARSP
+(78-74968), and BSSP (78-74971) SPDs before writing.
+
+**The organizing insight.** *Termination of Employment* is defined as terminating with **all members
+of the AT&T Controlled Group**. A union/management move therefore is **not** a termination and **not**
+a break in service, so **Term of Employment (seniority/NCS) runs straight through** — which means
+**Mod 75 progress is preserved**. Clients routinely believe the opposite. That fact anchors the whole
+section; everything else is a list of what does and does not follow it.
+
+**What the SPDs actually say, and the two findings worth the section's existence.**
+
+1. **Pensions stack, they do not merge.** Every program: *"you will be eligible to receive a
+   distribution of your available vested Pension Benefit from **both** this Program and any other
+   applicable Plan program."* A cash-balance account left behind *"will remain in this Program and
+   will continue to earn Interest Credits"* — compounding continues, pay credits stop.
+
+2. **The Nonbargained three-year bridge, and the carve-out that guts it.** Prior bargained service
+   joins Pension Calculation Service after 3 years in the program, offset by the prior benefit,
+   **"unless the service was earned under a cash balance formula."** Since anyone hired after
+   Aug. 8, 2009 is in BCB#2 (cash balance), **their union service bridges nowhere**. Combined with
+   the Management Cash Balance Program closing after Dec. 31, 2014, this produces a concrete and
+   increasingly common client: a post-2009 union hire promoted today stops accruing a union pension,
+   gains no management pension, and bridges no service. That is the single most useful thing in the
+   section and it is not stated in any one SPD — it falls out of combining three of them.
+
+**Other sourced detail worth capturing:** the demotion band-freeze (higher band frozen until the new
+band catches up; **5th anniversary** protection where the demotion follows permanent medical
+restriction or force surplus and Mod 75 was already met); the **18-month** rule for a promotion to
+reach the band calculation; the **one-year** test for temporary/acting promotions (employee stays in
+the union savings plan); the savings-plan rule that the **account never follows the client** (frozen
+old account + new account, loans aggregated across both); the ARSP/BSSP **asymmetry** on inbound
+former managers; and the union/management **break-in-service threshold mismatch** (3 vs 5 years to
+restore service; 5- vs 2-year layoff window).
+
+**Placement decisions.**
+- `index.html`: new **Section 09**, between Payment options and the Savings Plan group, because it
+  spans both. Renumbers 09–16 → 10–17.
+- `non-bargained.html`: parallel **Section 11** written from the management side (different emphasis:
+  leads with the bridge and its carve-out, since that is the management reader's question).
+  Renumbers 11–18 → 12–19.
+- `mobility.html`: a cross-linking callout rather than a full section. Mobility covers both bargained
+  and management populations in one program, so the crossing question is less acute there.
+- Both consolidated MDs: the union reference's **§3.8** was a one-line stub on exactly this topic, so
+  it is expanded in place rather than appended as a new §3.13 — keeps numbering stable and puts the
+  content where a reader already looks. Management MD's *Moving between members* paragraph likewise
+  expanded in place.
+
+**Risks.** (1) Renumbering two guides is the main mechanical risk; mitigated by descending-order
+replacement and by asserting before/after reference counts rather than eyeballing. (2) The
+"promotion may cost you your pension" framing is genuinely important but must not read as advice
+against promotions — the enhanced 7% match usually more than offsets it, and the section says so
+explicitly in both guides.
+
+**Next steps.** Write → renumber with assertions → insert → verify anchors and sequence in-browser →
+responsive check → MDs → push.
+
 ## 2026-08-21 (3) — The missing SPD arrives: Bargained Cash Balance Program #2
 
 **Task.** User supplied two PDFs and asked whether either fills the gap flagged this morning.

@@ -102,6 +102,13 @@
       Band amounts vary by termination year, so any client-facing figure should be pulled from
       Attachment 3 for that client's year, not reused from an example.
 
+- [ ] **`.tscroll` is only defined in `index.html` and `non-bargained.html`.** The wide-table scroll
+      wrapper (`.tscroll{overflow-x:auto}` + `.tscroll table{min-width:540px}`) was added to
+      `non-bargained.html` on 2026-08-21 after a new section's tables broke the mobile layout there.
+      `mobility.html`, `triggers.html`, and the three case-study decks still have **no such rule**, so
+      any wide table added to them will silently overflow the page on mobile. Either port the two
+      lines to those pages pre-emptively, or remember to add them alongside the first wide table.
+
 - [ ] **Client Milestones enhancements (triggers.html).** Possible follow-ups: a tax-filing-status
       input so the IRMAA line shows only the relevant tier ($109k vs $218k); a West/Craft vs
       Southeast sub-select for the union threshold age (55 vs 56); confirm the born-1959 RMD age
