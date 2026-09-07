@@ -1,5 +1,66 @@
 # CHANGE_LOG
 
+## 2026-09-07 — Company match + contribution calculator on the Non-Bargained guide
+
+Ported `#match` and `#match-calc` from the union guide to `non-bargained.html` as new
+**Section 13 (The company match)** and **Section 14 (Contribution & limits calculator)**.
+
+**The formulas were re-derived, not copied.** The union guide's match table lists bargained
+groups only (Mobility Orange/Purple/Black/Blue, BellSouth Utility Ops, Alascom, Technical
+Services), none of which a management client belongs to. Pulled the management rules directly
+from `Management SPDs/20260710---SPD---ATT-Retirement-Savings-Plan---NIN-78-74968.pdf`:
+
+- **Match begins upon hire** for Management Employees (SPD "Special Rule for Management
+  Employees"), one of the named exceptions to the plan's one-Year-of-Service baseline. This is a
+  real advantage over most bargained groups and the page had it right but buried.
+- **80% of the first 6%** (4.8% of pay) for management hired/rehired **before 1/1/2015**;
+  **133⅓% of the first 3% + 100% of the next 3%** (7% of pay) **on or after**.
+- **DIRECTV transfer rules, newly added:** a DIRECTV hire date on/after 1/1/2016 transferring to
+  management with no intervening termination gets the 7% tier; a DIRECTV hire date before
+  1/1/2016 transferring on/after 7/24/2015 gets the 4.8% tier. Also added the SPD's rule that a
+  merger/acquisition entrant's hire date for this test is **the date the deal closed**.
+- **AT&T Shares Fund** default, with the SPD's management-specific exception for **Cricket/AIO
+  Wireless, LLC and AT&T Investment Operations I, LLC**. Kept the NUA-before-rollover point,
+  which matters more here given a CAM pension from the same employer.
+
+**The calculator diverges from the union version in one deliberate way:** it applies the plan's
+**$360,000 compensation limit**, because the SPD suspends contributions on reaching it and that
+is a live constraint for a management population rather than a theoretical one. Entering
+$500,000 computes everything on the first $360,000 and says so. The union tool still excludes
+the cap and its disclaimer still says so; TODO updated to reflect the split.
+
+**Verified in the browser** (screenshots were returning blank, so verification was geometry,
+computed styles, and scripted interaction rather than images):
+
+- Both of the **SPD's own worked examples reproduce exactly**: 3% contributed returns 4% of pay
+  ($6,000 on $150,000), 6% returns 7% ($10,500). Total match caps at 7%.
+- Karen Whitfield's defaults match hand calculation to the dollar: $7,200 match, $9,000 402(g),
+  $16,200 of 415(c) additions, $11,250 catch-up (age 61, the 60–63 enhanced amount), 16.3% to
+  max 402(g), 43.2% to fill 415(c). Dropping to 4% shows $4,800 match and $2,400 left on the
+  table, matching the copy in both new sections.
+- $500,000 Compensation correctly computes on $360,000 ($25,200 match on the 7% tier).
+- No console errors; 21 sections and 21 `.pn` labels in unbroken 01–21 sequence; no broken
+  in-page anchors; div/section/table/select tag counts balanced; the pre-existing Mod 75
+  calculator and the nav scroll-observer still function.
+
+**Bug found and fixed while verifying.** The new tier `<select>` rendered **661px wide at a
+375px viewport** and pushed the whole page into horizontal scroll, because flex items default
+to `min-width:auto` and the long option labels set the intrinsic width. Added `min-width:0` to
+`.calc select` and shortened the four longest labels (full conditions remain in the Section 13
+table). Mobile overflow now 0. `index.html` does **not** currently overflow, its labels are
+shorter, so the same latent weakness there is logged in TODO rather than changed here.
+
+**Housekeeping.** Renumbered sections 13–19 to 15–21 and fixed the now-stale section references
+in the "full picture" callout; corrected two section labels in `case-studies-nb.html` that were
+already stale by one from the earlier bridging renumber and would have been off by three;
+reduced the old Section 12 match callout to a pointer and moved the per-pay-period trap into
+Section 13 so match content lives in one place; added `.sr-only`.
+`ANNUAL-TAX-FIGURES.md` now names **both** JavaScript constants blocks (and the NB-only sixth
+constant, `COMP_LIMIT`) so the annual pass cannot update one calculator and miss the other.
+
+**Files.** `non-bargained.html`, `case-studies-nb.html`, `ANNUAL-TAX-FIGURES.md`, `PLAN_LOG.md`,
+`TODO.md`. Pushed as d30d6ae.
+
 ## 2026-08-21 (4) — New section: crossing between union and management (bridging rules)
 
 **Summary.** Added a section on what happens when an employee moves between a bargained job and
