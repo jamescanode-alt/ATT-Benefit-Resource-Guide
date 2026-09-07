@@ -1,5 +1,49 @@
 # CHANGE_LOG
 
+## 2026-09-07 (2) — Lead with the rule: concision pass on the Non-Bargained guide
+
+User flagged one sentence in Section 13 ("The SPD's baseline is that matching contributions begin
+after one Year of Service.") for opening a paragraph with information that is not the rule, and
+asked for the same treatment across the guide.
+
+**The principle applied.** State the rule that governs *this* reader first. A contrast (the union
+plan, the plan-wide baseline, the pre-2005 history) survives only as a trailing clause, and only
+where it prevents a real misreading.
+
+**Five rule-first rewrites**
+
+| Where | Was | Now opens with |
+|---|---|---|
+| §13 match eligibility | "The SPD's baseline is that matching contributions begin after one Year of Service." | "**Management Employees are eligible for the Company Match immediately**" |
+| §06 frozen cash balance | "Before it was frozen, the account earned basic benefit credits…" | "**On Jan 14, 2005 the basic benefit credits stopped.**" |
+| §04 greatest-of-three | "The union (bargained) guide describes a pension that **adds**…" | "The three formulas **compete**…" |
+| §13 formula table lead-in | "The plan's baseline is 80% of the first 6%. Management hired… instead:" | "Hire date sets the formula:" |
+| §14 calculator note | "Unlike the union guide's version of this tool, this one…" | "This calculator **applies the plan's $360,000 compensation limit**." |
+
+**Six filler cuts.** "A note on how the three limits interact, because the tool reports them
+separately"; "which is worth knowing"; "Both are worth asking about rather than assuming"; "Note
+what that means at the low end"; "Two mechanics worth knowing"; "a live risk for this population
+in a way it is not for most bargained clients". Also dropped the duplicate statement of the 7%
+match cap and the three-clause sprawl following the match-eligibility rule.
+
+**Kept deliberately.** "Two gates control whether a client has a benefit at all", "Two separate
+IRS ceilings govern…", "Three features make IRMAA a planning problem…", "Three questions, in this
+order…". These state the shape of something the reader is about to see, so they introduce rather
+than delay. Cutting them would remove signposting, not context.
+
+**Verified prose-only.** Diffed every dollar figure, percentage, date and year in `<main>` before
+and after: 478 → 474. All four removals (`80%`, `6%`, `2015`, `7%`) were restatements that remain
+in the adjacent table or clause, confirmed by counting them inside Section 13 after the edit
+(80% of the first 6% ×3, 1/1/2015 ×2, 133⅓ ×2, 7.0% ×4, 4.8% ×5). No formula, factor, citation or
+SPD reference changed.
+
+**Re-scanned** every `<p>` in `<main>` afterward: zero remaining lead-with-context openings and
+zero residual filler phrases from the target list. Rendered check: both calculators still compute
+($7,200 match on Karen's defaults, Mod 75 cards intact), 21 sections, no console errors, no
+horizontal overflow at 1265px or 375px.
+
+**Files.** `non-bargained.html`, `PLAN_LOG.md`. Pushed as 239f0cc.
+
 ## 2026-09-07 — Company match + contribution calculator on the Non-Bargained guide
 
 Ported `#match` and `#match-calc` from the union guide to `non-bargained.html` as new
