@@ -1,5 +1,44 @@
 # PLAN_LOG
 
+## 2026-09-07 — Port the company match + contribution calculator to the Non-Bargained guide
+
+**Task.** Add the union guide's Company Match section (`#match`) and Contribution & limits
+calculator (`#match-calc`) to `non-bargained.html`.
+
+**Key constraint: the union match table must NOT be copied verbatim.** It lists bargained
+groups (Mobility Orange/Purple/Black/Blue, BellSouth Utility Ops, Alascom, etc.) that no
+management client belongs to. Verified the management rules directly from
+`Management SPDs/20260710---SPD---ATT-Retirement-Savings-Plan---NIN-78-74968.pdf` via pdftotext:
+
+- Management Employees are eligible for Company Match **immediately** (SPD "Special Rule for
+  Management Employees"), unlike most bargained groups' one Year of Service wait.
+- Baseline management (hired/rehired **before** 1/1/2015): **80% of the first 6%** (max 4.8%).
+- Management hired/rehired **on or after 1/1/2015**: **133 1/3% of the first 3% + 100% of the
+  next 3%** (max 7%). SPD worked example: 3% contributed = 4% match; 6% = 7%; capped at 7%.
+- **DIRECTV transfer rules** (absent from the current page, adding them): DIRECTV hire date on
+  or after 1/1/2016 transferring to AT&T Management without intervening termination gets the
+  7% tier; DIRECTV hire date before 1/1/2016 transferring on/after 7/24/2015 gets the 4.8% tier.
+- Merger/acquisition entrants use the deal-close date as their hire date for this test.
+- Management match is allocated to the **AT&T Shares Fund** by default (management is not in
+  the SPD's "same funds" exception list), vests 100% after 3 Years of Service, and is never
+  paid on Catch-Up Contributions.
+
+**One deliberate engine change vs. the union calculator.** The NB page already documents the
+plan's **$360,000 annual compensation limit**, and the SPD suspends contributions on reaching
+it. That cap is a live constraint for a management population and a non-issue for most
+bargained clients, so the NB calculator caps eligible Compensation at $360,000 and says so,
+rather than inheriting the union tool's stated exclusion of it.
+
+**Files.** `non-bargained.html`: new `#match` (Section 13) and `#match-calc` (Section 14),
+`.sr-only` CSS added, existing Section 12 match callout reduced to a pointer, the
+per-pay-period match trap moved into the new match section, sections 13-19 renumbered to
+15-21, nav updated, calculator IIFE appended.
+
+**Risks.** Renumbering collisions (do it descending); duplicated/contradictory match copy if
+the Section 12 callout is left as-is; importing bargained tiers by accident.
+
+**Next steps.** Build → validate in preview at desktop + mobile → push → CHANGE_LOG.
+
 ## 2026-08-21 (4) — New section: crossing between union and management (bridging)
 
 **Task.** User asked for a section explaining the bridging rules for an employee moving from union to

@@ -2,6 +2,13 @@
 
 ## Open
 
+- [ ] **`.calc select` needs `min-width:0` in `index.html` and `mobility.html` too.** Flex items
+      default to `min-width:auto`, so a `<select>` whose option text is long refuses to shrink and
+      pushes the whole page into horizontal scroll at mobile. This bit the new management tier
+      dropdown on `non-bargained.html` (661px wide at a 375px viewport) and is fixed there. The
+      union page's contract dropdown does **not** currently overflow because its labels are
+      shorter, so this is latent rather than live, but any future longer option label will trip it.
+
 - [ ] **Rewrite the Sept 2026 Roth-split subsection after the event.** The `#roth-split` block on
       `index.html`, `non-bargained.html`, `mobility.html` and the client-facing callout in
       `triggers.html` are written in future tense against a Sept 14–22, 2026 blackout. After
@@ -33,16 +40,16 @@
       paragraph (~line 839) and the "greatest of three" card headings (~425/430/435: "CAM — the
       usual winner", "Cash Balance — frozen", "PBM — narrow"). The `index.html` one was cleared on
       2026-08-12 while the match copy was being rewritten. `index.html` is now em-dash free.
-- [ ] **Apply the same match treatment to the other two guides.** `index.html` now has a dedicated
-      Section 10 (`#match`) with the SPD's real match tiers, the one-Year-of-Service eligibility
-      rule, the AT&T Shares default, and a contract-aware calculator. `non-bargained.html` §11 and
-      `mobility.html` §06 still have prose-only match content inside their 401(k) sections. Their
-      tiers are correct but they lack the eligibility and AT&T-Shares-concentration points and have
-      no calculator. Porting means renumbering those guides too (nb: 12–18 shift to 13–19;
-      mobility: 07–12 shift to 08–13), so treat it as a deliberate pass, not a quick copy.
-- [ ] **Currency formatting is only on the union guide's match calculator.** If any other dollar
-      input is added, reuse the `formatComp`/`readComp` pair and the `.sr-only` hint from
-      `index.html` rather than writing a second implementation.
+- [ ] **Apply the same match treatment to `mobility.html` (last one).** Done on `index.html`
+      (Section 11/12) and, on 2026-09-07, on `non-bargained.html` (new Sections 13 `#match` and 14
+      `#match-calc`, renumbering 13–19 to 15–21). `mobility.html` §06 still has prose-only match
+      content inside its 401(k) section: its tiers are correct but it lacks the eligibility and
+      AT&T-Shares-concentration points and has no calculator. Mobility's tiers are the bargained
+      Orange/Purple/Black/Blue ladder, **not** the management one, so port the structure and
+      re-derive the rows from the ARSP SPD rather than copying either existing table.
+- [ ] **Currency formatting now exists in two copies** (`index.html` and `non-bargained.html`
+      match calculators). The `formatComp`/`readComp` pair and the `.sr-only` hint are duplicated
+      verbatim; if a third is added, factor them out rather than writing a fourth.
 - [ ] **415(c) target rate is wrong above roughly $1M of Compensation (now confirmed cosmetic).**
       Section 11 solves the "rate to fill 415(c)" with the closed form `(72000 - maxMatch) / comp`,
       which assumes the match is already at its cap. Above about $1M the numerator goes negative and
@@ -53,8 +60,9 @@
       `../CONTRIBUTION-CALCULATOR-SPEC.md` §3, verified to return 1.54% at $2M against a
       133⅓%/100% ladder (exactly $72,000 of additions). Port it if this section is ever revisited.
 
-- [ ] **Consider applying the $360,000 compensation cap in the Section 11 calculator.** Currently
-      the tool ignores it and the disclaimer says so. Applying it would be more than a clamp: the
+- [ ] **Consider applying the $360,000 compensation cap in the *union* Section 12 calculator.**
+      The NB calculator now clamps countable Compensation to $360,000 and says so in its note; the
+      union tool still ignores it and its disclaimer says so. Note the NB version only clamps. Applying it would be more than a clamp: the
       SPD says contributions are **automatically suspended** on reaching the cap, so a client above
       roughly $360,000 on a level rate stops contributing (and stops earning match) partway through
       the year. Modelling that honestly means modelling the pay-period timeline, not just capping
@@ -66,7 +74,8 @@
       building, the logic is small: weekly pay -> band amount -> x52 -> x the current match rate.
 - [ ] **The contribution calculator hard-codes the 2026 IRS limits in JavaScript.** `PLAN_YEAR`,
       `DEFERRAL_LIMIT`, `ADDITIONS_LIMIT`, `CATCHUP`, and `CATCHUP_SUPER` live in a constants block
-      in `index.html` Section 11 and must be updated with the annual pass.
+      in `index.html` Section 12 **and again in `non-bargained.html` Section 14** (which adds a
+      sixth constant, `COMP_LIMIT`), and both must be updated with the annual pass.
       `ANNUAL-TAX-FIGURES.md` now carries the step and the exact code, so this is a pointer, not a
       second checklist.
 - [ ] **Recheck match tiers at the next ARSP SPD.** Verified row by row against the July 2026 SPD

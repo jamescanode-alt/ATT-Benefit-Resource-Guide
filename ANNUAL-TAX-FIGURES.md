@@ -21,12 +21,14 @@
 3. Re-check the **derived totals** (e.g., 402(g) + catch-up), they are hard-coded, not computed.
 4. Update the **"Last verified"** date above and the year in each page's IRMAA sentence
    ("For reference, 20XX IRMAA begins above…").
-5. Update the **JavaScript constants block** in `index.html` Section 11 (see the warning under the
-   401(k) limits table below). Prose search-and-replace will not catch it.
+5. Update the **JavaScript constants blocks** — there are now **two**: `index.html` Section 12 and
+   `non-bargained.html` Section 14 (see the warning under the 401(k) limits table below). Prose
+   search-and-replace will not catch either one.
 6. Re-run the local preview and spot-check the 401(k) limits table and IRMAA paragraph on all
    three pages, plus `triggers.html` (timeline copy, the summary line under the inputs, and the
    Section 04 reference table carry the catch-up, 402(g), and IRMAA figures), plus the
-   `index.html` contribution calculator's limit cards and target-rate boxes.
+   contribution calculators' limit cards and target-rate boxes on **both** `index.html` and
+   `non-bargained.html`.
 
 ---
 
@@ -52,10 +54,11 @@ Authoritative sources:
 | 415(c) + super catch-up total (60–63) | **$83,250** | limits table | `$83,250` |
 | SECURE 2.0 Roth-catch-up FICA wage threshold | **~$150,000** (indexed) | catch-up callout | `$150,000` |
 
-> **⚠ These four figures are also hard-coded in JavaScript**, not just in prose. `index.html`
-> Section 11 (the contribution calculator) carries a constants block that must be updated in the
-> same pass, or the calculator will silently report last year's limits while the tables above show
-> the new ones. Search `index.html` for `Tax-year figures` to find it:
+> **⚠ These four figures are also hard-coded in JavaScript**, not just in prose, and now in
+> **two** places: the contribution calculator in `index.html` **Section 12** and the one in
+> `non-bargained.html` **Section 14**. Both carry a constants block that must be updated in the
+> same pass, or a calculator will silently report last year's limits while the tables above show
+> the new ones. Search each file for `Tax-year figures` to find it:
 >
 > ```js
 > const PLAN_YEAR=2026;
@@ -63,6 +66,13 @@ Authoritative sources:
 > const ADDITIONS_LIMIT=72000;  // 415(c) total additions limit (catch-up is exempt)
 > const CATCHUP=8000;           // ages 50-59 and 64+
 > const CATCHUP_SUPER=11250;    // ages 60-63 only
+> ```
+>
+> `non-bargained.html` carries the same five constants **plus a sixth**, the plan's annual
+> compensation limit, which is also indexed and must be updated with them:
+>
+> ```js
+> const COMP_LIMIT=360000;      // plan's annual compensation limit; contributions suspend on reaching it
 > ```
 >
 > `PLAN_YEAR` drives catch-up eligibility (age at the end of that calendar year) and is printed in
