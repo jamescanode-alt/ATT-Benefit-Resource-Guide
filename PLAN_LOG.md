@@ -1,5 +1,34 @@
 # PLAN_LOG
 
+## 2026-09-07 (2) — Cut lead-with-context prose from the Non-Bargained guide
+
+**Task.** User flagged the Section 13 sentence "The SPD's baseline is that matching contributions
+begin after one Year of Service." Opening a paragraph with what is *not* the rule buries the rule.
+Remove it, then sweep the guide for the same habit and for context that earns nothing.
+
+**The rule being applied.** Lead with the rule that governs this reader. A contrast (the union
+plan, the plan-wide baseline, the pre-2005 history) may survive as a trailing clause when it
+prevents a real misreading, but it never goes first, and it goes only where a client is actually
+likely to get it wrong.
+
+**Scanned** every `<p>` in `<main>` for openings that set up before they state, plus a filler pass
+("which is worth knowing", "A note on how...", "rather than a theoretical one", "Note what that
+means", "worth asking about rather than assuming").
+
+**Edits (11).** Rule-first rewrites: match eligibility (§13), the frozen cash balance (§06), the
+greatest-of-three vs. union contrast (§04), the $360,000 calculator note (§14), the match-formula
+table lead-in (§13). Filler cuts: the 402(g)/415(c) lead-in, the tiered-formula explanation, the
+hire-date qualifiers, auto-escalation, the compensation-cap risk sentence, catch-up mechanics.
+
+**Kept deliberately.** "Two gates control...", "Two separate IRS ceilings govern...", "Three
+features make IRMAA...", "Three questions, in this order..." are topic sentences that introduce a
+structure the reader is about to see. They state the rule's shape rather than delaying it.
+
+**Risks.** Over-cutting into SPD-sourced substance. Every edit is prose-only: no figure, date,
+formula, or citation changes. Verify by diffing the rendered text for numbers before and after.
+
+**Next steps.** Edit → assert no numeric/date drift → preview → push → CHANGE_LOG.
+
 ## 2026-09-07 — Port the company match + contribution calculator to the Non-Bargained guide
 
 **Task.** Add the union guide's Company Match section (`#match`) and Contribution & limits
